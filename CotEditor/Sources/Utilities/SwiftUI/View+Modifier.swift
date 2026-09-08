@@ -25,6 +25,10 @@
 
 import SwiftUI
 
+#if !compiler(>=7.0)
+typealias ContentBuilder = ViewBuilder
+#endif
+
 extension View {
     
     func modifier(@ContentBuilder _ closure: (Self) -> some View) -> some View {

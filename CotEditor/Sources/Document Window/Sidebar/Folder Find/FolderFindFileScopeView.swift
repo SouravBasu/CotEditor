@@ -58,7 +58,7 @@ struct FolderFindFileScopeView: View {
     
     @Environment(\.dismiss) private var dismiss
     
-    @State private var validationError: any Error?
+    @State private var validationError: (any Error)?
     @State private var isScopeSaveViewPresented = false
     
     
@@ -287,7 +287,7 @@ private extension Set where Element == String {
 
 private struct ErrorMessageView: View {
     
-    var error: any Error?
+    var error: (any Error)?
     
     
     var body: some View {

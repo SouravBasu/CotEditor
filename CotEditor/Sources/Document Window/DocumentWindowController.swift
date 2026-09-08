@@ -1036,9 +1036,11 @@ extension DocumentWindowController: NSMenuDelegate {
                 menuItem.image = item.icon
                 menuItem.image?.size = NSSize(width: 16, height: 16)
                 
+                #if compiler(>=7.0)
                 guard #available(macOS 27, *) else { return menuItem }
                 
                 menuItem.preferredImageVisibility = .visible
+                #endif
                 
                 return menuItem
             }

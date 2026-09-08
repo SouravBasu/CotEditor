@@ -40,9 +40,11 @@ public final class InspectorTabView: NSTabView {
         self.segmentedControl = NSSegmentedControl()
         self.segmentedControl.controlSize = .large
         self.segmentedControl.selectedSegment = 1
+        #if compiler(>=7.0)
         if #available(macOS 27, *) {
             self.segmentedControl.role = .tabs
         }
+        #endif
         
         super.init(frame: frameRect)
         

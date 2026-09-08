@@ -23,6 +23,20 @@
 //  limitations under the License.
 //
 
+import SwiftUI
+
+extension String: @retroactive Identifiable {
+    
+    public var id: String { self }
+}
+
+
+extension ImportDuplicationError: Identifiable {
+    
+    public var id: String { self.name }
+}
+
+
 extension Sequence where Element: Identifiable {
     
     subscript(id id: Element.ID?) -> Element? {

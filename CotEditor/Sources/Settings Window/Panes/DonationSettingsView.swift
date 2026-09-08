@@ -103,7 +103,7 @@ private struct AppPurchaseView: View {
     
     @AppStorage(.donationBadgeType) private var badgeType: BadgeType
     
-    @State private var error: any Error?
+    @State private var error: (any Error)?
     @State private var storeKitError: StoreKitError?
     @State private var hasDonated = false
     
@@ -244,7 +244,7 @@ private struct AppPurchaseView: View {
 private struct OnetimeProductViewStyle: ProductViewStyle {
     
     @State private var quantity = 1
-    @State private var error: any Error?
+    @State private var error: (any Error)?
     
     
     func makeBody(configuration: Configuration) -> some View {

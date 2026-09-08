@@ -40,61 +40,12 @@ struct MultipleReplaceListView: View {
     @State private var isExporterPresented = false
     @State private var isImporterPresented = false
     @State private var importingError: ImportDuplicationError?
-    @State private var error: any Error?
+    @State private var error: (any Error)?
     
     
     var body: some View {
         
-        List(selection: $selection) {
-            ForEach(self.settingNames, id: \.self) { name in
-                SettingNameField(text: name) { newName in
-                    do {
-                        self.selection = try self.manager.renameSetting(name: name, to: newName)
-                    } catch {
-                        self.error = error
-                        return false
-                    }
-                    return true
-                }
-                .focused($editingItem, equals: name)
-                .draggable(TransferableReplacement.self) {
-                    self.manager.urlForUserSetting(name: name)
-                        .map { .init(name: name, url: $0) }
-                }
-                .tag(name)
-            }
-        }
-        .safeAreaBar(edge: .bottom) {
-            self.bottomAccessoryView
-                .padding(6)
-        }
-        .scrollEdgeEffectStyle(.hard, for: .bottom)
-        .dragConfiguration(DragConfiguration(allowMove: false, allowDelete: true))
-        .dropDestination(for: URL.self) { urls, session in
-            guard session.localSession == nil else { return }
-            
-            self.importSettings(at: urls)
-        }
-        .contextMenu(forSelectionType: String.self) { selections in
-            if let selection = selections.first {
-                self.menu(for: selection, isContext: true)
-            }
-        }
-        .accessibilityElement(children: .contain)
-        .accessibilityLabel(.init("Sidebar", table: "MultipleReplace", comment: "accessibility label"))
-        .onChange(of: self.manager.settingNames, initial: true) { _, newValue in self.settingNames = newValue }
-        .onAppear {
-            // separate from `.onChange(of: self.settingNames.isEmpty)`
-            // to avoid evaluating before initializing settingNames
-            if self.settingNames.isEmpty {
-                self.createUntitledSetting()
-            }
-        }
-        .onChange(of: self.settingNames.isEmpty) { _, newValue in
-            if newValue {
-                self.createUntitledSetting()
-            }
-        }
+        self.configuredListView
         .fileImporter(isPresented: $isImporterPresented, allowedContentTypes: [.cotReplacement, .tabSeparatedText], allowsMultipleSelection: true) { result in
             switch result {
                 case .success(let urls):
@@ -103,9 +54,6 @@ struct MultipleReplaceListView: View {
                     self.error = error
             }
         }
-        .fileDialogMessage(.init("FileImporter.message",
-                                 defaultValue: "Choose CotEditor Replace Definition or TSV (Tab-separated values) files.", table: "MultipleReplace",
-                                 comment: "CotEditor Replace Definition is a proper file type name. Refer to InfoPlist.xcstrings."))
         .fileDialogConfirmationLabel(.init("Action.import.label", defaultValue: "Import"))
         .confirmationDialog(.init("ImportDuplicationError.description",
                                   defaultValue: "“\(self.importingError?.name ?? String(localized: .unknown))” already exists. Do you want to replace it?",
@@ -265,6 +213,79 @@ struct MultipleReplaceListView: View {
                     }
                 }
             }
+        }
+    }
+    
+    
+    private var listView: some View {
+        
+        List(selection: $selection) {
+            ForEach(self.settingNames, id: \.self) { name in
+                self.rowView(for: name)
+            }
+        }
+    }
+    
+    
+    private var configuredListView: some View {
+        
+        self.listView
+            .safeAreaBar(edge: .bottom) {
+                self.bottomAccessoryView
+                    .padding(6)
+            }
+            .scrollEdgeEffectStyle(.hard, for: .bottom)
+            .dragConfiguration(DragConfiguration(allowMove: false, allowDelete: true))
+            .dropDestination(for: URL.self) { urls, session in
+                guard session.localSession == nil else { return }
+                
+                self.importSettings(at: urls)
+            }
+            .contextMenu(forSelectionType: String.self) { selections in
+                if let selection = selections.first {
+                    self.menu(for: selection, isContext: true)
+                }
+            }
+            .accessibilityElement(children: .contain)
+            .accessibilityLabel(.init("Sidebar", table: "MultipleReplace", comment: "accessibility label"))
+            .onChange(of: self.manager.settingNames, initial: true) { _, newValue in self.settingNames = newValue }
+            .onAppear {
+                if self.settingNames.isEmpty {
+                    self.createUntitledSetting()
+                }
+            }
+            .onChange(of: self.settingNames.isEmpty) { _, newValue in
+                if newValue {
+                    self.createUntitledSetting()
+                }
+            }
+    }
+    
+    
+    @ViewBuilder
+    private func rowView(for name: String) -> some View {
+        
+        SettingNameField(text: name) { newName in
+            self.renameSetting(name: name, to: newName)
+        }
+        .focused($editingItem, equals: name)
+        .draggable(TransferableReplacement.self) {
+            self.manager.urlForUserSetting(name: name)
+                .map { TransferableReplacement(name: name, url: $0) }
+        }
+        .tag(name)
+    }
+    
+    
+    /// Renames a setting.
+    private func renameSetting(name: String, to newName: String) -> Bool {
+        
+        do {
+            self.selection = try self.manager.renameSetting(name: name, to: newName)
+            return true
+        } catch {
+            self.error = error
+            return false
         }
     }
     

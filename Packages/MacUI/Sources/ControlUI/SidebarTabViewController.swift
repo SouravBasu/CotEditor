@@ -43,9 +43,11 @@ open class SidebarTabViewController: NSTabViewController {
         
         self.segmentedControl.segmentDistribution = .fillEqually
         self.segmentedControl.controlSize = .large
+        #if compiler(>=7.0)
         if #available(macOS 27, *) {
             self.segmentedControl.role = .tabs
         }
+        #endif
         self.segmentedControl.target = self.tabView
         self.segmentedControl.action = #selector(NSTabView.takeSelectedTabViewItemFromSender)
     }

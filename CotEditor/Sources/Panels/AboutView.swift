@@ -95,6 +95,7 @@ struct AboutView: View {
                     EmptyView()
                 }
                 .modifier { container in
+                    #if compiler(>=7.0)
                     if #available(macOS 27, *) {
                         container
                             .pickerStyle(.tabs)
@@ -103,6 +104,11 @@ struct AboutView: View {
                             .pickerStyle(.segmented)
                             .tint(.secondary.opacity(0.5))
                     }
+                    #else
+                    container
+                        .pickerStyle(.segmented)
+                        .tint(.secondary.opacity(0.5))
+                    #endif
                 }
                 .buttonBorderShape(.capsule)
                 .padding(10)

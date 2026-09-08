@@ -32,7 +32,7 @@ extension View {
     /// - Parameters:
     ///   - error: An optional Error that is used to generate the alert.
     ///   - buttonTitle: The title for the button in the alert panel, or `nil` for the default "OK."
-    func alert(error: Binding<some Error?>, buttonTitle: LocalizedStringResource? = nil) -> some View {
+    func alert(error: Binding<(some Error)?>, buttonTitle: LocalizedStringResource? = nil) -> some View {
         
         let localizedError = LocalizedAlertError(error.wrappedValue)
         
@@ -44,6 +44,84 @@ extension View {
             Text(error.recoverySuggestion ?? "")
         }
     }
+    
+    
+    #if !compiler(>=7.0)
+    func confirmationDialog<Item, Actions: View, Message: View>(
+        _ title: LocalizedStringResource,
+        item: Binding<Item?>,
+        @ViewBuilder actions: (Item) -> Actions,
+        @ViewBuilder message: (Item) -> Message
+    ) -> some View {
+        
+        self.confirmationDialog(
+            title,
+            isPresented: Binding(
+                get: { item.wrappedValue != nil },
+                set: { if !$0 { item.wrappedValue = nil } }
+            ),
+            presenting: item.wrappedValue,
+            actions: actions,
+            message: message
+        )
+    }
+    
+    
+    func confirmationDialog<Item, Actions: View>(
+        _ title: LocalizedStringResource,
+        item: Binding<Item?>,
+        @ViewBuilder actions: (Item) -> Actions
+    ) -> some View {
+        
+        self.confirmationDialog(
+            title,
+            isPresented: Binding(
+                get: { item.wrappedValue != nil },
+                set: { if !$0 { item.wrappedValue = nil } }
+            ),
+            presenting: item.wrappedValue,
+            actions: actions
+        )
+    }
+    
+    
+    func alert<Item, Actions: View, Message: View>(
+        _ title: LocalizedStringResource,
+        item: Binding<Item?>,
+        @ViewBuilder actions: (Item) -> Actions,
+        @ViewBuilder message: (Item) -> Message
+    ) -> some View {
+        
+        self.alert(
+            title,
+            isPresented: Binding(
+                get: { item.wrappedValue != nil },
+                set: { if !$0 { item.wrappedValue = nil } }
+            ),
+            presenting: item.wrappedValue,
+            actions: actions,
+            message: message
+        )
+    }
+    
+    
+    func alert<Item, Actions: View>(
+        _ title: LocalizedStringResource,
+        item: Binding<Item?>,
+        @ViewBuilder actions: (Item) -> Actions
+    ) -> some View {
+        
+        self.alert(
+            title,
+            isPresented: Binding(
+                get: { item.wrappedValue != nil },
+                set: { if !$0 { item.wrappedValue = nil } }
+            ),
+            presenting: item.wrappedValue,
+            actions: actions
+        )
+    }
+    #endif
 }
 
 
@@ -57,7 +135,7 @@ private struct LocalizedAlertError: LocalizedError {
     /// Creates an existential error conforming to the `LocalizedError` protocol from a general `Swift.Error`.
     ///
     /// - Parameter error: The error to present.
-    init?(_ error: some Error?) {
+    init?(_ error: (some Error)?) {
         
         guard let error else { return nil }
         

@@ -137,6 +137,7 @@ final class DocumentWindowController: NSWindowController, NSWindowDelegate {
         toolbar.autosavesConfiguration = true
         toolbar.delegate = self
         window.toolbar = toolbar
+        self.updateMarkdownPreviewToolbarItemVisibility(syntaxName: (document as? Document)?.syntaxName)
         
         // observe opacity setting change
         // -> Keep opaque when the window was created as a browsing window (the right side ones in the browsing mode).
@@ -349,10 +350,12 @@ final class DocumentWindowController: NSWindowController, NSWindowDelegate {
             self.documentSyntaxObserver = Task { [weak self] in
                 for await syntaxName in Observations({ document.syntaxName }) {
                     self?.selectSyntaxPopUpItem(with: syntaxName)
+                    self?.updateMarkdownPreviewToolbarItemVisibility(syntaxName: syntaxName)
                 }
             }
         } else {
             self.syntaxPopUpButton?.isEnabled = false
+            self.updateMarkdownPreviewToolbarItemVisibility(syntaxName: nil)
         }
     }
     
@@ -484,6 +487,20 @@ final class DocumentWindowController: NSWindowController, NSWindowDelegate {
             menu.item(at: 1)?.tag = deletedTag
         }
     }
+    
+    
+    /// Updates the visibility of the Markdown Preview toolbar item based on the document syntax.
+    ///
+    /// - Parameter syntaxName: The name of the syntax currently chosen.
+    private func updateMarkdownPreviewToolbarItemVisibility(syntaxName: String?) {
+        
+        let isMarkdown = (syntaxName == SyntaxName.markdown)
+        for item in self.window?.toolbar?.items ?? [] {
+            if item.itemIdentifier == .markdownPreview {
+                item.isHidden = !isMarkdown
+            }
+        }
+    }
 }
 
 
@@ -556,6 +573,7 @@ private extension NSToolbarItem.Identifier {
     static let fonts = Self(Self.prefix + "fonts")
     static let find = Self(Self.prefix + "find")
     static let share = Self(Self.prefix + "share")
+    static let markdownPreview = Self(Self.prefix + "markdownPreview")
 }
 
 
@@ -597,6 +615,7 @@ extension DocumentWindowController: NSToolbarDelegate {
             .inspectorTrackingSeparator,
             .flexibleSpace,
             .toggleInspector,
+            .markdownPreview,
         ]
     }
     
@@ -626,6 +645,7 @@ extension DocumentWindowController: NSToolbarDelegate {
             .print,
             .writingToolsItemIdentifier,
             .share,
+            .markdownPreview,
             .space,
         ]
         
@@ -994,6 +1014,17 @@ extension DocumentWindowController: NSToolbarDelegate {
                                       defaultValue: "Share document file", table: "Document",
                                       comment: "(label for the Share toolbar item is automatically set)")
                 item.delegate = self
+                return item
+                
+            case .markdownPreview:
+                let item = NSToolbarItem(itemIdentifier: itemIdentifier)
+                item.label = String(localized: "Toolbar.markdownPreview.label",
+                                    defaultValue: "Markdown Preview", table: "Document")
+                item.toolTip = String(localized: "Toolbar.markdownPreview.tooltip",
+                                      defaultValue: "Show or hide Markdown preview window", table: "Document")
+                item.image = NSImage(systemSymbolName: "doc.richtext", accessibilityDescription: item.label)
+                item.action = #selector(AppDelegate.toggleMarkdownPreview)
+                item.isHidden = (self.fileDocument as? Document)?.syntaxName != SyntaxName.markdown
                 return item
                 
             default:

@@ -695,6 +695,12 @@ Gw
                                                 </items>
                                             </menu>
                                         </menuItem>
+                                        <menuItem title="Markdown Preview" secondaryImage="doc.richtext" catalog="system" keyEquivalent="p" id="mkv-pr-iew">
+                                            <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="toggleMarkdownPreview:" target="Ady-hI-5gd" id="act-mp-iew"/>
+                                            </connections>
+                                        </menuItem>
                                         <menuItem isSeparatorItem="YES" id="hFL-Ed-JMj"/>
                                         <menuItem title="Show Navigation Bar" secondaryImage="inset.filled.topthird.rectangle" catalog="system" id="681">
                                             <modifierMask key="keyEquivalentModifierMask"/>

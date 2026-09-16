@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="light dark">
+    <base id="base-tag">
+    <link rel="stylesheet" href="preview.css">
+    <script src="marked.min.js"></script>
+</head>
+<body class="markdown-body">
+    <div id="markdown-content"></div>
+    <script>
+        // Slugify helper for heading anchors
+        function slugify(text) {
+            return text
+                .toLowerCase()
+                .replace(/<[^>]*>/g, '')
+                .replace(/[^\p{L}\p{N}\s_-]/gu, '')
+                .trim()
+                .replace(/\s+/g, '-');
+        }
+
+        // Configure marked options for GitHub Flavored Markdown
+        if (typeof marked !== 'undefined') {
+            marked.use({
+                gfm: true,
+                breaks: false,
+                pedantic: false,
+                renderer: {
+                    heading({ tokens, depth }) {
+                        const text = this.parser.parseInline(tokens);
+                        const id = slugify(text);
+                        return '<h' + depth + (id ? ' id="' + id + '"' : '') + '>' + text + '</h' + depth + '>\n';
+                    }
+                }
+            });
+        }
+
+        /**
+         * Updates the rendered markdown in-place while preserving the scroll position.
+         * @param {string} markdown - The raw markdown text to parse and render.
+         * @param {string|null} baseURI - Optional file:/// URL representing the active document's directory.
+         * @param {boolean} resetScroll - If true, resets scroll position to (0, 0).
+         */
+        window.updateMarkdown = function(markdown, baseURI, resetScroll) {
+            // 1. Update <base> tag for resolving relative images and links
+            const baseTag = document.getElementById('base-tag');
+            if (baseTag) {
+                if (baseURI && baseURI !== 'null') {
+                    if (baseTag.getAttribute('href') !== baseURI) {
+                        baseTag.setAttribute('href', baseURI);
+                    }
+                } else {
+                    if (baseTag.hasAttribute('href')) {
+                        baseTag.removeAttribute('href');
+                    }
+                }
+            }
+
+            const container = document.getElementById('markdown-content');
+            if (!container) return false;
+
+            // 2. Snapshot current scroll position
+            const scrollX = resetScroll ? 0 : window.scrollX;
+            const scrollY = resetScroll ? 0 : window.scrollY;
+
+            // 3. Render HTML in-place
+            if (typeof marked !== 'undefined' && typeof marked.parse === 'function') {
+                container.innerHTML = marked.parse(markdown || '');
+            } else {
+                container.textContent = markdown || '';
+            }
+
+            // 4. Restore scroll position to prevent jumping during typing
+            window.scrollTo(scrollX, scrollY);
+            return true;
+        };
+
+        /**
+         * Explicitly updates the base URI without altering current content.
+         * @param {string|null} baseURI
+         */
+        window.setBaseURL = function(baseURI) {
+            const baseTag = document.getElementById('base-tag');
+            if (baseTag) {
+                if (baseURI && baseURI !== 'null') {
+                    baseTag.setAttribute('href', baseURI);
+                } else {
+                    baseTag.removeAttribute('href');
+                }
+            }
+        };
+    </script>
+</body>
+</html>

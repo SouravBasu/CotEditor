@@ -1,0 +1,127 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "Markdown Preview" : {
+      "comment" : "window title",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Markdown Preview"
+          }
+        }
+      }
+    },
+    "No Markdown Document" : {
+      "comment" : "placeholder title",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Markdown Document"
+          }
+        }
+      }
+    },
+    "Open or select a Markdown document to preview." : {
+      "comment" : "placeholder description",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open or select a Markdown document to preview."
+          }
+        }
+      }
+    },
+    "Toolbar.keepOnTop.label" : {
+      "comment" : "toolbar item label",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep on Top"
+          }
+        }
+      }
+    },
+    "Toolbar.keepOnTop.tooltip" : {
+      "comment" : "toolbar item tooltip",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep preview window always on top"
+          }
+        }
+      }
+    },
+    "Toolbar.keepOnTop.tooltip.floating" : {
+      "comment" : "toolbar item tooltip when floating",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Restore normal window level"
+          }
+        }
+      }
+    },
+    "Toolbar.keepOnTop.tooltip.normal" : {
+      "comment" : "toolbar item tooltip when normal",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Keep preview window always on top"
+          }
+        }
+      }
+    },
+    "Toolbar.pin.label" : {
+      "comment" : "toolbar item label",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pin Document"
+          }
+        }
+      }
+    },
+    "Toolbar.pin.tooltip" : {
+      "comment" : "toolbar item tooltip",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lock preview to current document"
+          }
+        }
+      }
+    },
+    "Toolbar.pin.tooltip.pinned" : {
+      "comment" : "toolbar item tooltip when pinned",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unlock preview to follow active document"
+          }
+        }
+      }
+    },
+    "Toolbar.pin.tooltip.unpinned" : {
+      "comment" : "toolbar item tooltip when unpinned",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lock preview to current document"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

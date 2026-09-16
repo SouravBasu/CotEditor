@@ -296,6 +296,13 @@ extension Logger {
         switch item.action {
             case #selector(importSettings):
                 return !self.isSettingsImporterPresented
+                
+            case #selector(toggleMarkdownPreview):
+                let hasDocument = (NSDocumentController.shared as? DocumentController)?.currentPlainTextDocument != nil
+                    || NSDocumentController.shared.documents.contains { $0 is Document || ($0 as? DirectoryDocument)?.currentDocument is Document }
+                let isPreviewOpen = MarkdownPreviewWindowController.shared.isWindowLoaded && MarkdownPreviewWindowController.shared.window?.isVisible == true
+                return hasDocument || isPreviewOpen
+                
             default: break
         }
         
@@ -423,6 +430,13 @@ extension Logger {
     @IBAction func showConsolePanel(_ sender: Any?) {
         
         ConsolePanelController.shared.showWindow(sender)
+    }
+    
+    
+    /// Shows or closes the Markdown preview window.
+    @IBAction func toggleMarkdownPreview(_ sender: Any?) {
+        
+        MarkdownPreviewWindowController.shared.toggleWindow(sender)
     }
     
     

@@ -25,6 +25,7 @@
 
 import AppKit
 import WebKit
+import OSLog
 
 extension MarkdownPreviewViewController: WKNavigationDelegate {
     
@@ -36,7 +37,6 @@ extension MarkdownPreviewViewController: WKNavigationDelegate {
         decidePolicyFor navigationAction: WKNavigationAction,
         decisionHandler: @escaping (WKNavigationActionPolicy) -> Void
     ) {
-        
         // Intercept link activations
         guard navigationAction.navigationType == .linkActivated,
               let url = navigationAction.request.url else {
@@ -68,19 +68,29 @@ extension MarkdownPreviewViewController: WKNavigationDelegate {
     
     
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        
         self.isReady = true
         self.flushPendingUpdate()
     }
     
     
     func webViewWebContentProcessDidTerminate(_ webView: WKWebView) {
-        
         self.isReady = false
         if let markdown = self.lastMarkdown {
             self.pendingUpdate = (markdown, self.currentBaseURL, false)
         }
         self.loadTemplate(baseURL: self.currentBaseURL)
+    }
+    
+    
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: any Error) {
+        Logger(subsystem: "com.coteditor.CotEditor", category: "MarkdownPreview").error("Markdown preview navigation failed: \(error.localizedDescription)")
+        self.isReady = false
+    }
+    
+    
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: any Error) {
+        Logger(subsystem: "com.coteditor.CotEditor", category: "MarkdownPreview").error("Markdown preview provisional navigation failed: \(error.localizedDescription)")
+        self.isReady = false
     }
     
     

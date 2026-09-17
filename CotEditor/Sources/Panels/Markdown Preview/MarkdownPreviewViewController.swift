@@ -113,19 +113,10 @@ import WebKit
     ///   - resetScroll: Whether to reset the scroll position to top (e.g. when switching files).
     func updateMarkdown(_ markdown: String, baseURL: URL? = nil, resetScroll: Bool = false) {
         
-        // If directory changed, reload template to establish new security origin
-        if baseURL != self.currentBaseURL {
-            self.currentBaseURL = baseURL
-            self.lastMarkdown = markdown
-            self.pendingUpdate = (markdown, baseURL, true)
-            if self.isViewLoaded {
-                self.loadTemplate(baseURL: baseURL)
-            }
-            return
-        }
-        
         let isContentUnchanged = (self.lastMarkdown == markdown)
+        let isBaseURLUnchanged = (self.currentBaseURL == baseURL)
         self.lastMarkdown = markdown
+        self.currentBaseURL = baseURL
         
         // If webView is not yet finished loading initial template, queue the update
         guard self.isReady else {
@@ -133,8 +124,8 @@ import WebKit
             return
         }
         
-        // Skip identical re-renders if content hasn't changed and scroll reset wasn't requested
-        if !self.needsFullRender, !resetScroll, isContentUnchanged {
+        // Skip identical re-renders if content and baseURL haven't changed and scroll reset wasn't requested
+        if !self.needsFullRender, !resetScroll, isContentUnchanged, isBaseURLUnchanged {
             return
         }
         self.needsFullRender = false
@@ -166,12 +157,15 @@ import WebKit
     // MARK: Internal Methods
     
     /// Loads the HTML template into the web view with the specified base URL.
-    func loadTemplate(baseURL: URL?) {
+    func loadTemplate(baseURL: URL? = nil) {
         
+        if let baseURL {
+            self.currentBaseURL = baseURL
+        }
         self.isReady = false
         self.needsFullRender = true
-        let effectiveBaseURL = baseURL ?? Bundle.main.resourceURL
-        self.webView.loadHTMLString(self.templateHTML, baseURL: effectiveBaseURL)
+        let safeBaseURL = Bundle(for: MarkdownPreviewViewController.self).resourceURL ?? Bundle.main.resourceURL
+        self.webView.loadHTMLString(self.templateHTML, baseURL: safeBaseURL)
     }
     
     

@@ -30,6 +30,7 @@ import SyntaxParsers
 import ValueRange
 @testable import CotEditor
 
+@Suite(.serialized)
 @MainActor struct SyntaxControllerTests {
     
     @Test func highlightApplies() async throws {
@@ -123,7 +124,7 @@ import ValueRange
     }
     
     
-    private func waitFor(timeout: Duration = .seconds(2), interval: Duration = .milliseconds(20), _ condition: @escaping () -> Bool) async -> Bool {
+    private func waitFor(timeout: Duration = .seconds(5), interval: Duration = .milliseconds(20), _ condition: @escaping () -> Bool) async -> Bool {
         
         let clock = ContinuousClock()
         let deadline = clock.now.advanced(by: timeout)

@@ -29,3 +29,5 @@
 // Code signing may need to override any predefined values.
 // Therefore, it should be included at the end.
 #include "CodeSigning.xcconfig"
+
+CODE_SIGN_ENTITLEMENTS =

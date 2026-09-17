@@ -113,7 +113,9 @@ final class MarkdownPreviewWindowController: NSWindowController, NSWindowDelegat
     
     override func showWindow(_ sender: Any?) {
         if self.currentDocument == nil, !self.isPinned {
-            if let frontDocument = (NSDocumentController.shared as? DocumentController)?.currentPlainTextDocument {
+            let frontDocument = (NSDocumentController.shared as? DocumentController)?.currentPlainTextDocument
+                ?? (NSDocumentController.shared.documents.first as? Document)
+            if let frontDocument {
                 self.updateTrackedDocument(to: frontDocument)
             }
         }
@@ -158,14 +160,9 @@ final class MarkdownPreviewWindowController: NSWindowController, NSWindowDelegat
         // Two-tier observation: window -> document
         NSApp.publisher(for: \.mainWindow, options: .new)
             .debounce(for: .seconds(0.1), scheduler: RunLoop.main)
-            .map { $0?.windowController as? DocumentWindowController }
+            .compactMap { $0?.windowController as? DocumentWindowController }
             .sink { [weak self] windowController in
                 guard let self, !self.isPinned else { return }
-                guard let windowController else {
-                    self.fileDocumentObserver = nil
-                    self.updateTrackedDocument(to: nil)
-                    return
-                }
                 
                 self.fileDocumentObserver = windowController.publisher(for: \.fileDocument, options: .initial)
                     .debounce(for: .seconds(0.1), scheduler: RunLoop.main)
@@ -239,6 +236,16 @@ final class MarkdownPreviewWindowController: NSWindowController, NSWindowDelegat
         self.fileURLObserver = nil
         self.debouncer.cancel()
         self.currentDocument = nil
+        
+        if !self.isPinned {
+            let nextDocument = (NSDocumentController.shared as? DocumentController)?.currentPlainTextDocument
+                ?? (NSDocumentController.shared.documents.first as? Document)
+            if let nextDocument {
+                self.updateTrackedDocument(to: nextDocument)
+                return
+            }
+        }
+        
         self.containerViewController.showPlaceholder()
         self.window?.toolbar?.validateVisibleItems()
     }

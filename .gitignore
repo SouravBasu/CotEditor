@@ -12,3 +12,6 @@ default.profraw
 .build
 .swiftpm
 Packages/*/Package.resolved
+
+# VS Code
+.vscode/

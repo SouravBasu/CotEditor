@@ -1,12 +1,32 @@
 # Change Log
 
-7.1.0-beta.7 (unreleased)
+7.1.1 (unreleased)
+--------------------------
+
+### Improvements
+
+- Improve the External Editor button in the file preview view.
+- [trivial] Tweak the appearance of the Import/Export Settings windows.
+- [non-AppStore ver.] Update Sparkle from 2.9.6 to 2.10.0.
+
+
+
+7.1.0 (2026-09-13)
+--------------------------
+
+- No change.
+
+
+
+7.1.0-rc (2026-09-11)
 --------------------------
 
 ### Improvements
 
 - [beta] Improve the performance of the folder find pane.
+- [beta] Highlight all matches in a document when selecting a folder find result, and clear the highlights when the editor gains focus.
 - [beta] Limit folder find results to 5,000 matches per file and 500,000 matches in total, and indicate when the limit is reached.
+- [beta][dev] Update the build environment to Xcode 27 RC.
 
 
 ### Fixes
@@ -14,6 +34,7 @@
 - [beta] Fix an issue where long matches were not highlighted in folder search results.
 - [beta] Fix an issue where binary files, such as executables without a filename extension, were searched in the folder find.
 - [beta] Fix an issue where the folder find could follow symbolic links to files.
+- [beta] Fix an issue where the find indicator effect was occasionally cut out when selecting an item in the result of folder find.
 
 
 ### Known Issues

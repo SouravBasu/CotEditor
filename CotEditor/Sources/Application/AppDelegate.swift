@@ -184,7 +184,7 @@ extension Logger {
         
         // store the latest version
         // -> Migration processes should be completed up to this point.
-        let thisVersion = Bundle.main.bundleVersion
+        let thisVersion = Bundle.main.bundleVersion!
         if lastVersion == nil || Int(thisVersion)! > lastVersion! {
             UserDefaults.standard[.lastVersion] = thisVersion
         }
@@ -515,7 +515,7 @@ extension Logger {
         }
         
         self.menuUpdateObservers = [
-            Task { [weak self] in
+            Task(priority: .medium) { [menu = self.syntaxesMenu!] in
                 for await names in Observations({ SyntaxManager.shared.settingNames }) {
                     let action = #selector((any SyntaxChanging).changeSyntax)
                     let noneItem = NSMenuItem(title: String(localized: "SyntaxName.none", defaultValue: "None"), action: action, keyEquivalent: "")
@@ -526,25 +526,22 @@ extension Logger {
                         return item
                     }
                     
-                    self?.syntaxesMenu?.items = [
+                    menu.items = [
                         noneItem,
                         .separator()
                     ] + items
                 }
             },
             
-            Task { [weak self] in
+            Task(priority: .medium) { [menu = self.themesMenu!] in
                 for await names in Observations({ ThemeManager.shared.settingNames }) {
-                    self?.themesMenu?.items = names
+                    menu.items = names
                         .map { NSMenuItem(title: $0, action: #selector((any ThemeChanging).changeTheme), keyEquivalent: "") }
                 }
             },
             
-            Task { [weak self] in
+            Task(priority: .medium) { [menu = self.multipleReplaceMenu!] in
                 for await names in Observations({ ReplacementManager.shared.settingNames }) {
-                    guard let menu = self?.multipleReplaceMenu else { return }
-                    
-                    let manageItem = menu.items.last
                     menu.items = names.map { name in
                         let item = NSMenuItem()
                         item.title = name
@@ -554,7 +551,7 @@ extension Logger {
                         return item
                     } + [
                         .separator(),
-                        manageItem!,
+                        menu.items.last!,
                     ]
                 }
             },

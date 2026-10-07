@@ -83,6 +83,7 @@ final class MultipleReplaceViewController: NSViewController, NSUserInterfaceVali
     }
     
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         
         fatalError("init(coder:) has not been implemented")
@@ -351,7 +352,7 @@ final class MultipleReplaceViewController: NSViewController, NSUserInterfaceVali
                 target.removeReplacements(at: rowIndexes)
             }
             if !undoManager.isUndoing {
-                undoManager.setActionName(String(localized: "Insert Rule", table: "MultipleReplace", comment: "action name"))
+                undoManager.setActionName(String(localized: "Insert Rule", table: "MultipleReplace", comment: "verb; undo action name"))
             }
         }
         
@@ -379,7 +380,7 @@ final class MultipleReplaceViewController: NSViewController, NSUserInterfaceVali
                 target.insertReplacements(replacements, at: rowIndexes)
             }
             if !undoManager.isUndoing {
-                undoManager.setActionName(String(localized: "Delete Rules", table: "MultipleReplace", comment: "action name"))
+                undoManager.setActionName(String(localized: "Delete Rules", table: "MultipleReplace", comment: "verb; undo action name"))
             }
         }
         
@@ -411,7 +412,7 @@ final class MultipleReplaceViewController: NSViewController, NSUserInterfaceVali
                 target.updateReplacements(replacements, at: rowIndexes)
             }
             if !undoManager.isUndoing {
-                undoManager.setActionName(String(localized: "Edit Rule", table: "MultipleReplace", comment: "action name"))
+                undoManager.setActionName(String(localized: "Edit Rule", table: "MultipleReplace", comment: "verb; undo action name"))
             }
         }
         
@@ -446,7 +447,7 @@ final class MultipleReplaceViewController: NSViewController, NSUserInterfaceVali
                 target.moveReplacements(from: destinationRows, to: sourceRows)
             }
             if !undoManager.isUndoing {
-                undoManager.setActionName(String(localized: "Move Rules", table: "MultipleReplace", comment: "action name"))
+                undoManager.setActionName(String(localized: "Move Rules", table: "MultipleReplace", comment: "verb; undo action name"))
             }
         }
         

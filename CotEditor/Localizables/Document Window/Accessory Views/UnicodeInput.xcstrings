@@ -2,7 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Clear Recents" : {
-      "comment" : "button label",
+      "comment" : "verb; menu item",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -32,6 +32,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Effacer les éléments récents"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हाल के साफ़ करें"
           }
         },
         "it" : {
@@ -73,13 +79,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Отчистить недавние"
+            "value" : "Очистить недавние"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Son Kullanılanları Sil"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Очистити недавні"
           }
         },
         "zh-Hans" : {
@@ -134,6 +146,12 @@
             "value" : "Code invalide"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अमान्य कोड"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -167,7 +185,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Codice non valido"
+            "value" : "Código inválido"
           }
         },
         "ru" : {
@@ -180,6 +198,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Geçersiz Kod"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Некоректний код"
           }
         },
         "zh-Hans" : {
@@ -235,6 +259,12 @@
             "value" : "Récents"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हाल के"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -281,6 +311,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Son Kullanılanlar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Недавні"
           }
         },
         "zh-Hans" : {

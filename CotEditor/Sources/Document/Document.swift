@@ -42,7 +42,7 @@ import URLUtils
 extension NSTextView: EditorCounter.Source { }
 
 
-@Observable final class Document: DataDocument, AdditionalDocumentPreparing, EncodingChanging {
+@Observable class Document: DataDocument, AdditionalDocumentPreparing, EncodingChanging {
     
     // MARK: Notification Messages
     
@@ -507,27 +507,19 @@ extension NSTextView: EditorCounter.Source { }
         let additionalFileAttributes = self.additionalFileAttributes(for: saveOperation)
         self.lastAdditionalFileAttributes.withLock { $0 = additionalFileAttributes }
         
-        // workaround the issue that invoking the async version super blocks the save process
-        // (2022, macOS 12-27 + Xcode 13-27, FB11203469).
-        // To reproduce the issue:
-        //     1. Make a document unsaved ("Edited" status in the window subtitle).
-        //     2. Open the save panel once and cancel it.
-        //     3. Quit the application.
-        //     4. Then, the application hangs up.
-        super.save(to: url, ofType: typeName, for: saveOperation) { [unowned self, url] error in
-            defer {
-                self.pendingFileData.withLock { $0 = nil }
-                completionHandler(error)
+        self.saveFile(to: url, ofType: typeName, for: saveOperation) { [unowned self, url] error in
+            let data = self.pendingFileData.withLock { value in
+                defer { value = nil }
+                return value
             }
             if error != nil {
-                return
+                return completionHandler(error)
             }
             
             // store file data in order to check the file content identity in `presentedItemDidChange()`
             if saveOperation.updatesDocumentFile {
-                let pendingFileData = self.pendingFileData.withLock(\.self)
-                assert(pendingFileData != nil)
-                self.fileData.withLock { $0 = pendingFileData }
+                assert(data != nil)
+                self.fileData.withLock { $0 = data }
             }
             
             // apply syntax that is inferred from the filename or the shebang
@@ -540,11 +532,7 @@ extension NSTextView: EditorCounter.Source { }
                 self.setSyntax(name: syntaxName)
             }
             
-            if !saveOperation.isAutosave {
-                Task {
-                    await ScriptManager.shared.dispatch(event: .documentSaved, document: self.objectSpecifier)
-                }
-            }
+            self.finishSaving(data: data, for: saveOperation, completionHandler: completionHandler)
         }
     }
     
@@ -646,19 +634,19 @@ extension NSTextView: EditorCounter.Source { }
             alert.messageText = String(
                 localized: "DocumentClosingAlert.message",
                 defaultValue: "Do you want to save the changes made to the document “\(self.displayName!)”?",
-                comment: "Refer the same sentence in AppKit.framework by Apple."
+                comment: "Refer the same expression in AppKit.framework by Apple."
             ) + "\n" + LossyEncodingError(encoding: self.fileEncoding).localizedDescription
             alert.informativeText = String(
                 localized: "DocumentClosingAlert.lossyEncoding.informativeText",
                 defaultValue: "Your changes will be lost if you don’t save them. Incompatible characters are either substituted or removed in saving.",
-                comment: "For the first sentence, refer the same sentence in AppKit.framework by Apple. For the latter one, refer the DocumentSavingAlert.lossyEncoding.recoverySuggestion.")
+                comment: "For the first sentence, refer the same expression in AppKit.framework by Apple. For the latter one, refer the DocumentSavingError.lossyEncoding.recoverySuggestion.")
             alert.addButton(withTitle: String(
                 localized: "DocumentSavingError.lossyEncoding.recoveryOption.save",
                 defaultValue: "Save Available Text"))
             alert.addButton(withTitle: String(
                 localized: "DocumentClosingAlert.button.dontSave",
                 defaultValue: "Don’t Save",
-                comment: "Refer the same sentence in AppKit.framework by Apple."))
+                comment: "Refer the same expression in AppKit.framework by Apple."))
             alert.addButton(withTitle: String(localized: .cancel))
             alert.buttons[1].hasDestructiveAction = true
             alert.window.identifier = .contentDependentAlert
@@ -706,14 +694,6 @@ extension NSTextView: EditorCounter.Source { }
     
     override func printOperation(withSettings printSettings: [NSPrintInfo.AttributeKey: Any]) throws -> NSPrintOperation {
         
-        // -> Because the last *edited* date is not recorded anywhere, use `.now` if the document was modified since the last save.
-        let info = PrintTextView.DocumentInfo(
-            name: self.displayName,
-            fileURL: self.fileURL,
-            lastModifiedDate: self.hasUnautosavedChanges ? .now : self.fileModificationDate,
-            syntaxName: self.syntaxName
-        )
-        
         let defaults = UserDefaults.standard
         let options = PrintTextView.Options(
             lineHeight: defaults[.lineHeight],
@@ -725,7 +705,7 @@ extension NSTextView: EditorCounter.Source { }
         
         // create printView
         let textStorage = NSTextStorage(string: self.textStorage.string)
-        let printView = PrintTextView(textStorage: textStorage, lineEndingScanner: self.lineEndingScanner, info: info, options: options)
+        let printView = PrintTextView(textStorage: textStorage, lineEndingScanner: self.lineEndingScanner, info: self.printingDocumentInfo, options: options)
         if let selectedRanges = self.textView?.selectedRanges {
             printView.selectedRanges = selectedRanges
         }
@@ -954,8 +934,8 @@ extension NSTextView: EditorCounter.Source { }
             case #selector(toggleEditable):
                 if let item = item as? NSMenuItem {
                     item.title = self.isEditable
-                        ? String(localized: "Prevent Editing", table: "MainMenu")
-                        : String(localized: "Allow Editing", table: "MainMenu")
+                        ? String(localized: "Prevent Editing", table: "MainMenu", comment: "noun; menu item")
+                        : String(localized: "Allow Editing", table: "MainMenu", comment: "noun; menu item")
                     if #unavailable(macOS 27) {
                         item.image = self.isEditable
                             ? NSImage(systemSymbolName: "pencil.slash", accessibilityDescription: nil)
@@ -1012,6 +992,56 @@ extension NSTextView: EditorCounter.Source { }
     var textViews: [NSTextView] {
         
         self.viewController?.textViews ?? []
+    }
+    
+    
+    /// The document information to display in printed headers and footers.
+    var printingDocumentInfo: PrintTextView.DocumentInfo {
+        
+        // -> Because the last *edited* date is not recorded anywhere, use `.now` if the document was modified since the last save.
+        PrintTextView.DocumentInfo(
+            name: self.displayName,
+            filePath: self.fileURL?.pathAbbreviatingWithTilde,
+            lastModifiedDate: self.hasUnautosavedChanges ? .now : self.fileModificationDate,
+            syntaxName: self.syntaxName
+        )
+    }
+    
+    
+    /// Saves the prepared content to disk.
+    ///
+    /// - Parameters:
+    ///   - url: The destination URL.
+    ///   - typeName: The document type.
+    ///   - saveOperation: The AppKit save operation.
+    ///   - completionHandler: The handler called with the result of writing the file.
+    func saveFile(to url: URL, ofType typeName: String, for saveOperation: NSDocument.SaveOperationType, completionHandler: @escaping (any Error?) -> Void) {
+        
+        // workaround the issue that invoking the async version super blocks the save process
+        // (2022, macOS 12-27 + Xcode 13-27, FB11203469).
+        // To reproduce the issue:
+        //     1. Make a document unsaved ("Edited" status in the window subtitle).
+        //     2. Open the save panel once and cancel it.
+        //     3. Quit the application.
+        //     4. Then, the application hangs up.
+        super.save(to: url, ofType: typeName, for: saveOperation, completionHandler: completionHandler)
+    }
+    
+    
+    /// Completes a successful save operation.
+    ///
+    /// - Parameters:
+    ///   - data: The file content written to disk.
+    ///   - operation: The original document save operation.
+    ///   - completionHandler: The handler called when saving finishes.
+    func finishSaving(data: Data?, for operation: NSDocument.SaveOperationType, completionHandler: @escaping (any Error?) -> Void) {
+        
+        if !operation.isAutosave {
+            Task {
+                await ScriptManager.shared.dispatch(event: .documentSaved, document: self.objectSpecifier)
+            }
+        }
+        completionHandler(nil)
     }
     
     
@@ -1187,6 +1217,13 @@ extension NSTextView: EditorCounter.Source { }
     }
     
     
+    /// Discards save panel options so canceled choices do not affect subsequent saves.
+    func invalidateSaveOptions() {
+        
+        self.saveOptions = nil
+    }
+    
+    
     // MARK: Action Messages
     
     /// Changes the document text encoding with sender's tag.
@@ -1313,8 +1350,7 @@ extension NSTextView: EditorCounter.Source { }
     ///   - contextInfo: The original delegate context wrapped in `runModalSavePanel(for:delegate:didSave:contextInfo:)`.
     @objc private func document(_ document: NSDocument, didSave: Bool, contextInfo: UnsafeRawPointer) {
         
-        // discard the save options at the end of the save panel session
-        self.saveOptions = nil
+        self.invalidateSaveOptions()
         
         // manually invoke the original delegate
         let context: DelegateContext = bridgeUnwrapped(contextInfo)
@@ -1436,9 +1472,9 @@ extension NSTextView: EditorCounter.Source { }
                                            defaultValue: "Do you want to convert or reinterpret this document using “\(fileEncoding.localizedName)”?",
                                            comment: "%@ is an encoding name")
             alert.addButton(withTitle: String(localized: "EncodingChangeAlert.button.convert",
-                                              defaultValue: "Convert"))
+                                              defaultValue: "Convert", comment: "verb; button"))
             alert.addButton(withTitle: String(localized: "EncodingChangeAlert.button.reinterpret",
-                                              defaultValue: "Reinterpret"))
+                                              defaultValue: "Reinterpret", comment: "verb; button"))
             alert.addButton(withTitle: String(localized: .cancel))
             alert.helpAnchor = "howto_change_encoding"
             alert.showsHelp = true
@@ -1478,7 +1514,8 @@ extension NSTextView: EditorCounter.Source { }
                                                            defaultValue: "Are you sure you want to discard your changes and reopen the document using “\(fileEncoding.localizedName)”?", comment: "%@ is an encoding name")
                             alert.addButton(withTitle: String(localized: .cancel))
                             alert.addButton(withTitle: String(localized: "UnsavedReinterpretationAlert.button.discard",
-                                                              defaultValue: "Discard Changes"))
+                                                              defaultValue: "Discard Changes",
+                                                              comment: "Refer the same expression by Apple."))
                             alert.buttons.last?.hasDestructiveAction = true
                             alert.window.identifier = .contentDependentAlert
                             
@@ -1542,16 +1579,16 @@ extension NSTextView: EditorCounter.Source { }
                          defaultValue: "The most common line ending in this document is \(self.lineEnding.label).")
             if self.isEditable {
                 alert.addButton(withTitle: String(localized: "InconsistentLineEndingAlert.button.convert",
-                                                  defaultValue: "Convert"))
+                                                  defaultValue: "Convert", comment: "verb; button"))
             }
             alert.addButton(withTitle: String(localized: "InconsistentLineEndingAlert.button.review",
-                                              defaultValue: "Review"))
+                                              defaultValue: "Review", comment: "verb; button"))
             alert.addButton(withTitle: String(localized: "InconsistentLineEndingAlert.button.ignore",
-                                              defaultValue: "Ignore"))
+                                              defaultValue: "Ignore", comment: "verb; button"))
             alert.showsSuppressionButton = true
             alert.suppressionButton?.title = String(localized: "InconsistentLineEndingAlert.suppressionButton",
                                                     defaultValue: "Don’t ask again for this document",
-                                                    comment: "toggle button label")
+                                                    comment: "verb; checkbox; refer to Apple’s translation of “Don’t ask again”")
             alert.helpAnchor = "inconsistent_line_endings"
             alert.showsHelp = true
             alert.window.identifier = .contentDependentAlert
@@ -1610,13 +1647,15 @@ extension NSTextView: EditorCounter.Source { }
                          defaultValue: "The file has been changed by another application. There are also unsaved changes in CotEditor.")
                 : String(localized: "UpdatedByExternalProcessAlert.message",
                          defaultValue: "The file has been changed by another application.",
-                         comment: "AppKit has the same expression.")
+                         comment: "Refer to the same expression by Apple.")
             alert.informativeText = String(localized: "UpdatedByExternalProcessAlert.informativeText",
-                                           defaultValue: "Do you want to keep CotEditor’s version or update it to the modified version?")
+                                           defaultValue: "Do you want to keep CotEditor’s version or update it to the modified version?",
+                                           comment: "version refers to the document’s contents")
             alert.addButton(withTitle: String(localized: "UpdatedByExternalProcessAlert.button.keep",
-                                              defaultValue: "Keep CotEditor’s Version"))
+                                              defaultValue: "Keep CotEditor’s Version",
+                                              comment: "verb; button; version refers to the document’s contents"))
             alert.addButton(withTitle: String(localized: "UpdatedByExternalProcessAlert.button.update",
-                                              defaultValue: "Update"))
+                                              defaultValue: "Update", comment: "verb; button"))
             
             // mark the alert as critical in order to interrupt other sheets already attached
             if documentWindow.attachedSheet != nil {
@@ -1790,7 +1829,7 @@ struct LossyEncodingError: LocalizedError, RecoverableError {
     
     var recoveryOptions: [String] {
         
-        [String(localized: "LossyEncodingError.recoveryOption.change", defaultValue: "Change Encoding", comment: "button label"),
+        [String(localized: "LossyEncodingError.recoveryOption.change", defaultValue: "Change Encoding", comment: "verb; button"),
          String(localized: .cancel)]
     }
     
@@ -1852,9 +1891,9 @@ private struct DocumentSavingError: LocalizedError, CustomNSError {
         switch self.code {
             case .lossyEncoding:
                 [String(localized: "DocumentSavingError.lossyEncoding.recoveryOption.save",
-                        defaultValue: "Save Available Text", comment: "button label"),
+                        defaultValue: "Save Available Text", comment: "verb; button"),
                  String(localized: "DocumentSavingError.lossyEncoding.recoveryOption.review",
-                        defaultValue: "Review Incompatible Characters", comment: "button label"),
+                        defaultValue: "Review Incompatible Characters", comment: "verb; button"),
                  String(localized: .cancel)]
         }
     }

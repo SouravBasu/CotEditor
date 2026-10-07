@@ -139,6 +139,7 @@ struct SyntaxEditView: View {
             .focused($focus, equals: .sidebar)
             .simultaneousGesture(TapGesture().onEnded { self.focus = .sidebar })  // workaround (2026-08, macOS 27)
             .environment(\.sidebarRowSize, .medium)
+            .navigationSplitViewColumnWidth(min: 80, ideal: 180)
             
         } detail: {
             VStack(spacing: 0) {
@@ -385,7 +386,7 @@ extension SyntaxEditView.Pane {
                 .init("Syntax.key.completions.label",
                       defaultValue: "Completion",
                       table: "SyntaxEditor",
-                      comment: "syntax definition type")
+                      comment: "syntax definition type; noun, word completion")
                 
             case .syntaxInfo:
                 .init("Information",

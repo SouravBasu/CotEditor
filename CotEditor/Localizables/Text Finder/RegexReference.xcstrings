@@ -6,7 +6,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Žádný nebo více"
+            "value" : "0 nebo více opakování"
           }
         },
         "de" : {
@@ -31,6 +31,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "0 fois ou plus"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0 या अधिक बार"
           }
         },
         "it" : {
@@ -72,13 +78,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "0 раз"
+            "value" : "0 или более раз"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "0 veya daha çok kez"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "0 або більше разів"
           }
         },
         "zh-Hans" : {
@@ -106,7 +118,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Žádný nebo jeden"
+            "value" : "0 nebo 1 opakování"
           }
         },
         "de" : {
@@ -131,6 +143,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "1 fois ou 0"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 या 0 बार"
           }
         },
         "it" : {
@@ -181,6 +199,12 @@
             "value" : "1 veya 0 kez"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 або 0 разів"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -206,7 +230,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Jeden nebo více"
+            "value" : "1 nebo více opakování"
           }
         },
         "de" : {
@@ -231,6 +255,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "1 fois ou plus"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 या अधिक बार"
           }
         },
         "it" : {
@@ -279,6 +309,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "1 veya daha çok kez"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 або більше разів"
           }
         },
         "zh-Hans" : {
@@ -334,6 +370,12 @@
             "value" : "Ancrages"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "एंकर"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -373,13 +415,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Якорь"
+            "value" : "Якоря"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Çapalar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Якорі"
           }
         },
         "zh-Hans" : {
@@ -434,6 +482,12 @@
             "value" : "N’importe quel caractère"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कोई भी वर्ण"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -482,6 +536,12 @@
             "value" : "herhangi bir karakter"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "будь-який символ"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -507,7 +567,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Libovolný znak v rozsahu A až Z"
+            "value" : "Libovolný znak v rozsahu A až Z"
           }
         },
         "de" : {
@@ -532,6 +592,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Caractère entre A et Z"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A से Z की सीमा में कोई भी वर्ण"
           }
         },
         "it" : {
@@ -573,13 +639,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "любой символ от А до Я"
+            "value" : "любой символ в диапазоне от A до Z"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "A-Z erimindeki herhangi bir karakter"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "будь-який символ у діапазоні від A до Z"
           }
         },
         "zh-Hans" : {
@@ -634,6 +706,12 @@
             "value" : "Tout sauf un caractère entre A et Z"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A से Z की सीमा में न होने वाला कोई भी वर्ण"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -667,19 +745,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "qualquer caractere fora de A a Z"
+            "value" : "qualquer caractere fora do intervalo de A a Z"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "любой символ кроме от А до Я"
+            "value" : "любой символ вне диапазона от A до Z"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "A-Z eriminde bulunmayan herhangi bir karakter"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "будь-який символ поза діапазоном від A до Z"
           }
         },
         "zh-Hans" : {
@@ -707,7 +791,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alespoň 0, ale ne více než n krát"
+            "value" : "Nejméně 0, nejvýše n opakování"
           }
         },
         "de" : {
@@ -732,6 +816,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Au moins 0 fois mais pas plus de n fois"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कम से कम 0 लेकिन n बार से अधिक नहीं"
           }
         },
         "it" : {
@@ -773,13 +863,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "больше 0 но не больше N раз"
+            "value" : "не менее 0 и не более n раз"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "en az 0; ancak n’den fazla değil"
+            "value" : "en az 0, en çok n kez"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "щонайменше 0, але не більше n разів"
           }
         },
         "zh-Hans" : {
@@ -807,7 +903,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alespoň n krát, ale ne více než m krát"
+            "value" : "Nejméně n, nejvýše m opakování"
           }
         },
         "de" : {
@@ -832,6 +928,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Au moins n mais pas plus de m fois"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कम से कम n लेकिन m बार से अधिक नहीं"
           }
         },
         "it" : {
@@ -873,13 +975,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "больше N но не больше M раз"
+            "value" : "не менее n и не более m раз"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "en az n; ancak m’den fazla değil"
+            "value" : "en az n, en çok m kez"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "щонайменше n, але не більше m разів"
           }
         },
         "zh-Hans" : {
@@ -907,7 +1015,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alespoň n krát"
+            "value" : "Nejméně n opakování"
           }
         },
         "de" : {
@@ -934,6 +1042,12 @@
             "value" : "Au moins n fois"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कम से कम n बार"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -949,7 +1063,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "n회 의상"
+            "value" : "n회 이상"
           }
         },
         "nl" : {
@@ -973,13 +1087,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "больше N раз"
+            "value" : "не менее n раз"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "en az n kez"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "щонайменше n разів"
           }
         },
         "zh-Hans" : {
@@ -1026,13 +1146,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Referencia posterior"
+            "value" : "Referencia inversa"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Références passées"
+            "value" : "Référence arrière"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "बैक रेफ़रेंस"
           }
         },
         "it" : {
@@ -1074,13 +1200,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Обратно к описанию"
+            "value" : "Обратная ссылка"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Geri Başvuru"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зворотне посилання"
           }
         },
         "zh-Hans" : {
@@ -1136,6 +1268,12 @@
             "value" : "Syntaxe de base des expressions régulières"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मूल रेगुलर एक्सप्रेशन सिंटैक्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1151,7 +1289,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "기본 정규표현식 구문"
+            "value" : "기본 정규 표현식 구문"
           }
         },
         "nl" : {
@@ -1175,13 +1313,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Базовый синтаксис"
+            "value" : "Основы синтаксиса регулярных выражений"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yalın Düzenli İfade Sözdizimi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Базовий синтаксис регулярних виразів"
           }
         },
         "zh-Hans" : {
@@ -1236,6 +1380,12 @@
             "value" : "Début de la ligne"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पंक्ति का आरंभ"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1282,6 +1432,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "satır başlangıcı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "початок рядка"
           }
         },
         "zh-Hans" : {
@@ -1337,6 +1493,12 @@
             "value" : "Caractères"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "वर्ण"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1376,13 +1538,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Символов"
+            "value" : "Символы"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Karakterler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Символи"
           }
         },
         "zh-Hans" : {
@@ -1428,7 +1596,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Número decimal"
+            "value" : "Dígito decimal"
           }
         },
         "fr" : {
@@ -1437,10 +1605,16 @@
             "value" : "Chiffre"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "दशमलव संख्या"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Decimale"
+            "value" : "Cifra decimale"
           }
         },
         "ja" : {
@@ -1458,7 +1632,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "decimaal getal"
+            "value" : "decimaal cijfer"
           }
         },
         "pl" : {
@@ -1470,19 +1644,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "número decimal"
+            "value" : "dígito decimal"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "числовое значение"
+            "value" : "десятичная цифра"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "onluk sayı"
+            "value" : "ondalık rakam"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "десяткове число"
           }
         },
         "zh-Hans" : {
@@ -1537,6 +1717,12 @@
             "value" : "Fin de la ligne"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पंक्ति का अंत"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1583,6 +1769,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "satır sonu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "кінець рядка"
           }
         },
         "zh-Hans" : {
@@ -1638,6 +1830,12 @@
             "value" : "Groupes étendus"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "विस्तारित समूह"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1677,13 +1875,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Группа"
+            "value" : "Расширенные группы"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Genişletilmiş Gruplar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розширені групи"
           }
         },
         "zh-Hans" : {
@@ -1729,13 +1933,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Primer coincidencia"
+            "value" : "Primera coincidencia"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Première correspondance"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पहला मिलान"
           }
         },
         "it" : {
@@ -1784,6 +1994,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ilk eşleşme"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "перший збіг"
           }
         },
         "zh-Hans" : {
@@ -1838,6 +2054,12 @@
             "value" : "ICU Regular Expressions"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ICU रेगुलर एक्सप्रेशन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1853,7 +2075,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ICU 정규표현식"
+            "value" : "ICU 정규 표현식"
           }
         },
         "nl" : {
@@ -1877,13 +2099,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ICU регулярное выражение"
+            "value" : "Регулярные выражения ICU"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ICU Regular Expressions"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Регулярні вирази ICU"
           }
         },
         "zh-Hans" : {
@@ -1938,10 +2166,16 @@
             "value" : "Test avant"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "लुक-अहेड"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "guarda avanti"
+            "value" : "Lookahead"
           }
         },
         "ja" : {
@@ -1977,13 +2211,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "вокруг"
+            "value" : "опережающая проверка"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "öne bak"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "випереджальна перевірка"
           }
         },
         "zh-Hans" : {
@@ -2038,10 +2278,16 @@
             "value" : "Test arrière"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "लुक-बिहाइंड"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "guarda indietro"
+            "value" : "Lookbehind"
           }
         },
         "ja" : {
@@ -2053,7 +2299,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "후색 탐색"
+            "value" : "후방 탐색"
           }
         },
         "nl" : {
@@ -2077,13 +2323,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "за"
+            "value" : "ретроспективная проверка"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "arkaya bak"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ретроспективна перевірка"
           }
         },
         "zh-Hans" : {
@@ -2111,7 +2363,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "n krát"
+            "value" : "n opakování"
           }
         },
         "de" : {
@@ -2136,6 +2388,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "n fois"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n बार"
           }
         },
         "it" : {
@@ -2177,13 +2435,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "N раз"
+            "value" : "n раз"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "n kez"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "n разів"
           }
         },
         "zh-Hans" : {
@@ -2238,6 +2502,12 @@
             "value" : "Nouvelle ligne"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "न्यूलाइन वर्ण"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2259,7 +2529,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nieuwe regel"
+            "value" : "regeleindeteken"
           }
         },
         "pl" : {
@@ -2284,6 +2554,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "yeni satır karakteri"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "символ нового рядка"
           }
         },
         "zh-Hans" : {
@@ -2311,13 +2587,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Znak nepředstavující mezeru"
+            "value" : "Neprázdný znak"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "kein Leerzeichen"
+            "value" : "kein Leerraumzeichen"
           }
         },
         "en-GB" : {
@@ -2329,13 +2605,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Carácter no espacios en blanco"
+            "value" : "Carácter que no sea un espacio en blanco"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pas un espace"
+            "value" : "Caractère non blanc"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "गैर-खाली-स्थान वर्ण"
           }
         },
         "it" : {
@@ -2359,7 +2641,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "teken zonder witruimte"
+            "value" : "geen witruimteteken"
           }
         },
         "pl" : {
@@ -2371,19 +2653,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "caractere de espaço não em branco"
+            "value" : "caractere que não é espaço em branco"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "символ «без пробела»"
+            "value" : "непробельный символ"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "boşluk olmayan karakter"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "непробільний символ"
           }
         },
         "zh-Hans" : {
@@ -2412,7 +2700,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kvantifikátor"
+            "value" : "Kvantifikátory"
           }
         },
         "de" : {
@@ -2439,10 +2727,16 @@
             "value" : "Quantificateurs"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "क्वांटिफ़ायर"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Quantificatore"
+            "value" : "Quantificatori"
           }
         },
         "ja" : {
@@ -2460,7 +2754,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Factoren"
+            "value" : "Kwantoren"
           }
         },
         "pl" : {
@@ -2485,6 +2779,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Niceleyiciler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Квантифікатори"
           }
         },
         "zh-Hans" : {
@@ -2530,7 +2830,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Carácter tabulación"
+            "value" : "Carácter de tabulación"
           }
         },
         "fr" : {
@@ -2539,10 +2839,16 @@
             "value" : "Tabulation"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "टैब वर्ण"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Carattere Tabulazione"
+            "value" : "Carattere di tabulazione"
           }
         },
         "ja" : {
@@ -2578,13 +2884,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "символ  TAB"
+            "value" : "символ табуляции"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "sekme karakteri"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "символ табуляції"
           }
         },
         "zh-Hans" : {
@@ -2619,7 +2931,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Die Syntax entspricht den Spezifikationen der %@."
+            "value" : "Die Syntax entspricht den Spezifikationen für %@."
           }
         },
         "en-GB" : {
@@ -2631,7 +2943,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La sintaxis se ajusta a las %@ especificaciones."
+            "value" : "La sintaxis se ajusta a las especificaciones de %@."
           }
         },
         "fr" : {
@@ -2640,10 +2952,16 @@
             "value" : "Syntaxe conforme aux spécifications %@."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सिंटैक्स %@ विनिर्देशों के अनुरूप है।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La sintassi rispetta le specifiche %@"
+            "value" : "La sintassi rispetta le specifiche %@."
           }
         },
         "ja" : {
@@ -2655,7 +2973,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "이 구문은 %@ 명세를 따릅니다. "
+            "value" : "이 구문은 %@ 명세를 따릅니다."
           }
         },
         "nl" : {
@@ -2679,13 +2997,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Фортам соответсвует %@ спецификации."
+            "value" : "Синтаксис соответствует спецификации %@."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sözdizim, %@ belirtimine uyar."
+            "value" : "Sözdizimi, %@ belirtimine uyar."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Синтаксис відповідає специфікаціям %@."
           }
         },
         "zh-Hans" : {
@@ -2713,13 +3037,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mezera"
+            "value" : "Prázdný znak"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Leerzeichen"
+            "value" : "Leerraumzeichen"
           }
         },
         "en-GB" : {
@@ -2737,7 +3061,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Espace"
+            "value" : "Caractère blanc"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खाली स्थान वर्ण"
           }
         },
         "it" : {
@@ -2761,7 +3091,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "teken met witruimte"
+            "value" : "witruimteteken"
           }
         },
         "pl" : {
@@ -2779,13 +3109,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "пробел"
+            "value" : "пробельный символ"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "boşluk karakteri"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "пробільний символ"
           }
         },
         "zh-Hans" : {
@@ -2831,7 +3167,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Límites de las palabras"
+            "value" : "Límite de palabra"
           }
         },
         "fr" : {
@@ -2840,16 +3176,22 @@
             "value" : "Début ou fin de mot"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द सीमा"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Limiti delle parole"
+            "value" : "Limite di parola"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "非単語境界"
+            "value" : "単語境界"
           }
         },
         "ko" : {
@@ -2879,13 +3221,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "слово целиком"
+            "value" : "граница слова"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "sözcük sınırı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "межа слова"
           }
         },
         "zh-Hans" : {
@@ -2913,13 +3261,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Výraz"
+            "value" : "Znak slova"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buchstabe"
+            "value" : "Wortzeichen"
           }
         },
         "en-GB" : {
@@ -2931,13 +3279,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Carácter de la palabra"
+            "value" : "Carácter de palabra"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mot"
+            "value" : "Caractère de mot"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द वर्ण"
           }
         },
         "it" : {
@@ -2979,13 +3333,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "часть слова"
+            "value" : "символ слова"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "sözcük karakteri"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "символ слова"
           }
         },
         "zh-Hans" : {

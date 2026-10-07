@@ -33,6 +33,12 @@
             "value" : "Début :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आरंभ :"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -79,6 +85,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Başlangıç:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Початок:"
           }
         },
         "zh-Hans" : {
@@ -133,6 +145,12 @@
             "value" : "Fin :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अंत :"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -181,6 +199,12 @@
             "value" : "Bitiş:"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кінець:"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -206,7 +230,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Obklopit s:"
+            "value" : "Obklopit znaky:"
           }
         },
         "de" : {
@@ -231,6 +255,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Entourer avec :"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इससे घेरें :"
           }
         },
         "it" : {
@@ -272,13 +302,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Вокруг:"
+            "value" : "Обрамить:"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Şunlarla sar:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оточити:"
           }
         },
         "zh-Hans" : {

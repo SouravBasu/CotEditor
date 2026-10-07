@@ -41,6 +41,12 @@
             "value" : "Dans la sélection"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "चयन में"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -80,13 +86,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "В выбранном"
+            "value" : "В выделенном"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Seçimde Bul"
+            "value" : "Seçimde"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "У вибраному"
           }
         },
         "zh-Hans" : {
@@ -122,7 +134,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unter Verwendung dieser Regeln nacheinander von oben nach unten durch ersetzen:"
+            "value" : "Ersetzungen mit den folgenden Regeln von oben nach unten durchführen:"
           }
         },
         "en" : {
@@ -140,13 +152,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Realice el reemplazo utilizando estas reglas en sucesión de arriba hacia abajo:"
+            "value" : "Realiza el reemplazo utilizando estas reglas en sucesión de arriba hacia abajo:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Remplacer le texte en appliquant ces règles successivement, du haut vers le bas :"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इन नियमों का उपयोग करके ऊपर से नीचे क्रमिक रूप से प्रतिस्थापन करें :"
           }
         },
         "it" : {
@@ -176,13 +194,13 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wykonaj zastąpienie używając poniższych reguł w kolejności od góry do dołu:"
+            "value" : "Wykonaj zastąpienie, używając poniższych reguł w kolejności od góry do dołu:"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usar estas regras consecutivamente para substituir:"
+            "value" : "Substitua o texto usando estas regras em sequência, de cima para baixo:"
           }
         },
         "ru" : {
@@ -195,6 +213,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Değişimi bu kuralları yukarıdan aşağı sırada kullanarak gerçekleştir:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виконувати заміну за цими правилами послідовно згори вниз:"
           }
         },
         "zh-Hans" : {
@@ -230,7 +254,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alle Treffer der Ersetzungsregeln markieren."
+            "value" : "Markiere alle Treffer der Ersetzungsregeln."
           }
         },
         "en" : {
@@ -248,13 +272,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Resalte todas las coincidencias de las reglas de reemplazo."
+            "value" : "Resaltar todas las coincidencias de las reglas de reemplazo."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mettre en surbrillance toutes les correspondances des règles de remplacement."
+            "value" : "Mettez en surbrillance toutes les correspondances des règles de remplacement."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "प्रतिस्थापन नियमों के सभी मिलान हाइलाइट करें।"
           }
         },
         "it" : {
@@ -284,7 +314,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wyróżnij wszystkie dopasowania reguł zastąpienia."
+            "value" : "Wyróżnij wszystkie dopasowania reguł zastąpienia"
           }
         },
         "pt" : {
@@ -296,13 +326,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Выделите все совпадения правил замены."
+            "value" : "Выделить все совпадения правил замены."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Değişim kurallarının tüm eşleşmelerini vurgula"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Підсвітити всі збіги за правилами заміни."
           }
         },
         "zh-Hans" : {
@@ -365,6 +401,12 @@
             "value" : "IC"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IC"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -411,6 +453,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "BY"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "IC"
           }
         },
         "zh-Hans" : {
@@ -473,6 +521,12 @@
             "value" : "Ignorer la casse"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "केस अनदेखा करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -488,7 +542,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "대소문자 무시"
+            "value" : "대소문자를 구분하지 않습니다."
           }
         },
         "nl" : {
@@ -519,6 +573,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Harf Biçimlerini Yok Say"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ігнорувати регістр"
           }
         },
         "zh-Hans" : {
@@ -581,6 +641,12 @@
             "value" : "Les règles invalides seront sautées."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अमान्य नियम छोड़ दिए जाएँगे।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -629,6 +695,12 @@
             "value" : "Geçersiz kurallar atlanacaktır."
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Некоректні правила буде пропущено."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -675,7 +747,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Erweitere Optionen"
+            "value" : "Erweiterte Optionen"
           }
         },
         "en" : {
@@ -700,6 +772,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Options avancées"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "उन्नत विकल्प"
           }
         },
         "it" : {
@@ -750,6 +828,12 @@
             "value" : "Gelişmiş seçenekler"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розширені параметри"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -783,7 +867,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Erweitere Optionen einblenden"
+            "value" : "Erweiterte Optionen einblenden"
           }
         },
         "en" : {
@@ -810,6 +894,12 @@
             "value" : "Afficher les options avancées"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "उन्नत विकल्प दिखाएँ"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -825,7 +915,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "고급 옵션 보기"
+            "value" : "고급 옵션을 표시합니다."
           }
         },
         "nl" : {
@@ -843,7 +933,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mostrar opções avançadas"
+            "value" : "Mostrar Opções Avançadas"
           }
         },
         "ru" : {
@@ -856,6 +946,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gelişmiş seçenekleri göster"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показати розширені параметри"
           }
         },
         "zh-Hans" : {
@@ -885,13 +981,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chcete-li při hledání ignorovat velikost písmen vyberte tuto volbu."
+            "value" : "Chcete-li při hledání ignorovat velikost písmen, vyberte tuto volbu."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Auswählen, um beim Suchen Groß-/Kleinschreibung zu ignorieren."
+            "value" : "Wähle diese Option, um beim Suchen Groß-/Kleinschreibung zu ignorieren."
           }
         },
         "en" : {
@@ -909,7 +1005,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Seleccione para ignorar las mayúsculas y minúsculas de los caracteres en la búsqueda."
+            "value" : "Seleccionar para ignorar las mayúsculas y minúsculas en la búsqueda."
           }
         },
         "fr" : {
@@ -918,10 +1014,16 @@
             "value" : "Sélectionnez pour ignorer la casse lors de la recherche."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खोज में वर्ण केस अनदेखा करने के लिए चुनें।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selezionare per ignorare maiuscole/minuscole nella ricerca."
+            "value" : "Seleziona per ignorare maiuscole/minuscole nella ricerca."
           }
         },
         "ja" : {
@@ -933,7 +1035,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "대소문자를 무시하고 검색하려면 선택하십시오."
+            "value" : "대소문자를 구분하지 않고 검색합니다."
           }
         },
         "nl" : {
@@ -945,7 +1047,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zaznacz, aby ignorować wielkość liter przy wyszukiwaniu."
+            "value" : "Zaznacz, aby ignorować wielkość liter podczas wyszukiwania"
           }
         },
         "pt" : {
@@ -957,13 +1059,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Выберите чтобы игнорировать регистр символов при поиске"
+            "value" : "Установите флажок, чтобы игнорировать регистр символов при поиске."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aramada harf biçimini yok saymak için seçin."
+            "value" : "Aramada büyük-küçük harf farkını yok say"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увімкніть, щоб ігнорувати регістр символів під час пошуку."
           }
         },
         "zh-Hans" : {
@@ -1026,6 +1134,12 @@
             "value" : "Tout surligner"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सभी हाइलाइट करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1072,6 +1186,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tümünü Vurgula"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Підсвітити все"
           }
         },
         "zh-Hans" : {
@@ -1134,6 +1254,12 @@
             "value" : "Activer"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सक्षम करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1149,7 +1275,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "켜짐"
+            "value" : "대치 규칙을 활성화합니다."
           }
         },
         "nl" : {
@@ -1167,7 +1293,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ative"
+            "value" : "Ativar"
           }
         },
         "ru" : {
@@ -1180,6 +1306,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Etkinleştir"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увімкнути"
           }
         },
         "zh-Hans" : {
@@ -1242,6 +1374,12 @@
             "value" : "Tout remplacer"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सभी बदलें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1269,7 +1407,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zastąp wszystkie"
+            "value" : "Zastąp wszystko"
           }
         },
         "pt" : {
@@ -1288,6 +1426,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tümünü Değiştir"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Замінити всі"
           }
         },
         "zh-Hans" : {
@@ -1317,13 +1461,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chcete-li hledat pomocí regulárního výrazu vyberte tuto volbu."
+            "value" : "Chcete-li hledat pomocí regulárního výrazu, vyberte tuto volbu."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Auswählen, um mit regulärem Ausdruck zu suchen."
+            "value" : "Wähle diese Option, um mit einem regulären Ausdruck zu suchen."
           }
         },
         "en" : {
@@ -1341,7 +1485,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Seleccione para buscar con expresión regular."
+            "value" : "Seleccionar para buscar con expresiones regulares."
           }
         },
         "fr" : {
@@ -1350,10 +1494,16 @@
             "value" : "Sélectionnez pour rechercher à l’aide d’une expression régulière."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रेगुलर एक्सप्रेशन से खोजने के लिए चुनें।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selezionare per la ricerca di un’espressione regolare."
+            "value" : "Seleziona per cercare con le espressioni regolari."
           }
         },
         "ja" : {
@@ -1365,7 +1515,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "정규표현식으로 검색하려면 선택하십시오."
+            "value" : "정규 표현식으로 검색합니다."
           }
         },
         "nl" : {
@@ -1377,7 +1527,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zaznacz, aby szukać z użyciem wyrażenia regularnego."
+            "value" : "Zaznacz, aby szukać z użyciem wyrażenia regularnego"
           }
         },
         "pt" : {
@@ -1389,13 +1539,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Выберите чтобы использовать поиск по регулярному выражению."
+            "value" : "Установите флажок, чтобы использовать регулярные выражения при поиске."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Düzenli ifade ile aramak için seçin."
+            "value" : "Düzenli ifadeyle ara"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увімкніть, щоб шукати за регулярним виразом."
           }
         },
         "zh-Hans" : {
@@ -1449,13 +1605,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reemplazar Con"
+            "value" : "Reemplazar con"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Remplacer par"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इससे बदलें"
           }
         },
         "it" : {
@@ -1506,6 +1668,12 @@
             "value" : "Şununla Değiştir"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Замінити на"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1539,7 +1707,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alle Treffer gemäß den Ersetzungsregeln ersetzen."
+            "value" : "Ersetze alle Treffer gemäß den Ersetzungsregeln."
           }
         },
         "en" : {
@@ -1557,13 +1725,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reemplace todas las coincidencias de acuerdo con las reglas de reemplazo."
+            "value" : "Reemplazar todas las coincidencias según las reglas de reemplazo."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Remplace toutes les correspondances selon les règles de remplacement."
+            "value" : "Remplacez toutes les correspondances selon les règles de remplacement."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "प्रतिस्थापन नियमों के अनुसार सभी मिलान बदलें।"
           }
         },
         "it" : {
@@ -1593,7 +1767,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zastąp wszystkie dopasowania zgodnie z regułami zastąpienia."
+            "value" : "Zastąp wszystkie dopasowania zgodnie z regułami zastąpienia"
           }
         },
         "pt" : {
@@ -1605,13 +1779,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Замените все совпадения в соответствии с правилами замены."
+            "value" : "Заменить все совпадения в соответствии с правилами замены."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tüm eşleşmeleri değişim kurallarına göre değiştir."
+            "value" : "Tüm eşleşmeleri değişim kurallarına göre değiştir"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Замінити всі збіги відповідно до правил заміни."
           }
         },
         "zh-Hans" : {
@@ -1641,13 +1821,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chcete-li nahradit text pouze ve výběru vyberte tuto volbu."
+            "value" : "Chcete-li nahradit text pouze ve výběru, vyberte tuto volbu."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Auswählen, um nur in der Auswahl zu suchen."
+            "value" : "Wähle diese Option, um nur Text in der Auswahl zu ersetzen."
           }
         },
         "en" : {
@@ -1665,19 +1845,25 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Seleccione para reemplazar el texto solo en la selección."
+            "value" : "Seleccionar para reemplazar texto solo en la selección."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sélectionnez pour rechercher le texte seulement dans la sélection."
+            "value" : "Sélectionnez pour remplacer le texte seulement dans la sélection."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "केवल चयन में टेक्स्ट बदलने के लिए चुनें।"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selezionare per ricercare testo solo all’interno della selezione."
+            "value" : "Seleziona per sostituire il testo solo nella selezione."
           }
         },
         "ja" : {
@@ -1689,7 +1875,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "선택된 부분에서만 텍스트를 대치하려면 선택하십시오."
+            "value" : "선택한 부분에서만 텍스트를 대치합니다."
           }
         },
         "nl" : {
@@ -1701,37 +1887,43 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zaznacz, aby zastąpić tekst jedynie w zaznaczeniu."
+            "value" : "Zaznacz, aby zastąpić tekst tylko w zaznaczeniu"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selecione para buscar apenas no texto da seleção."
+            "value" : "Selecione para substituir o texto apenas na seleção."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Выберите, чтобы заменить текст только в выделенном."
+            "value" : "Установите флажок, чтобы заменять текст только в выделенном."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Yalnızca seçimde metin değiştirmek için seçin."
+            "value" : "Yalnızca seçili metni değiştir"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увімкніть, щоб замінювати текст лише у вибраному."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "选中仅在选择范围内进行文本查找。"
+            "value" : "选中后，仅替换所选范围内的文本。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "選中僅在選擇範圍內進行文字尋找。"
+            "value" : "勾選後，僅取代所選範圍內的文字。"
           }
         },
         "zh-HK" : {
@@ -1755,7 +1947,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Auswählen, um diese Regel zu benutzen."
+            "value" : "Wähle diese Option, um diese Regel zu benutzen."
           }
         },
         "en" : {
@@ -1773,13 +1965,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Seleccione para usar esta regla de reemplazo."
+            "value" : "Seleccionar para usar esta regla de reemplazo."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sélectionnez pour utiliser cette règle de remplacement."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इस प्रतिस्थापन नियम को उपयोग करने के लिए चुनें।"
           }
         },
         "it" : {
@@ -1797,7 +1995,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "이 대치 규칙을 사용하려면 선택하십시오."
+            "value" : "이 대치 규칙을 사용합니다."
           }
         },
         "nl" : {
@@ -1809,25 +2007,31 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zaznacz, aby użyć tej reguły zastąpienia."
+            "value" : "Zaznacz, aby użyć tej reguły zastąpienia"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selecione esta regra na para usar na substituição"
+            "value" : "Selecione para usar esta regra de substituição."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Выберите, чтобы использовать это правило замены."
+            "value" : "Установите флажок, чтобы использовать это правило замены."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bu değişim kuralını kullanmak için seç."
+            "value" : "Bu değişim kuralını kullan"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увімкніть, щоб використовувати це правило заміни."
           }
         },
         "zh-Hans" : {
@@ -1890,6 +2094,12 @@
             "value" : "Description"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "विवरण"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1936,6 +2146,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Açıklama"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Опис"
           }
         },
         "zh-Hans" : {
@@ -1998,6 +2214,12 @@
             "value" : "RE"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RE"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2044,6 +2266,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dİ"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RE"
           }
         },
         "zh-Hans" : {
@@ -2097,13 +2325,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Expresión Regular"
+            "value" : "Expresión regular"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Expression régulière"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रेगुलर एक्सप्रेशन"
           }
         },
         "it" : {
@@ -2121,7 +2355,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "정규표현식"
+            "value" : "정규 표현식을 사용합니다."
           }
         },
         "nl" : {
@@ -2152,6 +2386,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Düzenli İfade"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Регулярний вираз"
           }
         },
         "zh-Hans" : {
@@ -2214,6 +2454,12 @@
             "value" : "Rechercher"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ढूँढें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2260,6 +2506,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bul"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пошук"
           }
         },
         "zh-Hans" : {

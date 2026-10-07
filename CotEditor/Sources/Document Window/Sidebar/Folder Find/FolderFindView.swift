@@ -106,21 +106,21 @@ struct FolderFindView: View {
     /// - Returns: The context menu content.
     @ContentBuilder private func contextMenu(for file: FolderFind.FileResult) -> some View {
         
-        Button(.init("Reveal in File Browser", table: "Document"), systemImage: "folder") {
+        Button(.init("Reveal in File Browser", table: "Document", comment: "verb; menu item"), systemImage: "folder") {
             self.model.document.revealInFileBrowser(fileURL: file.fileURL)
         }
         
-        Button(.init("Show in Finder", table: "Document"), systemImage: "finder") {
+        Button(.init("Show in Finder", table: "Document", comment: "verb; menu item"), systemImage: "finder") {
             NSWorkspace.shared.activateFileViewerSelecting([file.fileURL])
         }
         
-        Button(.init("Open in New Window", table: "Document"), systemImage: "macwindow.badge.plus") {
+        Button(.init("Open in New Window", table: "Document", comment: "verb; menu item"), systemImage: "macwindow.badge.plus") {
             self.model.document.openInNewWindow(fileURL: file.fileURL)
         }
         
         Divider()
         
-        Button(.init("Open with External Editor", table: "Document"), systemImage: "arrow.up.forward.square") {
+        Button(.init("Open with External Editor", table: "Document", comment: "verb; menu item"), systemImage: "arrow.up.forward.square") {
             NSWorkspace.shared.openWithOtherApplication([file.fileURL])
         }
     }
@@ -162,13 +162,13 @@ private struct FolderFindControlView: View {
                 
                 Toggle(isOn: Binding(get: { !self.ignoresCase }, set: { self.ignoresCase = !$0 })) {
                     Label {
-                        Text("Case Sensitive", tableName: "TextFind", comment: "toggle button label")
+                        Text("Case Sensitive", tableName: "TextFind", comment: "toggle button")
                     } icon: {
                         Image(systemName: "textformat")
                             .environment(\.locale, Locale(script: .latin))
                     }
                 }
-                .help(.init("Case Sensitive", table: "TextFind", comment: "toggle button label"))
+                .help(.init("Case Sensitive", table: "TextFind", comment: "toggle button"))
                 .toggleStyle(.button)
                 .fontWeight(self.ignoresCase ? .medium : .bold)
                 .labelStyle(.iconOnly)
@@ -178,7 +178,7 @@ private struct FolderFindControlView: View {
             .controlSize(.small)
             
             SearchField(text: $textFinderSettings.findString,
-                        placeholder: String(localized: "Search in Folder", table: "Document", comment: "placeholder"))
+                        placeholder: String(localized: "Search in Folder", table: "Document", comment: "noun; placeholder"))
             .autosaveName("FolderSearch")
             .isRegex(self.usesRegularExpression)
             .onSubmit { findString in
@@ -225,20 +225,20 @@ private struct FileScopeMenu: View {
         
         Menu {
             Section {
-                Toggle(.init("Include Hidden Files", table: "Document", comment: "toggle button label"), isOn: $includesHiddenFiles)
-                Toggle(.init("Include Other File Types", table: "Document", comment: "toggle button label"), isOn: $includesOtherFileTypes)
+                Toggle(.init("Include Hidden Files", table: "Document", comment: "verb; menu item"), isOn: $includesHiddenFiles)
+                Toggle(.init("Include Other File Types", table: "Document", comment: "verb; menu item"), isOn: $includesOtherFileTypes)
             }
             
-            Button(.init("Edit File Scope…", table: "Document")) {
+            Button(.init("Edit File Scope…", table: "Document", comment: "verb; menu item")) {
                 self.isFileScopeEditorPresented = true
             }
-            Button(.init("Clear File Scope", table: "Document")) {
+            Button(.init("Clear File Scope", table: "Document", comment: "verb; menu item")) {
                 self.selection = FileScopeSelection()
             }
             .disabled(self.selection.fileScope.isEmpty)
             
             if !self.savedScopes.scopes.isEmpty {
-                Picker(.init("Saved Scopes", table: "Document"), selection: $selection.name) {
+                Picker(.init("Saved Scopes", table: "Document", comment: "verb; menu item"), selection: $selection.name) {
                     ForEach(self.savedScopes.sortedNames, id: \.self) { name in
                         Label(name, systemImage: "text.magnifyingglass")
                             .tag(name)
@@ -247,12 +247,12 @@ private struct FileScopeMenu: View {
                 .pickerStyle(.inline)
                 .labelStyle(.titleAndIcon)
                 
-                Button(.init("Manage Saved Scopes…", table: "Document")) {
+                Button(.init("Manage Saved Scopes…", table: "Document", comment: "verb; menu item")) {
                     self.isSavedScopesEditorPresented = true
                 }
             }
         } label: {
-            Label(self.selection.name ?? String(localized: "File Scope", table: "Document"), systemImage: "text.magnifyingglass")
+            Label(self.selection.name ?? String(localized: "Scope", table: "Document", comment: "noun; menu button; file scope label in the Folder Find sidebar pane"), systemImage: "text.magnifyingglass")
                 .foregroundStyle(self.selection.fileScope.isEmpty ? .secondary : Color.accentColor)
                 .fontWeight((self.differentiateWithoutColor && !self.selection.fileScope.isEmpty) ? .semibold : .regular)
                 .labelIconToTitleSpacing(6)

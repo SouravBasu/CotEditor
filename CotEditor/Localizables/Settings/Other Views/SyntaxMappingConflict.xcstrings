@@ -7,7 +7,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Duplikované syntaxe"
+            "value" : "Duplicitní syntaxe"
           }
         },
         "de" : {
@@ -34,6 +34,12 @@
             "value" : "Syntaxes dupliquées"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डुप्लिकेट सिंटैक्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -49,7 +55,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "복제된 구문"
+            "value" : "중복된 구문"
           }
         },
         "nl" : {
@@ -73,13 +79,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Дублирующий синтаксис"
+            "value" : "Дублирующиеся синтаксисы"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yinelenmiş Sözdizimleri"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дубльовані синтаксиси"
           }
         },
         "zh-Hans" : {
@@ -135,6 +147,12 @@
             "value" : "Extension"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "एक्सटेंशन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -150,7 +168,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "확장"
+            "value" : "확장자"
           }
         },
         "nl" : {
@@ -162,7 +180,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rozszerzenia"
+            "value" : "Rozszerzenie"
           }
         },
         "pt" : {
@@ -181,6 +199,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Uzantı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розширення"
           }
         },
         "zh-Hans" : {
@@ -236,6 +260,12 @@
             "value" : "Nom du fichier"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ाइल नाम"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -284,10 +314,16 @@
             "value" : "Dosya Adı"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Імʼя файлу"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "檔案名稱"
+            "value" : "文件名"
           }
         },
         "zh-Hant" : {
@@ -337,10 +373,16 @@
             "value" : "Interpréteur"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इंटरप्रेटर"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Interpreti"
+            "value" : "Interprete"
           }
         },
         "ja" : {
@@ -364,25 +406,31 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Interpterer"
+            "value" : "Interpreter"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Intérpretes"
+            "value" : "Intérprete"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Переводчик"
+            "value" : "Интерпретатор"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yorumlayıcı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Інтерпретатор"
           }
         },
         "zh-Hans" : {
@@ -429,13 +477,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Conflictos de mapeo de sintaxis"
+            "value" : "Conflictos de asignación de sintaxis"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Conflits des Associations de Syntaxes"
+            "value" : "Conflits des associations de syntaxes"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सिंटैक्स मैपिंग विरोध"
           }
         },
         "it" : {
@@ -486,6 +540,12 @@
             "value" : "Sözdizimi Eşlemleme Çakışmaları"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Конфлікти зіставлення синтаксисів"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -529,7 +589,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Las siguientes reglas de asignación de archivos están registradas en varias sintaxis. CotEditor utiliza la primera sintaxis automáticamente. Para resolver conflictos, edite cada definición de sintaxis."
+            "value" : "Las siguientes reglas de asignación de archivos están registradas en varias sintaxis. CotEditor utiliza la primera sintaxis automáticamente. Para resolver conflictos, edita cada definición de sintaxis."
           }
         },
         "fr" : {
@@ -538,10 +598,16 @@
             "value" : "Les règles d’association de fichiers suivantes sont déclarées dans plusieurs syntaxes. CotEditor utilise la première syntaxe automatiquement. Pour résoudre les conflits, éditez chaque syntaxe."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "निम्नलिखित फ़ाइल मैपिंग नियम कई सिंटैक्स में पंजीकृत हैं। CotEditor स्वचालित रूप से पहले सिंटैक्स का उपयोग करता है। विरोध हल करने के लिए, प्रत्येक सिंटैक्स परिभाषा संपादित करें।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le regole di mappatura del file che seguono sono registrate in più sintassi. CotEditor userà la prima sintassi. Per risolvere i conflitti, modificare le definizioni di ciascuna sintassi."
+            "value" : "Le seguenti regole di mappatura dei file sono registrate in più sintassi. CotEditor usa automaticamente la prima sintassi. Per risolvere i conflitti, modifica la definizione di ciascuna sintassi."
           }
         },
         "ja" : {
@@ -559,7 +625,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "De volgende regels voor bestandskoppeling zijn geregistreerd in meerdere syntaxis. CotEditor gebruikt automatisch de eerste syntaxis. Bewerk elke syntaxdefinitie om conflicten op te lossen."
+            "value" : "De volgende regels voor bestandskoppeling zijn geregistreerd in meerdere syntaxen. CotEditor gebruikt automatisch de eerste syntaxis. Bewerk elke syntaxdefinitie om conflicten op te lossen."
           }
         },
         "pl" : {
@@ -584,6 +650,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aşağıdaki dosya eşlemleme kuralları birden çok sözdiziminde kayıtlıdır. CotEditor, kendiliğinden ilk sözdizimini kullanır. Çakışmaları çözmek için her bir sözdizimi tanımını düzenleyin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Наведені нижче правила зіставлення файлів зареєстровані для кількох синтаксисів. CotEditor автоматично використовує перший синтаксис. Щоб усунути конфлікти, відредагуйте визначення кожного синтаксису."
           }
         },
         "zh-Hans" : {
@@ -639,10 +711,16 @@
             "value" : "Syntaxe utilisée"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "उपयोग किया सिंटैक्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sintassi usate"
+            "value" : "Sintassi usata"
           }
         },
         "ja" : {
@@ -685,6 +763,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kullanılan Sözdizimi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використаний синтаксис"
           }
         },
         "zh-Hans" : {

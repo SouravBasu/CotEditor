@@ -138,6 +138,7 @@ private struct ModeListView: View {
         .onAppear {
             self.syntaxModes = self.manager.syntaxModes
         }
+        .alert(error: $error)
         .accessibilityLabel(.init("Mode", table: "ModeSettings"))
     }
     
@@ -165,11 +166,9 @@ private struct ModeListView: View {
                 }
             } label: {
                 Label(.init("Action.add.label", defaultValue: "Add"), systemImage: "plus")
-                    .padding(2)
             }
             .help(.init("Action.add.tooltip", defaultValue: "Add new item"))
             .menuIndicator(.hidden)
-            .alert(error: $error)
             
             Button {
                 self.manager.removeSetting(for: self.selection)
@@ -180,11 +179,10 @@ private struct ModeListView: View {
                 }
             } label: {
                 Label(.init("Action.delete.label", defaultValue: "Delete"), systemImage: "minus")
-                    .padding(2)
                     .fontWeight(.medium)
+                    .frame(width: 16, height: 16)
             }
             .help(.init("Action.delete.tooltip", defaultValue: "Delete selected items"))
-            .frame(width: 16)
             .disabled(self.selection.syntaxName == nil)
             
             Spacer()
@@ -266,7 +264,7 @@ private struct ModeOptionsView: View {
             }
             .padding(.bottom, 12)
             
-            LabeledContent(.init("Completion:", table: "ModeSettings")) {
+            LabeledContent(.init("Completion:", table: "ModeSettings", comment: "noun, word completion")) {
                 VStack(alignment: .leading) {
                     Text("Completion list includes:", tableName: "ModeSettings")
                         .foregroundStyle(self.isEnabled ? .primary : .tertiary)
@@ -307,7 +305,7 @@ private struct ModeIndentOptionsView: View {
     var body: some View {
         
         VStack(alignment: .leading) {
-            Toggle(.init("Use custom settings", table: "ModeSettings"),
+            Toggle(.init("Use custom settings", table: "ModeSettings", comment: "verb; checkbox"),
                    isOn: self.usesCustomIndentation)
             
             Group {
@@ -315,8 +313,8 @@ private struct ModeIndentOptionsView: View {
                     Text(.init("Prefer using", table: "EditSettings"))
                         .accessibilityLabeledPair(role: .label, id: "expandsTab", in: self.accessibility)
                     Picker(selection: self.expandsTab) {
-                        Text("Spaces", tableName: "EditSettings", comment: "indent style").tag(true)
-                        Text("Tabs", tableName: "EditSettings", comment: "indent style").tag(false)
+                        Text("Spaces", tableName: "EditSettings", comment: "noun; menu item; indent style").tag(true)
+                        Text("Tabs", tableName: "EditSettings", comment: "noun; menu item; indent style").tag(false)
                     } label: {
                         EmptyView()
                     }

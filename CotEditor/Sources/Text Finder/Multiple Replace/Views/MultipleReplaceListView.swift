@@ -108,21 +108,19 @@ struct MultipleReplaceListView: View {
                 self.createUntitledSetting()
             } label: {
                 Label(.init("Action.add.label", defaultValue: "Add"), systemImage: "plus")
-                    .padding(2)
+                    .frame(width: 16, height: 16)
             }
             .help(.init("Action.add.tooltip", defaultValue: "Add new item"))
             .labelStyle(.iconOnly)
-            .frame(width: 16)
             
             Button {
                 self.deletingItem = self.selection
             } label: {
                 Label(.init("Action.delete.label", defaultValue: "Delete"), systemImage: "minus")
-                    .padding(2)
+                    .frame(width: 16, height: 16)
             }
             .help(.init("Action.delete.tooltip", defaultValue: "Delete selected items"))
             .labelStyle(.iconOnly)
-            .frame(width: 16)
             
             Spacer()
             
@@ -207,7 +205,7 @@ struct MultipleReplaceListView: View {
                 self.isImporterPresented = true
             }
             .modifierKeyAlternate(.option) {
-                Button(.init("Reload All Definitions", table: "MultipleReplace"), systemImage: "arrow.clockwise") {
+                Button(.init("Reload All Definitions", table: "MultipleReplace", comment: "verb; menu item"), systemImage: "arrow.clockwise") {
                     Task {
                         await self.manager.invalidateUserSettings()
                     }
@@ -306,9 +304,7 @@ struct MultipleReplaceListView: View {
     /// - Parameter urls: The file URLs to import.
     private func importSettings(at urls: [URL]) {
         
-        for url in urls {
-            guard url.isFileURL else { continue }
-            
+        for url in urls where url.isFileURL {
             let accessing = url.startAccessingSecurityScopedResource()
             defer {
                 if accessing { url.stopAccessingSecurityScopedResource() }

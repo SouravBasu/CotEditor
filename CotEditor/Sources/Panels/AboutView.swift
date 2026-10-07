@@ -37,9 +37,9 @@ struct AboutView: View {
             
             switch self {
                 case .credits:
-                    .init("Credits", table: "About", comment: "button label")
+                    .init("Credits", table: "About", comment: "noun; pane")
                 case .license:
-                    .init("Licenses", table: "About", comment: "button label")
+                    .init("Licenses", table: "About", comment: "noun; pane")
             }
         }
     }
@@ -115,7 +115,7 @@ struct AboutView: View {
             }
             .scrollEdgeEffectStyle(.soft, for: .top)
             .contentMargins(20, for: .scrollContent)
-            .frame(width: 340)
+            .frame(width: 350)
         }
         .controlSize(.small)
         .frame(height: 320)

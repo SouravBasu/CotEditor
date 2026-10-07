@@ -7,13 +7,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vytvořit nový dokument se zadaným textem v aplikaci CotEditor."
+            "value" : "Vytvořit nový dokument se zadaným textem v aplikaci CotEditor."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ein neues Dokument mit dem angegebenen Text in CotEditor erstellen."
+            "value" : "Erstellt ein neues Dokument mit dem angegebenen Text in CotEditor."
           }
         },
         "en" : {
@@ -36,8 +36,14 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Créer un nouveau document avec le texte spécifié dans CotEditor."
+            "state" : "translated",
+            "value" : "Crée un nouveau document avec le texte spécifié dans CotEditor."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor में निर्दिष्ट टेक्स्ट के साथ एक नया दस्तावेज़ बनाएँ।"
           }
         },
         "it" : {
@@ -79,13 +85,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Создать новый документа с выбранным текстом в CotEditor"
+            "value" : "Создать новый документ с указанным текстом в CotEditor."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Belirtilen metin ile CotEditor’da yeni bir belge oluşturun."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Створити новий документ із указаним текстом у CotEditor."
           }
         },
         "zh-Hans" : {
@@ -147,6 +159,12 @@
             "value" : "Contenu"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सामग्री"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -193,6 +211,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "İçerik"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вміст"
           }
         },
         "zh-Hans" : {
@@ -245,13 +269,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Crear Documento"
+            "value" : "Crear documento"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Créer un document"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "दस्तावेज़ बनाएँ"
           }
         },
         "it" : {
@@ -269,7 +299,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "새로운 문서"
+            "value" : "문서 생성"
           }
         },
         "nl" : {
@@ -300,6 +330,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Belge Oluştur"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Створити документ"
           }
         },
         "zh-Hans" : {
@@ -352,13 +388,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Crear Documento"
+            "value" : "Crear documento"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Créer un document"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "दस्तावेज़ बनाएँ"
           }
         },
         "it" : {
@@ -376,7 +418,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "새로운 문서"
+            "value" : "문서 생성"
           }
         },
         "nl" : {
@@ -407,6 +449,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Belge Oluştur"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Створити документ"
           }
         },
         "zh-Hans" : {

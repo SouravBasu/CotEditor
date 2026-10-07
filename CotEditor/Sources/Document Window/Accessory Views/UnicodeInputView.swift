@@ -68,18 +68,19 @@ struct UnicodeInputView: View {
                                 Button {
                                     self.codePoint = scalar.codePoint
                                 } label: {
-                                    Text(AttributedString(scalar.codePoint.padding(toLength: 9, withPad: " ", startingAt: 0)) +
+                                    Text(AttributedString(scalar.codePoint.padding(toLength: 9, withPad: " ", startingAt: 0), attributes: .init()
+                                        .font(Font(NSFont.alternativeMonospacedSystemFont())
+                                             )) +
                                          AttributedString(scalar.name ?? "–", attributes: .init()
                                             .foregroundColor(.secondary)
                                             .font(.footnote)
                                          ))
-                                    .monospacedDigit()
                                 }
                             }
                         }
                         
                         if !scalars.isEmpty {
-                            Button(.init("Clear Recents", table: "UnicodeInput", comment: "button label"),
+                            Button(.init("Clear Recents", table: "UnicodeInput", comment: "verb; menu item"),
                                    role: .destructive, action: self.clearRecents)
                         }
                     } label: {

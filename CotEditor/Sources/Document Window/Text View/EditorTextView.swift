@@ -216,6 +216,7 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
     }
     
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         
         fatalError("init(coder:) has not been implemented")
@@ -862,7 +863,7 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
         // add "Copy as Rich Text" menu item
         let copyIndex = menu.indexOfItem(withTarget: nil, andAction: #selector(copy(_:)))
         if copyIndex >= 0 {  // -1 == not found
-            menu.insertItem(withTitle: String(localized: "Copy as Rich Text", table: "MainMenu"),
+            menu.insertItem(withTitle: String(localized: "Copy as Rich Text", table: "MainMenu", comment: "verb; menu item"),
                             action: #selector(copyWithStyle),
                             keyEquivalent: "",
                             at: copyIndex + 1)
@@ -871,21 +872,19 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
         // add "Select All" menu item
         let pasteIndex = menu.indexOfItem(withTarget: nil, andAction: #selector(paste))
         if pasteIndex >= 0 {  // -1 == not found
-            menu.insertItem(withTitle: String(localized: "Select All", table: "MainMenu"),
+            menu.insertItem(withTitle: String(localized: "Select All", table: "MainMenu", comment: "verb; menu item"),
                             action: #selector(selectAll),
                             keyEquivalent: "",
                             at: pasteIndex + 1)
         }
         
         // add "Straighten Quotes" menu item in Substitutions submenu
-        for item in menu.items {
-            guard let submenu = item.submenu else { continue }
-            
+        for case let submenu in menu.items.compactMap(\.submenu) {
             let index = submenu.indexOfItem(withTarget: nil, andAction: Selector(("replaceQuotesInSelection:")))
             
             guard index >= 0 else { continue }  // -1 == not found
             
-            submenu.insertItem(withTitle: String(localized: "Straighten Quotes", table: "MainMenu"),
+            submenu.insertItem(withTitle: String(localized: "Straighten Quotes", table: "MainMenu", comment: "verb; menu item"),
                                action: #selector(straightenQuotesInSelection),
                                keyEquivalent: "",
                                at: index + 1)
@@ -1200,13 +1199,13 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
                             if menuItem.keyEquivalent == NSEvent.SpecialKey.rightArrow.string {
                                 menuItem.keyEquivalent = NSEvent.SpecialKey.upArrow.string
                             }
-                            menuItem.title = String(localized: "Select Column Up", table: "MainMenu")
+                            menuItem.title = String(localized: "Select Column Up", table: "MainMenu", comment: "verb; menu item")
                         case .vertical:
                             if menuItem.keyEquivalent == NSEvent.SpecialKey.upArrow.string {
                                 menuItem.keyEquivalent = NSEvent.SpecialKey.rightArrow.string
                             }
                             menuItem.title = String(localized: "Select Column Right", table: "MainMenu",
-                                                    comment: "vertical orientation version of the Select Column Up command")
+                                                    comment: "verb; menu item; vertical orientation version of the Select Column Up command")
                         @unknown default:
                             assertionFailure()
                     }
@@ -1220,13 +1219,13 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
                             if menuItem.keyEquivalent == NSEvent.SpecialKey.leftArrow.string {
                                 menuItem.keyEquivalent = NSEvent.SpecialKey.downArrow.string
                             }
-                            menuItem.title = String(localized: "Select Column Down", table: "MainMenu")
+                            menuItem.title = String(localized: "Select Column Down", table: "MainMenu", comment: "verb; menu item")
                         case .vertical:
                             if menuItem.keyEquivalent == NSEvent.SpecialKey.downArrow.string {
                                 menuItem.keyEquivalent = NSEvent.SpecialKey.leftArrow.string
                             }
                             menuItem.title = String(localized: "Select Column Left", table: "MainMenu",
-                                                    comment: "vertical orientation version of the Select Column Down command")
+                                                    comment: "verb; menu item; vertical orientation version of the Select Column Down command")
                         @unknown default:
                             assertionFailure()
                     }
@@ -1247,8 +1246,8 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
                 
             case #selector(toggleComment):
                 (item as? NSMenuItem)?.title = self.canUncomment(partly: false)
-                    ? String(localized: "Uncomment", table: "MainMenu")
-                    : String(localized: "Comment Out", table: "MainMenu")
+                    ? String(localized: "Uncomment", table: "MainMenu", comment: "verb; menu item")
+                    : String(localized: "Comment Out", table: "MainMenu", comment: "verb; menu item")
                 return self.isEditable && (!self.commentDelimiters.inlines.isEmpty || !self.commentDelimiters.blocks.isEmpty)
             
             case #selector(commentOut):
@@ -1674,7 +1673,10 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
         else { return }
         
         let selectedRange = self.selectedRange
-        let ranges = try await Self.instanceRanges(in: self.string.immutable, at: selectedRange)
+        let ranges = try await { @concurrent [string = self.string.immutable] () async throws(CancellationError) -> [NSRange] in
+            try string.instanceRangesOfWord(at: selectedRange)
+                .filter { $0 != selectedRange }
+        }()
         
         guard !Task.isCancelled else { throw CancellationError() }
         
@@ -1695,20 +1697,6 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
                 layoutManager.addTemporaryAttribute(.roundedBackgroundColor, value: color, forCharacterRange: range)
             }
         }
-    }
-    
-    
-    /// Finds the ranges of the instances of the word at the given range in the background.
-    ///
-    /// - Parameters:
-    ///   - string: The string to find in.
-    ///   - selectedRange: The range of the selected word.
-    /// - Returns: The found ranges excluding the selected range itself.
-    /// - Throws: `CancellationError`.
-    @concurrent private static func instanceRanges(in string: String, at selectedRange: NSRange) async throws(CancellationError) -> [NSRange] {
-        
-        try string.instanceRangesOfWord(at: selectedRange)
-            .filter { $0 != selectedRange }
     }
 }
 

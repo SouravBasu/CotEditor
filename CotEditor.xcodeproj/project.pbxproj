@@ -131,6 +131,11 @@
 			path = Scripts;
 			sourceTree = "<group>";
 		};
+		81C42F976E1B4920B7316461 /* Test Plans */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Test Plans";
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +168,7 @@
 				2ACA39662D6DFE11000A78E2 /* CotEditor */,
 				2A7041012CA1B7AB009435BA /* Tests */,
 				2AE45D322C9C8341003CB621 /* UI Tests */,
+				81C42F976E1B4920B7316461 /* Test Plans */,
 				2AE46EEA2C9C8B44003CB621 /* Scripts */,
 				2AE44B462C9C7BD4003CB621 /* Packages */,
 				2A7380232CAD911F00E870E5 /* Products */,
@@ -324,6 +330,8 @@
 				pl,
 				ru,
 				"zh-HK",
+				uk,
+				hi,
 			);
 			mainGroup = 2A37F4AAFDCFA73011CA2CEA /* CotEditor */;
 			minimizedProjectReferenceProxies = 1;
@@ -478,6 +486,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_ENHANCED_SECURITY = YES;
+				ENABLE_HARDWARE_CHECKED_POINTER_ARITHMETIC_SLICE = YES;
 				ENABLE_POINTER_AUTHENTICATION = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -522,13 +531,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Accent Color";
-				CURRENT_PROJECT_VERSION = 849;
+				CURRENT_PROJECT_VERSION = 853;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDWARE_CHECKED_POINTER_ARITHMETIC_SLICE = NO;
 				ENABLE_POINTER_AUTHENTICATION = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = CotEditor/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				MARKETING_VERSION = "7.1.1-alpha";
+				MARKETING_VERSION = "7.2.0-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coteditor.CotEditor;
 				PRODUCT_NAME = CotEditor;
 				SWIFT_STRICT_CONCURRENCY = complete;
@@ -549,7 +559,7 @@
 		2A36F0492C931B7A00C0F3C4 /* Debug-Sparkle configuration for PBXNativeTarget "Tests" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 2A1AFDC32C92990300BF2C32 /* Configurations */;
-			baseConfigurationReferenceRelativePath = Tests.xcconfig;
+			baseConfigurationReferenceRelativePath = CodeSigning.xcconfig;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -562,7 +572,7 @@
 		2A36F04A2C931B7A00C0F3C4 /* Debug-Sparkle configuration for PBXNativeTarget "UI Tests" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 2A1AFDC32C92990300BF2C32 /* Configurations */;
-			baseConfigurationReferenceRelativePath = "UI-Tests.xcconfig";
+			baseConfigurationReferenceRelativePath = CodeSigning.xcconfig;
 			buildSettings = {
 				GENERATE_INFOPLIST_FILE = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wolfrosch.CotEditorUITests;
@@ -612,6 +622,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_ENHANCED_SECURITY = YES;
+				ENABLE_HARDWARE_CHECKED_POINTER_ARITHMETIC_SLICE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_POINTER_AUTHENTICATION = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -652,13 +663,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Accent Color";
-				CURRENT_PROJECT_VERSION = 849;
+				CURRENT_PROJECT_VERSION = 853;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDWARE_CHECKED_POINTER_ARITHMETIC_SLICE = NO;
 				ENABLE_POINTER_AUTHENTICATION = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = CotEditor/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				MARKETING_VERSION = "7.1.1-alpha";
+				MARKETING_VERSION = "7.2.0-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coteditor.CotEditor;
 				PRODUCT_NAME = CotEditor;
 				SWIFT_STRICT_CONCURRENCY = complete;
@@ -679,7 +691,7 @@
 		2A36F04F2C931B9600C0F3C4 /* Release-Sparkle configuration for PBXNativeTarget "Tests" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 2A1AFDC32C92990300BF2C32 /* Configurations */;
-			baseConfigurationReferenceRelativePath = Tests.xcconfig;
+			baseConfigurationReferenceRelativePath = CodeSigning.xcconfig;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -692,7 +704,7 @@
 		2A36F0502C931B9600C0F3C4 /* Release-Sparkle configuration for PBXNativeTarget "UI Tests" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 2A1AFDC32C92990300BF2C32 /* Configurations */;
-			baseConfigurationReferenceRelativePath = "UI-Tests.xcconfig";
+			baseConfigurationReferenceRelativePath = CodeSigning.xcconfig;
 			buildSettings = {
 				GENERATE_INFOPLIST_FILE = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wolfrosch.CotEditorUITests;
@@ -728,7 +740,7 @@
 		2A3F18FF203270BE002F1CA7 /* Debug configuration for PBXNativeTarget "UI Tests" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 2A1AFDC32C92990300BF2C32 /* Configurations */;
-			baseConfigurationReferenceRelativePath = "UI-Tests.xcconfig";
+			baseConfigurationReferenceRelativePath = CodeSigning.xcconfig;
 			buildSettings = {
 				GENERATE_INFOPLIST_FILE = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wolfrosch.CotEditorUITests;
@@ -740,7 +752,7 @@
 		2A3F1900203270BE002F1CA7 /* Release configuration for PBXNativeTarget "UI Tests" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 2A1AFDC32C92990300BF2C32 /* Configurations */;
-			baseConfigurationReferenceRelativePath = "UI-Tests.xcconfig";
+			baseConfigurationReferenceRelativePath = CodeSigning.xcconfig;
 			buildSettings = {
 				GENERATE_INFOPLIST_FILE = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.wolfrosch.CotEditorUITests;
@@ -756,13 +768,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Accent Color";
-				CURRENT_PROJECT_VERSION = 849;
+				CURRENT_PROJECT_VERSION = 853;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDWARE_CHECKED_POINTER_ARITHMETIC_SLICE = NO;
 				ENABLE_POINTER_AUTHENTICATION = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = CotEditor/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				MARKETING_VERSION = "7.1.1-alpha";
+				MARKETING_VERSION = "7.2.0-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coteditor.CotEditor;
 				PRODUCT_NAME = CotEditor;
 				SWIFT_STRICT_CONCURRENCY = complete;
@@ -787,13 +800,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = "Accent Color";
-				CURRENT_PROJECT_VERSION = 849;
+				CURRENT_PROJECT_VERSION = 853;
 				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_HARDWARE_CHECKED_POINTER_ARITHMETIC_SLICE = NO;
 				ENABLE_POINTER_AUTHENTICATION = NO;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				INFOPLIST_FILE = CotEditor/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
-				MARKETING_VERSION = "7.1.1-alpha";
+				MARKETING_VERSION = "7.2.0-alpha";
 				PRODUCT_BUNDLE_IDENTIFIER = com.coteditor.CotEditor;
 				PRODUCT_NAME = CotEditor;
 				SWIFT_STRICT_CONCURRENCY = complete;
@@ -814,7 +828,7 @@
 		2AC71DE61BF0BDBC002E1434 /* Debug configuration for PBXNativeTarget "Tests" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 2A1AFDC32C92990300BF2C32 /* Configurations */;
-			baseConfigurationReferenceRelativePath = Tests.xcconfig;
+			baseConfigurationReferenceRelativePath = CodeSigning.xcconfig;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -827,7 +841,7 @@
 		2AC71DE71BF0BDBC002E1434 /* Release configuration for PBXNativeTarget "Tests" */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReferenceAnchor = 2A1AFDC32C92990300BF2C32 /* Configurations */;
-			baseConfigurationReferenceRelativePath = Tests.xcconfig;
+			baseConfigurationReferenceRelativePath = CodeSigning.xcconfig;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GENERATE_INFOPLIST_FILE = YES;
@@ -870,6 +884,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_ENHANCED_SECURITY = YES;
+				ENABLE_HARDWARE_CHECKED_POINTER_ARITHMETIC_SLICE = YES;
 				ENABLE_POINTER_AUTHENTICATION = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -940,6 +955,7 @@
 				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_ENHANCED_SECURITY = YES;
+				ENABLE_HARDWARE_CHECKED_POINTER_ARITHMETIC_SLICE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_POINTER_AUTHENTICATION = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;

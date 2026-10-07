@@ -53,6 +53,12 @@
             ]
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "${applicationName} में एक दस्तावेज़ बनाएँ"
+          }
+        },
         "it" : {
           "stringSet" : {
             "state" : "translated",
@@ -115,6 +121,14 @@
             "state" : "translated",
             "values" : [
               "${applicationName} ile belge oluştur"
+            ]
+          }
+        },
+        "uk" : {
+          "stringSet" : {
+            "state" : "translated",
+            "values" : [
+              "Створити документ в ${applicationName}"
             ]
           }
         },

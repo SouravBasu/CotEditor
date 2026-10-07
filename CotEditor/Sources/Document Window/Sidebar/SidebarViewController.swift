@@ -52,6 +52,7 @@ final class SidebarViewController: SidebarTabViewController {
     }
     
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         
         fatalError("init(coder:) has not been implemented")
@@ -90,7 +91,8 @@ extension SidebarPane {
                        defaultValue: "File Browser", table: "Document")
             case .find:
                 String(localized: "SidebarPane.find.label",
-                       defaultValue: "Folder Find", table: "Document")
+                       defaultValue: "Folder Find", table: "Document",
+                       comment: "noun; feature searching for text in documents within a folder")
         }
     }
 }

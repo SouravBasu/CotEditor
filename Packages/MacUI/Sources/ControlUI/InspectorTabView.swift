@@ -39,7 +39,6 @@ public final class InspectorTabView: NSTabView {
         
         self.segmentedControl = NSSegmentedControl()
         self.segmentedControl.controlSize = .large
-        self.segmentedControl.selectedSegment = 1
         #if compiler(>=7.0)
         if #available(macOS 27, *) {
             self.segmentedControl.role = .tabs
@@ -67,6 +66,7 @@ public final class InspectorTabView: NSTabView {
     }
     
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         
         fatalError("init(coder:) has not been implemented")

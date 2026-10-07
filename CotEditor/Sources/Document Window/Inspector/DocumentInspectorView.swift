@@ -29,15 +29,24 @@ import CharacterInfo
 import DocumentFile
 import FileEncoding
 import LineEnding
+import RMate
 import SyntaxFormat
 
 @MainActor @Observable private final class DocumentInspectorViewModel: DocumentInspectorView.ModelProtocol {
     
-    var isPresented = false  { didSet { self.invalidateObservation() } }
+    var isPresented = false {
+        
+        didSet {
+            guard oldValue != self.isPresented else { return }
+            self.invalidateObservation()
+        }
+    }
+    
     var document: DataDocument?  { willSet { self.cancelObservation() } didSet { self.didUpdateDocument() } }
     
-    var attributes: FileAttributes?  { self.document?.fileAttributes }
+    var attributes: FileAttributes?  { self.remotePath == nil ? self.document?.fileAttributes : nil }
     var fileURL: URL?
+    var remotePath: String?  { (self.document as? RemoteDocument)?.remoteState?.file.metadata.path }
     var countResult: EditorCounter.Result?  { (self.document as? Document)?.counter.result }
     
     private var urlObserver: AnyCancellable?
@@ -118,6 +127,7 @@ struct DocumentInspectorView: View, HostedPaneView {
         
         var attributes: FileAttributes? { get }
         var fileURL: URL? { get }
+        var remotePath: String? { get }
         var textSettings: TextSettings? { get }
         var countResult: EditorCounter.Result? { get }
     }
@@ -133,7 +143,7 @@ struct DocumentInspectorView: View, HostedPaneView {
         
         ScrollView(.vertical) {
             VStack(spacing: 8) {
-                DocumentFileView(attributes: self.model.attributes, fileURL: self.model.fileURL)
+                DocumentFileView(attributes: self.model.attributes, fileURL: self.model.fileURL, remotePath: self.model.remotePath)
                 
                 if let textSettings = self.model.textSettings {
                     TextSettingsView(value: textSettings)
@@ -165,6 +175,7 @@ private struct DocumentFileView: View {
     
     var attributes: FileAttributes?
     var fileURL: URL?
+    var remotePath: String?
     
     @State private var isExpanded = true
     
@@ -201,21 +212,23 @@ private struct DocumentFileView: View {
                                optional: self.attributes?.owner)
                 
                 LabeledContent(.init("Full Path", table: "Document", comment: "label in document inspector")) {
-                    if let fileURL = self.fileURL {
+                    if let path = self.remotePath ?? self.fileURL?.formatted(.url.scheme(.never)), !path.isEmpty {
                         HStack(alignment: .lastTextBaseline, spacing: 4) {
-                            Text(fileURL, format: .url.scheme(.never))
+                            Text(path)
                                 .lineLimit(5)
                                 .truncationMode(.middle)
                                 .textSelection(.enabled)
-                                .help(fileURL.formatted(.url.scheme(.never)))
-                            Button(.init("Show in Finder", table: "Document"), systemImage: "arrow.forward") {
-                                NSWorkspace.shared.activateFileViewerSelecting([fileURL])
+                                .help(path)
+                            if let fileURL, self.remotePath == nil {
+                                Button(.init("Show in Finder", table: "Document", comment: "verb; button"), systemImage: "arrow.forward") {
+                                    NSWorkspace.shared.activateFileViewerSelecting([fileURL])
+                                }
+                                .symbolVariant(.circle.fill)
+                                .fontWeight(.bold)
+                                .labelStyle(.iconOnly)
+                                .controlSize(.mini)
+                                .buttonStyle(.borderless)
                             }
-                            .symbolVariant(.circle.fill)
-                            .fontWeight(.bold)
-                            .labelStyle(.iconOnly)
-                            .controlSize(.mini)
-                            .buttonStyle(.borderless)
                         }
                     } else {
                         Text.none
@@ -259,7 +272,7 @@ private struct EditorCountView: View {
     
     var body: some View {
         
-        DisclosureGroup(.init("Count", table: "Document", comment: "section title in inspector"), isExpanded: $isExpanded) {
+        DisclosureGroup(.init("Count", table: "Document", comment: "noun; section heading; character and word counts"), isExpanded: $isExpanded) {
             Form {
                 Section {
                     ForEach(CountType.countCases, id: \.self) { type in
@@ -292,7 +305,10 @@ private struct CharacterPaneView: View {
         DisclosureGroup(.init("Character", table: "Document", comment: "section title in inspector"), isExpanded: $isExpanded) {
             Form {
                 if let scalars = self.character?.unicodeScalars {
-                    LabeledContent {
+                    LabeledContent((scalars.count == 1)
+                                   ? .init("Code Point", table: "Document", comment: "label in document inspector")
+                                   : .init("Code Points", table: "Document", comment: "label in document inspector"))
+                    {
                         WrappingHStack(alignment: .trailing) {
                             ForEach(Array(scalars).enumerated(), id: \.offset) { _, scalar in
                                 Text(scalar.codePoint)
@@ -303,10 +319,6 @@ private struct CharacterPaneView: View {
                                         .strokeBorder(.tertiary))
                             }
                         }
-                    } label: {
-                        (scalars.count == 1)
-                            ? Text("Code Point", tableName: "Document", comment: "label in document inspector")
-                            : Text("Code Points", tableName: "Document", comment: "label in document inspector")
                     }
                     if scalars.count == 1, let scalar = scalars.first {
                         LabeledContent(.init("Name", table: "Document", comment: "label in document inspector"),
@@ -391,6 +403,7 @@ private extension ControlSize {
     
     var attributes: FileAttributes?
     var fileURL: URL?
+    var remotePath: String?
     var textSettings: TextSettings?
     var countResult: EditorCounter.Result?
 }
@@ -426,5 +439,11 @@ private extension ControlSize {
 
 #Preview {
     DocumentInspectorView(isPresented: true, model: MockedModel())
+        .frame(width: 240)
+}
+
+
+#Preview("Remote") {
+    DocumentInspectorView(isPresented: true, model: MockedModel(remotePath: "/etc/nginx/nginx.conf"))
         .frame(width: 240)
 }

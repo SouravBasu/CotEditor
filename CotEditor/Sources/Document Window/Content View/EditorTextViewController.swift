@@ -77,6 +77,7 @@ final class EditorTextViewController: NSViewController, NSServicesMenuRequestor,
     }
     
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         
         fatalError("init(coder:) has not been implemented")
@@ -291,7 +292,10 @@ final class EditorTextViewController: NSViewController, NSServicesMenuRequestor,
     
     func textView(_ textView: NSTextView, shouldChangeTextIn affectedCharRange: NSRange, replacementString: String?) -> Bool {
         
-        if textView.undoManager?.isUndoing == true { return true }  // = undo
+        // restore previously accepted text without normalizing it again
+        if let undoManager = textView.undoManager, undoManager.isUndoing || undoManager.isRedoing {
+            return true
+        }
         
         guard let textView = textView as? EditorTextView else { return true }
         
@@ -313,7 +317,7 @@ final class EditorTextViewController: NSViewController, NSServicesMenuRequestor,
         
         // add "Inspect Character" menu item if single character is selected
         if self.textView.selectsSingleCharacter {
-            menu.insertItem(.init(title: String(localized: "Inspect Character", table: "MainMenu"),
+            menu.insertItem(.init(title: String(localized: "Inspect Character", table: "MainMenu", comment: "verb; menu item"),
                                   systemImage: "character.bubble",
                                   action: #selector(showSelectionInfo), keyEquivalent: ""),
                             at: 1)
@@ -496,8 +500,8 @@ extension EditorTextViewController: NSUserInterfaceValidations {
                 return self.textView.isEditable
             case #selector(toggleAdvancedCounter):
                 (item as? NSMenuItem)?.title = (self.advancedCounterView == nil)
-                    ? String(localized: "Advanced Character Count…", table: "AdvancedCharacterCount", comment: "menu item")
-                    : String(localized: "Stop Advanced Character Count", table: "AdvancedCharacterCount", comment: "menu item")
+                    ? String(localized: "Advanced Character Count…", table: "AdvancedCharacterCount", comment: "noun; menu item; opens options for advanced character counting")
+                    : String(localized: "Stop Advanced Character Count", table: "AdvancedCharacterCount", comment: "verb; menu item")
                 return true
                 
             case #selector(showSelectionInfo):

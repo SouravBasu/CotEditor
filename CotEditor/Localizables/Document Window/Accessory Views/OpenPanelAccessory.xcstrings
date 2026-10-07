@@ -34,6 +34,12 @@
             "value" : "Automatique"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ऑटोमैटिक"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -82,6 +88,12 @@
             "value" : "Otomatik"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Автоматично"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -103,7 +115,7 @@
       }
     },
     "Open as read-only" : {
-      "comment" : "toggle button label",
+      "comment" : "verb; checkbox",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -133,6 +145,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ouvrir en lecture seule"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "केवल-पढ़ने के लिए खोलें"
           }
         },
         "it" : {
@@ -168,7 +186,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Abrir como somente leitura"
+            "value" : "Abrir como Somente Leitura"
           }
         },
         "ru" : {
@@ -181,6 +199,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Salt okunur olarak aç"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відкрити лише для читання"
           }
         },
         "zh-Hans" : {
@@ -204,7 +228,7 @@
       }
     },
     "Show invisible files" : {
-      "comment" : "toggle button label",
+      "comment" : "verb; checkbox",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -234,6 +258,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Afficher les fichiers cachés"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अदृश्य फ़ाइलें दिखाएँ"
           }
         },
         "it" : {
@@ -269,7 +299,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mostrar arquivos ocultos"
+            "value" : "Mostrar Arquivos Ocultos"
           }
         },
         "ru" : {
@@ -282,6 +312,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gizli dosyaları göster"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показувати невидимі файли"
           }
         },
         "zh-Hans" : {
@@ -336,6 +372,12 @@
             "value" : "Encodage du texte :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "टेक्स्ट एनकोडिंग :"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -382,6 +424,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Metin kodlaması:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кодування тексту:"
           }
         },
         "zh-Hans" : {

@@ -37,8 +37,6 @@ struct GeneralSettingsView: View {
     
     @Namespace private var accessibility
     
-    @Environment(\.locale) private var locale
-    
     @AppStorage(.quitAlwaysKeepsWindows) private var quitAlwaysKeepsWindows: Bool
     @AppStorage(.noDocumentOnLaunchOption) private var noDocumentOnLaunchOption: NoDocumentOnLaunchOption
     
@@ -52,9 +50,6 @@ struct GeneralSettingsView: View {
     @State private var isQuitAlwaysKeepsWindowsChangeConfirmationPresented = false
     @State private var isWarningsSettingPresented = false
     
-    @State private var commandLineToolStatus: CommandLineToolManager.Status = .none
-    @State private var commandLineToolURL: URL?
-    
     
     // MARK: View
     
@@ -66,7 +61,7 @@ struct GeneralSettingsView: View {
                     .gridColumnAlignment(.trailing)
                 
                 VStack(alignment: .leading) {
-                    Toggle(.init("Reopen windows from last session", table: "GeneralSettings"), isOn: $quitAlwaysKeepsWindows)
+                    Toggle(.init("Reopen windows from last session", table: "GeneralSettings", comment: "verb; checkbox"), isOn: $quitAlwaysKeepsWindows)
                         .onChange(of: self.quitAlwaysKeepsWindows) {
                             guard !self.suppressesQuitAlwaysKeepsWindowsChangeConfirmation else { return }
                             
@@ -99,7 +94,7 @@ struct GeneralSettingsView: View {
                     .gridColumnAlignment(.trailing)
                 
                 VStack(alignment: .leading) {
-                    Toggle(.init("Enable Auto Save with Versions", table: "GeneralSettings"), isOn: $enablesAutosaveInPlace)
+                    Toggle(.init("Enable Auto Save with Versions", table: "GeneralSettings", comment: "verb; checkbox"), isOn: $enablesAutosaveInPlace)
                         .onChange(of: self.enablesAutosaveInPlace) { _, newValue in
                             if newValue != self.initialEnablesAutosaveInPlace {
                                 self.isAutosaveChangeConfirmationPresented = true
@@ -109,11 +104,11 @@ struct GeneralSettingsView: View {
                             self.initialEnablesAutosaveInPlace = self.enablesAutosaveInPlace
                         }
                         .confirmationDialog(.init("NextSessionApplicationConfirmation.title", defaultValue: "The change will be applied first on the next launch.", table: "GeneralSettings"), isPresented: $isAutosaveChangeConfirmationPresented) {
-                            Button(.init("Restart Now", table: "GeneralSettings", comment: "button label")) {
+                            Button(.init("Restart Now", table: "GeneralSettings", comment: "verb; button")) {
                                 (NSApp.delegate as? AppDelegate)?.needsRelaunch = true
                                 NSApp.terminate(self)
                             }
-                            Button(.init("Later", table: "GeneralSettings", comment: "button label")) {
+                            Button(.init("Later", table: "GeneralSettings", comment: "button")) {
                                 // do nothing
                             }
                             Button(role: .cancel) {
@@ -162,47 +157,13 @@ struct GeneralSettingsView: View {
                     .gridColumnAlignment(.trailing)
                     .accessibilityLabeledPair(role: .label, id: "dialogWarnings", in: self.accessibility)
                 
-                Button(.init("Manage Warnings…", table: "GeneralSettings")) {
+                Button(.init("Manage Warnings…", table: "GeneralSettings", comment: "verb; button")) {
                     self.isWarningsSettingPresented.toggle()
                 }
                 .accessibilityLabeledPair(role: .content, id: "dialogWarnings", in: self.accessibility)
                 .sheet(isPresented: $isWarningsSettingPresented) {
                     WarningsSettingView()
                         .scenePadding()
-                }
-            }
-            
-            Divider()
-            
-            GridRow {
-                Text("Command-line tool:", tableName: "GeneralSettings")
-                    .gridColumnAlignment(.trailing)
-                
-                VStack(alignment: .leading) {
-                    HStack(alignment: .firstTextBaseline) {
-                        Button(.init("Learn More…", table: "GeneralSettings")) {
-                            NSHelpManager.shared.openHelpAnchor("about_cot", inBook: nil)
-                        }
-                        if self.commandLineToolStatus.installed,
-                           let url = self.commandLineToolURL
-                        {
-                            Label {
-                                Text("installed at \(url, format: .url.scheme(.never))", tableName: "GeneralSettings")
-                            } icon: {
-                                StatusImage(status: self.commandLineToolStatus.imageStatus)
-                                    .imageScale(.small)
-                                    .help(self.commandLineToolStatus.message ?? "")
-                                    .accessibilityHint(self.commandLineToolStatus.message ?? "")
-                            }
-                            .foregroundStyle(.secondary)
-                            .labelIconToTitleSpacing(6)
-                        }
-                    }
-                    Text("With the `cot` command-line tool, you can launch CotEditor and let it open files from the command line.", tableName: "GeneralSettings")
-                        .foregroundStyle(.secondary)
-                        .controlSize(.small)
-                        .lineLimit(10)
-                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
             
@@ -215,11 +176,6 @@ struct GeneralSettingsView: View {
                 Spacer()
                 HelpLink(anchor: "settings_general")
             }
-        }
-        .onAppear {
-            let manager = CommandLineToolManager()
-            self.commandLineToolStatus = manager.validateSymlink()
-            self.commandLineToolURL = manager.linkURL
         }
         .fixedSize(horizontal: false, vertical: true)
     }
@@ -239,10 +195,10 @@ private struct UpdaterView: View {
                 .gridColumnAlignment(.trailing)
             
             VStack(alignment: .leading) {
-                Toggle(.init("Check for updates automatically", table: "GeneralSettings"), isOn: $enableAutomaticUpdateChecks)
+                Toggle(.init("Check for updates automatically", table: "GeneralSettings", comment: "verb; checkbox"), isOn: $enableAutomaticUpdateChecks)
                 
                 VStack(alignment: .leading, spacing: 2) {
-                    Toggle(.init("Update to prereleases when available", table: "GeneralSettings"), isOn: $checksUpdatesForBeta)
+                    Toggle(.init("Update to prereleases when available", table: "GeneralSettings", comment: "verb; checkbox"), isOn: $checksUpdatesForBeta)
                     
                     if Bundle.main.version!.isPrerelease {
                         Text("Regardless of this setting, new prereleases are always included while using a prerelease.", tableName: "GeneralSettings")
@@ -286,36 +242,6 @@ private struct WarningsSettingView: View {
 }
 
 
-private extension CommandLineToolManager.Status {
-    
-    var imageStatus: StatusImage.Status {
-        
-        switch self {
-            case .none: .none
-            case .validTarget: .available
-            case .differentTarget: .partiallyAvailable
-            case .invalidTarget: .unavailable
-        }
-    }
-    
-    
-    var message: String? {
-        
-        switch self {
-            case .none, .validTarget:
-                nil
-            case .differentTarget:
-                String(localized: "CommandLineToolManager.Status.differentTarget.message",
-                       defaultValue: "The current `cot` symbolic link doesn’t target the running CotEditor.",
-                       table: "GeneralSettings")
-            case .invalidTarget:
-                String(localized: "CommandLineToolManager.Status.invalidTarget.message",
-                       defaultValue: "The current `cot` symbolic link may target an invalid path.", table: "GeneralSettings")
-        }
-    }
-}
-
-
 private extension NoDocumentOnLaunchOption {
     
     var label: LocalizedStringResource {
@@ -324,15 +250,18 @@ private extension NoDocumentOnLaunchOption {
             case .untitledDocument:
                 .init("NoDocumentOnLaunchOption.untitledDocument.label",
                       defaultValue: "Create New Document",
-                      table: "GeneralSettings")
+                      table: "GeneralSettings",
+                      comment: "verb; menu item")
             case .openPanel:
                 .init("NoDocumentOnLaunchOption.openPanel.label",
                       defaultValue: "Show Open Dialog",
-                      table: "GeneralSettings")
+                      table: "GeneralSettings",
+                      comment: "verb; menu item")
             case .none:
                 .init("NoDocumentOnLaunchOption.none.label",
                       defaultValue: "Do Nothing",
-                      table: "GeneralSettings")
+                      table: "GeneralSettings",
+                      comment: "verb; menu item")
         }
     }
 }
@@ -346,15 +275,18 @@ private extension DocumentConflictOption {
             case .ignore:
                 .init("DocumentConflictOption.ignore.label",
                       defaultValue: "Keep CotEditor’s version",
-                      table: "GeneralSettings")
+                      table: "GeneralSettings",
+                      comment: "verb; button; version refers to the document’s contents")
             case .notify:
                 .init("DocumentConflictOption.notify.label",
                       defaultValue: "Ask how to resolve",
-                      table: "GeneralSettings")
+                      table: "GeneralSettings",
+                      comment: "verb; button")
             case .revert:
                 .init("DocumentConflictOption.revert.label",
                       defaultValue: "Update to modified version",
-                      table: "GeneralSettings")
+                      table: "GeneralSettings",
+                      comment: "verb; button; version refers to the document’s contents")
         }
     }
 }

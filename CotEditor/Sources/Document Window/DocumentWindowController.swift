@@ -29,6 +29,7 @@ import Combine
 import SwiftUI
 import UniformTypeIdentifiers
 import Defaults
+import RMate
 import ControlUI
 import URLUtils
 
@@ -104,6 +105,7 @@ final class DocumentWindowController: NSWindowController, NSWindowDelegate {
         window.styleMask.update(with: .fullSizeContentView)
         window.animationBehavior = .documentWindow
         window.setFrameAutosaveName(self.windowAutosaveName)
+        window.setFrameUsingName(self.windowAutosaveName)
         
         if self.isDirectoryDocument {
             window.tabbingMode = .disallowed
@@ -175,6 +177,7 @@ final class DocumentWindowController: NSWindowController, NSWindowDelegate {
     }
     
     
+    @available(*, unavailable)
     required init?(coder: NSCoder) {
         
         fatalError("init(coder:) has not been implemented")
@@ -209,7 +212,7 @@ final class DocumentWindowController: NSWindowController, NSWindowDelegate {
     
     override func windowTitle(forDocumentDisplayName displayName: String) -> String {
         
-        if let uniqueDirectory {
+        if let uniqueDirectory, (self.fileDocument as? RemoteDocument)?.remoteState == nil {
             displayName + " \u{2014} " + uniqueDirectory  // EM DASH
         } else {
             displayName
@@ -220,6 +223,14 @@ final class DocumentWindowController: NSWindowController, NSWindowDelegate {
     override func synchronizeWindowTitleWithDocumentName() {
         
         super.synchronizeWindowTitleWithDocumentName()
+        
+        if let remoteState = (self.fileDocument as? RemoteDocument)?.remoteState {
+            self.window?.representedURL = nil
+            self.window?.subtitle = remoteState.file.isConnected
+                ? String(localized: "Remote", table: "Document", comment: "window subtitle; for remote document")
+                : String(localized: "Disconnected", table: "Document", comment: "window subtitle; for remote document")
+            return
+        }
         
         if self.isDirectoryDocument {
             // display current document title as window subtitle
@@ -444,6 +455,8 @@ final class DocumentWindowController: NSWindowController, NSWindowDelegate {
         
         if let document = self.fileDocument as? Document {
             self.selectSyntaxPopUpItem(with: document.syntaxName, in: popUpButton)
+        } else {
+            self.updateSyntaxPopUpButtonWidth(popUpButton)
         }
     }
     
@@ -485,6 +498,29 @@ final class DocumentWindowController: NSWindowController, NSWindowDelegate {
             
             menu.insertItem(.separator(), at: 1)
             menu.item(at: 1)?.tag = deletedTag
+        }
+        
+        self.updateSyntaxPopUpButtonWidth(popUpButton)
+    }
+    
+    
+    /// Updates the fixed width of the syntax pop-up button to fit its menu items.
+    ///
+    /// - Parameter popUpButton: The syntax pop-up button to update.
+    private func updateSyntaxPopUpButtonWidth(_ popUpButton: NSPopUpButton) {
+        
+        guard #available(macOS 27, *) else { return }
+        
+        // Work around an AppKit layout loop near the toolbar overflow threshold (2026-09, macOS 27, FB25001982).
+        // -> The pop-up button's intrinsic width alternates depending on its toolbar layout, so constrain it explicitly.
+        let identifier = "syntaxPopUpButtonWidth"
+        let width = popUpButton.intrinsicContentSize.width
+        if let constraint = popUpButton.constraints.first(where: { $0.identifier == identifier }) {
+            constraint.constant = width
+        } else {
+            let constraint = popUpButton.widthAnchor.constraint(equalToConstant: width)
+            constraint.identifier = identifier
+            constraint.isActive = true
         }
     }
     
@@ -856,7 +892,8 @@ extension DocumentWindowController: NSToolbarDelegate {
             case .comment:
                 let item = NSToolbarItem(itemIdentifier: itemIdentifier)
                 item.label = String(localized: "Toolbar.comment.label",
-                                    defaultValue: "Comment", table: "Document")
+                                    defaultValue: "Comment", table: "Document",
+                                    comment: "verb, toggle commenting of the selection")
                 item.toolTip = String(localized: "Toolbar.comment.tooltip",
                                       defaultValue: "Comment-out or uncomment selection", table: "Document")
                 item.image = NSImage(resource: .textCommentout)
@@ -866,7 +903,8 @@ extension DocumentWindowController: NSToolbarDelegate {
             case .tabStyle:
                 let item = StatableMenuToolbarItem(itemIdentifier: itemIdentifier)
                 item.label = String(localized: "Toolbar.tabStyle.label",
-                                    defaultValue: "Tab Style", table: "Document")
+                                    defaultValue: "Tab Style", table: "Document",
+                                    comment: "Tab refers to indentation")
                 item.toolTip = String(localized: "Toolbar.tabStyle.tooltip.off",
                                       defaultValue: "Use spaces for indentation", table: "Document")
                 item.stateImages[.on] = NSImage(resource: .tabForwardSplit)
@@ -874,7 +912,7 @@ extension DocumentWindowController: NSToolbarDelegate {
                 item.action = #selector(DocumentViewController.toggleAutoTabExpand)
                 item.menu.items = [
                     .sectionHeader(title: String(localized: "Toolbar.tabStyle.menu.tabWidth.label",
-                                                 defaultValue: "Tab Width", table: "Document", comment: "menu item header")),
+                                                 defaultValue: "Tab Width", table: "Document", comment: "noun; menu section header; Tab refers to indentation")),
                 ] + [2, 4, 8].map { width in
                     let item = NSMenuItem(title: width.formatted(), action: #selector(DocumentViewController.changeTabWidth), keyEquivalent: "")
                     item.tag = width
@@ -1012,7 +1050,7 @@ extension DocumentWindowController: NSToolbarDelegate {
                 let item = NSSharingServicePickerToolbarItem(itemIdentifier: itemIdentifier)
                 item.toolTip = String(localized: "Toolbar.share.tooltip",
                                       defaultValue: "Share document file", table: "Document",
-                                      comment: "(label for the Share toolbar item is automatically set)")
+                                      comment: "(label for the Share toolbar item is set automatically)")
                 item.delegate = self
                 return item
                 

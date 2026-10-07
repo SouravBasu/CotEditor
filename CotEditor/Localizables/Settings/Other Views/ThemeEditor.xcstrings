@@ -33,6 +33,12 @@
             "value" : "Auteur"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "लेखक"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -79,6 +85,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yazar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Автор"
           }
         },
         "zh-Hans" : {
@@ -133,6 +145,12 @@
             "value" : "Fond :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पृष्ठभूमि :"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -179,6 +197,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Arka plan:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тло:"
           }
         },
         "zh-Hans" : {
@@ -233,6 +257,12 @@
             "value" : "Ligne courante :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "वर्तमान पंक्ति :"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -281,6 +311,12 @@
             "value" : "Geçerli satır:"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поточний рядок:"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -312,7 +348,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zeiger:"
+            "value" : "Einfügemarke:"
           }
         },
         "en-GB" : {
@@ -331,6 +367,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Curseur :"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कर्सर :"
           }
         },
         "it" : {
@@ -379,6 +421,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "İmleç:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Курсор:"
           }
         },
         "zh-Hans" : {
@@ -433,6 +481,12 @@
             "value" : "Description"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "विवरण"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -481,6 +535,12 @@
             "value" : "Açıklama"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Опис"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -502,6 +562,7 @@
       }
     },
     "Highlight:" : {
+      "comment" : "noun, the highlight color",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -524,7 +585,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Resaltar:"
+            "value" : "Resaltado:"
           }
         },
         "fr" : {
@@ -533,10 +594,16 @@
             "value" : "Surbrillance :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हाइलाइट :"
+          }
+        },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Evidenziato:"
+            "state" : "translated",
+            "value" : "Evidenziazione:"
           }
         },
         "ja" : {
@@ -579,6 +646,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vurgu:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Підсвічування:"
           }
         },
         "zh-Hans" : {
@@ -633,6 +706,12 @@
             "value" : "Invisibles :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अदृश्य वर्ण :"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -679,6 +758,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Görünmez karakterler:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Невидимі символи:"
           }
         },
         "zh-Hans" : {
@@ -733,6 +818,12 @@
             "value" : "Licence"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "लाइसेंस"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -779,6 +870,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lisans"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ліцензія"
           }
         },
         "zh-Hans" : {
@@ -834,6 +931,12 @@
             "value" : "Non défini"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "परिभाषित नहीं"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -880,6 +983,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tanımlanmamış"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не визначено"
           }
         },
         "zh-Hans" : {
@@ -934,10 +1043,16 @@
             "value" : "Recharger tous les thèmes"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सभी थीम फिर से लोड करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ricarica tutti i Temi"
+            "value" : "Ricarica tutti i temi"
           }
         },
         "ja" : {
@@ -982,6 +1097,12 @@
             "value" : "Tüm Temaları Yeniden Yükle"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перезавантажити всі теми"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -991,7 +1112,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "過載所有主題"
+            "value" : "重新載入所有主題"
           }
         },
         "zh-HK" : {
@@ -1034,6 +1155,12 @@
             "value" : "Sélection :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "चयन :"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1073,13 +1200,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Выбрано:"
+            "value" : "Выделение:"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seçim:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибране:"
           }
         },
         "zh-Hans" : {
@@ -1107,7 +1240,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zobrazit informace o souboru motivu"
+            "value" : "Zobrazit informace o souboru motivu"
           }
         },
         "de" : {
@@ -1132,6 +1265,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Afficher les informations du thème"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "थीम फ़ाइल जानकारी दिखाएँ"
           }
         },
         "it" : {
@@ -1167,19 +1306,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mostre o arquivo de informações do tema"
+            "value" : "Mostrar Informações do Arquivo de Tema"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Показать информации о теме"
+            "value" : "Показать информацию о файле темы"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tema dosyası bilgisini göster"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показати інформацію про файл теми"
           }
         },
         "zh-Hans" : {
@@ -1234,6 +1379,12 @@
             "value" : "Syntaxe"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सिंटैक्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1273,13 +1424,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Синтакс"
+            "value" : "Синтаксис"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sözdizimi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Синтаксис"
           }
         },
         "zh-Hans" : {
@@ -1334,6 +1491,12 @@
             "value" : "Texte :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "टेक्स्ट :"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1380,6 +1543,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Metin:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Текст:"
           }
         },
         "zh-Hans" : {
@@ -1440,6 +1609,12 @@
             "value" : "Thème"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "थीम"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1488,6 +1663,12 @@
             "value" : "Tema"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тема"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1513,7 +1694,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Editor témat"
+            "value" : "Editor motivů"
           }
         },
         "de" : {
@@ -1538,6 +1719,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Éditeur de thème"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "थीम एडिटर"
           }
         },
         "it" : {
@@ -1579,13 +1766,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Редактор Тем"
+            "value" : "Редактор тем"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tema Düzenleyicisi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редактор тем"
           }
         },
         "zh-Hans" : {
@@ -1640,6 +1833,12 @@
             "value" : "URL"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1688,6 +1887,12 @@
             "value" : "URL"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "URL"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1709,12 +1914,12 @@
       }
     },
     "Use system color" : {
-      "comment" : "toggle button label",
+      "comment" : "verb; checkbox",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Použít systémové barvy"
+            "value" : "Použít systémovou barvu"
           }
         },
         "de" : {
@@ -1732,13 +1937,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usa el color del sistema"
+            "value" : "Usar el color del sistema"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Couleur du système"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सिस्टम रंग उपयोग करें"
           }
         },
         "it" : {
@@ -1774,19 +1985,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usar cor do sistema"
+            "value" : "Usar Cor do Sistema"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Использовать системый цвет"
+            "value" : "Использовать системный цвет"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sistem rengini kullan"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Системний колір"
           }
         },
         "zh-Hans" : {

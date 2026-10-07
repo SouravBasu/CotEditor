@@ -93,14 +93,14 @@
             "plural" : {
               "one" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%lld coincidencia encontrada."
+                  "state" : "translated",
+                  "value" : "%lld coincidencia encontrada."
                 }
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%lld coincidencias encontradas."
+                  "state" : "translated",
+                  "value" : "%lld coincidencias encontradas."
                 }
               }
             }
@@ -119,6 +119,24 @@
                 "stringUnit" : {
                   "state" : "needs_review",
                   "value" : "%lld éléments trouvés."
+                }
+              }
+            }
+          }
+        },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld मिलान मिला।"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld मिलान मिले।"
                 }
               }
             }
@@ -160,7 +178,7 @@
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld개 일치 항목 찾음."
+                  "value" : "일치하는 항목 %lld개를 찾았습니다."
                 }
               }
             }
@@ -238,7 +256,7 @@
               "few" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld совпадений найдено."
+                  "value" : "Найдено %lld совпадения."
                 }
               },
               "many" : {
@@ -269,6 +287,36 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld eşleşme bulundu."
+                }
+              }
+            }
+          }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Знайдено %1$lld збіги."
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Знайдено %1$lld збігів."
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Знайдено %1$lld збіг."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Знайдено %1$lld збігів."
                 }
               }
             }
@@ -404,14 +452,14 @@
             "plural" : {
               "one" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%lld coincidencia reemplazada."
+                  "state" : "translated",
+                  "value" : "%lld coincidencia reemplazada."
                 }
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%lld coincidencias reemplazadas."
+                  "state" : "translated",
+                  "value" : "%lld coincidencias reemplazadas."
                 }
               }
             }
@@ -430,6 +478,24 @@
                 "stringUnit" : {
                   "state" : "needs_review",
                   "value" : "%lld éléments remplacés."
+                }
+              }
+            }
+          }
+        },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld मिलान बदला गया।"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld मिलान बदले गए।"
                 }
               }
             }
@@ -471,7 +537,7 @@
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld개 일치 항목 대치."
+                  "value" : "일치하는 항목 %lld개를 대치했습니다."
                 }
               }
             }
@@ -549,7 +615,7 @@
               "few" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld замен произведено."
+                  "value" : "Произведено %lld замены."
                 }
               },
               "many" : {
@@ -580,6 +646,36 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld eşleşme değiştirildi."
+                }
+              }
+            }
+          }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Замінено %1$lld збіги."
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Замінено %1$lld збігів."
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Замінено %1$lld збіг."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Замінено %1$lld збігів."
                 }
               }
             }
@@ -655,6 +751,12 @@
             "value" : "Options avancées de recherche"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "उन्नत खोज विकल्प"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -676,7 +778,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Geavanceerde Zoekopties"
+            "value" : "Geavanceerde zoekopties"
           }
         },
         "pl" : {
@@ -701,6 +803,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gelişmiş Bulma Ayarları"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розширені параметри пошуку"
           }
         },
         "zh-Hans" : {
@@ -756,6 +864,12 @@
             "value" : "Options avancées"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "उन्नत विकल्प"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -771,7 +885,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "찾기 옵션"
+            "value" : "고급 옵션"
           }
         },
         "nl" : {
@@ -804,6 +918,12 @@
             "value" : "Gelişmiş seçenekler"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розширені параметри"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -825,12 +945,12 @@
       }
     },
     "Case Sensitive" : {
-      "comment" : "toggle button label",
+      "comment" : "toggle button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rozlišovat velká a malá písmena"
+            "value" : "Rozlišovat velká a malá písmena"
           }
         },
         "de" : {
@@ -857,10 +977,16 @@
             "value" : "Sensible à la casse"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "केस-संवेदी"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Distingue maiuscole/minuscole"
+            "value" : "Distingui maiuscole/minuscole"
           }
         },
         "ja" : {
@@ -890,7 +1016,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Faz distinção entre maiúsculas e minúsculas"
+            "value" : "Distinguir Maiúsculas e Minúsculas"
           }
         },
         "ru" : {
@@ -903,6 +1029,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "BÜYÜK/küçük Harf Duyarlı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Враховувати регістр"
           }
         },
         "zh-Hans" : {
@@ -926,7 +1058,7 @@
       }
     },
     "Clear" : {
-      "comment" : "button label",
+      "comment" : "verb; button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -956,6 +1088,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Effacer"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "साफ़ करें"
           }
         },
         "it" : {
@@ -997,13 +1135,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Отчистить"
+            "value" : "Очистить"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Temizle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Очистити"
           }
         },
         "zh-Hans" : {
@@ -1027,7 +1171,7 @@
       }
     },
     "Clear Recent Replacements" : {
-      "comment" : "menu item label",
+      "comment" : "verb; menu item",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -1057,6 +1201,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Effacer les remplacements récents"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हाल के प्रतिस्थापन साफ़ करें"
           }
         },
         "it" : {
@@ -1098,13 +1248,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Отчистить список недавних замен"
+            "value" : "Очистить список недавних замен"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Son Değişimleri Temizle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Очистити недавні заміни"
           }
         },
         "zh-Hans" : {
@@ -1128,7 +1284,7 @@
       }
     },
     "Clear Recent Searches" : {
-      "comment" : "menu item label",
+      "comment" : "verb; menu item",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -1160,6 +1316,12 @@
             "value" : "Effacer les recherches récentes"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हालिया खोज साफ़ करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1181,7 +1343,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wis recente zoekacties"
+            "value" : "Wis recente zoekopdrachten"
           }
         },
         "pl" : {
@@ -1199,19 +1361,25 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Отчистить список недавних поисков"
+            "value" : "Очистить недавние поиски"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Son Aramaları Temizle"
+            "value" : "Son Aramaları Sil"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Очистити список останніх запитів"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "清除最近查找"
+            "value" : "清除最近搜索"
           }
         },
         "zh-Hant" : {
@@ -1229,7 +1397,7 @@
       }
     },
     "Close" : {
-      "comment" : "button label",
+      "comment" : "verb; button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -1259,6 +1427,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fermer"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "बंद करें"
           }
         },
         "it" : {
@@ -1309,6 +1483,12 @@
             "value" : "Kapat"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закрити"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1341,7 +1521,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suchergebnis schließen."
+            "value" : "Schließe das Suchergebnis."
           }
         },
         "en-GB" : {
@@ -1359,7 +1539,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ferme les résultats de recherche."
+            "value" : "Fermez les résultats de recherche."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खोज परिणाम बंद करें।"
           }
         },
         "it" : {
@@ -1389,7 +1575,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zamknij wynik wyszukiwania."
+            "value" : "Zamknij wynik wyszukiwania"
           }
         },
         "pt" : {
@@ -1407,7 +1593,13 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bulma sonucunu kapatın."
+            "value" : "Bulma sonucunu kapat"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Закрити результати пошуку."
           }
         },
         "zh-Hans" : {
@@ -1463,10 +1655,16 @@
             "value" : "Rechercher"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ढूँढें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cerca"
+            "value" : "Trova"
           }
         },
         "ja" : {
@@ -1511,6 +1709,12 @@
             "value" : "Bul"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пошук"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1537,7 +1741,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hledat a nahradit"
+            "value" : "Hledat a nahradit"
           }
         },
         "de" : {
@@ -1561,7 +1765,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rechercher et Remplacer"
+            "value" : "Rechercher et remplacer"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खोजें और बदलें"
           }
         },
         "it" : {
@@ -1585,7 +1795,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zoek en verplaats"
+            "value" : "Zoek en vervang"
           }
         },
         "pl" : {
@@ -1612,6 +1822,12 @@
             "value" : "Bul ve Değiştir"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пошук і заміна"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1633,7 +1849,7 @@
       }
     },
     "Find All" : {
-      "comment" : "button label",
+      "comment" : "verb; button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -1656,7 +1872,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Encuentra todo"
+            "value" : "Buscar todo"
           }
         },
         "fr" : {
@@ -1665,10 +1881,16 @@
             "value" : "Tout rechercher"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सभी ढूँढें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cerca tutto"
+            "value" : "Trova tutto"
           }
         },
         "ja" : {
@@ -1713,6 +1935,12 @@
             "value" : "Tümünü Bul"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Знайти все"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1739,13 +1967,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vyhledat a vypsat všechny shody."
+            "value" : "Vyhledat a vypsat všechny shody."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suchen und alle Treffer auflisten."
+            "value" : "Suche alle Treffer und liste sie auf."
           }
         },
         "en-GB" : {
@@ -1757,13 +1985,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Busca y enumera todas las coincidencias."
+            "value" : "Buscar y enumerar todas las coincidencias."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Liste tous les résultats."
+            "value" : "Recherchez et listez toutes les correspondances."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सभी मिलान ढूँढें और सूचीबद्ध करें।"
           }
         },
         "it" : {
@@ -1793,7 +2027,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Znajdź i wyświetl listę wszystkich dopasowań."
+            "value" : "Znajdź i wyświetl listę wszystkich dopasowań"
           }
         },
         "pt" : {
@@ -1811,7 +2045,13 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tüm eşleşmeleri bulun ve listeleyin."
+            "value" : "Tüm eşleşmeleri bul ve listele"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Знайти та показати всі збіги."
           }
         },
         "zh-Hans" : {
@@ -1835,7 +2075,7 @@
       }
     },
     "Find Next" : {
-      "comment" : "button label",
+      "comment" : "verb; button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -1867,10 +2107,16 @@
             "value" : "Rechercher le suivant"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अगला ढूँढें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cerca successivo"
+            "value" : "Trova successivo"
           }
         },
         "ja" : {
@@ -1915,6 +2161,12 @@
             "value" : "Sonrakini Bul"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Знайти наступне"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1947,7 +2199,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nächsten Treffer suchen."
+            "value" : "Suche den nächsten Treffer."
           }
         },
         "en-GB" : {
@@ -1959,19 +2211,25 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Encuentra la siguiente coincidencia."
+            "value" : "Buscar la siguiente coincidencia."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Recherche le résultat suivant."
+            "value" : "Recherchez le résultat suivant."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अगला मिलान ढूँढें।"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cerca l’occorrenza successiva."
+            "value" : "Trova l’occorrenza successiva."
           }
         },
         "ja" : {
@@ -1995,7 +2253,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Znajdź następne dopasowanie."
+            "value" : "Znajdź następne dopasowanie"
           }
         },
         "pt" : {
@@ -2013,7 +2271,13 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bir sonraki eşleşmeyi bulun."
+            "value" : "Sonraki eşleşmeyi bul"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Знайти наступний збіг."
           }
         },
         "zh-Hans" : {
@@ -2037,7 +2301,7 @@
       }
     },
     "Find Previous" : {
-      "comment" : "button label",
+      "comment" : "verb; button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -2069,10 +2333,16 @@
             "value" : "Rechercher le précédent"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पिछला ढूँढें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cerca precedente"
+            "value" : "Trova precedente"
           }
         },
         "ja" : {
@@ -2117,6 +2387,12 @@
             "value" : "Öncekini Bul"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Знайти попереднє"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2149,7 +2425,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vorherigen Treffer suchen."
+            "value" : "Suche den vorherigen Treffer."
           }
         },
         "en-GB" : {
@@ -2161,19 +2437,25 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Encuentra la coincidencia anterior."
+            "value" : "Buscar la coincidencia anterior."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Recherche le résultat précédent."
+            "value" : "Recherchez le résultat précédent."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पिछला मिलान ढूँढें।"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cerca l’occorrenza precedente."
+            "value" : "Trova l’occorrenza precedente."
           }
         },
         "ja" : {
@@ -2197,7 +2479,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Znajdź poprzednie dopasowanie."
+            "value" : "Znajdź poprzednie dopasowanie"
           }
         },
         "pt" : {
@@ -2215,7 +2497,13 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bir önceki eşleşmeyi bulun."
+            "value" : "Önceki eşleşmeyi bul"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Знайти попередній збіг."
           }
         },
         "zh-Hans" : {
@@ -2239,12 +2527,12 @@
       }
     },
     "Find Result" : {
-      "comment" : "accessibility label",
+      "comment" : "accessibility label for the view displaying find result",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Najít výsledek"
+            "value" : "Výsledek hledání"
           }
         },
         "de" : {
@@ -2262,13 +2550,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buscar resultado"
+            "value" : "Resultado de búsqueda"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Résultat de la recherche"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खोज परिणाम"
           }
         },
         "it" : {
@@ -2292,7 +2586,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zoek resultaat"
+            "value" : "Zoekresultaat"
           }
         },
         "pl" : {
@@ -2317,6 +2611,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Arama Sonucu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Результат пошуку"
           }
         },
         "zh-Hans" : {
@@ -2371,6 +2671,12 @@
             "value" : "Rechercher du texte : %@"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खोज टेक्स्ट : %@"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2419,6 +2725,12 @@
             "value" : "Metni Ara: %@"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Текст пошуку: %@"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2446,7 +2758,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nalezeno %1$lld z %2$lld."
+            "value" : "Shoda %1$lld z %2$lld."
           }
         },
         "de" : {
@@ -2479,6 +2791,12 @@
             "value" : "Résultat %1$lld sur %2$lld."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%2$lld में से मिलान संख्या %1$lld."
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2488,13 +2806,13 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "\\(%2$lld)件中\\(%1$lld)件目"
+            "value" : "%2$lld件中%1$lld件目"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%2$lld개 중 %1$lld번째 일치 항목."
+            "value" : "%2$lld개 중 %1$lld번째 일치 항목"
           }
         },
         "nl" : {
@@ -2518,13 +2836,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Найдено %1$lld из %2$lld."
+            "value" : "Совпадение %1$lld из %2$lld."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$lld / %2$lld eşleşme bulundu."
+            "value" : "Toplam %2$lld eşleşme. Geçerli eşleşme: %1$lld."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Збіг %1$lld із %2$lld."
           }
         },
         "zh-Hans" : {
@@ -2664,13 +2988,13 @@
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld resultado"
+                  "value" : "%lld resultado"
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld resultados"
+                  "value" : "%lld resultados"
                 }
               },
               "zero" : {
@@ -2701,6 +3025,30 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "Introuvable"
+                }
+              }
+            }
+          }
+        },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld मिलान"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld मिलान"
+                }
+              },
+              "zero" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "नहीं मिला"
                 }
               }
             }
@@ -2856,7 +3204,7 @@
               "few" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld совпадений"
+                  "value" : "%lld совпадения"
                 }
               },
               "many" : {
@@ -2892,19 +3240,55 @@
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld eşleşen"
+                  "value" : "%lld eşleşme"
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld eşleşen"
+                  "value" : "%lld eşleşme"
                 }
               },
               "zero" : {
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "Bulunamadı"
+                }
+              }
+            }
+          }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld збіги"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld збігів"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld збіг"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld збігів"
+                }
+              },
+              "zero" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Не знайдено"
                 }
               }
             }
@@ -3006,6 +3390,12 @@
             "value" : "%1$lld/%2$lld"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld/%2$lld"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3049,6 +3439,12 @@
           }
         },
         "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%1$lld/%2$lld"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%1$lld/%2$lld"
@@ -3215,6 +3611,30 @@
             }
           }
         },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld बदला गया"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld बदले गए"
+                }
+              },
+              "zero" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "नहीं बदला"
+                }
+              }
+            }
+          }
+        },
         "it" : {
           "variations" : {
             "plural" : {
@@ -3365,7 +3785,7 @@
               "few" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld замен"
+                  "value" : "%lld замены"
                 }
               },
               "many" : {
@@ -3414,6 +3834,42 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "Değiştirilmedi"
+                }
+              }
+            }
+          }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Замінено %lld"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Замінено %lld"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Замінено %lld"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Замінено %lld"
+                }
+              },
+              "zero" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Не замінено"
                 }
               }
             }
@@ -3476,7 +3932,7 @@
       }
     },
     "FindSettings.findIsWrap.label" : {
-      "comment" : "toggle button label",
+      "comment" : "verb; checkbox; continue searching from the other end of the document",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "cs" : {
@@ -3488,7 +3944,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gesamtes Dokument"
+            "value" : "Zyklisch suchen"
           }
         },
         "en" : {
@@ -3506,19 +3962,25 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Envolver la búsqueda"
+            "value" : "Continuar la búsqueda desde el otro extremo"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Revenir en haut à la fin du document"
+            "value" : "Reprendre la recherche à l’autre extrémité du document"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "दस्तावेज़ के दूसरे सिरे से खोज जारी रखें"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Manda a capo la ricerca"
+            "value" : "Continua dall’inizio"
           }
         },
         "ja" : {
@@ -3530,13 +3992,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "끝까지 도달하면 처음부터 순환하여 검색합니다"
+            "value" : "순환 검색"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zoek van het begin"
+            "value" : "Zoek verder vanaf het andere uiteinde"
           }
         },
         "pl" : {
@@ -3548,13 +4010,13 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Voltar busca ao início"
+            "value" : "Voltar ao Início"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Обернуть поиск вокруг"
+            "value" : "Продолжать поиск с начала или конца документа"
           }
         },
         "tr" : {
@@ -3563,34 +4025,40 @@
             "value" : "Aramayı başa sar"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зациклювати пошук"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "折行查找"
+            "value" : "循环查找"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "折行尋找"
+            "value" : "循環尋找"
           }
         },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "換行搜尋"
+            "value" : "循環搜尋"
           }
         }
       }
     },
     "FindSettings.findSearchesIncrementally.label" : {
-      "comment" : "toggle button label",
+      "comment" : "verb; checkbox",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hledat postupně"
+            "value" : "Hledat během psaní"
           }
         },
         "de" : {
@@ -3623,10 +4091,16 @@
             "value" : "Recherche incrémentale"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "वृद्धिशील खोज करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ricerca incrementale"
+            "value" : "Cerca in modo incrementale"
           }
         },
         "ja" : {
@@ -3656,19 +4130,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buscar incrementalmente"
+            "value" : "Buscar Incrementalmente"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Искать по возрастанию"
+            "value" : "Искать по мере ввода"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aşamalı olarak ara"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Інкрементний пошук"
           }
         },
         "zh-Hans" : {
@@ -3704,31 +4184,37 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suche ignoriert diakritische Zeichen (z. B. ö = o)."
+            "value" : "Suche ignoriert diakritische Zeichen (z. B. ö = o)."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Search ignores diacritical marks (e.g., ö = o)."
+            "value" : "Search ignores diacritical marks (for example, ö = o)."
           }
         },
         "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Search ignores diacritical marks (e.g. ö = o)."
+            "value" : "Search ignores diacritical marks (for example, ö = o)."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La búsqueda ignora las marcas diacríticas (P. ej., ö = o)."
+            "value" : "La búsqueda ignora las marcas diacríticas (por ejemplo, ö = o)."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La recherche ignore les signes diacritiques (Ex. : ö = o)"
+            "value" : "La recherche ignore les signes diacritiques (par exemple, ö = o)."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खोज विशेषक चिह्नों को अनदेखा करती है (उदाहरण के लिए, ö = o)।"
           }
         },
         "it" : {
@@ -3740,25 +4226,25 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "文字の発音記号を無視して検索（例: ö = o）"
+            "value" : "発音区別記号を無視して検索（例: ö = o）"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "표음 부호를 무시하고 비교합니다. (예시: ö = o)"
+            "value" : "표음 부호를 무시하고 검색합니다(예: ö = o)."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zoeken negeert diakritische tekens (bijv. ö = o)."
+            "value" : "Zoeken negeert diakritische tekens (bijvoorbeeld ö = o)."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wyszukiwanie ignoruje znaki diakrytyczne (np. ą = a)."
+            "value" : "Ignoruj znaki diakrytyczne podczas wyszukiwania (np. ą = a)"
           }
         },
         "pt" : {
@@ -3770,13 +4256,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Поиск игнорирует диакритические знаки (ö = o)"
+            "value" : "При поиске игнорируются диакритические знаки (например, ö = o)."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Arama, aksan imlerini yok sayar (örn. ö = o)."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пошук ігнорує діакритичні знаки (наприклад, ö = o)."
           }
         },
         "zh-Hans" : {
@@ -3800,7 +4292,7 @@
       }
     },
     "FindSettings.ignoresDiacriticMarks.label" : {
-      "comment" : "toggle button label",
+      "comment" : "verb; checkbox",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "cs" : {
@@ -3839,6 +4331,12 @@
             "value" : "Ignorer les signes diacritiques"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "विशेषक चिह्न अनदेखा करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3872,7 +4370,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ignorar sinais diacríticos"
+            "value" : "Ignorar Sinais Diacríticos"
           }
         },
         "ru" : {
@@ -3885,6 +4383,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aksan imlerini yok say"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ігнорувати діакритичні знаки"
           }
         },
         "zh-Hans" : {
@@ -3920,31 +4424,37 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suche ignoriert den Unterschied der Breite der Zeichenform (z. B. ａ = a)."
+            "value" : "Suche ignoriert den Unterschied der Breite der Zeichenform (z. B. ａ = a)."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Search ignores width differences in character forms (e.g., ａ = a)."
+            "value" : "Search ignores width differences in character forms (for example, ａ = a)."
           }
         },
         "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Search ignores width differences in character forms (e.g. ａ = a)."
+            "value" : "Search ignores width differences in character forms (for example, ａ = a)."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La búsqueda ignora las diferencias de ancho en las formas de caracteres (P. ej., ａ = a)."
+            "value" : "La búsqueda ignora las diferencias de ancho en las formas de caracteres (por ejemplo, ａ = a)."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ignore les différences de forme des caractères (Ex. : ａ = a)."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खोज वर्ण रूपों में चौड़ाई के अंतर को अनदेखा करती है (उदाहरण के लिए, ａ = a)।"
           }
         },
         "it" : {
@@ -3962,19 +4472,19 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "전각 및 반각 문자의 너비 차이를 무시하고 비교합니다. (예시: ａ = a)"
+            "value" : "전각 및 반각 문자의 너비 차이를 무시하고 검색합니다(예: ａ = a)."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zoeken negeert breedteverschillen in tekenvormen (bijv. ａ = a)."
+            "value" : "Zoeken negeert breedteverschillen in tekenvormen (bijvoorbeeld ａ = a)."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wyszukiwanie ignoruje różnice szerokości w formach znaków (np. ａ = a)."
+            "value" : "Ignoruj różnice szerokości znaków podczas wyszukiwania (np. ａ = a)"
           }
         },
         "pt" : {
@@ -3986,13 +4496,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Поиск игрорирует различие форм знаков (ａ = a)."
+            "value" : "При поиске игнорируются различия в ширине символов (например, ａ = a)."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Arama, karakter biçimlerindeki genişlik ayrımlarını yok sayar (örn. ａ = a)."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пошук ігнорує відмінності в ширині символів (наприклад, ａ = a)."
           }
         },
         "zh-Hans" : {
@@ -4016,7 +4532,7 @@
       }
     },
     "FindSettings.ignoresWidth.label" : {
-      "comment" : "toggle button label",
+      "comment" : "verb; checkbox",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "cs" : {
@@ -4055,6 +4571,12 @@
             "value" : "Ignorer les différences de chasse"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "चौड़ाई के अंतर अनदेखा करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4088,19 +4610,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ignorar diferenças de largura"
+            "value" : "Ignorar Diferenças de Largura"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Игнорировать различие форм знаков"
+            "value" : "Игнорировать различия в ширине символов"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Genişlik ayrımlarını yok say"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ігнорувати відмінності в ширині"
           }
         },
         "zh-Hans" : {
@@ -4136,7 +4664,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Äquivalenz Zeichen für Zeichen vergleichen."
+            "value" : "Exakte Übereinstimmung Zeichen für Zeichen."
           }
         },
         "en" : {
@@ -4160,7 +4688,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Exacte équivalence caractère par caractère"
+            "value" : "Équivalence exacte caractère par caractère."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सटीक वर्ण-दर-वर्ण समानता।"
           }
         },
         "it" : {
@@ -4172,7 +4706,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "バイトレベルで完全一致する文字列にのみ一致"
+            "value" : "文字単位で厳密に比較"
           }
         },
         "ko" : {
@@ -4190,7 +4724,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dokładna równoważność poszczególnych znaków."
+            "value" : "Dopasowuj dokładnie znak po znaku"
           }
         },
         "pt" : {
@@ -4202,13 +4736,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Поиск использует максимальное сравнение символов"
+            "value" : "Точное посимвольное сравнение."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tam karakter eşliği."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Точна посимвольна відповідність."
           }
         },
         "zh-Hans" : {
@@ -4232,7 +4772,7 @@
       }
     },
     "FindSettings.isLiteralSearch.label" : {
-      "comment" : "toggle button label",
+      "comment" : "verb; checkbox",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "cs" : {
@@ -4271,6 +4811,12 @@
             "value" : "Équivalence stricte des caractères"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "वर्णों में कड़ाई से भेद करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4292,7 +4838,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Onderscheid karakters strikt"
+            "value" : "Onderscheid tekens strikt"
           }
         },
         "pl" : {
@@ -4304,19 +4850,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Distinguir caracteres estritamente"
+            "value" : "Distinguir Caracteres Estritamente"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Строгий поиск"
+            "value" : "Строго различать символы"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Karakterleri açıkça birbirinden ayırt et"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Суворо розрізняти символи"
           }
         },
         "zh-Hans" : {
@@ -4346,13 +4898,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Povolit ^ a $ tak, aby odpovídaly začátku a konci řádků (víceřádkové)."
+            "value" : "Povolit ^ a $ tak, aby odpovídaly začátku a konci řádků (víceřádkové)."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "^ und $ auch mit Zeilenanfang und -ende übereinstimmen lassen (multiline)."
+            "value" : "Die Anker ^ und $ stimmen auch mit Zeilenanfang und -ende überein (multiline)."
           }
         },
         "en" : {
@@ -4379,10 +4931,16 @@
             "value" : "Les caractères ^ et $ capturent respectivement le début et la fin d’une ligne."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "^ और $ को पंक्तियों के आरंभ और अंत से मिलान करने दें (मल्टीलाइन)।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Consente a ^ e $ di valere come inizio e fine riga (multipla)."
+            "value" : "Consenti a ^ e $ di corrispondere all’inizio e alla fine delle righe (multiline)."
           }
         },
         "ja" : {
@@ -4394,7 +4952,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "^와 $가 여러 줄에 걸쳐 일치할 수 있게 허용합니다."
+            "value" : "^와 $가 각 줄의 시작과 끝에 일치하도록 합니다(여러 줄 모드)."
           }
         },
         "nl" : {
@@ -4406,25 +4964,31 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pozwól by ^ i $ dopasowały do początku i końca wiersza (tryb wielowierszowy)."
+            "value" : "Dopasowuj ^ i $ do początku i końca wierszy (tryb wielowierszowy)"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Permite que ^ e $ correspondam ao início e final de linhas (multilinha)."
+            "value" : "Permita que ^ e $ correspondam ao início e ao final das linhas (multilinha)."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Разрешить символы строк (^ и $) для определения конца строки в мультстрочном поиске"
+            "value" : "Символы ^ и $ соответствуют началу и концу строк (многострочный режим)."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "^ ve $ karakterlerinin satır başı ve sonu ile eşleşmesine izin ver (çoklu satır)."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дозволити ^ і $ відповідати початку та кінцю рядків (багаторядковий режим)."
           }
         },
         "zh-Hans" : {
@@ -4448,7 +5012,7 @@
       }
     },
     "FindSettings.isMultiline.label" : {
-      "comment" : "toggle button label",
+      "comment" : "checkbox",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "cs" : {
@@ -4478,7 +5042,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Los anclajes coinciden con las líneas"
+            "value" : "Anclas por línea"
           }
         },
         "fr" : {
@@ -4487,10 +5051,16 @@
             "value" : "Ancrage de ligne"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "एंकर पंक्तियों से मिलान करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le Anchors valgono come righe"
+            "value" : "Applica le ancore alle righe"
           }
         },
         "ja" : {
@@ -4502,13 +5072,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "앵커를 여러 줄에 일치"
+            "value" : "앵커를 각 줄의 시작과 끝에 일치"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ankers passen bij lijnen"
+            "value" : "Ankers gelden per regel"
           }
         },
         "pl" : {
@@ -4520,19 +5090,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Âncoras correspondem a linhas"
+            "value" : "Âncoras Correspondem aos Limites das Linhas"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Разрешить символы строк"
+            "value" : "Якоря соответствуют границам строк"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Çapalar satırlarla eşleşir"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Якорі відповідають рядкам"
           }
         },
         "zh-Hans" : {
@@ -4568,7 +5144,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ". mit jedem Zeichen einschließlich Zeilenumbrüchen übereinstimmen lassen (singleline)."
+            "value" : "Der Punkt (.) stimmt mit jedem Zeichen einschließlich Zeilenumbrüchen überein (singleline)."
           }
         },
         "en" : {
@@ -4595,10 +5171,16 @@
             "value" : "Le caractère . capture n’importe quel caractère, y compris les caractères de nouvelle ligne."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : ". को किसी भी वर्ण से मिलान करने दें, न्यूलाइन वर्णों सहित (सिंगललाइन)।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Consente al . di equivalere a qualunque carattere, anche quello di nuova riga (singola)."
+            "value" : "Consenti a . di corrispondere a qualsiasi carattere, inclusi i caratteri di nuova riga (singleline)."
           }
         },
         "ja" : {
@@ -4616,31 +5198,37 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Laat . overeenkomen met elk teken, inclusief tekens met nieuwe regels (singleline)."
+            "value" : "Laat . overeenkomen met elk teken, inclusief regeleindetekens (singleline)."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pozwól by . dopasowała do dowolnego znaku, włączając znaki nowego wiersza (tryb jednowierszowy)."
+            "value" : "Dopasowuj . do dowolnego znaku, także znaku nowego wiersza (tryb jednowierszowy)"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Permite que . corresponda a qualquer caractere, incluindo caracteres de nova linha (linha única)."
+            "value" : "Permita que . corresponda a qualquer caractere, incluindo caracteres de nova linha (linha única)."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Разрешить точке так-же соответствовать разделителю строки"
+            "value" : "Точка соответствует любому символу, включая символы новой строки (однострочный режим)."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : ". karakterinin yenisatır karakteri dahil herhangi bir karakteri eşlemesine izin ver (tek satır)."
+            "value" : ". karakterinin yeni satır karakteri dahil herhangi bir karakteri eşlemesine izin ver (tek satır)."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дозволити . відповідати будь-якому символу, включно із символами нового рядка (однорядковий режим)."
           }
         },
         "zh-Hans" : {
@@ -4664,7 +5252,7 @@
       }
     },
     "FindSettings.isSingleLine.label" : {
-      "comment" : "toggle button label",
+      "comment" : "checkbox",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "cs" : {
@@ -4703,10 +5291,16 @@
             "value" : "Le point capture les séparateurs de ligne"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डॉट पंक्ति विभाजकों से मिलान करे"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Il punto vale come separatore di riga"
+            "value" : "Il punto corrisponde anche ai separatori di riga"
           }
         },
         "ja" : {
@@ -4724,7 +5318,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Punt komt overeen met lijnscheidingstekens"
+            "value" : "Punt komt overeen met regeleindetekens"
           }
         },
         "pl" : {
@@ -4736,7 +5330,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ponto corresponde a separadores de linha"
+            "value" : "Ponto Corresponde Também a Separadores de Linha"
           }
         },
         "ru" : {
@@ -4749,6 +5343,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nokta, satır ayırıcıları ile eşleşir"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Крапка відповідає роздільникам рядків"
           }
         },
         "zh-Hans" : {
@@ -4784,7 +5384,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Suchergebnisse auf ganze Wörter beschränken."
+            "value" : "Beschränkt die Suchergebnisse auf ganze Wörter."
           }
         },
         "en" : {
@@ -4808,7 +5408,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Restreint les résultats de recherche aux mots entiers."
+            "value" : "Limitez les résultats de recherche aux mots entiers."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खोज परिणामों को पूर्ण शब्दों तक सीमित करें।"
           }
         },
         "it" : {
@@ -4838,7 +5444,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ogranicz wyniki wyszukiwania do pełnych wyrazów."
+            "value" : "Ogranicz wyniki wyszukiwania do pełnych wyrazów"
           }
         },
         "pt" : {
@@ -4850,13 +5456,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Поиск ищет совпадения только целиком слова"
+            "value" : "Поиск только целых слов."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Arama sonuçlarını tam sonuçlarla sınırla."
+            "value" : "Arama sonuçlarını tam sözcüklerle sınırla"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Обмежити результати пошуку цілими словами."
           }
         },
         "zh-Hans" : {
@@ -4880,7 +5492,7 @@
       }
     },
     "FindSettings.matchesFullWord.label" : {
-      "comment" : "toggle button label",
+      "comment" : "verb; checkbox",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "cs" : {
@@ -4910,13 +5522,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Empareja solo la palabra completa"
+            "value" : "Buscar solo palabras completas"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rechercher seulement les mots entiers"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "केवल पूर्ण शब्दों से मिलान करें"
           }
         },
         "it" : {
@@ -4952,19 +5570,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Apenas ocorrências de palavras completas"
+            "value" : "Apenas Ocorrências de Palavras Completas"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Искать целиком слова"
+            "value" : "Искать только целые слова"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yalnızca tam sözcükleri eşleştir"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шукати лише цілі слова"
           }
         },
         "zh-Hans" : {
@@ -4994,13 +5618,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Odstranit zpětná lomítka před metaznaky v nahrazovacím textu."
+            "value" : "Převést escape sekvence se zpětným lomítkem v nahrazovacím textu na odpovídající znaky."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Backslash im Ersetzungstext als Maskierungszeichen interpretieren."
+            "value" : "Entfernt mit Backslash eingeleitete Escape-Sequenzen im Ersetzungstext."
           }
         },
         "en" : {
@@ -5017,20 +5641,26 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Desescapar metacaracteres con barra invertida en el texto de reemplazo."
+            "state" : "translated",
+            "value" : "Eliminar los escapes de los metacaracteres precedidos por una barra invertida en el texto de reemplazo."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dé-échappe les métacaractères précédés d’un antislash dans le texte de remplacement."
+            "value" : "Annulez l’échappement des métacaractères précédés d’un antislash dans le texte de remplacement."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "प्रतिस्थापन टेक्स्ट में बैकस्लैश के साथ मेटावर्णों को अनएस्केप करें।"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nel testo sostitutivo, decodifica i meta-caratteri con la barra inversa."
+            "value" : "Interpreta le sequenze di escape con barra inversa nel testo sostitutivo."
           }
         },
         "ja" : {
@@ -5042,7 +5672,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "대치 텍스트에서 메타 문자를 백슬래시로 이스케이프 해제합니다."
+            "value" : "대치 텍스트에서 역슬래시로 이스케이프된 메타 문자를 원래 문자로 변환합니다."
           }
         },
         "nl" : {
@@ -5054,25 +5684,31 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Konwertuj sekwencje ucieczki metaznaków z ukośnikiem wstecznym w tekście zastępującym."
+            "value" : "Konwertuj sekwencje ucieczki metaznaków z ukośnikiem wstecznym w tekście zastępującym"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Desescapar metacaracteres com barra invertida no texto de substituição."
+            "value" : "Interprete as sequências de escape com barra invertida no texto de substituição."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Поиск текста игнорирует символы экранирования спецсимволов"
+            "value" : "Убрать экранирование метасимволов с обратной косой чертой в тексте замены."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "İkâme metinde meta karakterlerin kaçırılmasını ters eğik çizgi ile kaldırın."
+            "value" : "Değişim metninde ters eğik çizgiyle belirtilen kaçış dizilerini çöz"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Інтерпретувати метасимволи з оберненою скісною рискою в тексті заміни."
           }
         },
         "zh-Hans" : {
@@ -5096,19 +5732,19 @@
       }
     },
     "FindSettings.unescapesReplacementString.label" : {
-      "comment" : "toggle button label",
+      "comment" : "verb; checkbox",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Odescapovat nahrazovací text"
+            "value" : "Zrušit escapování nahrazovacího textu"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ersetzungstext maskieren"
+            "value" : "Escape-Sequenzen im Ersetzungstext entfernen"
           }
         },
         "en" : {
@@ -5125,20 +5761,26 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Desescapar texto de reemplazo"
+            "state" : "translated",
+            "value" : "Eliminar escapes del texto de reemplazo"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dé-échapper le texte de remplacement"
+            "value" : "Annuler l’échappement du texte de remplacement"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "प्रतिस्थापन टेक्स्ट अनएस्केप करें"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Testo di sostituzione Unescape"
+            "value" : "Interpreta gli escape nel testo sostitutivo"
           }
         },
         "ja" : {
@@ -5150,7 +5792,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "대치 텍스트 이스케이프 해제"
+            "value" : "대치 텍스트 이스케이프 취소"
           }
         },
         "nl" : {
@@ -5168,19 +5810,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Texto de substituição sem caractere de escape"
+            "value" : "Remover Escape do Texto de Substituição"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Игнорировать знаки экранирования"
+            "value" : "Убрать экранирование в тексте замены"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "İkâme metnin kaçırılmasını kaldır"
+            "value" : "Değişim metnindeki kaçışları kaldır"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Інтерпретувати керівні послідовності в тексті заміни"
           }
         },
         "zh-Hans" : {
@@ -5210,13 +5858,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Určit hranice slov pomocí kódování Unicode TR#29."
+            "value" : "Určit hranice slov podle Unicode TR#29"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unicode TR#29 verwenden, um Wortgrenzen zu spezifizieren."
+            "value" : "Legt Wortgrenzen nach Unicode TR#29 fest."
           }
         },
         "en" : {
@@ -5234,7 +5882,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usa Unicode TR#29 para especificar los límites de las palabras"
+            "value" : "Usar Unicode TR#29 para especificar los límites de las palabras."
           }
         },
         "fr" : {
@@ -5243,10 +5891,16 @@
             "value" : "Utilise Unicode TR#29 pour spécifier les extrémités de mots."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शब्द सीमाएँ निर्दिष्ट करने के लिए Unicode TR#29 उपयोग करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usa Unicode TR#29 per specificare i Word Boundary"
+            "value" : "Usa Unicode TR#29 per definire i limiti di parola"
           }
         },
         "ja" : {
@@ -5264,7 +5918,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gebruik Unicode TR#29 om woordgrenzen op te geven"
+            "value" : "Gebruik Unicode TR#29 om woordgrenzen op te geven."
           }
         },
         "pl" : {
@@ -5276,19 +5930,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usa o TR#29 do Unicode para especificar os limites de palavras"
+            "value" : "Use o TR#29 do Unicode para definir os limites de palavras"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Использовать Unicode TR#29 для обозначения слов"
+            "value" : "Использовать Unicode TR#29 для определения границ слов"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sözcük sınırlarını belirtmek için Unicode TR#29 kullan"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використовувати Unicode TR#29 для визначення меж слів"
           }
         },
         "zh-Hans" : {
@@ -5312,7 +5972,7 @@
       }
     },
     "FindSettings.usesUnicodeBoundaries.label" : {
-      "comment" : "toggle button label",
+      "comment" : "verb; checkbox",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "cs" : {
@@ -5342,7 +6002,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usa los límites de las palabras Unicode"
+            "value" : "Usar los límites de palabras de Unicode"
           }
         },
         "fr" : {
@@ -5351,10 +6011,16 @@
             "value" : "Utiliser les limites de mots Unicode"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Unicode शब्द सीमाएँ उपयोग करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usa Word Boundary Unicode"
+            "value" : "Usa i limiti di parola Unicode"
           }
         },
         "ja" : {
@@ -5384,19 +6050,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usar limite de palavra Unicode"
+            "value" : "Usar Limites de Palavra Unicode"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Используйте Unicode для слов"
+            "value" : "Использовать границы слов Unicode"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Unicode sözcük sınırlarını kullan"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використовувати межі слів Unicode"
           }
         },
         "zh-Hans" : {
@@ -5428,25 +6100,25 @@
               "few" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "V „%2$@“ nalezeny %1$lld shody."
+                  "value" : "V „%2$@“ nalezeny %1$lld shody."
                 }
               },
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "V „%2$@“ nalezena jedna shoda."
+                  "value" : "V „%2$@“ nalezena jedna shoda."
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "V „%2$@“ nalezeno %1$lld shod."
+                  "value" : "V „%2$@“ nalezeno %1$lld shod."
                 }
               },
               "zero" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "V „%2$@“ nenalezeny žádné shody."
+                  "value" : "V „%2$@“ nenalezeny žádné shody."
                 }
               }
             }
@@ -5529,20 +6201,20 @@
             "plural" : {
               "one" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "Se encontró una coincidencia en “%2$@”."
+                  "state" : "translated",
+                  "value" : "Se ha encontrado una coincidencia en “%2$@”."
                 }
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "Se encontraron %1$lld coincidencias en “%2$@”."
+                  "state" : "translated",
+                  "value" : "Se han encontrado %1$lld coincidencias en “%2$@”."
                 }
               },
               "zero" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "No se encontraron coincidencias en “%2$@”."
+                  "state" : "translated",
+                  "value" : "No se han encontrado coincidencias en “%2$@”."
                 }
               }
             }
@@ -5572,6 +6244,30 @@
             }
           }
         },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "“%2$@” में एक मिलान मिला।"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "“%2$@” में %1$lld मिलान मिले।"
+                }
+              },
+              "zero" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "“%2$@” में कोई मिलान नहीं मिला।"
+                }
+              }
+            }
+          }
+        },
         "it" : {
           "variations" : {
             "plural" : {
@@ -5584,7 +6280,7 @@
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "Trovati %1$lld risultati in %2$@”."
+                  "value" : "Trovati %1$lld risultati in “%2$@”."
                 }
               },
               "zero" : {
@@ -5638,19 +6334,19 @@
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "Eén overeenkomst gevonden in ‘%2$@’."
+                  "value" : "Eén overeenkomst gevonden in '%2$@'."
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%1$lld overeenkomsten gevonden in ‘%2$@’."
+                  "value" : "%1$lld overeenkomsten gevonden in '%2$@'."
                 }
               },
               "zero" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "Geen overeenkomsten gevonden in ‘%2$@’."
+                  "value" : "Geen overeenkomsten gevonden in '%2$@'."
                 }
               }
             }
@@ -5698,19 +6394,19 @@
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "Encontrada uma correspondência em “%2$@.”"
+                  "value" : "Encontrada uma correspondência em “%2$@”."
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "Encontradas %1$lld correspondências em “%2$@.”"
+                  "value" : "Encontradas %1$lld correspondências em “%2$@”."
                 }
               },
               "zero" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "Nenhuma correspondência encontrada em “%2$@.”"
+                  "value" : "Nenhuma correspondência encontrada em “%2$@”."
                 }
               }
             }
@@ -5722,31 +6418,31 @@
               "few" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "Найдено %1$lld совпадений в “%2$@.”"
+                  "value" : "Найдено %1$lld совпадения в «%2$@»."
                 }
               },
               "many" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "Найдено %1$lld совпадений в “%2$@.”"
+                  "value" : "Найдено %1$lld совпадений в «%2$@»."
                 }
               },
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "Найдено одно значение “%2$@.”"
+                  "value" : "Найдено %1$lld совпадение в «%2$@»."
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "Найдено %1$lld совпадений в “%2$@.”"
+                  "value" : "Найдено %1$lld совпадений в «%2$@»."
                 }
               },
               "zero" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "Ничего не найдено по “%2$@.”"
+                  "value" : "Совпадений в «%2$@» не найдено."
                 }
               }
             }
@@ -5765,6 +6461,42 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "“%2$@” içinde hiçbir eşleşme bulunamadı."
+                }
+              }
+            }
+          }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "У «%2$@» знайдено %1$lld збіги."
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "У «%2$@» знайдено %1$lld збігів."
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "У «%2$@» знайдено %1$lld збіг."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "У «%2$@» знайдено %1$lld збігів."
+                }
+              },
+              "zero" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "У «%2$@» збігів не знайдено."
                 }
               }
             }
@@ -5827,7 +6559,7 @@
       }
     },
     "Highlight All" : {
-      "comment" : "button label",
+      "comment" : "verb; menu item",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -5857,6 +6589,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tout surligner"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सभी हाइलाइट करें"
           }
         },
         "it" : {
@@ -5907,6 +6645,12 @@
             "value" : "Tümünü Vurgula"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Підсвітити все"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5928,7 +6672,7 @@
       }
     },
     "Ignore Case" : {
-      "comment" : "toggle button label",
+      "comment" : "toggle button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -5958,6 +6702,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ignorer la casse"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "केस अनदेखा करें"
           }
         },
         "it" : {
@@ -6008,6 +6758,12 @@
             "value" : "BÜYÜK/küçük Harf Duyarsız"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ігнорувати регістр"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6029,7 +6785,7 @@
       }
     },
     "In Selection" : {
-      "comment" : "toggle button label",
+      "comment" : "toggle button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -6059,6 +6815,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dans la sélection"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "चयन में"
           }
         },
         "it" : {
@@ -6106,7 +6868,13 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Seçimde Bul"
+            "value" : "Seçimde"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "У вибраному"
           }
         },
         "zh-Hans" : {
@@ -6162,6 +6930,12 @@
             "value" : "Ligne"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पंक्ति"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6208,6 +6982,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Satır"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рядок"
           }
         },
         "zh-Hans" : {
@@ -6263,6 +7043,12 @@
             "value" : "Texte correspondant"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मिलान किया टेक्स्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6309,6 +7095,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Eşleşen Metin"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Знайдений текст"
           }
         },
         "zh-Hans" : {
@@ -6364,6 +7156,12 @@
             "value" : "Remplacements récents"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हाल के प्रतिस्थापन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6410,6 +7208,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Son Değişimler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Недавні заміни"
           }
         },
         "zh-Hans" : {
@@ -6465,6 +7269,12 @@
             "value" : "Recherches récentes"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हालिया खोज"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6486,7 +7296,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Recente zoekacties"
+            "value" : "Recente zoekopdrachten"
           }
         },
         "pl" : {
@@ -6513,16 +7323,22 @@
             "value" : "Son Aramalar"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Останні запити"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "最近的搜索"
+            "value" : "最近搜索"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "最近的搜尋"
+            "value" : "最近的搜尋項目"
           }
         },
         "zh-HK" : {
@@ -6534,7 +7350,7 @@
       }
     },
     "Regular Expression" : {
-      "comment" : "toggle button label",
+      "comment" : "toggle button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -6566,6 +7382,12 @@
             "value" : "Expression régulière"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रेगुलर एक्सप्रेशन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6581,13 +7403,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "정규표현식"
+            "value" : "정규 표현식"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reguliere Expressie"
+            "value" : "Reguliere expressie"
           }
         },
         "pl" : {
@@ -6612,6 +7434,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Düzenli İfade"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Регулярний вираз"
           }
         },
         "zh-Hans" : {
@@ -6667,6 +7495,12 @@
             "value" : "Expressions régulières"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रेगुलर एक्सप्रेशन खोज"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6682,7 +7516,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "정규표현식 찾기"
+            "value" : "정규 표현식 찾기"
           }
         },
         "nl" : {
@@ -6715,6 +7549,12 @@
             "value" : "Düzenli İfade Araması"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пошук за регулярним виразом"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6736,7 +7576,7 @@
       }
     },
     "Replace" : {
-      "comment" : "button label",
+      "comment" : "verb; button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -6768,6 +7608,12 @@
             "value" : "Remplacer"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "बदलें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6789,7 +7635,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verplaats"
+            "value" : "Vervang"
           }
         },
         "pl" : {
@@ -6816,6 +7662,12 @@
             "value" : "Değiştir"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Замінити"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6837,7 +7689,7 @@
       }
     },
     "Replace All" : {
-      "comment" : "button label",
+      "comment" : "verb; button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -6869,6 +7721,12 @@
             "value" : "Tout remplacer"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सभी बदलें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -6896,7 +7754,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zastąp wszystkie"
+            "value" : "Zastąp wszystko"
           }
         },
         "pt" : {
@@ -6915,6 +7773,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tümünü Değiştir"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Замінити всі"
           }
         },
         "zh-Hans" : {
@@ -6943,13 +7807,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nahradit všechny shody nahrazovaným textem."
+            "value" : "Nahradit všechny shody nahrazovacím textem."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Alle Treffer durch den Ersetzungstext ersetzen."
+            "value" : "Ersetze alle Treffer durch den Ersetzungstext."
           }
         },
         "en-GB" : {
@@ -6961,13 +7825,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reemplaza todas las coincidencias con el texto de reemplazo."
+            "value" : "Reemplazar todas las coincidencias con el texto de reemplazo."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Remplace tous les résultats par le texte de remplacement."
+            "value" : "Remplacez tous les résultats par le texte de remplacement."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सभी मिलानों को प्रतिस्थापन टेक्स्ट से बदलें।"
           }
         },
         "it" : {
@@ -6997,7 +7867,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zamień wszystkie dopasowania na tekst zastępujący."
+            "value" : "Zastąp wszystkie dopasowania tekstem zastępującym"
           }
         },
         "pt" : {
@@ -7009,13 +7879,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Заменить все выделенным текстом"
+            "value" : "Заменить все совпадения текстом замены."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tüm eşleşmeleri değişim metniyle değiştir."
+            "value" : "Tüm eşleşmeleri değişim metniyle değiştir"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Замінити всі збіги текстом заміни."
           }
         },
         "zh-Hans" : {
@@ -7044,13 +7920,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nahradit aktuální výběr nahrazovacím textem a poté najít další shodu."
+            "value" : "Nahradit aktuální výběr nahrazovacím textem a poté najít další shodu."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Die aktuelle Auswahl durch den Ersetzungstext ersetzen, dann den nächsten Treffer suchen."
+            "value" : "Ersetze die aktuelle Auswahl durch den Ersetzungstext und suche dann den nächsten Treffer."
           }
         },
         "en-GB" : {
@@ -7062,13 +7938,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Reemplace la selección actual con el texto de reemplazo y, a continuación, busque la siguiente coincidencia."
+            "value" : "Reemplazar la selección actual con el texto de reemplazo y, a continuación, buscar la siguiente coincidencia."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Remplacer la sélection avec le texte de remplacement, puis chercher la prochaine correspondance."
+            "value" : "Remplacez la sélection par le texte de remplacement, puis recherchez la correspondance suivante."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मौजूदा चयन को प्रतिस्थापन टेक्स्ट से बदलें, फिर अगला मिलान ढूँढें।"
           }
         },
         "it" : {
@@ -7098,7 +7980,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zastąp bieżące zaznaczenie tekstem zastępującym, a następnie znajdź kolejne dopasowanie."
+            "value" : "Zastąp bieżące zaznaczenie tekstem zastępującym, a następnie znajdź kolejne dopasowanie"
           }
         },
         "pt" : {
@@ -7110,13 +7992,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Заменить все выделенным текстом и продолжить поиск"
+            "value" : "Заменить текущее выделение текстом замены, затем найти следующее совпадение."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Geçerli seçimi değiştirilecek metinle değiştir, sonrasında bir sonraki eşleşmeyi bul."
+            "value" : "Geçerli seçimi değişim metniyle değiştir, ardından sonraki eşleşmeyi bul"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Замінити поточний вибраний текст текстом заміни, а потім знайти наступний збіг."
           }
         },
         "zh-Hans" : {
@@ -7169,7 +8057,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Remplacer"
+            "value" : "Remplacer par"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इससे बदलें"
           }
         },
         "it" : {
@@ -7220,6 +8114,12 @@
             "value" : "Değiştir"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Замінити на"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7241,12 +8141,12 @@
       }
     },
     "Search wrapped." : {
-      "comment" : "Announced when the search restarted from the beginning.",
+      "comment" : "Announced when the search wraps to the other end of the document.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hledání dokončeno."
+            "value" : "Hledání pokračuje od opačného konce dokumentu."
           }
         },
         "de" : {
@@ -7264,19 +8164,25 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Búsqueda terminada."
+            "value" : "La búsqueda ha continuado desde el otro extremo."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Retour au début."
+            "value" : "Recherche reprise à l’autre extrémité du document."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खोज दस्तावेज़ के दूसरे सिरे से जारी है।"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ricerca dall’inizio"
+            "value" : "Ricerca ripresa dall’estremità opposta."
           }
         },
         "ja" : {
@@ -7288,13 +8194,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "검색 순환됨."
+            "value" : "검색이 순환되었습니다."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zoek teruggelopen."
+            "value" : "Zoeken hervat aan het andere uiteinde."
           }
         },
         "pl" : {
@@ -7306,19 +8212,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A busca voltou ao início."
+            "value" : "A busca recomeçou na outra extremidade do documento."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Начать поиск с начала"
+            "value" : "Поиск продолжен с противоположного края документа."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Arama baştan sürüyor"
+            "value" : "Arama belgenin diğer ucundan sürüyor."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пошук продовжено з іншого кінця документа."
           }
         },
         "zh-Hans" : {
@@ -7346,7 +8258,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hledání v textu…"
+            "value" : "Hledání v textu…"
           }
         },
         "de" : {
@@ -7373,10 +8285,16 @@
             "value" : "Recherche en cours…"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "टेक्स्ट में खोजा जा रहा है…"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ricerca nel testo…"
+            "value" : "Cerco nel testo…"
           }
         },
         "ja" : {
@@ -7400,25 +8318,31 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wyszukiwanie w tekście…"
+            "value" : "Szukam w tekście…"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Buscando no texto…"
+            "value" : "Busca no texto…"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ищем"
+            "value" : "Поиск в тексте…"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Metinde aranıyor…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пошук у тексті…"
           }
         },
         "zh-Hans" : {
@@ -7442,7 +8366,7 @@
       }
     },
     "Select All" : {
-      "comment" : "button label",
+      "comment" : "verb; menu item",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -7472,6 +8396,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tout sélectionner"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सभी चुनें"
           }
         },
         "it" : {
@@ -7522,6 +8452,12 @@
             "value" : "Tümünü Seç"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибрати все"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7548,13 +8484,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chcete-li při hledání ignorovat velikost písmen vyberte tuto volbu."
+            "value" : "Chcete-li při hledání ignorovat velikost písmen, vyberte tuto volbu."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Auswählen, um beim Suchen Groß-/Kleinschreibung zu ignorieren."
+            "value" : "Wähle diese Option, um beim Suchen Groß-/Kleinschreibung zu ignorieren."
           }
         },
         "en-GB" : {
@@ -7566,7 +8502,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Seleccione para ignorar las mayúsculas y minúsculas del carácter en la búsqueda."
+            "value" : "Seleccionar para ignorar las mayúsculas y minúsculas en la búsqueda."
           }
         },
         "fr" : {
@@ -7575,10 +8511,16 @@
             "value" : "Sélectionnez pour ignorer la casse lors de la recherche."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खोज में वर्ण केस अनदेखा करने के लिए चुनें।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selezionare per ignorare maiuscole/minuscole nella ricerca."
+            "value" : "Seleziona per ignorare maiuscole/minuscole nella ricerca."
           }
         },
         "ja" : {
@@ -7590,7 +8532,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "대소문자를 무시하고 검색하려면 선택하십시오."
+            "value" : "대소문자를 구분하지 않고 검색합니다."
           }
         },
         "nl" : {
@@ -7602,7 +8544,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wybierz, aby ignorować wielkość liter podczas wyszukiwania."
+            "value" : "Zaznacz, aby ignorować wielkość liter podczas wyszukiwania"
           }
         },
         "pt" : {
@@ -7614,13 +8556,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Выберите, чтобы игнорировать регистр символа при поиске."
+            "value" : "Установите флажок, чтобы игнорировать регистр символов при поиске."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Seçimde BÜYÜK/küçük harf yok saymak için seçin."
+            "value" : "Aramada büyük-küçük harf farkını yok say"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увімкніть, щоб ігнорувати регістр символів під час пошуку."
           }
         },
         "zh-Hans" : {
@@ -7649,13 +8597,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chcete-li hledat text pouze ve výběru vyberte tuto volbu."
+            "value" : "Chcete-li hledat text pouze ve výběru, vyberte tuto volbu."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Auswählen, um nur in der Auswahl zu suchen."
+            "value" : "Wähle diese Option, um nur in der Auswahl zu suchen."
           }
         },
         "en-GB" : {
@@ -7667,7 +8615,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Seleccione para buscar texto solo de la selección."
+            "value" : "Seleccionar para buscar texto solo en la selección."
           }
         },
         "fr" : {
@@ -7676,10 +8624,16 @@
             "value" : "Sélectionnez pour rechercher le texte seulement dans la sélection."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "केवल चयन से टेक्स्ट खोजने के लिए चुनें।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selezionare per ricercare testo solo all’interno della selezione."
+            "value" : "Seleziona per cercare il testo solo nella selezione."
           }
         },
         "ja" : {
@@ -7691,7 +8645,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "선택된 부분에서만 텍스트를 검색하려면 선택하십시오."
+            "value" : "선택한 부분에서만 텍스트를 검색합니다."
           }
         },
         "nl" : {
@@ -7703,7 +8657,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wybierz, aby wyszukiwać tekst tylko z zaznaczenia."
+            "value" : "Zaznacz, aby wyszukiwać tekst tylko w zaznaczeniu"
           }
         },
         "pt" : {
@@ -7715,13 +8669,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Выберите для поиска текста только из выделения."
+            "value" : "Установите флажок, чтобы искать только в выделенном тексте."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Yalnızca seçimden arama yapmak için seçin."
+            "value" : "Yalnızca seçili metinde ara"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увімкніть, щоб шукати лише у вибраному тексті."
           }
         },
         "zh-Hans" : {
@@ -7750,13 +8710,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Chcete-li hledat pomocí regulárního výrazu vyberte tuto volbu."
+            "value" : "Chcete-li hledat pomocí regulárního výrazu, vyberte tuto volbu."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Auswählen, um mit regulärem Ausdruck zu suchen."
+            "value" : "Wähle diese Option, um mit einem regulären Ausdruck zu suchen."
           }
         },
         "en-GB" : {
@@ -7768,7 +8728,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Seleccione para buscar con expresión regular."
+            "value" : "Seleccionar para buscar con expresiones regulares."
           }
         },
         "fr" : {
@@ -7777,10 +8737,16 @@
             "value" : "Sélectionnez pour rechercher à l’aide d’une expression régulière."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रेगुलर एक्सप्रेशन से खोजने के लिए चुनें।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selezionare per ricercare con le espressioni regolari."
+            "value" : "Seleziona per cercare con le espressioni regolari."
           }
         },
         "ja" : {
@@ -7792,7 +8758,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "정규표현식으로 검색하려면 선택하십시오."
+            "value" : "정규 표현식으로 검색합니다."
           }
         },
         "nl" : {
@@ -7804,7 +8770,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wybierz, aby szukać z użyciem wyrażenia regularnego."
+            "value" : "Zaznacz, aby szukać z użyciem wyrażenia regularnego"
           }
         },
         "pt" : {
@@ -7816,13 +8782,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Выберите для поиска с регулярным выражением."
+            "value" : "Установите флажок, чтобы использовать регулярные выражения при поиске."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Düzenli ifade kullanarak aramak için seçin."
+            "value" : "Düzenli ifadeyle ara"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увімкніть, щоб шукати за регулярним виразом."
           }
         },
         "zh-Hans" : {
@@ -7878,6 +8850,12 @@
             "value" : "Afficher les options avancées"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "उन्नत विकल्प दिखाएँ"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -7893,7 +8871,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "고급 옵션 보기"
+            "value" : "고급 옵션을 표시합니다."
           }
         },
         "nl" : {
@@ -7911,7 +8889,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mostrar opções avançadas"
+            "value" : "Mostrar Opções Avançadas"
           }
         },
         "ru" : {
@@ -7924,6 +8902,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gelişmiş seçenekleri göster"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показати розширені параметри"
           }
         },
         "zh-Hans" : {
@@ -7958,7 +8942,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kurzreferenz des regulären Ausdrucks anzeigen."
+            "value" : "Zeige die Kurzreferenz für die Syntax regulärer Ausdrücke an."
           }
         },
         "en-GB" : {
@@ -7976,7 +8960,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Affiche un pense-bête pour les expressions régulières"
+            "value" : "Affichez un pense-bête pour les expressions régulières."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रेगुलर एक्सप्रेशन सिंटैक्स के लिए त्वरित संदर्भ दिखाएँ।"
           }
         },
         "it" : {
@@ -7994,7 +8984,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "정규표현식에 대한 참고 자료를 표시합니다."
+            "value" : "정규 표현식 구문에 대한 참고 자료를 표시합니다."
           }
         },
         "nl" : {
@@ -8006,7 +8996,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pokaż skrócony podręcznik składni wyrażeń regularnych."
+            "value" : "Pokaż skrócony podręcznik składni wyrażeń regularnych"
           }
         },
         "pt" : {
@@ -8018,13 +9008,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Показать краткую ссылку на синтаксис регулярных выражений."
+            "value" : "Показать краткий справочник по синтаксису регулярных выражений."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Düzenli ifade sözdizimi için hızlı başvuruyu göster."
+            "value" : "Düzenli ifade sözdizimi için hızlı başvuruyu göster"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показати коротку довідку із синтаксису регулярних виразів."
           }
         },
         "zh-Hans" : {
@@ -8052,7 +9048,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Texty"
+            "value" : "Text"
           }
         },
         "de" : {
@@ -8077,6 +9073,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Texte"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "टेक्स्ट"
           }
         },
         "it" : {
@@ -8125,6 +9127,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Metin"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Текст"
           }
         },
         "zh-Hans" : {
@@ -8186,10 +9194,16 @@
             "value" : "Texte de recherche vide"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खाली खोज टेक्स्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nessun testo trovato"
+            "value" : "Testo da cercare vuoto"
           }
         },
         "ja" : {
@@ -8207,7 +9221,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Leeg zoektekst"
+            "value" : "Lege zoektekst"
           }
         },
         "pl" : {
@@ -8234,6 +9248,12 @@
             "value" : "Bulunacak metin boş"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Порожній текст пошуку"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8249,7 +9269,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "清空尋找的文字"
+            "value" : "未輸入尋找文字"
           }
         }
       }
@@ -8284,19 +9304,25 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Introduzca texto a encontrar."
+            "value" : "Introduce el texto que quieras buscar."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Texte à rechercher"
+            "value" : "Saisissez le texte à rechercher."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ढूँढने के लिए टेक्स्ट दर्ज करें।"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inserire il testo da cercare."
+            "value" : "Inserisci il testo da cercare."
           }
         },
         "ja" : {
@@ -8332,13 +9358,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Введите текст для поиска"
+            "value" : "Введите текст для поиска."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bulunacak girdi metni"
+            "value" : "Aranacak metni girin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введіть текст для пошуку."
           }
         },
         "zh-Hans" : {
@@ -8400,10 +9432,16 @@
             "value" : "L’option « Dans la sélection » est activée mais il n’y a aucune sélection."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“चयन में” विकल्प चयनित है, हालाँकि कुछ भी चयनित नहीं है।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "L’opzione “nella selezione” è attiva, ma non è stato selezionato nulla."
+            "value" : "L’opzione “In selezione” è attiva, ma non è stato selezionato nulla."
           }
         },
         "ja" : {
@@ -8415,55 +9453,61 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "‘선택된 부분에서’ 옵션이 켜져있지만, 선택된 부분이 없습니다."
+            "value" : "‘선택된 부분에서’ 옵션이 켜져 있지만 선택된 부분이 없습니다."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "De optie ‘in selectie’ is geselecteerd, hoewel er niets is geselecteerd."
+            "value" : "De optie 'in selectie' is geselecteerd, hoewel er niets is geselecteerd."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wybrano opcję „w zaznaczeniu”, chociaż nic nie jest zaznaczone."
+            "value" : "Opcja W zaznaczeniu jest włączona, chociaż nic nie jest zaznaczone."
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A opção “Na Seleção” está habilitada, porém nada está selecionado."
+            "value" : "A opção “Na Seleção” está ativada, mas nada está selecionado."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Опция поиска «в найденом тексте» выбрана, но ничего не выбрали в документе."
+            "value" : "Параметр «В выделенном» включен, но в документе ничего не выделено."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“seçimde” seçeneği etkin; ancak hiçbir şey seçilmemiş."
+            "value" : "“Seçimde” seçeneği etkin; ancak hiçbir şey seçilmemiş."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Параметр «У вибраному» увімкнено, але нічого не вибрано."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "“在选择中搜索”选项被激活，但是并没有内容被选中。"
+            "value" : "“所选内容”选项被激活，但是并没有内容被选中。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "「在選擇中搜索」選項被激活，但是並沒有內容被選中。"
+            "value" : "「所選範圍」選項被激活，但是並沒有內容被選中。"
           }
         },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "已選擇「所選範圍」選項，但沒有可供選擇的項目。"
+            "value" : "已選擇「所選範圍」選項，但未選擇任何文字。"
           }
         }
       }
@@ -8474,7 +9518,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vyberte v dokumentu rozsah hledání, nebo zrušte volbu „Ve výběru“."
+            "value" : "Vyberte v dokumentu rozsah hledání, nebo zrušte volbu „Ve výběru“."
           }
         },
         "de" : {
@@ -8507,10 +9551,16 @@
             "value" : "Sélectionnez le périmètre de recherche dans le document ou désactivez l’option « dans la sélection »."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "दस्तावेज़ में खोज दायरा चुनें या “चयन में” विकल्प अचयनित करें।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selezionare l’ambito di ricerca nel documento, oppure disabilitare l’opzione “nella selezione”."
+            "value" : "Seleziona l’ambito di ricerca nel documento oppure disattiva l’opzione “In selezione”."
           }
         },
         "ja" : {
@@ -8528,13 +9578,13 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selecteer het zoekbereik in het document of schakel de optie ‘in selectie’ uit."
+            "value" : "Selecteer het zoekbereik in het document of schakel de optie 'in selectie' uit."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wybierz zakres wyszukiwania w dokumencie lub wyłącz opcję „w zaznaczeniu”."
+            "value" : "Zaznacz zakres wyszukiwania w dokumencie lub wyłącz opcję W zaznaczeniu."
           }
         },
         "pt" : {
@@ -8546,25 +9596,31 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Выберите область поиска в документе или выключите опцию поиска «в найденом тексте»."
+            "value" : "Выделите область поиска в документе или отключите параметр «В выделенном»."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Belgedeki arama kapsamını seçin veya “seçimde” seçeneğinin işaretini kaldırın."
+            "value" : "Belgedeki arama kapsamını seçin veya “Seçimde” seçeneğinin işaretini kaldırın."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть область пошуку в документі або вимкніть параметр «У вибраному»."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "在文稿中选择搜索范围，或者禁用“在选择中搜索”。"
+            "value" : "在文稿中选择搜索范围，或者禁用“所选内容”。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "在文件中選擇搜索範圍，或者禁用「在選擇中搜索」。"
+            "value" : "在文件中選擇搜索範圍，或者禁用「所選範圍」。"
           }
         },
         "zh-HK" : {
@@ -8614,6 +9670,12 @@
             "value" : "Expression régulière invalide"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अमान्य रेगुलर एक्सप्रेशन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8629,7 +9691,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "유효하지 않은 정규표현식"
+            "value" : "유효하지 않은 정규 표현식"
           }
         },
         "nl" : {
@@ -8662,6 +9724,12 @@
             "value" : "Geçersiz düzenli ifade"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Некоректний регулярний вираз"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8688,7 +9756,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hledání v textu"
+            "value" : "Hledání v textu"
           }
         },
         "de" : {
@@ -8713,6 +9781,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recherche textuelle"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पाठ्य खोज"
           }
         },
         "it" : {
@@ -8763,6 +9837,12 @@
             "value" : "Metin Araması"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Текстовий пошук"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -8795,7 +9875,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ersetzungstext für den gefundenen Suchbegriff eingeben."
+            "value" : "Gib den Ersetzungstext für den gefundenen Text ein."
           }
         },
         "en-GB" : {
@@ -8816,10 +9896,16 @@
             "value" : "Tapez le texte qui doit remplacer les résultats de recherche."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मिले हुए टेक्स्ट को बदलने के लिए टेक्स्ट टाइप करें।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inserire il testo con cui sostituire il testo trovato."
+            "value" : "Inserisci il testo con cui sostituire il testo trovato."
           }
         },
         "ja" : {
@@ -8831,7 +9917,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "찾은 텍스트를 대치할 텍스트를 입력하십시오."
+            "value" : "찾은 텍스트를 대치할 텍스트를 입력합니다."
           }
         },
         "nl" : {
@@ -8843,7 +9929,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wprowadź tekst, który ma zastąpić tekst znaleziony."
+            "value" : "Wprowadź tekst, który ma zastąpić tekst znaleziony"
           }
         },
         "pt" : {
@@ -8855,13 +9941,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Введите текст которым хотите заменить найденое."
+            "value" : "Введите текст для замены найденного текста."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bulunan metni değiştirecek metni girin."
+            "value" : "Bulunan metnin yerine kullanılacak metni gir"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введіть текст, яким потрібно замінити знайдений."
           }
         },
         "zh-Hans" : {
@@ -8908,7 +10000,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Escriba el texto para buscar."
+            "value" : "Escribir el texto que se desea buscar."
           }
         },
         "fr" : {
@@ -8917,10 +10009,16 @@
             "value" : "Tapez le texte à rechercher."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "खोजने के लिए टेक्स्ट टाइप करें।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inserire il testo da cercare."
+            "value" : "Inserisci il testo da cercare."
           }
         },
         "ja" : {
@@ -8932,7 +10030,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "검색할 텍스트를 입력하십시오."
+            "value" : "검색할 텍스트를 입력합니다."
           }
         },
         "nl" : {
@@ -8944,7 +10042,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wprowadź tekst do znalezienia."
+            "value" : "Wprowadź tekst do znalezienia"
           }
         },
         "pt" : {
@@ -8962,7 +10060,13 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aranacak metni girin."
+            "value" : "Aranacak metni gir"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введіть текст для пошуку."
           }
         },
         "zh-Hans" : {

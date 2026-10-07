@@ -1,13 +1,51 @@
 # Change Log
 
-7.1.1 (unreleased)
+7.2.0 (unreleased)
 --------------------------
+
+### New Features
+
+- Support editing remote files with `rmate` over SSH port forwarding, enabled in Integration settings.
+
 
 ### Improvements
 
-- Improve the External Editor button in the file preview view.
-- [trivial] Tweak the appearance of the Import/Export Settings windows.
+- Move donations to the CotEditor project from a settings pane to a separate window, accessible from the CotEditor menu.
+- Add an Integration pane to the settings window for managing integration with external tools.
+
+
+### Fixes
+
+- Fix an issue where new windows did not inherit the last resized window size when the window size was set to Auto.
+
+
+
+7.1.1 (2026-10-03)
+--------------------------
+
+### New Features
+
+- Add the Ukrainian localization (thanks to Yaroslav Savchenko!).
+- Add the Hindi localization (thanks to Prajwal Raj!).
+
+
+### Improvements
+
+- Improve the “Open with External Editor” button in the file preview view.
+- Update tree-sitter-php.
+- Update tree-sitter-sql.
+- [trivial] Tweak the appearance of the “Import Settings” and “Export Settings” windows.
+- [trivial] Tweak the layout of the CotEditor section in the print dialog.
+- [trivial] Support keyboard shortcuts using keys that produce multiple characters with a single press.
 - [non-AppStore ver.] Update Sparkle from 2.9.6 to 2.10.0.
+
+
+### Fixes
+
+- Fix an issue where narrow windows with the Syntax toolbar item could cause sustained high CPU usage on macOS 27.
+- Fix an issue where Redo could change line endings in documents with mixed line endings.
+- Fix an issue where Replace All could change line endings outside the matched text in documents with mixed line endings.
+- Fix localizations.
 
 
 

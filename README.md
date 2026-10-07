@@ -5,7 +5,26 @@ CotEditor is a lightweight plain text editor designed for macOS. The project aim
 - __Requirement__: macOS Tahoe 26 or later
 - __Web Site__: <https://coteditor.com>
 - __Mac App Store__: <https://apps.apple.com/app/coteditor/id1024640650>
-- __Languages__: English, Simplified Chinese, Traditional Chinese, Chinese (Hong Kong), Czech, Dutch, English (UK), French, German, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, and Turkish
+- __Languages__: 
+    English,
+    Simplified Chinese,
+    Traditional Chinese,
+    Chinese (Hong Kong),
+    Czech,
+    Dutch,
+    English (UK),
+    French,
+    German,
+    Hindi,
+    Italian,
+    Japanese,
+    Korean,
+    Polish,
+    Portuguese,
+    Russian,
+    Spanish,
+    Ukrainian,
+    and Turkish
 
 ![screenshot](screenshot@2x.png)
 
@@ -74,7 +93,6 @@ For those people who just want to build and play with CotEditor locally.
 1. Open `CotEditor.xcodeproj` in Xcode.
 1. Switch to ad-hoc build mode:
     1. Open `Configurations/CodeSigning.xcconfig`.
-    1. Comment out `#include "CodeSigning-Default.xcconfig"`.
     1. Uncomment `#include "CodeSigning-AdHoc.xcconfig"`.
 1. Build the “CotEditor” scheme.
 

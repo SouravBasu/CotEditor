@@ -1,14 +1,15 @@
 //
-//  Tests.xcconfig
+//  RMateOpenRequest.swift
+//  RMate
 //
 //  CotEditor
 //  https://coteditor.com
 //
-//  Created by Yoshimasa Niwa on 2020-04-07.
+//  Created by 1024jp on 2026-09-28.
 //
 //  ---------------------------------------------------------------------------
 //
-//  © 2020-2024 CotEditor Project
+//  © 2026 1024jp
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -23,11 +24,23 @@
 //  limitations under the License.
 //
 
-// Configuration settings file format documentation can be found at:
-// https://help.apple.com/xcode/#/dev745c5c974
+public import Foundation
 
-// Code signing may need to override any predefined values.
-// Therefore, it should be included at the end.
-#include "CodeSigning.xcconfig"
-
-CODE_SIGN_ENTITLEMENTS =
+/// The content and options of an `rmate` open request.
+public struct RMateOpenRequest: Sendable {
+    
+    public let data: Data
+    public let lineNumber: Int?
+    public let fileType: String?
+    
+    
+    /// Initializes an open request from a message.
+    ///
+    /// - Parameter message: The open message.
+    init(message: RMateMessage) {
+        
+        self.data = message.data
+        self.lineNumber = message.headers["selection"].flatMap(Int.init).flatMap { $0 > 0 ? $0 : nil }
+        self.fileType = message.headers["file-type"]
+    }
+}

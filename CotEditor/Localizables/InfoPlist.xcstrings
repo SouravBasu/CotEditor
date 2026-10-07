@@ -33,6 +33,12 @@
             "value" : "Script AWK"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "AWK स्क्रिप्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -72,13 +78,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "AWK"
+            "value" : "Скрипт AWK"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "AWK betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт AWK"
           }
         },
         "zh-Hans" : {
@@ -106,7 +118,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "BibTeX Bibliografie"
+            "value" : "BibTeX bibliografie"
           }
         },
         "de" : {
@@ -131,6 +143,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bibliographie BibTeX"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "BibTeX ग्रंथसूची"
           }
         },
         "it" : {
@@ -172,13 +190,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "BibTeX"
+            "value" : "Библиография BibTeX"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "BibTeX kaynakça"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бібліографія BibTeX"
           }
         },
         "zh-Hans" : {
@@ -206,7 +230,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "C header"
+            "value" : "Hlavičkový soubor C"
           }
         },
         "de" : {
@@ -230,13 +254,19 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Header C"
+            "value" : "En-tête C"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "C हेडर"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : " Intestazione C"
+            "value" : "Intestazione C"
           }
         },
         "ja" : {
@@ -272,13 +302,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Заголовок C"
+            "value" : "Заголовочный файл C"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "C üstbilgisi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заголовок C"
           }
         },
         "zh-Hans" : {
@@ -333,6 +369,12 @@
             "value" : "Source C"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "C सोर्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -372,13 +414,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Исходник C"
+            "value" : "Исходный код C"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "C kaynağı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вихідний код C"
           }
         },
         "zh-Hans" : {
@@ -433,6 +481,12 @@
             "value" : "Source C#"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "C# सोर्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -472,13 +526,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Исходник C#"
+            "value" : "Исходный код C#"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "C# kaynağı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вихідний код C#"
           }
         },
         "zh-Hans" : {
@@ -506,7 +566,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "C++ header"
+            "value" : "Hlavičkový soubor C++"
           }
         },
         "de" : {
@@ -530,7 +590,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Header C++"
+            "value" : "En-tête C++"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "C++ हेडर"
           }
         },
         "it" : {
@@ -572,13 +638,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Заголовок C++"
+            "value" : "Заголовочный файл C++"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "C++ üstbilgisi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заголовок C++"
           }
         },
         "zh-Hans" : {
@@ -624,13 +696,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "fuente de C++"
+            "value" : "Fuente de C++"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Source C++"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "C++ सोर्स"
           }
         },
         "it" : {
@@ -672,13 +750,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Исходник C++"
+            "value" : "Исходный код C++"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "C++ kaynağı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вихідний код C++"
           }
         },
         "zh-Hans" : {
@@ -733,6 +817,12 @@
             "value" : "Feuille de style CSS"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कैस्केडिंग स्टाइल शीट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -772,13 +862,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CSS"
+            "value" : "Каскадная таблица стилей"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CSS"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Каскадна таблиця стилів CSS"
           }
         },
         "zh-Hans" : {
@@ -938,6 +1034,12 @@
             "value" : "Cot editor"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कॉट एडिटर"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -981,6 +1083,12 @@
           }
         },
         "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Cot editor"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Cot editor"
@@ -1038,6 +1146,12 @@
             "value" : "Configuration"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कॉन्फ़िगरेशन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1053,7 +1167,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Configuration"
+            "value" : "구성"
           }
         },
         "nl" : {
@@ -1086,6 +1200,12 @@
             "value" : "Yapılandırma"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Конфігурація"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1111,7 +1231,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Definice nahrazení CotEditor"
+            "value" : "Definice nahrazení CotEditoru"
           }
         },
         "de" : {
@@ -1136,6 +1256,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Liste de remplacements CotEditor"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor रिप्लेस परिभाषा"
           }
         },
         "it" : {
@@ -1171,7 +1297,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Substituição de definição do CotEditor"
+            "value" : "Definição de Substituição do CotEditor"
           }
         },
         "ru" : {
@@ -1183,7 +1309,13 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor değişiklik tanımı"
+            "value" : "CotEditor Değiştirme Tanımı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Файл замін CotEditor"
           }
         },
         "zh-Hans" : {
@@ -1234,14 +1366,20 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Archive des paramètres CotEditor"
+            "state" : "translated",
+            "value" : "Archive des réglages CotEditor"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor सेटिंग आर्काइव"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Archivio Impostazioni CotEditor"
+            "value" : "Archivio impostazioni CotEditor"
           }
         },
         "ja" : {
@@ -1271,7 +1409,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Arquivo de Configurações do CotEditor"
+            "value" : "Arquivo de Ajustes do CotEditor"
           }
         },
         "ru" : {
@@ -1284,6 +1422,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "CotEditor Ayarları Arşivi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Архів параметрів CotEditor"
           }
         },
         "zh-Hans" : {
@@ -1338,6 +1482,12 @@
             "value" : "Syntaxe CotEditor"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor सिंटैक्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1377,13 +1527,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor Синтаксис"
+            "value" : "Синтаксис CotEditor"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CotEditor Sözdizimi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Синтаксис CotEditor"
           }
         },
         "zh-Hans" : {
@@ -1438,6 +1594,12 @@
             "value" : "Thème CotEditor"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor थीम"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1484,6 +1646,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "CotEditor teması"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тема CotEditor"
           }
         },
         "zh-Hans" : {
@@ -1538,6 +1706,12 @@
             "value" : "Source D"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "D सोर्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1577,13 +1751,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Исходник D"
+            "value" : "Исходный код D"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "D kaynağı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вихідний код D"
           }
         },
         "zh-Hans" : {
@@ -1638,6 +1818,12 @@
             "value" : "Script Dart"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dart स्क्रिप्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1677,13 +1863,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dart"
+            "value" : "Скрипт Dart"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dart betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт Dart"
           }
         },
         "zh-Hans" : {
@@ -1738,6 +1930,12 @@
             "value" : "Diff"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diff"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1781,6 +1979,12 @@
           }
         },
         "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Diff"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Diff"
@@ -1838,6 +2042,12 @@
             "value" : "Source Fortran"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fortran सोर्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1877,13 +2087,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Fortran"
+            "value" : "Исходный код Fortran"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Fortran kaynağı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вихідний код Fortran"
           }
         },
         "zh-Hans" : {
@@ -1938,6 +2154,12 @@
             "value" : "Script Go"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Go स्क्रिप्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1977,13 +2199,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "GO"
+            "value" : "Скрипт Go"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Go betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт Go"
           }
         },
         "zh-Hans" : {
@@ -2038,6 +2266,12 @@
             "value" : "Script Haskell"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Haskell स्क्रिप्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2077,13 +2311,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Haskell"
+            "value" : "Скрипт Haskell"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Haskell betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт Haskell"
           }
         },
         "zh-Hans" : {
@@ -2138,6 +2378,12 @@
             "value" : "Document HTML"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HTML दस्तावेज़"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2177,13 +2423,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "HTML"
+            "value" : "Документ HTML"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "HTML belgesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Документ HTML"
           }
         },
         "zh-Hans" : {
@@ -2238,6 +2490,12 @@
             "value" : "INI"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INI"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2281,6 +2539,12 @@
           }
         },
         "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "INI"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "INI"
@@ -2338,6 +2602,12 @@
             "value" : "Source Java"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Java सोर्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2377,13 +2647,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Java"
+            "value" : "Исходный код Java"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Java kaynağı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вихідний код Java"
           }
         },
         "zh-Hans" : {
@@ -2429,10 +2705,16 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Javascript"
+            "value" : "JavaScript"
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JavaScript"
+          }
+        },
+        "hi" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "JavaScript"
@@ -2459,7 +2741,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Javscript"
+            "value" : "JavaScript"
           }
         },
         "pl" : {
@@ -2481,6 +2763,12 @@
           }
         },
         "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JavaScript"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "JavaScript"
@@ -2538,6 +2826,12 @@
             "value" : "Document JSON"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "JSON दस्तावेज़"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2577,13 +2871,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "JSON"
+            "value" : "Документ JSON"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "JSON belgesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Документ JSON"
           }
         },
         "zh-Hans" : {
@@ -2638,6 +2938,12 @@
             "value" : "Script Julia"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Julia स्क्रिप्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2677,13 +2983,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Julia"
+            "value" : "Скрипт Julia"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Julia betiğe"
+            "value" : "Julia betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт Julia"
           }
         },
         "zh-Hans" : {
@@ -2738,6 +3050,12 @@
             "value" : "Script Kotlin"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kotlin स्क्रिप्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2777,13 +3095,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kotlin"
+            "value" : "Скрипт Kotlin"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kotlin betiğe"
+            "value" : "Kotlin betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт Kotlin"
           }
         },
         "zh-Hans" : {
@@ -2838,6 +3162,12 @@
             "value" : "Script Lisp"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lisp स्क्रिप्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2877,13 +3207,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "LISP"
+            "value" : "Скрипт Lisp"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lisp betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт Lisp"
           }
         },
         "zh-Hans" : {
@@ -2938,6 +3274,12 @@
             "value" : "Script Lua"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Lua स्क्रिप्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2977,13 +3319,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "LUA"
+            "value" : "Скрипт Lua"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Lua betiğe"
+            "value" : "Lua betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт Lua"
           }
         },
         "zh-Hans" : {
@@ -3038,6 +3386,12 @@
             "value" : "Document Markdown"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Markdown दस्तावेज़"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3077,13 +3431,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Markdown"
+            "value" : "Документ Markdown"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Markdown belgesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Документ Markdown"
           }
         },
         "zh-Hans" : {
@@ -3138,6 +3498,12 @@
             "value" : "Script Mojo"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mojo स्क्रिप्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3177,13 +3543,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mojo"
+            "value" : "Скрипт Mojo"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Mojo betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт Mojo"
           }
         },
         "zh-Hans" : {
@@ -3213,7 +3585,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor potřebuje souhlas uživatele k ovládání jiných aplikací pomocí AppleScriptu."
+            "value" : "CotEditor potřebuje souhlas uživatele k ovládání jiných aplikací pomocí AppleScriptu."
           }
         },
         "de" : {
@@ -3237,13 +3609,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor necesita tu aprobación para controlar otras aplicaciones con AppleScript"
+            "value" : "CotEditor necesita tu aprobación para controlar otras aplicaciones con AppleScript."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CotEditor a besoin de votre autorisation pour contrôler les autres applications avec AppleScript."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अन्य एप्लिकेशन को AppleScript से नियंत्रित करने के लिए CotEditor को आपकी स्वीकृति चाहिए।"
           }
         },
         "it" : {
@@ -3279,19 +3657,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "O CotEditor precisa de aprovação do usuário para controlar outros aplicativos via AppleScript."
+            "value" : "O CotEditor precisa da sua aprovação para controlar outros aplicativos via AppleScript."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor необходимо разрешение на использование AppleScript."
+            "value" : "Для управления другими приложениями с помощью AppleScript приложению CotEditor требуется Ваше разрешение."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CotEditor, başka uygulamaları AppleScript ile denetlemek için kullanıcı onayına gereksinim duyuyor."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor потрібен дозвіл на керування іншими програмами за допомогою AppleScript."
           }
         },
         "zh-Hans" : {
@@ -3359,6 +3743,12 @@
             "value" : "Script Perl"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Perl स्क्रिप्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3398,13 +3788,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Perl"
+            "value" : "Скрипт Perl"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Perl betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт Perl"
           }
         },
         "zh-Hans" : {
@@ -3459,6 +3855,12 @@
             "value" : "Script PHP"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "PHP स्क्रिप्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3498,13 +3900,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "PHP"
+            "value" : "Скрипт PHP"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "PHP betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт PHP"
           }
         },
         "zh-Hans" : {
@@ -3532,7 +3940,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Prostý text dokument"
+            "value" : "Prostý textový dokument"
           }
         },
         "de" : {
@@ -3557,6 +3965,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Document format texte"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "प्लेन टेक्स्ट दस्तावेज़"
           }
         },
         "it" : {
@@ -3586,7 +4000,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "dokument tekstowy"
+            "value" : "dokument tekstowy (zwykły)"
           }
         },
         "pt" : {
@@ -3598,13 +4012,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Текстовой документ"
+            "value" : "Документ простого текста"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Düz metin belgesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Документ простого тексту"
           }
         },
         "zh-Hans" : {
@@ -3650,13 +4070,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Script Puthon"
+            "value" : "Script Python"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Script Python"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Python स्क्रिप्ट"
           }
         },
         "it" : {
@@ -3698,13 +4124,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Python"
+            "value" : "Скрипт Python"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Python betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт Python"
           }
         },
         "zh-Hans" : {
@@ -3750,7 +4182,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Documento de texto reestructurado"
+            "value" : "Documento reStructuredText"
           }
         },
         "fr" : {
@@ -3759,10 +4191,16 @@
             "value" : "Document reStructured"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "reStructured Text दस्तावेज़"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Documento di testo riStrutturato"
+            "value" : "Documento reStructuredText"
           }
         },
         "ja" : {
@@ -3798,13 +4236,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Текст в формате reStructured"
+            "value" : "Документ reStructuredText"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "reStructured Text belgesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Документ reStructured Text"
           }
         },
         "zh-Hans" : {
@@ -3859,6 +4303,12 @@
             "value" : "Script Ruby"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ruby स्क्रिप्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3898,13 +4348,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ruby"
+            "value" : "Скрипт Ruby"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ruby betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт Ruby"
           }
         },
         "zh-Hans" : {
@@ -3959,6 +4415,12 @@
             "value" : "Script Rust"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rust स्क्रिप्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3998,13 +4460,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rust"
+            "value" : "Скрипт Rust"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rust betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт Rust"
           }
         },
         "zh-Hans" : {
@@ -4056,7 +4524,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Script Scala"
+            "value" : "Source Scala"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scala सोर्स"
           }
         },
         "it" : {
@@ -4068,7 +4542,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Scalaスクリプト"
+            "value" : "Scalaソース"
           }
         },
         "ko" : {
@@ -4098,13 +4572,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Scala"
+            "value" : "Исходный код Scala"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scala kaynağı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вихідний код Scala"
           }
         },
         "zh-Hans" : {
@@ -4159,6 +4639,12 @@
             "value" : "SVG"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "स्केलेबल वेक्टर ग्राफ़िक्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4198,13 +4684,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SVG"
+            "value" : "Масштабируемая векторная графика"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SVG"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SVG-файл"
           }
         },
         "zh-Hans" : {
@@ -4259,10 +4751,16 @@
             "value" : "Script Scheme"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scheme स्क्रिप्ट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Script Schema"
+            "value" : "Script Scheme"
           }
         },
         "ja" : {
@@ -4298,13 +4796,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Scheme"
+            "value" : "Скрипт Scheme"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Scheme betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт Scheme"
           }
         },
         "zh-Hans" : {
@@ -4356,7 +4860,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Source Shell"
+            "value" : "Script Shell"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शेल स्क्रिप्ट"
           }
         },
         "it" : {
@@ -4398,13 +4908,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Shell"
+            "value" : "Скрипт командной оболочки"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kabuk betiği"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Скрипт Shell"
           }
         },
         "zh-Hans" : {
@@ -4456,7 +4972,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Script SQL"
+            "value" : "Source SQL"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SQL सोर्स"
           }
         },
         "it" : {
@@ -4498,13 +5020,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "SQL"
+            "value" : "Исходный код SQL"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "SQL kaynağı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вихідний код SQL"
           }
         },
         "zh-Hans" : {
@@ -4559,6 +5087,12 @@
             "value" : "Source Swift"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Swift सोर्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4598,13 +5132,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Swift"
+            "value" : "Исходный код Swift"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Swift kaynağı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вихідний код Swift"
           }
         },
         "zh-Hans" : {
@@ -4638,7 +5178,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "TeX-Document"
+            "value" : "TeX-Dokument"
           }
         },
         "en-GB" : {
@@ -4657,6 +5197,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Document TeX"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TeX दस्तावेज़"
           }
         },
         "it" : {
@@ -4698,13 +5244,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "TeX"
+            "value" : "Документ TeX"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "TeX belgesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Документ TeX"
           }
         },
         "zh-Hans" : {
@@ -4750,13 +5302,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dcumento Textile"
+            "value" : "Documento Textile"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Document Textile"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Textile दस्तावेज़"
           }
         },
         "it" : {
@@ -4780,7 +5338,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Textile-dcoument"
+            "value" : "Textile-document"
           }
         },
         "pl" : {
@@ -4798,13 +5356,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Textile"
+            "value" : "Документ Textile"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Textile belgesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Документ Textile"
           }
         },
         "zh-Hans" : {
@@ -4859,6 +5423,12 @@
             "value" : "Document TOML"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "TOML दस्तावेज़"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4898,13 +5468,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "TOML"
+            "value" : "Документ TOML"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "TOML belgesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Документ TOML"
           }
         },
         "zh-Hans" : {
@@ -4959,6 +5535,12 @@
             "value" : "UUID"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UUID"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5002,6 +5584,12 @@
           }
         },
         "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "UUID"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "UUID"
@@ -5059,6 +5647,12 @@
             "value" : "Source Verilog"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Verilog सोर्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5098,13 +5692,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Verilog"
+            "value" : "Исходный код Verilog"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Verilog kaynağı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вихідний код Verilog"
           }
         },
         "zh-Hans" : {
@@ -5159,6 +5759,12 @@
             "value" : "Source VHDL"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "VHDL सोर्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5198,13 +5804,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "VHDL"
+            "value" : "Исходный код VHDL"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "VHDL kaynağı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вихідний код VHDL"
           }
         },
         "zh-Hans" : {
@@ -5259,6 +5871,12 @@
             "value" : "Document XML"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "XML दस्तावेज़"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5298,13 +5916,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "XML"
+            "value" : "Документ XML"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "XML belgesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Документ XML"
           }
         },
         "zh-Hans" : {
@@ -5359,6 +5983,12 @@
             "value" : "Document YAML"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "YAML दस्तावेज़"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -5398,13 +6028,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "YAML"
+            "value" : "Документ YAML"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "YAML belgesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Документ YAML"
           }
         },
         "zh-Hans" : {

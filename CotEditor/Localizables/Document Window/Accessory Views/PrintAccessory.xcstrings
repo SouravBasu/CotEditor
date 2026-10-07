@@ -7,7 +7,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ pt"
+            "value" : "%@ pt"
           }
         },
         "de" : {
@@ -25,10 +25,16 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ pt"
+            "value" : "%@ pt"
           }
         },
         "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ pt"
+          }
+        },
+        "hi" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ pt"
@@ -43,7 +49,7 @@
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@pt"
+            "value" : "%@ pt"
           }
         },
         "ko" : {
@@ -61,7 +67,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ pt"
+            "value" : "%@ pt"
           }
         },
         "pt" : {
@@ -73,13 +79,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ точек"
+            "value" : "%@ пт"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ punto"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ пт"
           }
         },
         "zh-Hans" : {
@@ -141,6 +153,12 @@
             "value" : "Centrer"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मध्य"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -180,13 +198,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Середина"
+            "value" : "По центру"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ortala"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "По центру"
           }
         },
         "zh-Hans" : {
@@ -248,6 +272,12 @@
             "value" : "Aligner à gauche"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "बाईं ओर अलाइन करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -287,13 +317,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Выровнять с лева"
+            "value" : "По левому краю"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sola Hizala"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вирівняти за лівим краєм"
           }
         },
         "zh-Hans" : {
@@ -355,6 +391,12 @@
             "value" : "Aligner à droite"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "दाईं ओर अलाइन करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -394,13 +436,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Выровнять с права"
+            "value" : "По правому краю"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sağa Hizala"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вирівняти за правим краєм"
           }
         },
         "zh-Hans" : {
@@ -453,7 +501,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Noir et Blanc"
+            "value" : "Noir et blanc"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "श्वेत-श्याम"
           }
         },
         "it" : {
@@ -495,13 +549,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Черно-белая"
+            "value" : "Черно-белый"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siyah–Beyaz"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чорно-білий"
           }
         },
         "zh-Hans" : {
@@ -557,6 +617,12 @@
             "value" : "Couleur"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रंग"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -605,6 +671,12 @@
             "value" : "Renk"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Колір"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -649,7 +721,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tamaño letra"
+            "value" : "Tamaño de letra"
           }
         },
         "fr" : {
@@ -658,10 +730,16 @@
             "value" : "Taille de police"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ॉन्ट आकार"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dimensione font"
+            "value" : "Dimensioni font"
           }
         },
         "ja" : {
@@ -704,6 +782,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Font Puntosu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розмір шрифту"
           }
         },
         "zh-Hans" : {
@@ -759,10 +843,16 @@
             "value" : "Pied de page"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ुटर"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pie’ di pagina"
+            "value" : "Piè di pagina"
           }
         },
         "ja" : {
@@ -805,6 +895,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Altbilgi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нижній колонтитул"
           }
         },
         "zh-Hans" : {
@@ -860,6 +956,12 @@
             "value" : "En-tête"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हेडर"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -899,13 +1001,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Заголовок"
+            "value" : "Верхний колонтитул"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Üstbilgi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Верхній колонтитул"
           }
         },
         "zh-Hans" : {
@@ -961,6 +1069,12 @@
             "value" : "Caractères invisibles"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अदृश्य वर्ण"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -982,7 +1096,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Onzichtbaren"
+            "value" : "Onzichtbare tekens"
           }
         },
         "pl" : {
@@ -1007,6 +1121,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Görünmez Karakterler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Невидимі символи"
           }
         },
         "zh-Hans" : {
@@ -1062,6 +1182,12 @@
             "value" : "Numéro de ligne"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पंक्ति संख्या"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1110,6 +1236,12 @@
             "value" : "Satır Numarası"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Номер рядка"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1153,7 +1285,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Encendido"
+            "value" : "Activado"
           }
         },
         "fr" : {
@@ -1162,10 +1294,16 @@
             "value" : "Oui"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "चालू"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Acceso"
+            "value" : "Attivo"
           }
         },
         "ja" : {
@@ -1183,7 +1321,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Op"
+            "value" : "Ingeschakeld"
           }
         },
         "pl" : {
@@ -1208,6 +1346,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Açık"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Увімкнено"
           }
         },
         "zh-Hans" : {
@@ -1263,6 +1407,12 @@
             "value" : "Imprimer l’arrière-plan"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पृष्ठभूमि प्रिंट करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1309,6 +1459,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Arka Planları Yazdır"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Друкувати тло"
           }
         },
         "zh-Hans" : {
@@ -1370,6 +1526,12 @@
             "value" : "Nom du document"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "दस्तावेज़ नाम"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1418,6 +1580,12 @@
             "value" : "Belge Adı"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Назва документа"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1444,7 +1612,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cesta k souboru"
+            "value" : "Cesta k souboru"
           }
         },
         "de" : {
@@ -1475,6 +1643,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Chemin du fichier"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ाइल पथ"
           }
         },
         "it" : {
@@ -1516,13 +1690,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Путь файла"
+            "value" : "Путь к файлу"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Dosya Yolu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шлях до файлу"
           }
         },
         "zh-Hans" : {
@@ -1584,6 +1764,12 @@
             "value" : "Date de dernière modification"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अंतिम संशोधित तिथि"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1630,6 +1816,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Son Değişiklik Tarihi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дата останньої зміни"
           }
         },
         "zh-Hans" : {
@@ -1691,6 +1883,12 @@
             "value" : "Aucun"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कोई नहीं"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1737,6 +1935,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yok"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає"
           }
         },
         "zh-Hans" : {
@@ -1798,6 +2002,12 @@
             "value" : "Numéro de page"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पेज संख्या"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1846,6 +2056,12 @@
             "value" : "Sayfa Numarası"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Номер сторінки"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1867,6 +2083,7 @@
       }
     },
     "PrintInfoType.printDate.label" : {
+      "comment" : "noun; the date the document is printed",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "cs" : {
@@ -1896,13 +2113,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Imprimir fecha"
+            "value" : "Fecha de impresión"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Date d’impression"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "प्रिंट तिथि"
           }
         },
         "it" : {
@@ -1920,7 +2143,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "날짜 프린트"
+            "value" : "프린트 날짜"
           }
         },
         "nl" : {
@@ -1944,13 +2167,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Напечатать дату"
+            "value" : "Дата печати"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yazdırma Tarihi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дата друку"
           }
         },
         "zh-Hans" : {
@@ -2012,6 +2241,12 @@
             "value" : "Nom de la syntaxe"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सिंटैक्स नाम"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2058,6 +2293,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sözdizimi Adı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Назва синтаксису"
           }
         },
         "zh-Hans" : {
@@ -2113,6 +2354,12 @@
             "value" : "Thème"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "थीम"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2159,6 +2406,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tema"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тема"
           }
         },
         "zh-Hans" : {

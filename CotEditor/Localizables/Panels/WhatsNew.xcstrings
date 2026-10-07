@@ -2,6 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Continue" : {
+      "comment" : "verb; button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -31,6 +32,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Continuer"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "जारी रखें"
           }
         },
         "it" : {
@@ -81,6 +88,12 @@
             "value" : "Sürdür"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Продовжити"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -107,7 +120,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "V nastavení režimu si můžete přizpůsobit styl odsazení pro jednotlivé syntaxe."
+            "value" : "V nastavení Režim si můžete přizpůsobit styl odsazení pro jednotlivé syntaxe."
           }
         },
         "de" : {
@@ -125,7 +138,7 @@
         "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Use Mode settings to customize the indentation style for individual syntaxes as you like."
+            "value" : "Use Mode settings to customise the indentation style for individual syntaxes as you like."
           }
         },
         "es" : {
@@ -140,10 +153,16 @@
             "value" : "Utilisez les réglages Mode pour personnaliser le style d’indentation de certaines syntaxes à votre convenance."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अलग-अलग सिंटैक्स के लिए इंडेंटेशन स्टाइल अपनी पसंद के अनुसार कस्टमाइज़ करने के लिए मोड सेटिंग उपयोग करें।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Usa le impostazioni del Modo per personalizzare lo stile di indentazione in base alla sintassi preferita."
+            "value" : "Usa le impostazioni Modalità per personalizzare lo stile di rientro per ogni sintassi."
           }
         },
         "ja" : {
@@ -167,25 +186,31 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Użyj ustawień Trybu by dostosować do własnych upodobań styl wcięć dla poszczególnych składni."
+            "value" : "Użyj ustawień Trybu, by dostosować do własnych upodobań styl wcięć dla poszczególnych składni."
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Use as configurações de Modo para personalizar o estilo de recuo de sintaxes individuais como preferir."
+            "value" : "Use os ajustes de Modo para personalizar o estilo de recuo de cada sintaxe como preferir."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Используйте настройки для стиля отступов под каждый синтаксис по своему усмотрению."
+            "value" : "Используйте настройки режима, чтобы настроить стиль отступов для каждого синтаксиса по своему усмотрению."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mod ayarlarını kullanarak, istediğiniz gibi her bir sözdizimi için girintileme stilini özelleştirebilirsiniz."
+            "value" : "Mod ayarlarını kullanarak istediğiniz gibi her bir sözdizimi için girintileme stilini özelleştirebilirsiniz."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використовуйте параметри режиму, щоб окремо налаштувати стиль відступів для кожного синтаксису."
           }
         },
         "zh-Hans" : {
@@ -197,7 +222,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "使用模式設定，依您的喜好為個別語法自訂縮排樣式。"
+            "value" : "使用模式設定，依你的喜好為個別語法自訂縮排樣式。"
           }
         },
         "zh-HK" : {
@@ -247,10 +272,16 @@
             "value" : "Une indentation adaptée à chaque syntaxe"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हर सिंटैक्स के अनुरूप इंडेंटेशन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Indentazione adatta ad ogni sintassi"
+            "value" : "Rientro adatto a ogni sintassi"
           }
         },
         "ja" : {
@@ -295,6 +326,12 @@
             "value" : "Her bir sözdizimine uyan girintileme"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відступи для кожного синтаксису"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -321,7 +358,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "V macOS 27 získají nepojmenované dokumenty automaticky pracovní název navržený podle svého obsahu."
+            "value" : "V macOS 27 získají nepojmenované dokumenty automaticky pracovní název navržený podle svého obsahu."
           }
         },
         "de" : {
@@ -344,14 +381,20 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "En macOS 27, los documentos sin título reciben automáticamente un nombre provisional sugerido a partir de su contenido."
+            "state" : "translated",
+            "value" : "En macOS 27, los documentos sin título reciben automáticamente un nombre provisional sugerido a partir de su contenido."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Sous macOS 27, les documents sans titre reçoivent automatiquement un nom provisoire suggéré à partir de leur contenu."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macOS 27 पर, शीर्षकहीन दस्तावेज़ों को उनकी सामग्री से सुझाया गया ड्राफ़्ट नाम स्वतः मिल जाता है।"
           }
         },
         "it" : {
@@ -374,8 +417,8 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "In macOS 27 krijgen naamloze documenten automatisch een conceptnaam op basis van hun inhoud."
+            "state" : "translated",
+            "value" : "In macOS 27 krijgen naamloze documenten automatisch een conceptnaam op basis van hun inhoud."
           }
         },
         "pl" : {
@@ -399,7 +442,13 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "macOS 27 ile, başlıksız belgeler kendiliğinden içeriklerinden önerilen bir taslak adı alır."
+            "value" : "macOS 27’de adsız belgeler otomatik olarak içeriklerinden önerilen bir taslak adı alır."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "У macOS 27 документи без назви автоматично отримують чернеткову назву на основі свого вмісту."
           }
         },
         "zh-Hans" : {
@@ -461,6 +510,12 @@
             "value" : "Le document se nomme tout seul"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "दस्तावेज़ को स्वयं नाम रखने दें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -488,7 +543,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pozwól by dokument sam się nazwał"
+            "value" : "Pozwól, by dokument sam się nazwał"
           }
         },
         "pt" : {
@@ -507,6 +562,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Belgelerin kendilerini adlandırmalarına izin verin"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Дозвольте документу назвати себе"
           }
         },
         "zh-Hans" : {
@@ -535,7 +596,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vyhledávejte text napříč soubory v otevřené složce přímo z bočního panelu."
+            "value" : "Vyhledávejte text napříč soubory v otevřené složce přímo z bočního panelu."
           }
         },
         "de" : {
@@ -566,6 +627,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Recherchez du texte dans les fichiers d’un dossier ouvert directement depuis la barre latérale."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "साइडबार से ही खुले फ़ोल्डर की फ़ाइलों में टेक्स्ट खोजें।"
           }
         },
         "it" : {
@@ -614,6 +681,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Açık bir klasördeki dosyalar arasında metin aramayı doğrudan kenar çubuğundan yapabilirsiniz."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шукайте текст у файлах відкритої папки безпосередньо з бічної панелі."
           }
         },
         "zh-Hans" : {
@@ -675,6 +748,12 @@
             "value" : "Trouvez-le dans le dossier"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इसे फ़ोल्डर में ढूँढें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -723,6 +802,12 @@
             "value" : "Klasörlerde bulun"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Знайдіть у папці"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -749,7 +834,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pomocí panelu nástrojů můžete přecházet zpět a vpřed mezi naposledy zobrazenými dokumenty v otevřené složce."
+            "value" : "Pomocí panelu nástrojů můžete přecházet zpět a vpřed mezi naposledy zobrazenými dokumenty v otevřené složce."
           }
         },
         "de" : {
@@ -782,6 +867,12 @@
             "value" : "Utilisez la barre d’outils pour naviguer en arrière et en avant parmi les documents récemment consultés dans un document de dossier."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ोल्डर दस्तावेज़ में हाल में देखे गए दस्तावेज़ों में पीछे और आगे जाने के लिए टूलबार उपयोग करें।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -809,7 +900,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Użyj paska narzędzi by przechodzić wstecz i dalej pomiędzy ostatnio przeglądanymi dokumentami w folderze."
+            "value" : "Użyj paska narzędzi, by przechodzić wstecz i dalej pomiędzy ostatnio przeglądanymi dokumentami w folderze."
           }
         },
         "pt" : {
@@ -828,6 +919,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Klasör içindeki belgelerde yakın zamanda görüntülenen belgeler arasında ileri ve geri gitmek için araç çubuğunu kullanın."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Використовуйте панель інструментів, щоб переходити назад і вперед між нещодавно переглянутими документами в папці."
           }
         },
         "zh-Hans" : {
@@ -856,7 +953,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zpět a vpřed ve složkách"
+            "value" : "Zpět a vpřed ve složkách"
           }
         },
         "de" : {
@@ -889,6 +986,12 @@
             "value" : "Précédent et suivant dans les dossiers"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ोल्डर में पीछे और आगे"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -916,7 +1019,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wróć i przejdź dalej w forderach"
+            "value" : "Wróć i przejdź dalej w folderach"
           }
         },
         "pt" : {
@@ -928,13 +1031,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "История переходов между папками"
+            "value" : "Назад и вперед в папках"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Klasörlerde ileri ve geri gidin"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Назад і вперед у папках"
           }
         },
         "zh-Hans" : {
@@ -963,7 +1072,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor nyní podporuje macOS 27 Golden Gate a přebírá jeho nový vzhled."
+            "value" : "CotEditor nyní podporuje macOS 27 Golden Gate a přebírá jeho nový vzhled."
           }
         },
         "de" : {
@@ -986,14 +1095,20 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "CotEditor ahora es compatible con macOS 27 Golden Gate, con un aspecto renovado para el sistema más reciente."
+            "state" : "translated",
+            "value" : "CotEditor ahora es compatible con macOS 27 Golden Gate, con un aspecto renovado para el sistema más reciente."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "CotEditor prend désormais en charge macOS 27 Golden Gate, avec une apparence actualisée pour le tout dernier système."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor अब macOS 27 Golden Gate का समर्थन करता है, जिसमें नवीनतम सिस्टम के लिए ताज़ा रूप शामिल है।"
           }
         },
         "it" : {
@@ -1016,8 +1131,8 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "CotEditor ondersteunt nu macOS 27 Golden Gate, inclusief een vernieuwde vormgeving voor het nieuwste systeem."
+            "state" : "translated",
+            "value" : "CotEditor ondersteunt nu macOS 27 Golden Gate, inclusief een vernieuwde vormgeving voor het nieuwste systeem."
           }
         },
         "pl" : {
@@ -1035,13 +1150,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor теперь поддерживает macOS 27 Golden Gate, включая обновленный внешний вид системы."
+            "value" : "CotEditor теперь поддерживает macOS 27 Golden Gate, включая обновленное оформление для новейшей системы."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CotEditor artık macOS 27 Golden Gate’i destekliyor ve bu en yeni işletim sistemi için yenilenmiş bir görünüşe kavuştu."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor тепер підтримує macOS 27 Golden Gate, зокрема оновлений вигляд для нової системи."
           }
         },
         "zh-Hans" : {
@@ -1093,14 +1214,20 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Listo para macOS 27"
+            "state" : "translated",
+            "value" : "Listo para macOS 27"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Prêt pour macOS 27"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "macOS 27 के लिए तैयार"
           }
         },
         "it" : {
@@ -1123,8 +1250,8 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Klaar voor macOS 27"
+            "state" : "translated",
+            "value" : "Klaar voor macOS 27"
           }
         },
         "pl" : {
@@ -1149,6 +1276,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "macOS 27 için hazır"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Готовий до macOS 27"
           }
         },
         "zh-Hans" : {
@@ -1176,7 +1309,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Poznámky k verzi"
+            "value" : "Poznámky k verzi"
           }
         },
         "de" : {
@@ -1209,6 +1342,12 @@
             "value" : "Notes de version"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रिलीज़ नोट्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1224,7 +1363,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "릴리즈 노트"
+            "value" : "릴리스 노트"
           }
         },
         "nl" : {
@@ -1255,6 +1394,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sürüm Notları"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Примітки до випуску"
           }
         },
         "zh-Hans" : {
@@ -1316,6 +1461,12 @@
             "value" : "Alpha"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अल्फ़ा"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1362,6 +1513,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Alfa"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Альфа"
           }
         },
         "zh-Hans" : {
@@ -1423,6 +1580,12 @@
             "value" : "Bêta"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "बीटा"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1469,6 +1632,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Beta"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Бета"
           }
         },
         "zh-Hans" : {
@@ -1530,6 +1699,12 @@
             "value" : "RC"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RC"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1578,6 +1753,12 @@
             "value" : "RC"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "RC"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1604,7 +1785,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Co je nového v aplikaci CotEditor %@"
+            "value" : "Co je nového v aplikaci CotEditor %@"
           }
         },
         "de" : {
@@ -1629,6 +1810,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Nouveautés de CotEditor %@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor %@ में नया क्या है"
           }
         },
         "it" : {
@@ -1677,6 +1864,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "CotEditor %@ sürümünde neler yeni"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Що нового в CotEditor %@"
           }
         },
         "zh-Hans" : {

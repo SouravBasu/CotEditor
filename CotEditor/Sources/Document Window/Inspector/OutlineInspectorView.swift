@@ -32,7 +32,13 @@ import StringUtils
 
 @MainActor @Observable private final class OutlineInspectorViewModel: OutlineInspectorView.ModelProtocol {
     
-    var isPresented = false  { didSet { self.invalidateObservation() } }
+    var isPresented = false {
+        
+        didSet {
+            guard oldValue != self.isPresented else { return }
+            self.invalidateObservation()
+        }
+    }
     var document: Document?  { didSet { self.invalidateObservation() } }
     
     var items: [Item] = []  { didSet { self.rebuildOutline() } }
@@ -174,12 +180,12 @@ struct OutlineInspectorView: View, HostedPaneView {
                 
                 Spacer()
                 Menu(.init("Options", table: "Document"), systemImage: "ellipsis.circle") {
-                    Toggle(.init("Wrap Lines", table: "MainMenu"), isOn: $wrapsLines)
+                    Toggle(.init("Wrap Lines", table: "MainMenu", comment: "verb; menu item"), isOn: $wrapsLines)
                     
-                    Section(.init("Text Size", table: "MainMenu")) {
-                        Button(.init("Bigger", table: "MainMenu"), systemImage: "textformat.size.larger", action: self.biggerFont)
-                        Button(.init("Smaller", table: "MainMenu"), systemImage: "textformat.size.smaller", action: self.smallerFont)
-                        Button(.init("Reset to Default", table: "MainMenu"), systemImage: "textformat.size", action: self.resetFont)
+                    Section(.init("Text Size", table: "MainMenu", comment: "noun; menu item")) {
+                        Button(.init("Bigger", table: "MainMenu", comment: "menu item"), systemImage: "textformat.size.larger", action: self.biggerFont)
+                        Button(.init("Smaller", table: "MainMenu", comment: "menu item"), systemImage: "textformat.size.smaller", action: self.smallerFont)
+                        Button(.init("Reset to Default", table: "MainMenu", comment: "verb; menu item"), systemImage: "textformat.size", action: self.resetFont)
                     }
                 }
                 .menuStyle(.button)

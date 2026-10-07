@@ -2,7 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Color Code" : {
-      "comment" : "placeholder",
+      "comment" : "noun; placeholder",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -25,13 +25,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "código de color"
+            "value" : "Código de color"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Code couleur"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कलर कोड"
           }
         },
         "it" : {
@@ -67,19 +73,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "código de Cor"
+            "value" : "Código de cor"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Цвет кода"
+            "value" : "Код цвета"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Renk Kodu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Код кольору"
           }
         },
         "zh-Hans" : {
@@ -141,6 +153,12 @@
             "value" : "CSS HSL"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CSS HSL"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -184,6 +202,12 @@
           }
         },
         "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CSS HSL"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CSS HSL"
@@ -248,6 +272,12 @@
             "value" : "CSS HSLa"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CSS HSLa"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -291,6 +321,12 @@
           }
         },
         "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CSS HSLa"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CSS HSLa"
@@ -355,6 +391,12 @@
             "value" : "CSS HWB"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CSS HWB"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -403,6 +445,12 @@
             "value" : "CSS HWB"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CSS HWB"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -429,7 +477,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CSS HWB s alfa kanálem"
+            "value" : "CSS HWB s alfa kanálem"
           }
         },
         "de" : {
@@ -459,13 +507,19 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CSS HWB avec Alpha"
+            "value" : "CSS HWB avec alpha"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अल्फ़ा के साथ CSS HWB"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CSS HWB"
+            "value" : "CSS HWB con alpha"
           }
         },
         "ja" : {
@@ -501,13 +555,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CSS HWB с альфоканалом"
+            "value" : "CSS HWB с альфа-каналом"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CSS Alfa ile HWB"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CSS HWB з альфа-каналом"
           }
         },
         "zh-Hans" : {
@@ -560,7 +620,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CSS Palabra clave"
+            "value" : "Palabra clave CSS"
           }
         },
         "fr" : {
@@ -569,10 +629,16 @@
             "value" : "Nom CSS"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CSS कीवर्ड"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CSS Parola chiave"
+            "value" : "Parola chiave CSS"
           }
         },
         "ja" : {
@@ -608,13 +674,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CSS ключи"
+            "value" : "Ключевое слово CSS"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CSS Anahtar Sözcük"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ключове слово CSS"
           }
         },
         "zh-Hans" : {
@@ -676,6 +748,12 @@
             "value" : "CSS RGB"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CSS RGB"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -719,6 +797,12 @@
           }
         },
         "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CSS RGB"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CSS RGB"
@@ -783,6 +867,12 @@
             "value" : "CSS RGBa"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CSS RGBa"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -826,6 +916,12 @@
           }
         },
         "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CSS RGBa"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CSS RGBa"
@@ -890,6 +986,12 @@
             "value" : "Hexa"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हेक्साडेसिमल"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -923,19 +1025,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hexa"
+            "value" : "Hexadecimal"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hexadecimal"
+            "value" : "Шестнадцатеричный"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Onaltılık"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шістнадцятковий"
           }
         },
         "zh-Hans" : {
@@ -964,7 +1072,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hexadecimální s alfa kanálem"
+            "value" : "Hexadecimální s alfa kanálem"
           }
         },
         "de" : {
@@ -994,7 +1102,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hexa avec Alpha"
+            "value" : "Hexa avec alpha"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अल्फ़ा के साथ हेक्साडेसिमल"
           }
         },
         "it" : {
@@ -1030,19 +1144,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hexa com Alfa"
+            "value" : "Hexadecimal com Alfa"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hexadecimal с альфоканалом"
+            "value" : "Шестнадцатеричный с альфа-каналом"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Alfa ile Onaltılık"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шістнадцятковий з альфа-каналом"
           }
         },
         "zh-Hans" : {
@@ -1101,13 +1221,19 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hexa (Court)"
+            "value" : "Hexa (court)"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हेक्साडेसिमल (लघु)"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Esadecimale (Breve)"
+            "value" : "Esadecimale (breve)"
           }
         },
         "ja" : {
@@ -1125,7 +1251,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hexadecimaal (Kort)"
+            "value" : "Hexadecimaal (kort)"
           }
         },
         "pl" : {
@@ -1137,19 +1263,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hexa (Curto)"
+            "value" : "Hexadecimal (Curto)"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hexadecimal (сокращенное)"
+            "value" : "Шестнадцатеричный (краткий)"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Onaltılık (Kısa)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шістнадцятковий (скорочений)"
           }
         },
         "zh-Hans" : {
@@ -1178,7 +1310,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hexadecimální s alfa kanálem (krátký)"
+            "value" : "Hexadecimální s alfa kanálem (krátký)"
           }
         },
         "de" : {
@@ -1208,13 +1340,19 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hexa avec Alpha (Court)"
+            "value" : "Hexa avec alpha (court)"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अल्फ़ा के साथ हेक्साडेसिमल (लघु)"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Esadecimale con alpha (Breve)"
+            "value" : "Esadecimale con alpha (breve)"
           }
         },
         "ja" : {
@@ -1232,7 +1370,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hexadecimaal met alpha (Kort)"
+            "value" : "Hexadecimaal met alpha (kort)"
           }
         },
         "pl" : {
@@ -1244,19 +1382,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hexa com Alfa (Curto)"
+            "value" : "Hexadecimal com Alfa (Curto)"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Hexadecimal с альфоканалом (сокращенное)"
+            "value" : "Шестнадцатеричный с альфа-каналом (краткий)"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Alfa ile Onaltılık (Kısa)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Шістнадцятковий з альфа-каналом (скорочений)"
           }
         },
         "zh-Hans" : {
@@ -1280,7 +1424,7 @@
       }
     },
     "Insert" : {
-      "comment" : "button label",
+      "comment" : "verb; button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -1303,13 +1447,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inserción"
+            "value" : "Insertar"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Insérer"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सम्मिलित करें"
           }
         },
         "it" : {
@@ -1333,7 +1483,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Invoegen"
+            "value" : "Voeg in"
           }
         },
         "pl" : {
@@ -1358,6 +1508,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ekle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вставити"
           }
         },
         "zh-Hans" : {
@@ -1413,6 +1569,12 @@
             "value" : "Mots-clés CSS"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "स्टाइलशीट कीवर्ड"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1459,6 +1621,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Stil Sayfası Anahtar Sözcükleri"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ключові слова таблиць стилів"
           }
         },
         "zh-Hans" : {

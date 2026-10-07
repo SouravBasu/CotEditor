@@ -18,6 +18,7 @@ let package = Package(
             "Invisible",
             "LineEnding",
             "LineSort",
+            "RMate",
             "SemanticVersioning",
             "StringUtils",
             "TextClipping",
@@ -54,6 +55,9 @@ let package = Package(
         .target(name: "LineSort", dependencies: ["StringUtils"]),
         .testTarget(name: "LineSortTests", dependencies: ["LineSort"]),
         
+        .target(name: "RMate"),
+        .testTarget(name: "RMateTests", dependencies: ["RMate"]),
+        
         .target(name: "SemanticVersioning"),
         .testTarget(name: "SemanticVersioningTests", dependencies: ["SemanticVersioning"]),
         
@@ -66,8 +70,8 @@ let package = Package(
         .target(name: "TextEditing", dependencies: ["StringUtils"]),
         .testTarget(name: "TextEditingTests", dependencies: ["TextEditing"]),
         
-        .target(name: "TextFind", dependencies: ["StringUtils", "ValueRange"]),
-        .testTarget(name: "TextFindTests", dependencies: ["TextFind"]),
+        .target(name: "TextFind", dependencies: ["LineEnding", "StringUtils", "ValueRange"]),
+        .testTarget(name: "TextFindTests", dependencies: ["LineEnding", "TextFind"]),
         
         .target(name: "URLUtils"),
         .testTarget(name: "URLUtilsTests", dependencies: ["URLUtils"]),

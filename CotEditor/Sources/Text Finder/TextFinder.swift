@@ -454,7 +454,9 @@ struct FindMatchesCache {
             return cache.matches
         }
         
-        let matches = try await Self.matches(in: textFind)
+        let matches = try await { @concurrent () async throws(CancellationError) -> [NSRange] in
+            try textFind.matches
+        }()
         
         guard !Task.isCancelled else { throw CancellationError() }
         
@@ -508,12 +510,13 @@ struct FindMatchesCache {
         let mode = self.settings.mode
         let inSelection = self.settings.inSelection
         let string = client.string
+        let lineEnding = (client as? EditorTextView)?.lineEnding
         let selectedRanges = client.selectedRanges.map(\.rangeValue)
         
         let textFind: TextFind
         do {
             let pattern = try self.pattern(findString: findString, mode: mode)
-            textFind = try TextFind(for: string.immutable, pattern: pattern, inSelection: inSelection, selectedRanges: selectedRanges)
+            textFind = try TextFind(for: string.immutable, pattern: pattern, lineEnding: lineEnding, inSelection: inSelection, selectedRanges: selectedRanges)
         } catch {
             guard presentsError else { return nil }
             
@@ -622,7 +625,7 @@ struct FindMatchesCache {
             
             if result.wrapped {
                 client.enclosingScrollView?.superview?.showHUD(symbol: .wrap(flipped: !forward))
-                AccessibilityNotification.Announcement(String(localized: "Search wrapped.", table: "TextFind", comment: "Announced when the search restarted from the beginning.")).post()
+                AccessibilityNotification.Announcement(String(localized: "Search wrapped.", table: "TextFind", comment: "Announced when the search wraps to the other end of the document.")).post()
             }
         } else if !isIncremental {
             client.enclosingScrollView?.superview?.showHUD(symbol: forward ? .reachBottom : .reachTop)
@@ -740,6 +743,7 @@ struct FindMatchesCache {
         client.isEditable = false
         defer { client.isEditable = true }
         
+        let editorTextView = client as? EditorTextView
         let replacementString = self.settings.replacementString
         let progress = FindProgress(scope: textFind.scopeRange)
         async let replacementResult = Self.replaceAll(for: textFind, with: replacementString, progress: progress)
@@ -766,6 +770,11 @@ struct FindMatchesCache {
         guard progress.state != .cancelled else { return }
         
         if !replacementItems.isEmpty {
+            // inserted text is already normalized; preserve line endings outside the matches
+            let wasApproved = editorTextView?.isApprovedTextChange ?? false
+            editorTextView?.isApprovedTextChange = true
+            defer { editorTextView?.isApprovedTextChange = wasApproved }
+            
             // apply found strings to the text view
             client.replace(with: replacementItems.map(\.value), ranges: replacementItems.map(\.range), selectedRanges: selectedRanges,
                            actionName: String(localized: "Replace All", table: "TextFind"))
@@ -793,17 +802,6 @@ struct FindMatchesCache {
         
         NotificationCenter.default.post(message, subject: self)
         AccessibilityNotification.Announcement(result.accessibilityPositionMessage ?? result.message).post()
-    }
-    
-    
-    /// Finds all matches in the given find state.
-    ///
-    /// - Parameter textFind: The find state to use.
-    /// - Returns: Matched ranges.
-    /// - Throws: `CancellationError`.
-    @concurrent private static func matches(in textFind: TextFind) async throws(CancellationError) -> [NSRange] {
-        
-        try textFind.matches
     }
     
     

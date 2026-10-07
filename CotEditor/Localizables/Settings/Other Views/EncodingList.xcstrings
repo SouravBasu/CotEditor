@@ -33,10 +33,16 @@
             "value" : "Faites glisser les encodages pour changer l’ordre :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "क्रम बदलने के लिए एनकोडिंग खींचें :"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Trascinare le codifiche per modificarne l’ordine:"
+            "value" : "Trascina le codifiche per modificarne l’ordine:"
           }
         },
         "ja" : {
@@ -79,6 +85,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sıralamayı değiştirmek için kodlamaları sürükleyin:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перетягуйте кодування, щоб змінити їх порядок:"
           }
         },
         "zh-Hans" : {
@@ -140,6 +152,12 @@
             "value" : "L’encodage défini par défaut ne peut pas être supprimé."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डिफ़ॉल्ट के रूप में सेट एनकोडिंग हटाई नहीं जा सकती।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -173,7 +191,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "O conjunto de codificação definido como padrão não pode ser removido."
+            "value" : "Não é possível remover a codificação definida como padrão."
           }
         },
         "ru" : {
@@ -186,6 +204,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Saptanmış olarak ayarlanan kodlama kaldırılamaz."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кодування, встановлене за замовчуванням, не можна видалити."
           }
         },
         "zh-Hans" : {
@@ -248,6 +272,12 @@
             "value" : "%@ ne peut pas être supprimé."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ हटाई नहीं जा सकती।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -281,7 +311,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@ não pode ser removido."
+            "value" : "Não é possível remover %@."
           }
         },
         "ru" : {
@@ -294,6 +324,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ kaldırılamaz."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не можна видалити %@."
           }
         },
         "zh-Hans" : {
@@ -317,6 +353,7 @@
       }
     },
     "Separator" : {
+      "comment" : "noun; menu item",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -346,6 +383,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Séparateur"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "विभाजक"
           }
         },
         "it" : {
@@ -396,6 +439,12 @@
             "value" : "Ayırıcı"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Роздільник"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -417,6 +466,7 @@
       }
     },
     "Text Encoding" : {
+      "comment" : "noun; menu item header",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -446,6 +496,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Encodage du texte"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "टेक्स्ट एनकोडिंग"
           }
         },
         "it" : {
@@ -496,6 +552,12 @@
             "value" : "Metin Kodlaması"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кодування тексту"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -521,7 +583,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Toto pořadí platí pro nabídku kódování a detekci kódování. Proces detekce zohledňuje pouze zde uvedené položky, přičemž vyšší položky mají přednost."
+            "value" : "Toto pořadí platí pro nabídku Kódování a detekci kódování. Proces detekce zohledňuje pouze zde uvedené položky, přičemž vyšší položky mají přednost."
           }
         },
         "de" : {
@@ -548,6 +610,12 @@
             "value" : "Cet ordre est utilisé par le menu Encodage et pour la détection de l’encodage. Lors de la détection, seuls les encodages répertoriés ici sont pris en compte, et les éléments les plus hauts dans la liste sont prioritaires."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "यह क्रम एनकोडिंग मेन्यू और एनकोडिंग पहचान के लिए उपयोग होता है। पहचान के दौरान केवल यहाँ सूचीबद्ध एनकोडिंग पर विचार किया जाता है, जिसमें ऊपरी आइटम को प्राथमिकता मिलती है।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -568,8 +636,8 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Deze volgorde wordt gebruikt voor het coderingsmenu en voor coderingsdetectie. Bij detectie worden alleen de hier vermelde coderingen meegenomen; items hoger in de lijst hebben voorrang."
+            "state" : "translated",
+            "value" : "Deze volgorde wordt gebruikt voor het coderingsmenu en voor coderingsdetectie. Bij detectie worden alleen de hier vermelde coderingen meegenomen. Items hoger in de lijst hebben voorrang."
           }
         },
         "pl" : {
@@ -587,13 +655,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Этот порядок применяется к меню кодирования и обнаружению кодирования. Процесс обнаружения учитывает только перечисленные здесь элементы, при этом элементы с более высоким приоритетом имеют более высокие значения."
+            "value" : "Этот порядок используется в меню кодировок и при определении кодировки. При определении учитываются только кодировки из этого списка, причем расположенные выше имеют приоритет."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bu sıralama, kodlama menüsü ve kodlama algılaması içindir. Algılama süreci yalnızca burada listelenen öğeleri, sıra önceliğine göre dikkate alır."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Цей порядок використовується в меню «Кодування» та для визначення кодування. Під час визначення враховуються лише наведені тут кодування, причому розташовані вище мають вищий пріоритет."
           }
         },
         "zh-Hans" : {

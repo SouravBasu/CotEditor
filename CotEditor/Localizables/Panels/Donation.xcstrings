@@ -46,7 +46,7 @@
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld Tasse"
+                  "value" : "%lld Tassen"
                 }
               }
             }
@@ -94,13 +94,13 @@
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld taza"
+                  "value" : "%lld taza"
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld tazas"
+                  "value" : "%lld tazas"
                 }
               }
             }
@@ -119,6 +119,24 @@
                 "stringUnit" : {
                   "state" : "needs_review",
                   "value" : "%lld tasses"
+                }
+              }
+            }
+          }
+        },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld कप"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld कप"
                 }
               }
             }
@@ -238,7 +256,7 @@
               "few" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld чашек"
+                  "value" : "%lld чашки"
                 }
               },
               "many" : {
@@ -275,6 +293,36 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld fincan"
+                }
+              }
+            }
+          }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld чашки"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld чашок"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld чашка"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld чашок"
                 }
               }
             }
@@ -351,6 +399,12 @@
             "value" : "× %lld"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "× %lld"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -399,6 +453,12 @@
             "value" : "× %lld"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "× %lld"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -425,7 +485,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pro darování je vyžadováno připojení k internetu."
+            "value" : "Pro darování je vyžadováno připojení k internetu."
           }
         },
         "de" : {
@@ -450,6 +510,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Une connexion Internet est requise pour faire un don."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "दान करने के लिए इंटरनेट कनेक्शन आवश्यक है।"
           }
         },
         "it" : {
@@ -491,13 +557,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Необходимо интернет соединение для поддержки."
+            "value" : "Для поддержки проекта требуется подключение к интернету."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bağış yapmak için bir internet bağlantısı gereklidir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Для підтримки проєкту потрібне підключення до інтернету."
           }
         },
         "zh-Hans" : {
@@ -525,7 +597,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Jako důkaz vaší laskavosti se během kontinuální podpory zobrazí ve stavovém řádku odznak s kávou."
+            "value" : "Jako důkaz vaší laskavosti se během kontinuální podpory zobrazí ve stavovém řádku odznak s kávou."
           }
         },
         "de" : {
@@ -543,7 +615,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Como prueba de su generosa ayuda, aparecerá una insignia de café en la barra de estado durante el soporte continuo."
+            "value" : "Como muestra de agradecimiento por tu apoyo, aparece una insignia de café en la barra de estado mientras mantienes el apoyo continuo."
           }
         },
         "fr" : {
@@ -552,10 +624,16 @@
             "value" : "Comme preuve de votre soutien, un badge de café apparaît sur la barre d’état pendant le soutien continu."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आपके सहयोग के प्रमाण के रूप में, निरंतर सहयोग के दौरान स्टेटस बार पर एक कॉफ़ी बैज दिखाई देता है।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Come prova del tuo sostegno permanente, un badge del caffè apparirà sulla barra di stato."
+            "value" : "Come segno di ringraziamento per il tuo sostegno, un badge del caffè appare sulla barra di stato durante il sostegno continuativo."
           }
         },
         "ja" : {
@@ -567,7 +645,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "후원에 보답하는 마음으로, 지속 후원을 해주시는 동안 상태 바에 커피 뱃지가 나타납니다."
+            "value" : "후원에 보답하는 마음으로, 지속 후원을 해주시는 동안 상태 막대에 커피 배지가 나타납니다."
           }
         },
         "nl" : {
@@ -579,19 +657,19 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Jako dowód Twojego wsparcia, w okresie ciągłego wsparcia na pasku stanu pojawi się znak kawy."
+            "value" : "Jako dowód Twojego wsparcia w okresie ciągłego wsparcia na pasku statusu pojawi się odznaka kawy"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Como prova do seu apoio, um emblema de café aparece na barra de status durante o apoio contínuo."
+            "value" : "Como sinal de agradecimento pelo apoio, um emblema de café aparece na barra de estado durante o apoio contínuo."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "В качестве доказательства вашей поддержки на строке состояния будет отображаться значок кофе."
+            "value" : "В знак благодарности за Вашу поддержку во время постоянной поддержки в строке состояния отображается значок кофе."
           }
         },
         "tr" : {
@@ -600,16 +678,22 @@
             "value" : "Nazik desteğinizin bir kanıtı olarak, sürekli destekte bulunursanız bir kahve rozeti durum çubuğunda görünür."
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "На знак вдячності за регулярну підтримку на панелі стану відображатиметься значок кави."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "作为您慷慨支持的证明，在持续支持期间，状态栏中会显示咖啡徽章。"
+            "value" : "作为你慷慨支持的证明，在持续支持期间，状态栏中会显示咖啡徽章。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "作為您熱心支援的證明，軟體的狀態列會在整個在持續支援期間顯示一個咖啡徽章。"
+            "value" : "作為你熱心支援的證明，軟體的狀態列會在整個在持續支援期間顯示一個咖啡徽章。"
           }
         },
         "zh-HK" : {
@@ -652,10 +736,16 @@
             "value" : "Type de badge :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "बैज प्रकार :"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tipo Badge:"
+            "value" : "Tipo di badge:"
           }
         },
         "ja" : {
@@ -667,7 +757,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "뱃지 타입:"
+            "value" : "배지 유형:"
           }
         },
         "nl" : {
@@ -698,6 +788,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rozet türü:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Тип значка:"
           }
         },
         "zh-Hans" : {
@@ -743,7 +839,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Soporte continuo"
+            "value" : "Apoyo continuo"
           }
         },
         "fr" : {
@@ -752,10 +848,16 @@
             "value" : "Soutien continu"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "निरंतर सहयोग"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sostegno permanente"
+            "value" : "Sostegno continuativo"
           }
         },
         "ja" : {
@@ -785,7 +887,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Apoio contínuo"
+            "value" : "Apoio Contínuo"
           }
         },
         "ru" : {
@@ -798,6 +900,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sürekli destek"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Постійна підтримка"
           }
         },
         "zh-Hans" : {
@@ -852,6 +960,12 @@
             "value" : "CotEditor fournit toutes les fonctionnalités gratuitement à tout le monde. Vous pouvez soutenir ce projet en offrant du café."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor सभी को सभी सुविधाएँ मुफ़्त प्रदान करता है। आप कॉफ़ी देकर इस परियोजना का समर्थन कर सकते हैं।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -879,13 +993,13 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor udostępnia wszystkie funkcje za darmo dla każdego.\nMożesz wesprzeć ten projekt oferując kawę."
+            "value" : "CotEditor udostępnia wszystkie funkcje za darmo dla każdego.\nMożesz wesprzeć ten projekt, oferując kawę"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor fornece todos os recursos gratuitamente para todos. Você pode apoiar este projeto pagando um cafézinho."
+            "value" : "O CotEditor fornece todos os recursos gratuitamente para todos. Você pode apoiar este projeto oferecendo um cafezinho."
           }
         },
         "ru" : {
@@ -900,16 +1014,22 @@
             "value" : "CotEditor tüm özelliklerini herkese ücretsiz olarak sunar. Bir kahve ısmarlayarak bu projeyi destekleyebilirsiniz."
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Усі можливості CotEditor доступні безкоштовно. Ви можете підтримати проєкт, пригостивши розробника кавою."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor向所有人免费提供所有功能。您可以通过赠送咖啡来支持这个项目。"
+            "value" : "CotEditor向所有人免费提供所有功能。你可以通过赠送咖啡来支持这个项目。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor向所有人免費提供所有功能。您可以藉由捐贈咖啡費用的方式來聲援該專案。"
+            "value" : "CotEditor向所有人免費提供所有功能。你可以藉由捐贈咖啡費用的方式來聲援該專案。"
           }
         },
         "zh-HK" : {
@@ -920,12 +1040,131 @@
         }
       }
     },
+    "Donation" : {
+      "comment" : "window title",
+            "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Darování"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spende"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Donation"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Donation"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Donación"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Donation"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "दान"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Donazione"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "寄付"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "후원"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Donatie"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Darowizna"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Doação"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поддержка"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bağış"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Підтримка"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "捐赠"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "捐贈"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "捐贈"
+          }
+        }
+      }
+    },
     "Donation is currently not available." : {
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Darování není v současné době k dispozici."
+            "value" : "Darování není v současné době k dispozici."
           }
         },
         "de" : {
@@ -950,6 +1189,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Le don n’est pas disponible pour le moment."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "दान वर्तमान में उपलब्ध नहीं है।"
           }
         },
         "it" : {
@@ -1000,6 +1245,12 @@
             "value" : "Şu anda bağış yapılamıyor."
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Підтримка наразі недоступна."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1021,6 +1272,7 @@
       }
     },
     "Manage Subscriptions" : {
+      "comment" : "verb; link",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -1052,10 +1304,16 @@
             "value" : "Gérer les abonnements"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सदस्यताएँ प्रबंधित करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Gestisci le iscrizioni"
+            "value" : "Gestisci abbonamenti"
           }
         },
         "ja" : {
@@ -1098,6 +1356,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Abonelikleri Yönet"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Керувати підписками"
           }
         },
         "zh-Hans" : {
@@ -1152,6 +1416,12 @@
             "value" : "Don unique"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "एकमुश्त दान"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1185,7 +1455,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Doação única"
+            "value" : "Doação Única"
           }
         },
         "ru" : {
@@ -1198,6 +1468,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tek kerelik bağış"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Одноразова підтримка"
           }
         },
         "zh-Hans" : {
@@ -1221,12 +1497,12 @@
       }
     },
     "Open GitHub Sponsors" : {
-      "comment" : "\"GitHub Sponsors\" is the name of a service by GitHub. Check the official localization.",
+      "comment" : "verb; button; \"GitHub Sponsors\" is the name of a service by GitHub. Check the official localization.",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Otevřít GitHub Sponsors"
+            "value" : "Otevřít GitHub Sponsors"
           }
         },
         "de" : {
@@ -1253,6 +1529,12 @@
             "value" : "Ouvrir GitHub Sponsors"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "GitHub Sponsors खोलें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1274,13 +1556,13 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Open GitHub Sponsors"
+            "value" : "Open GitHub Sponsors"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Otwórz GitHub Sponsors"
+            "value" : "Otwórz GitHub Sponsors"
           }
         },
         "pt" : {
@@ -1292,13 +1574,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Спонсоры Open GitHub"
+            "value" : "Открыть GitHub Sponsors"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Github Sponsors’u Aç"
+            "value" : "GitHub Sponsors’u Aç"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відкрити GitHub Sponsors"
           }
         },
         "zh-Hans" : {
@@ -1322,11 +1610,12 @@
       }
     },
     "Open in App Store" : {
+      "comment" : "verb; button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Otevřít v App Storu"
+            "value" : "Otevřít v App Storu"
           }
         },
         "de" : {
@@ -1344,13 +1633,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Abrir en App Store"
+            "value" : "Abrir en App Store"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ouvrir dans l’App Store"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "App Store में खोलें"
           }
         },
         "it" : {
@@ -1374,13 +1669,13 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Open in App Store"
+            "value" : "Open in App Store"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Otwórz w App Store"
+            "value" : "Otwórz w App Store"
           }
         },
         "pt" : {
@@ -1392,13 +1687,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Открыть в App Store"
+            "value" : "Открыть в App Store"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "App Store’da Aç"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відкрити в App Store"
           }
         },
         "zh-Hans" : {
@@ -1453,6 +1754,12 @@
             "value" : "Confidentialité"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "गोपनीयता नीति"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1468,7 +1775,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "개인정보 취급방침"
+            "value" : "개인정보 처리방침"
           }
         },
         "nl" : {
@@ -1499,6 +1806,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Gizlilik Politikası"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Політика конфіденційності"
           }
         },
         "zh-Hans" : {
@@ -1554,6 +1867,12 @@
             "value" : "Quantité"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मात्रा"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1602,6 +1921,12 @@
             "value" : "Sayı"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кількість"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1623,6 +1948,7 @@
       }
     },
     "Restore Subscription" : {
+      "comment" : "verb; button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -1652,6 +1978,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Rétablir l’abonnement"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सदस्यता पुनर्स्थापित करें"
           }
         },
         "it" : {
@@ -1700,6 +2032,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aboneliği Geri Yükle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відновити підписку"
           }
         },
         "zh-Hans" : {
@@ -1754,6 +2092,12 @@
             "value" : "Conditions de service"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सेवा की शर्तें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1802,6 +2146,12 @@
             "value" : "Hizmet Kullanım Şartları"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Умови використання"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1827,7 +2177,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Funkce darování v aplikaci je k dispozici pouze v CotEditoru distribuovaném v App Store."
+            "value" : "Funkce darování v aplikaci je k dispozici pouze v CotEditoru distribuovaném v App Storu."
           }
         },
         "de" : {
@@ -1845,13 +2195,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La función de donación dentro de la app sólo está disponible en CotEditor distribuido en la App Store."
+            "value" : "La función de donación dentro de la app solo está disponible en CotEditor distribuido en App Store."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "La fonction de donation intégrée n’est disponible que dans CotEditor distribué dans l’App Store."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इन-ऐप दान सुविधा केवल App Store में वितरित CotEditor में उपलब्ध है।"
           }
         },
         "it" : {
@@ -1875,13 +2231,13 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "De in-app donatiefunctie is alleen beschikbaar in CotEditor gedistribueerd in de App Store."
+            "value" : "De in-app donatiefunctie is alleen beschikbaar in CotEditor gedistribueerd in de App Store."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Funkcja darowizny w aplikacji jest dostępna wyłącznie w CotEditorze dystrybuowanym przez App Store."
+            "value" : "Funkcja darowizny w aplikacji jest dostępna wyłącznie w CotEditorze dystrybuowanym przez App Store."
           }
         },
         "pt" : {
@@ -1893,13 +2249,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Функция поддержки внутри приложения доступна только в CotEditor, распространяемом в App Store."
+            "value" : "Функция поддержки внутри приложения доступна только в CotEditor, распространяемом в App Store."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Uygulama içi bağış özelliği, yalnızca App Store üzerinden dağıtılan CotEditor üzerinde kullanılabilir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Підтримка в програмі доступна лише у версії CotEditor, що розповсюджується через App Store."
           }
         },
         "zh-Hans" : {

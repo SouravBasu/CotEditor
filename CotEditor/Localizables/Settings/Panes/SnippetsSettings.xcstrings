@@ -33,6 +33,12 @@
             "value" : "Toutes"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सभी"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -81,6 +87,12 @@
             "value" : "Tümü"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Усі"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -102,7 +114,7 @@
       }
     },
     "Command" : {
-      "comment" : "tab label",
+      "comment" : "tab",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -132,6 +144,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Commande"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कमांड"
           }
         },
         "it" : {
@@ -180,6 +198,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Komut"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Команда"
           }
         },
         "zh-Hans" : {
@@ -235,6 +259,12 @@
             "value" : "Description"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "विवरण"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -281,6 +311,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Açıklama"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Опис"
           }
         },
         "zh-Hans" : {
@@ -336,6 +372,12 @@
             "value" : "Extensions"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "एक्सटेंशन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -351,7 +393,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "확장"
+            "value" : "확장자"
           }
         },
         "nl" : {
@@ -384,6 +426,12 @@
             "value" : "Uzantılar"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розширення"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -405,7 +453,7 @@
       }
     },
     "File Drop" : {
-      "comment" : "tab label",
+      "comment" : "tab",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -428,13 +476,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Entrega de archivos"
+            "value" : "Arrastre de archivos"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "File Drop"
+            "value" : "Dépôt de fichiers"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ाइल ड्रॉप"
           }
         },
         "it" : {
@@ -452,7 +506,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "파일 떨굼"
+            "value" : "파일 드롭"
           }
         },
         "nl" : {
@@ -470,19 +524,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Arquivos Soltos"
+            "value" : "Soltar Arquivos"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Передача файлов"
+            "value" : "Перетаскивание файлов"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dosya Bırak"
+            "value" : "Dosya Bırakma"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перетягування файлів"
           }
         },
         "zh-Hans" : {
@@ -538,6 +598,12 @@
             "value" : "Extensions des fichiers déposés (séparées par une virgule)."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ड्रॉप की गई फ़ाइल के एक्सटेंशन (अल्पविराम से अलग)।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -553,7 +619,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "떨군 파일의 확장자(쉼표로 구분)."
+            "value" : "드롭한 파일의 확장자를 쉼표로 구분합니다."
           }
         },
         "nl" : {
@@ -565,7 +631,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rozszerzenia upuszczanych plików (rozdzielone przecinkami)."
+            "value" : "Rozszerzenia upuszczanych plików (rozdzielone przecinkami)"
           }
         },
         "pt" : {
@@ -577,13 +643,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Расширение переданного файла (разделенные запятыми)."
+            "value" : "Расширения перетаскиваемых файлов (через запятую)."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bırakılan dosyanın uzantıları (virgülle ayrılmış)."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розширення перетягнутого файлу (через кому)."
           }
         },
         "zh-Hans" : {
@@ -639,6 +711,12 @@
             "value" : "Fichier image"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इमेज फ़ाइल"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -672,7 +750,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Arquivo de imagem"
+            "value" : "Arquivo de Imagem"
           }
         },
         "ru" : {
@@ -685,6 +763,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Resim Dosyası"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Файл зображення"
           }
         },
         "zh-Hans" : {
@@ -708,7 +792,7 @@
       }
     },
     "Insert Variable" : {
-      "comment" : "button label",
+      "comment" : "verb; button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -740,10 +824,16 @@
             "value" : "Insérer une variable"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "वेरिएबल सम्मिलित करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inserisci Variabile"
+            "value" : "Inserisci variabile"
           }
         },
         "ja" : {
@@ -786,6 +876,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Değişken Ekle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вставити змінну"
           }
         },
         "zh-Hans" : {
@@ -831,13 +927,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Insertar formato:"
+            "value" : "Formato de inserción:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Format du texte à insérer :"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सम्मिलन फ़ॉर्मैट :"
           }
         },
         "it" : {
@@ -888,6 +990,12 @@
             "value" : "Ekleme biçimi:"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Формат вставлення:"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -909,7 +1017,7 @@
       }
     },
     "Key" : {
-      "comment" : "table column header",
+      "comment" : "table column header; keyboard shortcut",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -947,6 +1055,12 @@
             "value" : "Raccourci"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कुंजी"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -968,7 +1082,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sleutel"
+            "value" : "Toets"
           }
         },
         "pl" : {
@@ -986,13 +1100,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ключ"
+            "value" : "Клавиша"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Düğme"
+            "value" : "Tuş"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Клавіша"
           }
         },
         "zh-Hans" : {
@@ -1054,6 +1174,12 @@
             "value" : "Nom"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "नाम"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1100,6 +1226,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ad"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Назва"
           }
         },
         "zh-Hans" : {
@@ -1155,6 +1287,12 @@
             "value" : "Syntaxe"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सिंटैक्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1176,7 +1314,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tekst die moet worden ingevoegd via een commando in het menu of via een sneltoets op het toetsenbord:"
+            "value" : "Syntaxis"
           }
         },
         "pl" : {
@@ -1201,6 +1339,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sözdizimi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Синтаксис"
           }
         },
         "zh-Hans" : {
@@ -1229,7 +1373,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Syntaxe, ve kterém se používá toto nastavení při přetažení souboru."
+            "value" : "Syntaxe, ve které se používá toto nastavení při přetažení souboru."
           }
         },
         "de" : {
@@ -1247,7 +1391,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sintaxis utilizada si se utiliza soltar archivos."
+            "value" : "Sintaxis en la que se utiliza este ajuste de arrastre de archivos."
           }
         },
         "fr" : {
@@ -1256,10 +1400,16 @@
             "value" : "Syntaxe pour laquelle cette configuration de fichiers déposés est utilisée."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "वह सिंटैक्स जिसमें यह फ़ाइल ड्रॉप सेटिंग उपयोग होती है।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sintassi che utilizza le impostazioni del file trascinato nell’editor."
+            "value" : "Sintassi in cui viene usata questa impostazione di trascinamento dei file."
           }
         },
         "ja" : {
@@ -1271,7 +1421,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "이 파일 떨굼 설정이 사용될 구문입니다."
+            "value" : "이 파일 드롭 설정이 사용될 구문입니다."
           }
         },
         "nl" : {
@@ -1283,13 +1433,13 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Składnia, w której to ustawienie upuszczenia pliku jest używane."
+            "value" : "Składnia, w której to ustawienie upuszczenia pliku jest używane"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sintaxe na qual essa configuração de soltar arquivo é usada."
+            "value" : "Sintaxe na qual este ajuste de soltar arquivos é usado."
           }
         },
         "ru" : {
@@ -1304,10 +1454,16 @@
             "value" : "Bu dosya bırakma ayarının etkinleştirildiği sözdizimi"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Синтаксис, у якому використовується цей параметр перетягування файлів."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "语法中的文件拖拽设置已启用"
+            "value" : "应用此文件拖放设置的语法。"
           }
         },
         "zh-Hant" : {
@@ -1357,6 +1513,12 @@
             "value" : "Fichier texte"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "टेक्स्ट फ़ाइल"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1390,7 +1552,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Arquivo de texto"
+            "value" : "Arquivo de Texto"
           }
         },
         "ru" : {
@@ -1403,6 +1565,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Metin Dosyası"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Текстовий файл"
           }
         },
         "zh-Hans" : {
@@ -1454,13 +1622,19 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Texte à insérer lors d’une commande de menu ou d’un raccourcis clavier :"
+            "value" : "Texte à insérer lors d’une commande de menu ou d’un raccourci clavier :"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मेन्यू में किसी कमांड या कीबोर्ड शॉर्टकट द्वारा डाला जाने वाला टेक्स्ट :"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Testo da inserire con un comando di menu o una scorciatoia da tastiera:"
+            "value" : "Testo da inserire con un comando di menu o un’abbreviazione da tastiera:"
           }
         },
         "ja" : {
@@ -1505,6 +1679,12 @@
             "value" : "Menüdeki bir komut veya klavye kestirmesi ile eklenecek metin:"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Текст, який вставлятиметься командою з меню або клавіатурним скороченням:"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1530,7 +1710,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Text, který má být vložen přetažením (upuštěním) souborů do editoru:"
+            "value" : "Text, který má být vložen přetažením souborů do editoru:"
           }
         },
         "de" : {
@@ -1557,6 +1737,12 @@
             "value" : "Texte à insérer en glissant-déposant des fichiers dans l’éditeur :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "एडिटर में फ़ाइलें ड्रॉप करके डाला जाने वाला टेक्स्ट :"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1572,7 +1758,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "파일을 편집기에 떨굴 때 삽입될 텍스트:"
+            "value" : "파일을 편집기에 드롭할 때 삽입될 텍스트:"
           }
         },
         "nl" : {
@@ -1605,6 +1791,12 @@
             "value" : "Düzenleyiciye dosya bırakılarak eklenecek metin:"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Текст, який вставлятиметься під час перетягування файлів до редактора:"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1620,7 +1812,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "透過將檔案拖放至编辑器中插入的文字："
+            "value" : "透過將檔案拖放至編輯器中插入的文字："
           }
         }
       }

@@ -40,6 +40,12 @@
             "value" : "Une tasse savoureuse"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "एक स्वादिष्ट कप"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -86,6 +92,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lezzetli bir kupa"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Смачне горнятко"
           }
         },
         "zh-Hans" : {
@@ -147,6 +159,12 @@
             "value" : "Espresso"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "एस्प्रेसो"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -193,6 +211,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Espresso"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Еспресо"
           }
         },
         "zh-Hans" : {
@@ -254,10 +278,16 @@
             "value" : "Café pour le développement quotidien"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रोज़ाना विकास के लिए कॉफ़ी"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Caffà per lo sviluppo quotidiano"
+            "value" : "Caffè per lo sviluppo quotidiano"
           }
         },
         "ja" : {
@@ -302,6 +332,12 @@
             "value" : "Günlük geliştirme için kahve"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кава для повсякденної розробки"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -317,7 +353,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "用咖啡支持日常關發"
+            "value" : "用咖啡支持日常開發"
           }
         }
       }
@@ -328,7 +364,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kávové boby"
+            "value" : "Kávová zrna"
           }
         },
         "de" : {
@@ -359,6 +395,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Grains de café"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कॉफ़ी बीन्स"
           }
         },
         "it" : {
@@ -407,6 +449,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kahve Çekirdekleri"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Кавові зерна"
           }
         },
         "zh-Hans" : {

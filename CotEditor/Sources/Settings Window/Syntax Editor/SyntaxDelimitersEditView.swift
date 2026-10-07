@@ -49,13 +49,13 @@ struct SyntaxDelimitersEditView: View {
                 
                 HStack(alignment: .firstTextBaseline, spacing: 20) {
                     VStack(alignment: .leading) {
-                        Text("Inline comment:", tableName: "SyntaxEditor")
+                        Text("Inline comment:", tableName: "SyntaxEditor", comment: "noun; a type of comment")
                             .accessibilityAddTraits(.isHeader)
                         InlineCommentsEditView(items: $inlineComments)
                     }.accessibilityElement(children: .contain)
                     
                     VStack(alignment: .leading) {
-                        Text("Block comment:", tableName: "SyntaxEditor")
+                        Text("Block comment:", tableName: "SyntaxEditor", comment: "noun; a type of comment")
                             .accessibilityAddTraits(.isHeader)
                         BlockCommentsEditView(items: $blockComments)
                     }.accessibilityElement(children: .contain)
@@ -68,7 +68,7 @@ struct SyntaxDelimitersEditView: View {
                     .fontWeight(.semibold)
                     .padding(.bottom, 2)
                 
-                Text("String delimiters:", tableName: "SyntaxEditor")
+                Text("String delimiters:", tableName: "SyntaxEditor", comment: "noun; delimiters indicating string type")
                     .accessibilityAddTraits(.isHeader)
                 StringDelimitersEditView(items: $stringDelimiters)
             }
@@ -79,7 +79,7 @@ struct SyntaxDelimitersEditView: View {
                     .fontWeight(.semibold)
                     .padding(.bottom, 2)
                 
-                Text("Character delimiters:", tableName: "SyntaxEditor")
+                Text("Character delimiters:", tableName: "SyntaxEditor", comment: "noun; delimiters indicating character type")
                     .accessibilityAddTraits(.isHeader)
                 CharacterDelimitersEditView(items: $characterDelimiters)
             }
@@ -90,7 +90,7 @@ struct SyntaxDelimitersEditView: View {
                     .fontWeight(.semibold)
                     .padding(.bottom, 2)
                 
-                Text("Block delimiters:", tableName: "SyntaxEditor")
+                Text("Block delimiters:", tableName: "SyntaxEditor", comment: "noun; delimiters indicating block")
                     .accessibilityAddTraits(.isHeader)
                 BlockEditView(items: $indentations)
                 Text("The block delimiters are used for automatic indentation while typing.", tableName: "SyntaxEditor")
@@ -135,7 +135,7 @@ private struct InlineCommentsEditView: View {
                 TextField(text: $item.value.begin, label: EmptyView.init)
                     .focused($focusedField, equals: item.id)
             }
-            TableColumn(.init("Line Start Only", table: "SyntaxEditor", comment: "table column header, keep short")) { $item in
+            TableColumn(.init("Line Start Only", table: "SyntaxEditor", comment: "table column header; keep short")) { $item in
                 Toggle(isOn: $item.value.leadingOnly, label: EmptyView.init)
             }
             .alignment(.center)
@@ -171,7 +171,7 @@ private struct BlockCommentsEditView: View {
             TableColumn(.init("End String", table: "SyntaxEditor", comment: "table column header")) { $item in
                 TextField(text: $item.value.end, label: EmptyView.init)
             }
-            TableColumn(.init("Nest", table: "SyntaxEditor", comment: "table column header, keep short")) { $item in
+            TableColumn(.init("Nest", table: "SyntaxEditor", comment: "verb; table column header; allow nested block comments; keep short")) { $item in
                 Toggle(isOn: $items.selectionBinding(for: $item, selection: $selection, keyPath: \.value.isNestable), label: EmptyView.init)
             }
             .alignment(.center)
@@ -216,7 +216,7 @@ private struct StringDelimitersEditView: View {
                 Toggle(isOn: $items.selectionBinding(for: $item, selection: $selection, keyPath: \.value.isMultiline), label: EmptyView.init)
             }
             .alignment(.center)
-            TableColumn(.init("Escape Character", defaultValue: "Escape Character", table: "SyntaxEditor", comment: "table column header")) { $item in
+            TableColumn(.init("Escape Character", defaultValue: "Escape Character", table: "SyntaxEditor", comment: "noun; table column header")) { $item in
                 let binding = Binding<String>(
                     get: { item.value.escapeCharacter.map(String.init) ?? "" },
                     set: { item.value.escapeCharacter = $0.first }

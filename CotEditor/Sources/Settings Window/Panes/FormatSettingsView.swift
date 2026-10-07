@@ -130,7 +130,7 @@ struct FormatSettingsView: View {
                     .gridColumnAlignment(.trailing)
                 
                 VStack(alignment: .leading) {
-                    Button(.init("Edit List…", table: "FormatSettings")) {
+                    Button(.init("Edit List…", table: "FormatSettings", comment: "verb; button")) {
                         self.isEncodingListPresented.toggle()
                     }
                     .sheet(isPresented: $isEncodingListPresented) {
@@ -139,7 +139,7 @@ struct FormatSettingsView: View {
                             .presentationSizing(.fitted)
                     }
                     
-                    Toggle(.init("Refer to encoding declaration in document", table: "FormatSettings"), isOn: $referToEncodingTag)
+                    Toggle(.init("Refer to encoding declaration in document", table: "FormatSettings", comment: "verb; checkbox"), isOn: $referToEncodingTag)
                         .fixedSize(horizontal: false, vertical: true)
                 }
                 .accessibilityLabeledPair(role: .content, id: "encodingPriority", in: self.accessibility)
@@ -323,7 +323,7 @@ private struct SyntaxListView: View {
         } primaryAction: { selections in
             self.editingMode = selections.first.map { .edit($0) }
         }
-        .accessibilityRotor(.init("Customized Syntaxes", table: "FormatSettings"),
+        .accessibilityRotor(.init("Customized Syntaxes", table: "FormatSettings", comment: "heading"),
                             entries: self.settingStates.filter(\.isCustomized), entryID: \.id, entryLabel: \.name)
         .onChange(of: self.settingNames, initial: true) { _, settingNames in
             self.settingStates = settingNames.compactMap(self.manager.state(of:))
@@ -420,32 +420,29 @@ private struct SyntaxListView: View {
                 self.editingMode = .new
             } label: {
                 Label(.init("Action.add.label", defaultValue: "Add"), systemImage: "plus")
-                    .padding(2)
+                    .frame(width: 16, height: 16)
             }
             .help(.init("Action.add.tooltip", defaultValue: "Add new item"))
             .labelStyle(.iconOnly)
-            .frame(width: 16)
             
             Button {
                 self.deletingItem = self.selection?.name
             } label: {
                 Label(.init("Action.delete.label", defaultValue: "Delete"), systemImage: "minus")
-                    .padding(2)
+                    .frame(width: 16, height: 16)
             }
             .help(.init("Action.delete.tooltip", defaultValue: "Delete selected items"))
             .labelStyle(.iconOnly)
-            .frame(width: 16)
             .disabled(self.selection?.isBundled != false)
             
             Button {
                 self.editingMode = .edit(self.selection!)
             } label: {
                 Label(.init("Action.edit.label", defaultValue: "Edit"), systemImage: "pencil")
-                    .padding(2)
+                    .frame(width: 16, height: 16)
             }
             .help(.init("Action.edit.tooltip", defaultValue: "Edit selected item"))
             .labelStyle(.iconOnly)
-            .frame(width: 16)
             .disabled(self.selection == nil)
             
             Spacer()
@@ -545,7 +542,7 @@ private struct SyntaxListView: View {
                 self.isImporterPresented = true
             }
             .modifierKeyAlternate(.option) {
-                Button(.init("Reload All Syntaxes", table: "FormatSettings"), systemImage: "arrow.clockwise") {
+                Button(.init("Reload All Syntaxes", table: "FormatSettings", comment: "verb; menu item"), systemImage: "arrow.clockwise") {
                     Task {
                         await self.manager.invalidateUserSettings()
                     }
@@ -554,11 +551,11 @@ private struct SyntaxListView: View {
             
             Divider()
             
-            Button(.init("Customize Syntax Menu…", table: "FormatSettings"), systemImage: "square.and.pencil") {
+            Button(.init("Customize Syntax Menu…", table: "FormatSettings", comment: "verb; menu item"), systemImage: "square.and.pencil") {
                 self.isListCustomizationViewPresented = true
             }
             
-            Button(.init("Show File Mapping Conflicts", table: "FormatSettings"), systemImage: "exclamationmark.triangle") {
+            Button(.init("Show File Mapping Conflicts", table: "FormatSettings", comment: "verb; menu item"), systemImage: "exclamationmark.triangle") {
                 self.isFileMappingConflictPresented = true
             }
             .disabled(self.manager.mappingConflicts.isEmpty)
@@ -571,9 +568,7 @@ private struct SyntaxListView: View {
     /// - Parameter urls: The file URLs to import.
     private func importSettings(at urls: [URL]) {
         
-        for url in urls {
-            guard url.isFileURL else { continue }
-            
+        for url in urls where url.isFileURL {
             let accessing = url.startAccessingSecurityScopedResource()
             defer {
                 if accessing { url.stopAccessingSecurityScopedResource() }

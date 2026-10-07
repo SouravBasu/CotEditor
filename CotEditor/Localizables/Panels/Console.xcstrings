@@ -2,7 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Clear Log" : {
-      "comment" : "toolbar item label",
+      "comment" : "verb; toolbar item",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -32,6 +32,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Effacer la console"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "लॉग साफ़ करें"
           }
         },
         "it" : {
@@ -73,13 +79,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Отчистить лог"
+            "value" : "Очистить журнал"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Günlüğü Temizle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Очистити журнал"
           }
         },
         "zh-Hans" : {
@@ -103,7 +115,7 @@
       }
     },
     "Console" : {
-      "comment" : "window title",
+      "comment" : "noun; window title",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -133,6 +145,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Console"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कंसोल"
           }
         },
         "it" : {
@@ -181,6 +199,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Konsol"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Консоль"
           }
         },
         "zh-Hans" : {

@@ -40,6 +40,12 @@
             "value" : "Code"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कोड"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -86,6 +92,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kod"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Код"
           }
         },
         "zh-Hans" : {
@@ -147,6 +159,12 @@
             "value" : "Général"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सामान्य"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -180,7 +198,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "General"
+            "value" : "Geral"
           }
         },
         "ru" : {
@@ -193,6 +211,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Genel"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загальне"
           }
         },
         "zh-Hans" : {
@@ -254,6 +278,12 @@
             "value" : "Conteneur"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कंटेनर"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -300,6 +330,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kapsayıcı"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Контейнер"
           }
         },
         "zh-Hans" : {
@@ -361,6 +397,12 @@
             "value" : "Fonction"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ंक्शन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -407,6 +449,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "İşlev"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Функція"
           }
         },
         "zh-Hans" : {
@@ -468,6 +516,12 @@
             "value" : "Titre"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हेडिंग"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -514,6 +568,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Başlık"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заголовок"
           }
         },
         "zh-Hans" : {
@@ -572,7 +632,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "En-tête %lld"
+            "value" : "Titre %lld"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हेडिंग %lld"
           }
         },
         "it" : {
@@ -621,6 +687,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Başlık %lld"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Заголовок %lld"
           }
         },
         "zh-Hans" : {
@@ -682,6 +754,12 @@
             "value" : "Marqueur"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मार्क"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -728,6 +806,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "İm"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Позначка"
           }
         },
         "zh-Hans" : {
@@ -789,6 +873,12 @@
             "value" : "Séparateur"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "विभाजक"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -837,10 +927,16 @@
             "value" : "Ayırıcı"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Роздільник"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "分隔符號"
+            "value" : "分隔符号"
           }
         },
         "zh-Hant" : {
@@ -896,6 +992,12 @@
             "value" : "Titre"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "शीर्षक"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -935,13 +1037,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Должность"
+            "value" : "Заглавие"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Başlık"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Назва"
           }
         },
         "zh-Hans" : {
@@ -1003,6 +1111,12 @@
             "value" : "Valeur"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मान"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1049,6 +1163,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Değer"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Значення"
           }
         },
         "zh-Hans" : {
@@ -1110,6 +1230,12 @@
             "value" : "Attributs"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "एट्रिब्यूट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1149,13 +1275,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Аттрибуты"
+            "value" : "Атрибуты"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Öznitelikler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Атрибути"
           }
         },
         "zh-Hans" : {
@@ -1217,6 +1349,12 @@
             "value" : "Caractères"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "वर्ण"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1263,6 +1401,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Karakterler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Символи"
           }
         },
         "zh-Hans" : {
@@ -1324,6 +1468,12 @@
             "value" : "Commandes"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कमांड"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1351,7 +1501,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Komendy"
+            "value" : "Polecenia"
           }
         },
         "pt" : {
@@ -1370,6 +1520,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Komutlar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Команди"
           }
         },
         "zh-Hans" : {
@@ -1431,6 +1587,12 @@
             "value" : "Commentaires"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कमेंट"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1477,6 +1639,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yorumlar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Коментарі"
           }
         },
         "zh-Hans" : {
@@ -1538,6 +1706,12 @@
             "value" : "Mots-clés"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कीवर्ड"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1584,6 +1758,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Anahtar sözcükler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ключові слова"
           }
         },
         "zh-Hans" : {
@@ -1645,6 +1825,12 @@
             "value" : "Nombres"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "संख्याएँ"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1666,7 +1852,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nummers"
+            "value" : "Getallen"
           }
         },
         "pl" : {
@@ -1684,13 +1870,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Номера"
+            "value" : "Числа"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sayılar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Числа"
           }
         },
         "zh-Hans" : {
@@ -1752,6 +1944,12 @@
             "value" : "Chaînes"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "स्ट्रिंग"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1797,7 +1995,13 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Diziler"
+            "value" : "Dizgiler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Рядки"
           }
         },
         "zh-Hans" : {
@@ -1859,6 +2063,12 @@
             "value" : "Types"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "प्रकार"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1905,6 +2115,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Türler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Типи"
           }
         },
         "zh-Hans" : {
@@ -1966,6 +2182,12 @@
             "value" : "Valeurs"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मान"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2012,6 +2234,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Değerler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Значення"
           }
         },
         "zh-Hans" : {
@@ -2073,6 +2301,12 @@
             "value" : "Variables"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "वेरिएबल"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2119,6 +2353,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Değişkenler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Змінні"
           }
         },
         "zh-Hans" : {

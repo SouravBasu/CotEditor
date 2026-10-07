@@ -34,6 +34,12 @@
             "value" : "Icône %@"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ आइकन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -73,13 +79,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@"
+            "value" : "Значок %@"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "%@ simgesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Іконка %@"
           }
         },
         "zh-Hans" : {
@@ -103,12 +115,12 @@
       }
     },
     "About %@" : {
-      "comment" : "%@ is app name",
+      "comment" : "window title; %@ is app name",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "O aplikaci %@"
+            "value" : "O aplikaci %@"
           }
         },
         "de" : {
@@ -133,6 +145,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "À propos de %@"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "%@ के बारे में"
           }
         },
         "it" : {
@@ -183,6 +201,12 @@
             "value" : "%@ Hakkında"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Про %@"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -209,7 +233,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "a všem, kteří podporují CotEditor!"
+            "value" : "a všem, kteří podporují CotEditor!"
           }
         },
         "de" : {
@@ -234,6 +258,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "ainsi que tous ceux qui soutiennent CotEditor !"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "और उन सभी को जो CotEditor का समर्थन करते हैं!"
           }
         },
         "it" : {
@@ -275,13 +305,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "и все кто поддерживает CotEditor!"
+            "value" : "и всех, кто поддерживает CotEditor!"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ve CotEditor’u destekleyen herkes!"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "і всім, хто підтримує CotEditor!"
           }
         },
         "zh-Hans" : {
@@ -316,7 +352,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Code-Beitragenden"
+            "value" : "Code-Beitragende"
           }
         },
         "en-GB" : {
@@ -335,6 +371,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Contributeurs du code"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कोड योगदानकर्ता"
           }
         },
         "it" : {
@@ -358,7 +400,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Code Bijdragers"
+            "value" : "Codebijdragers"
           }
         },
         "pl" : {
@@ -383,6 +425,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Kod Katkıcıları"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Учасники розробки"
           }
         },
         "zh-Hans" : {
@@ -437,28 +485,34 @@
             "value" : "CotEditor est un programme open source\nsous licence Apache, version 2.0."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor एक ओपन सोर्स प्रोग्राम है\nजो Apache License, Version 2.0 के अंतर्गत लाइसेंस प्राप्त है।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor è un programma Open-Source,\nrilasciato sotto la licenza Apache, Versione 2.0."
+            "value" : "CotEditor è un programma open source\nrilasciato sotto la licenza Apache, versione 2.0."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditorはオープンソースプログラムとして\nApache License, Version 2.0でライセンスされてます。"
+            "value" : "CotEditorはオープンソースプログラムとして\nApache License, Version 2.0でライセンスされています。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor는 오픈소스 프로그램이며,\nApache License, Version 2.0으로 보호됩니다."
+            "value" : "CotEditor는 오픈 소스 프로그램이며,\nApache License, Version 2.0에 따라 배포됩니다."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor is een open source programma\ngelicentieerd onder de Apache-licentie, versie 2.0."
+            "value" : "CotEditor is een opensourceprogramma\ngelicentieerd onder de Apache-licentie, versie 2.0."
           }
         },
         "pl" : {
@@ -476,13 +530,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor — программа с открытым исходным кодом,\nлицензированная Apache License, версия 2.0."
+            "value" : "CotEditor — программа с открытым исходным кодом,\nраспространяемая по лицензии Apache License, версия 2.0."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor, Apacha Lisansı Sürüm 2.0 altında\nlisanslanmış açık kaynaklı bir programdır."
+            "value" : "CotEditor, Apache Lisansı Sürüm 2.0 altında\nlisanslanmış açık kaynaklı bir programdır."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor — програма з відкритим вихідним кодом, що розповсюджується за ліцензією Apache License, Version 2.0."
           }
         },
         "zh-Hans" : {
@@ -537,6 +597,12 @@
             "value" : "CotEditor utilise les technologies géniales suivantes. Nous sommes très reconnaissants envers les personnes qui mettent leur précieux travail à notre disposition."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor निम्नलिखित बेहतरीन तकनीकों का उपयोग करता है। हम उन लोगों के गहराई से आभारी हैं जो अपना बहुमूल्य कार्य हमें उपलब्ध कराते हैं।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -552,7 +618,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "CotEditor는 다음과 같은 멋진 기술을 활용합니다. 가치있는 작업물을 사용할 수 있게 해주신 분들께 매우 감사드립니다."
+            "value" : "CotEditor는 다음과 같은 멋진 기술을 활용합니다. 가치 있는 작업물을 사용할 수 있게 해주신 분들께 매우 감사드립니다."
           }
         },
         "nl" : {
@@ -585,6 +651,12 @@
             "value" : "CotEditor aşağıdaki muhteşem teknolojileri kullanır. Değerli çalışmalarını kullanmamıza izin veren herkese şükran borçluyuz."
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor використовує наведені нижче чудові технології. Ми щиро вдячні людям, які зробили результати своєї цінної роботи доступними для нас."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -606,12 +678,12 @@
       }
     },
     "Credits" : {
-      "comment" : "button label",
+      "comment" : "noun; pane",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kredity"
+            "value" : "Poděkování"
           }
         },
         "de" : {
@@ -636,6 +708,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Crédits"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "क्रेडिट"
           }
         },
         "it" : {
@@ -665,7 +743,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Uznania"
+            "value" : "Podziękowania"
           }
         },
         "pt" : {
@@ -684,6 +762,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Emeği Geçenler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Подяки"
           }
         },
         "zh-Hans" : {
@@ -738,6 +822,12 @@
             "value" : "Licence"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "लाइसेंस"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -786,6 +876,12 @@
             "value" : "Lisans"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ліцензія"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -807,7 +903,7 @@
       }
     },
     "Licenses" : {
-      "comment" : "button label",
+      "comment" : "noun; pane",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -837,6 +933,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Licences"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "लाइसेंस"
           }
         },
         "it" : {
@@ -885,6 +987,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Lisanslar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ліцензії"
           }
         },
         "zh-Hans" : {
@@ -940,6 +1048,12 @@
             "value" : "Localisation"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "लोकलाइज़ेशन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -955,7 +1069,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "번역"
+            "value" : "현지화"
           }
         },
         "nl" : {
@@ -979,13 +1093,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Авторы переводов"
+            "value" : "Локализация"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Yerelleştirme"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Локалізація"
           }
         },
         "zh-Hans" : {
@@ -1014,13 +1134,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "pouze u verzí mimo App Store"
+            "value" : "pouze u verzí mimo App Store"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "nur bei der non-AppStore version"
+            "value" : "nur in der Version außerhalb des App Store"
           }
         },
         "en-GB" : {
@@ -1032,19 +1152,25 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Solo en la versión fuera de la AppStore"
+            "value" : "Solo en la versión fuera de App Store"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "uniquement la version non-AppStore"
+            "value" : "uniquement dans la version hors App Store"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "केवल गैर-AppStore वर्शन पर"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "solo sulla versione non sull’AppStore"
+            "value" : "solo nella versione non distribuita tramite App Store"
           }
         },
         "ja" : {
@@ -1056,19 +1182,19 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "비 AppStore 버전에만 해당"
+            "value" : "App Store 외부에서 배포된 버전에만 해당"
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "alleen op niet-AppStore versie"
+            "value" : "alleen in de versie buiten de App Store"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "tylko w wersji poza App Store"
+            "value" : "tylko w wersji poza App Store"
           }
         },
         "pt" : {
@@ -1080,13 +1206,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "только в версии не из AppStore"
+            "value" : "только в версии не из App Store"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "yalnızca App Store olmayan sürümde"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "лише у версії не з App Store"
           }
         },
         "zh-Hans" : {
@@ -1098,7 +1230,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "僅「非Mac App Store」發行版有使用到该模组"
+            "value" : "僅「非Mac App Store」發行版有使用到該模組"
           }
         },
         "zh-HK" : {
@@ -1141,6 +1273,12 @@
             "value" : "développeur original"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मूल डेवलपर"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1180,13 +1318,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "начальный разработчик"
+            "value" : "первоначальный разработчик"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ilk geliştirici"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "первинний розробник"
           }
         },
         "zh-Hans" : {
@@ -1242,6 +1386,12 @@
             "value" : "Un grand merci"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "विशेष धन्यवाद"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1288,6 +1438,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Özel Teşekkürler"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Особлива подяка"
           }
         },
         "zh-Hans" : {
@@ -1343,6 +1499,12 @@
             "value" : "Le projet CotEditor"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor परियोजना"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1382,13 +1544,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Основной автор"
+            "value" : "Проект CotEditor"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CotEditor Projesi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Проєкт CotEditor"
           }
         },
         "zh-Hans" : {
@@ -1450,6 +1618,12 @@
             "value" : "Version %1$@ (%2$@)"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "वर्शन %1$@ (%2$@)"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1496,6 +1670,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sürüm %1$@ (%2$@)"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Версія %1$@ (%2$@)"
           }
         },
         "zh-Hans" : {

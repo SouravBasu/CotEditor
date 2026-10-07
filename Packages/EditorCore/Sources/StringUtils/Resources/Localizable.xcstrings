@@ -8,13 +8,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Neoficiální standard založený na NFC, odpovídající modifikovanému NFD"
+            "value" : "Neoficiální forma normalizace založená na NFC, odpovídající modifikovanému NFD"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inoffizielles NFC-basiertes Normalisierungsformular entsprechend der modifizierten NFC"
+            "value" : "Inoffizielle NFC-basierte Normalisierungsform entsprechend der modifizierten NFD"
           }
         },
         "en" : {
@@ -32,7 +32,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Formulario de normalización no oficial basado en NFC correspondiente a NFD modificado"
+            "value" : "Forma de normalización no oficial basada en NFC correspondiente a NFD modificado"
           }
         },
         "fr" : {
@@ -41,10 +41,16 @@
             "value" : "Normalisation non officielle basée sur NFC, correspondant au NFD modifié"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "संशोधित NFD के अनुरूप अनौपचारिक NFC-आधारित नॉर्मलाइज़ेशन रूप"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Form di normalizzazione non ufficiale basata su NFD, corrispondente a NFD Modificato"
+            "value" : "Forma di normalizzazione non ufficiale basata su NFC, corrispondente a NFD modificato"
           }
         },
         "ja" : {
@@ -56,7 +62,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "수정된 NFD에 대응되는 NFC 기반 비공식 정규화 형태"
+            "value" : "수정된 NFD에 대응하는 NFC 기반의 비공식 정규화 형식입니다."
           }
         },
         "nl" : {
@@ -80,25 +86,31 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Неофициальная форма нормализации на основе NFC, соответствующая Модифицированному NFD"
+            "value" : "Неофициальная форма нормализации на основе NFC, соответствующая модифицированной NFD"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Değiştirilmiş NFD’ye karşılık gelen resmi olmayan NFC tabanlı olağanlaştırma biçimi"
+            "value" : "Değiştirilmiş NFD’ye karşılık gelen resmî olmayan NFC tabanlı olağanlaştırma biçimi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неофіційна форма нормалізації на основі NFC, що відповідає Modified NFD"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "非官方的基于NFD的标准化形式与修改后的NFD对应"
+            "value" : "非官方的基于NFC的标准化形式与修改后的NFD对应"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "非官方的基於NFD的標準化形式與修改後的NFD對應"
+            "value" : "非官方的基於NFC的標準化形式與修改後的NFD對應"
           }
         },
         "zh-HK" : {
@@ -110,6 +122,7 @@
       }
     },
     "UnicodeNormalization.modifiedNFC.label" : {
+      "comment" : "recommend to translate “modified”",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "cs" : {
@@ -139,7 +152,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NFD modificado"
+            "value" : "NFC modificado"
           }
         },
         "fr" : {
@@ -148,10 +161,16 @@
             "value" : "NFC modifié"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "संशोधित NFC"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NFC Modificato"
+            "value" : "NFC modificato"
           }
         },
         "ja" : {
@@ -184,10 +203,22 @@
             "value" : "NFC Modificado"
           }
         },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Модифицированная NFC"
+          }
+        },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Değiştirilmiş NFC"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Модифікований NFC"
           }
         },
         "zh-Hans" : {
@@ -217,13 +248,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Neoficiální standard založený na NFD, používaný v HFS+"
+            "value" : "Neoficiální forma normalizace založená na NFD, používaná v HFS+"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inoffizielles NFD-basiertes Normalisierungsformular, das im HFS+ verwendet wird"
+            "value" : "Inoffizielle NFD-basierte Normalisierungsform, die in HFS+ verwendet wird"
           }
         },
         "en" : {
@@ -241,7 +272,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Formulario de normalización no oficial basado en NFD utilizado en HFS+"
+            "value" : "Forma de normalización no oficial basada en NFD utilizada en HFS+"
           }
         },
         "fr" : {
@@ -250,10 +281,16 @@
             "value" : "Normalisation non officielle basée sur NFD, utilisée dans HFS+"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "HFS+ में उपयोग किया जाने वाला अनौपचारिक NFD-आधारित नॉर्मलाइज़ेशन रूप"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Form di normalizzazione non ufficiale basata su NFD, usata in HFS+"
+            "value" : "Forma di normalizzazione non ufficiale basata su NFD, usata in HFS+"
           }
         },
         "ja" : {
@@ -265,7 +302,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "HFS+에서 사용되는 NFD 기반 비공식 정규화 형태"
+            "value" : "HFS+에서 사용되는 NFD 기반의 비공식 정규화 형식입니다."
           }
         },
         "nl" : {
@@ -295,7 +332,13 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "HFS+’da resmi olmayan NFD tabanlı olağanlaştırma biçimi kullanılır"
+            "value" : "HFS+’da kullanılan resmî olmayan NFD tabanlı olağanlaştırma biçimi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неофіційна форма нормалізації на основі NFD, що використовується в HFS+"
           }
         },
         "zh-Hans" : {
@@ -319,6 +362,7 @@
       }
     },
     "UnicodeNormalization.modifiedNFD.label" : {
+      "comment" : "recommend to translate “modified”",
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "cs" : {
@@ -348,7 +392,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NFC modificado"
+            "value" : "NFD modificado"
           }
         },
         "fr" : {
@@ -357,10 +401,16 @@
             "value" : "NFD modifié"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "संशोधित NFD"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NFD Modificato"
+            "value" : "NFD modificato"
           }
         },
         "ja" : {
@@ -393,10 +443,22 @@
             "value" : "NFD Modificado"
           }
         },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Модифицированная NFD"
+          }
+        },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Değiştirilmiş NFD"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Модифікований NFD"
           }
         },
         "zh-Hans" : {
@@ -459,6 +521,12 @@
             "value" : "Décomposition canonique, suivie d’une composition canonique"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कैनोनिकल डीकम्पोज़िशन, उसके बाद कैनोनिकल कम्पोज़िशन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -474,7 +542,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "표준 분해를 하고 난 뒤 표준 합성"
+            "value" : "표준 분해 후 표준 합성을 수행합니다."
           }
         },
         "nl" : {
@@ -504,13 +572,19 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kurallara Uygun Dekompozisyon, sonrasında Kurallara Uygun Kompozisyon"
+            "value" : "Kurallara uygun dekompozisyon, ardından kurallara uygun kompozisyon"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Канонічна декомпозиція з подальшою канонічною композицією"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "以標準等價方式來分解，然後以標準等價重組之"
+            "value" : "以标准等价方式来分解，然后以标准等价重组之"
           }
         },
         "zh-Hant" : {
@@ -566,6 +640,12 @@
             "value" : "NFC"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFC"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -602,7 +682,19 @@
             "value" : "NFC"
           }
         },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFC"
+          }
+        },
         "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFC"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "NFC"
@@ -668,6 +760,12 @@
             "value" : "Décomposition canonique"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कैनोनिकल डीकम्पोज़िशन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -683,7 +781,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "표준 분해"
+            "value" : "표준 분해를 수행합니다."
           }
         },
         "nl" : {
@@ -713,13 +811,19 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Kurallara Uygun Kompozisyon"
+            "value" : "Kurallara uygun dekompozisyon"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Канонічна декомпозиція"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "以標準等價方式來分解"
+            "value" : "以标准等价方式来分解"
           }
         },
         "zh-Hant" : {
@@ -775,6 +879,12 @@
             "value" : "NFD"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFD"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -811,7 +921,19 @@
             "value" : "NFD"
           }
         },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFD"
+          }
+        },
         "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFD"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "NFD"
@@ -877,6 +999,12 @@
             "value" : "Décomposition de compatibilité, suivie d’une composition canonique"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कम्पैटिबिलिटी डीकम्पोज़िशन, उसके बाद कैनोनिकल कम्पोज़िशन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -892,7 +1020,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "호환 분해를 하고 난 뒤 표준 합성"
+            "value" : "호환 분해 후 표준 합성을 수행합니다."
           }
         },
         "nl" : {
@@ -922,13 +1050,19 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Uyumluluk Dekompozisyonu, sonrasında Kurallara Uygun Kompozisyon"
+            "value" : "Uyumluluk dekompozisyonu, ardından kurallara uygun kompozisyon"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Декомпозиція сумісності з подальшою канонічною композицією"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "以相容等價方式來分解，然後以標準等價重組之"
+            "value" : "以相容等价方式来分解，然后以标准等价重组之"
           }
         },
         "zh-Hant" : {
@@ -984,6 +1118,12 @@
             "value" : "NFKC"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFKC"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1020,7 +1160,19 @@
             "value" : "NFKC"
           }
         },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFKC"
+          }
+        },
         "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFKC"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "NFKC"
@@ -1053,13 +1205,13 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Použití NFKC, case folding a odstranění ignorovatelných kódových bodů"
+            "value" : "Použití NFKC, operace case folding a odstranění standardně ignorovatelných kódových bodů"
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NFKC anwenden, in Kleinbuchstaben umwandeln und standardmäßig ignorierbaren Codepunkten entfernen"
+            "value" : "NFKC und Case-Folding anwenden und standardmäßig ignorierbare Codepunkte entfernen"
           }
         },
         "en" : {
@@ -1077,37 +1229,43 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aplicación de NFKC, plegado y eliminación de puntos de código ignorables por defecto"
+            "value" : "Aplicación de NFKC, plegado de mayúsculas y minúsculas y eliminación de puntos de código ignorables por defecto"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Application de NFKC, case folding et suppression des points de code ignorables."
+            "value" : "Application de NFKC et du pli de casse, avec suppression des points de code ignorables implicitement"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFKC, केस फ़ोल्डिंग, और डिफ़ॉल्ट-अनदेखा-योग्य कोड पॉइंट हटाना लागू करना"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Applicare NFKC, case folding, e rimuovere i punti di codice ignorabili di default"
+            "value" : "Applicazione di NFKC e del case folding, con rimozione dei punti di codice ignorabili per impostazione predefinita"
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NFKCを適用しすべて小文字に変換（case folding）したのち、デフォルトの無視できるコードポイントを削除"
+            "value" : "NFKCとケースフォールディングを適用し、デフォルトで無視可能なコードポイントを削除"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NFKC"
+            "value" : "NFKC와 케이스 폴딩을 적용하고 기본적으로 무시할 수 있는 코드 포인트를 제거합니다."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Toepassing van NFKC, omzetten naar kleine letters en verwijdering van codepunten die standaard kunnen worden genegeerd."
+            "value" : "Toepassing van NFKC en casefolding, en verwijdering van codepunten die standaard kunnen worden genegeerd"
           }
         },
         "pl" : {
@@ -1119,7 +1277,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aplicando NFKC, case-folding e remoção de pontos de código ignorados por padrão"
+            "value" : "Aplicação de NFKC e case folding, com remoção dos pontos de código ignoráveis por padrão"
           }
         },
         "ru" : {
@@ -1131,19 +1289,25 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NFKC, Biçim Kıvırması ve öntanımlı olarak yok sayılabilen kod noktalarının kaldırılması uygulanıyor"
+            "value" : "NFKC uygulanır, büyük-küçük harf ayrımı kaldırılır ve saptanmış olarak yok sayılabilen kod noktaları silinir."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Застосування NFKC, згортання регістру та видалення кодових точок, що типово ігноруються"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "正在NFKC, Case Folding, 并移除默认可忽略编码点"
+            "value" : "应用NFKC、进行大小写折叠，并移除默认可忽略的码点"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "正在NFKC, Case Folding, 並移除預設可忽略編碼點"
+            "value" : "套用NFKC、進行大小寫折疊，並移除預設可忽略的碼點"
           }
         },
         "zh-HK" : {
@@ -1184,13 +1348,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NFKC plegado"
+            "value" : "NFKC Case-Fold"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "NFKC Case-Fold"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFKC केस-फ़ोल्ड"
           }
         },
         "it" : {
@@ -1229,10 +1399,22 @@
             "value" : "NFKC Case-Fold"
           }
         },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFKC Case-Fold"
+          }
+        },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "NFKC Biçim Kıvır"
+            "value" : "NFKC Case-Fold"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFKC Case-Fold"
           }
         },
         "zh-Hans" : {
@@ -1295,6 +1477,12 @@
             "value" : "Décomposition de compatibilité"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कम्पैटिबिलिटी डीकम्पोज़िशन"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1310,7 +1498,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "호환 분해"
+            "value" : "호환 분해를 수행합니다."
           }
         },
         "nl" : {
@@ -1340,13 +1528,19 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Uyumluluk Dekompozisyonu"
+            "value" : "Uyumluluk dekompozisyonu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Декомпозиція сумісності"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "以相容等價方式來分解"
+            "value" : "以相容等价方式来分解"
           }
         },
         "zh-Hant" : {
@@ -1402,6 +1596,12 @@
             "value" : "NFKD"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFKD"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1438,7 +1638,19 @@
             "value" : "NFKD"
           }
         },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFKD"
+          }
+        },
         "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "NFKD"
+          }
+        },
+        "uk" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "NFKD"

@@ -33,6 +33,12 @@
             "value" : "Syntaxes disponibles :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "उपलब्ध सिंटैक्स :"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -81,6 +87,12 @@
             "value" : "Kullanılabilir sözdizimleri:"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Доступні синтаксиси:"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -102,6 +114,7 @@
       }
     },
     "Customize Syntax Menu…" : {
+      "comment" : "verb; menu item",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -133,10 +146,16 @@
             "value" : "Personnaliser le menu de syntaxe…"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सिंटैक्स मेन्यू कस्टमाइज़ करें…"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Personalizza il Menu Sintassi…"
+            "value" : "Personalizza il menu Sintassi…"
           }
         },
         "ja" : {
@@ -181,6 +200,12 @@
             "value" : "Sözdizimi Menüsünü Özelleştir…"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Налаштувати меню синтаксисів…"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -202,6 +227,7 @@
       }
     },
     "Customized Syntaxes" : {
+      "comment" : "heading",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -231,6 +257,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Syntaxes personnalisées"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कस्टमाइज़ किए सिंटैक्स"
           }
         },
         "it" : {
@@ -266,19 +298,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sintaxes customizadas"
+            "value" : "Sintaxes Personalizadas"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Переопределенные синтаксисы:"
+            "value" : "Настроенные синтаксисы"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Özelleştirilmiş sözdizimleri"
+            "value" : "Özelleştirilmiş Sözdizimleri"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Налаштовані синтаксиси"
           }
         },
         "zh-Hans" : {
@@ -333,6 +371,12 @@
             "value" : "Fins de ligne par défaut :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डिफ़ॉल्ट लाइन एंडिंग :"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -360,7 +404,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Domyślny koniec wierszy:"
+            "value" : "Domyślne końce wierszy:"
           }
         },
         "pt" : {
@@ -378,7 +422,13 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Öntanımlı satır sonları:"
+            "value" : "Saptanmış satır sonları:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Типові закінчення рядків:"
           }
         },
         "zh-Hans" : {
@@ -424,13 +474,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sintaxis predeterminado:"
+            "value" : "Sintaxis predeterminada:"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Syntaxe par défaut :"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डिफ़ॉल्ट सिंटैक्स :"
           }
         },
         "it" : {
@@ -478,7 +534,13 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Öntanımlı sözdizimi:"
+            "value" : "Saptanmış sözdizimi:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Типовий синтаксис:"
           }
         },
         "zh-Hans" : {
@@ -533,6 +595,12 @@
             "value" : "Encodage du texte par défaut :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डिफ़ॉल्ट टेक्स्ट एनकोडिंग :"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -578,7 +646,13 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Öntanımlı metin kodlaması:"
+            "value" : "Saptanmış metin kodlaması:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Типове кодування тексту:"
           }
         },
         "zh-Hans" : {
@@ -602,6 +676,7 @@
       }
     },
     "Edit List…" : {
+      "comment" : "verb; button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -633,6 +708,12 @@
             "value" : "Modifier la liste…"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सूची संपादित करें…"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -654,7 +735,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bewerklijst…"
+            "value" : "Bewerk lijst…"
           }
         },
         "pl" : {
@@ -679,6 +760,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Listeyi Düzenle…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редагувати список…"
           }
         },
         "zh-Hans" : {
@@ -733,6 +820,12 @@
             "value" : "Priorité des encodages :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "एनकोडिंग प्राथमिकताएँ :"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -781,6 +874,12 @@
             "value" : "Kodlama önceliği:"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Пріоритети кодувань:"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -802,11 +901,12 @@
       }
     },
     "Refer to encoding declaration in document" : {
+      "comment" : "verb; checkbox",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Odkazovat na deklaraci kódování v dokumentu"
+            "value" : "Zohlednit deklaraci kódování v dokumentu"
           }
         },
         "de" : {
@@ -824,7 +924,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Consulte codificación hecha en el documento"
+            "value" : "Usar la declaración de codificación del documento"
           }
         },
         "fr" : {
@@ -833,10 +933,16 @@
             "value" : "Se référer à l’encodage déclaré dans le document"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "दस्तावेज़ में एनकोडिंग घोषणा देखें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Riferirsi alla codifica dichiarata nel documento"
+            "value" : "Usa la dichiarazione di codifica nel documento"
           }
         },
         "ja" : {
@@ -854,19 +960,19 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zie coderingsverklaring in document"
+            "value" : "Gebruik de coderingsdeclaratie in het document"
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Odwołaj się do deklaracji kodowania w dokumencie"
+            "value" : "Uwzględniaj deklarację kodowania w dokumencie"
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Consultar declaração da codificação no documento"
+            "value" : "Consultar Declaração da Codificação no Documento"
           }
         },
         "ru" : {
@@ -879,6 +985,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Belgedeki kodlama beyanına başvur"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Враховувати оголошення кодування в документі"
           }
         },
         "zh-Hans" : {
@@ -902,6 +1014,7 @@
       }
     },
     "Reload All Syntaxes" : {
+      "comment" : "verb; menu item",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -930,13 +1043,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Recargue todas las sintaxis"
+            "value" : "Recargar todas las sintaxis"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Recharger toutes les syntaxes"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सभी सिंटैक्स फिर से लोड करें"
           }
         },
         "it" : {
@@ -972,7 +1091,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Regarregar todas as sintaxes"
+            "value" : "Recarregar Todas as Sintaxes"
           }
         },
         "ru" : {
@@ -985,6 +1104,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tüm Sözdizimlerini Yeniden Yükle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перезавантажити всі синтаксиси"
           }
         },
         "zh-Hans" : {
@@ -1008,6 +1133,7 @@
       }
     },
     "Show File Mapping Conflicts" : {
+      "comment" : "verb; menu item",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -1036,13 +1162,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Mostrar conflictos de mapeo de archivos"
+            "value" : "Mostrar conflictos de asignación de archivos"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Montrer les conflits d’associations de fichiers"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ाइल मैपिंग विरोध दिखाएँ"
           }
         },
         "it" : {
@@ -1093,6 +1225,12 @@
             "value" : "Dosya Eşlemleme Çakışmalarını Göster"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Показати конфлікти зіставлення файлів"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1125,7 +1263,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dieses Syntax existiert nicht"
+            "value" : "Diese Syntax existiert nicht"
           }
         },
         "en-GB" : {
@@ -1143,7 +1281,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Cette syntaxe n’existe pas"
+            "value" : "Cette syntaxe n’existe pas."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "यह सिंटैक्स मौजूद नहीं है"
           }
         },
         "it" : {
@@ -1161,13 +1305,13 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "존재하지 않는 구문"
+            "value" : "존재하지 않는 구문입니다."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Deze syntaxis bestaat niet"
+            "value" : "Deze syntaxis bestaat niet."
           }
         },
         "pl" : {
@@ -1192,6 +1336,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bu sözdizimi yok"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Цього синтаксису не існує"
           }
         },
         "zh-Hans" : {
@@ -1252,6 +1402,12 @@
             "value" : "Cette syntaxe est personnalisée."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "यह सिंटैक्स कस्टमाइज़ किया गया है।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1285,19 +1441,25 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Esta sintaxe é customizada."
+            "value" : "Esta sintaxe é personalizada."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Этот синтаксис переопределен"
+            "value" : "Этот синтаксис настроен."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bu sözdizimi özelleştirilmiş."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Цей синтаксис налаштовано."
           }
         },
         "zh-Hans" : {

@@ -24,13 +24,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "La detección falló"
+            "value" : "La detección ha fallado"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Échec de la détection"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पहचान विफल"
           }
         },
         "it" : {
@@ -54,7 +60,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Detentie mislukt"
+            "value" : "Detectie mislukt"
           }
         },
         "pl" : {
@@ -72,13 +78,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ошибка распознования"
+            "value" : "Ошибка распознавания"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Algılama başarısız"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалося розпізнати"
           }
         },
         "zh-Hans" : {
@@ -102,7 +114,7 @@
       }
     },
     "Insert" : {
-      "comment" : "button label",
+      "comment" : "verb; button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -125,13 +137,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Inserción"
+            "value" : "Insertar"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Insérer"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सम्मिलित करें"
           }
         },
         "it" : {
@@ -180,6 +198,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ekle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вставити"
           }
         },
         "zh-Hans" : {
@@ -234,6 +258,12 @@
             "value" : "Aucun texte détecté"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कोई टेक्स्ट नहीं मिला"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -280,6 +310,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Saptanan metin yok"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Текст не розпізнано"
           }
         },
         "zh-Hans" : {

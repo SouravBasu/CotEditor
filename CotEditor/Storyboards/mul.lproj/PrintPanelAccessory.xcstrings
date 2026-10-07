@@ -41,6 +41,12 @@
             "value" : "Imprimer l’arrière-plan"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पृष्ठभूमि प्रिंट करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -87,6 +93,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Arka planları yazdır"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Друкувати тло"
           }
         },
         "zh-Hans" : {
@@ -140,7 +152,7 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tamaño letra"
+            "value" : "Tamaño de letra"
           }
         },
         "fr" : {
@@ -149,10 +161,16 @@
             "value" : "Taille de police"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ॉन्ट आकार"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dimensione font"
+            "value" : "Dimensioni font"
           }
         },
         "ja" : {
@@ -195,6 +213,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Font Puntosu"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Розмір шрифту"
           }
         },
         "zh-Hans" : {
@@ -257,6 +281,12 @@
             "value" : "En-tête"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हेडर"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -296,13 +326,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Заголовок"
+            "value" : "Верхний колонтитул"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Üstbilgi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Верхній колонтитул"
           }
         },
         "zh-Hans" : {
@@ -332,7 +368,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tisknout záhlaví a zápatí"
+            "value" : "Tisknout záhlaví a zápatí"
           }
         },
         "de" : {
@@ -363,6 +399,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Imprimer les en-têtes et pieds de page"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हेडर और फ़ुटर प्रिंट करें"
           }
         },
         "it" : {
@@ -411,6 +453,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Üst Bilgileri ve Alt Bilgileri Yazdır"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Друкувати колонтитули"
           }
         },
         "zh-Hans" : {
@@ -473,6 +521,12 @@
             "value" : "Imprimer les numéros de lignes"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पंक्ति संख्याएँ प्रिंट करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -519,6 +573,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Satır Numaralarını Yazdır"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Друкувати номери рядків"
           }
         },
         "zh-Hans" : {
@@ -572,13 +632,19 @@
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Imprimir Invisibles"
+            "value" : "Imprimir caracteres invisibles"
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Imprimer les caractères invisibles"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अदृश्य वर्ण प्रिंट करें"
           }
         },
         "it" : {
@@ -602,7 +668,7 @@
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Druk onzichtbaren af"
+            "value" : "Druk onzichtbare tekens af"
           }
         },
         "pl" : {
@@ -627,6 +693,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Görünmez Karakterleri Yazdır"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Друкувати невидимі символи"
           }
         },
         "zh-Hans" : {
@@ -702,10 +774,16 @@
             "value" : "Pied de page"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ुटर"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pie’ di pagina"
+            "value" : "Piè di pagina"
           }
         },
         "ja" : {
@@ -748,6 +826,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Altbilgi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нижній колонтитул"
           }
         },
         "zh-Hans" : {
@@ -810,6 +894,12 @@
             "value" : "Noir et blanc"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "श्वेत-श्याम"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -856,6 +946,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Siyah - Beyaz"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Чорно-білий"
           }
         },
         "zh-Hans" : {
@@ -931,6 +1027,12 @@
             "value" : "pt"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "pt"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -970,13 +1072,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "точек"
+            "value" : "пт"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "punto"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "пт"
           }
         },
         "zh-Hans" : {
@@ -1065,6 +1173,12 @@
             "value" : "Couleur"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रंग"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1111,6 +1225,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Renk"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Колір"
           }
         },
         "zh-Hans" : {

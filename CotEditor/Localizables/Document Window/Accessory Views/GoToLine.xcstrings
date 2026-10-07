@@ -2,7 +2,7 @@
   "sourceLanguage" : "en",
   "strings" : {
     "Go" : {
-      "comment" : "button label",
+      "comment" : "verb; button",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -32,6 +32,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Aller"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "जाएँ"
           }
         },
         "it" : {
@@ -73,13 +79,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Вперед"
+            "value" : "Перейти"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Git"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Перейти"
           }
         },
         "zh-Hans" : {
@@ -103,7 +115,7 @@
       }
     },
     "Line Number" : {
-      "comment" : "placeholder",
+      "comment" : "noun; placeholder",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -133,6 +145,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Numéro de ligne"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "पंक्ति संख्या"
           }
         },
         "it" : {
@@ -181,6 +199,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Satır Numarası"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Номер рядка"
           }
         },
         "zh-Hans" : {

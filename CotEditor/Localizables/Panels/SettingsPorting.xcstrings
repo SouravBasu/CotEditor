@@ -92,14 +92,14 @@
             "plural" : {
               "one" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%lld sintaxis personalizada"
+                  "state" : "translated",
+                  "value" : "%lld sintaxis personalizada"
                 }
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%lld sintaxis personalizadas"
+                  "state" : "translated",
+                  "value" : "%lld sintaxis personalizadas"
                 }
               }
             }
@@ -118,6 +118,24 @@
                 "stringUnit" : {
                   "state" : "needs_review",
                   "value" : "%lld syntaxes personnalisées"
+                }
+              }
+            }
+          }
+        },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld कस्टम सिंटैक्स"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld कस्टम सिंटैक्स"
                 }
               }
             }
@@ -176,8 +194,8 @@
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%lld aangepaste syntaxis"
+                  "state" : "translated",
+                  "value" : "%lld aangepaste syntaxen"
                 }
               }
             }
@@ -237,7 +255,7 @@
               "few" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld пользовательских синтаксисов"
+                  "value" : "%lld пользовательских синтаксиса"
                 }
               },
               "many" : {
@@ -274,6 +292,36 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld özel sözdizimi"
+                }
+              }
+            }
+          }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld користувацькі синтаксиси"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld користувацьких синтаксисів"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld користувацький синтаксис"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld користувацьких синтаксисів"
                 }
               }
             }
@@ -408,14 +456,14 @@
             "plural" : {
               "one" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%lld tema personalizado"
+                  "state" : "translated",
+                  "value" : "%lld tema personalizado"
                 }
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%lld temas personalizados"
+                  "state" : "translated",
+                  "value" : "%lld temas personalizados"
                 }
               }
             }
@@ -434,6 +482,24 @@
                 "stringUnit" : {
                   "state" : "needs_review",
                   "value" : "%lld thèmes personnalisés"
+                }
+              }
+            }
+          }
+        },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld कस्टम थीम"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld कस्टम थीम"
                 }
               }
             }
@@ -553,7 +619,7 @@
               "few" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld пользовательских тем"
+                  "value" : "%lld пользовательские темы"
                 }
               },
               "many" : {
@@ -590,6 +656,36 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld özel tema"
+                }
+              }
+            }
+          }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld користувацькі теми"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld користувацьких тем"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld користувацька тема"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld користувацьких тем"
                 }
               }
             }
@@ -725,14 +821,14 @@
             "plural" : {
               "one" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%lld definición"
+                  "state" : "translated",
+                  "value" : "%lld definición"
                 }
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
-                  "value" : "%lld definiciones"
+                  "state" : "translated",
+                  "value" : "%lld definiciones"
                 }
               }
             }
@@ -751,6 +847,24 @@
                 "stringUnit" : {
                   "state" : "needs_review",
                   "value" : "%lld définitions"
+                }
+              }
+            }
+          }
+        },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld परिभाषा"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld परिभाषाएँ"
                 }
               }
             }
@@ -870,7 +984,7 @@
               "few" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld определений"
+                  "value" : "%lld определения"
                 }
               },
               "many" : {
@@ -907,6 +1021,36 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld tanım"
+                }
+              }
+            }
+          }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld визначення"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld визначень"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld визначення"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld визначення"
                 }
               }
             }
@@ -1043,13 +1187,13 @@
               "one" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld ítem"
+                  "value" : "%lld ítem"
                 }
               },
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld ítems"
+                  "value" : "%lld ítems"
                 }
               }
             }
@@ -1068,6 +1212,24 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld éléments"
+                }
+              }
+            }
+          }
+        },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld आइटम"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%lld आइटम"
                 }
               }
             }
@@ -1187,7 +1349,7 @@
               "few" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "%lld штук"
+                  "value" : "%lld штуки"
                 }
               },
               "many" : {
@@ -1224,6 +1386,36 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "%lld öğe"
+                }
+              }
+            }
+          }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld елементи"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld елементів"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld елемент"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%1$lld елементів"
                 }
               }
             }
@@ -1295,14 +1487,20 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Choisissez une archive de paramètres CotEditor à importer."
+            "state" : "translated",
+            "value" : "Choisissez une archive de réglages CotEditor à importer."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इंपोर्ट करने के लिए एक CotEditor सेटिंग आर्काइव चुनें।"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Selezionare un archivio di impostazioni di CotEditor da importare."
+            "value" : "Scegli un archivio di impostazioni di CotEditor da importare."
           }
         },
         "ja" : {
@@ -1332,7 +1530,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Escolha um arquivo de configurações do CotEditor para importar."
+            "value" : "Escolha um arquivo de ajustes do CotEditor para importar."
           }
         },
         "ru" : {
@@ -1345,6 +1543,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "İçe aktarılacak bir CotEditor ayarları arşivi seçin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Оберіть архів параметрів CotEditor для імпорту."
           }
         },
         "zh-Hans" : {
@@ -1396,14 +1600,20 @@
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Este archivo de ajustes fue creado por otra versión de CotEditor (%@)."
+            "state" : "translated",
+            "value" : "Este archivo de ajustes se ha creado con otra versión de CotEditor (%@)."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Cette archive de réglages a été créée par une autre version de CotEditor (%@)."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "यह सेटिंग आर्काइव CotEditor के किसी भिन्न वर्शन (%@) द्वारा बनाया गया था।"
           }
         },
         "it" : {
@@ -1421,7 +1631,7 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "이 설정 아카이브는 다른 버전의 CotEditor에서 생성되었습니다. (%@)"
+            "value" : "이 설정 아카이브는 다른 버전의 CotEditor(%@)에서 생성되었습니다."
           }
         },
         "nl" : {
@@ -1439,7 +1649,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Este arquivo de configurações foi criado por uma versão diferente do CotEditor (%@)."
+            "value" : "Este arquivo de ajustes foi criado por uma versão diferente do CotEditor (%@)."
           }
         },
         "ru" : {
@@ -1452,6 +1662,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Bu ayarlar arşivi, CotEditor’ün farklı bir sürümü (%@) ile oluşturuldu."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Цей архів параметрів створено в іншій версії CotEditor (%@)."
           }
         },
         "zh-Hans" : {
@@ -1513,6 +1729,12 @@
             "value" : "Vous pouvez toujours importer ces éléments, mais certains réglages peuvent être incompatibles."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आप फिर भी इन आइटम को इंपोर्ट कर सकते हैं, लेकिन कुछ सेटिंग असंगत हो सकती हैं।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1546,7 +1768,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Você ainda pode importar estes itens, mas algumas configurações podem ser incompatíveis."
+            "value" : "Você ainda pode importar estes itens, mas alguns ajustes podem ser incompatíveis."
           }
         },
         "ru" : {
@@ -1561,16 +1783,22 @@
             "value" : "Bu öğeleri yine de içe aktarabilirsiniz; ancak bazı ayarlar uyumsuz olabilir."
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ви все одно можете імпортувати ці елементи, але деякі параметри можуть бути несумісними."
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您仍可继续导入这些项目，但部分设置可能不兼容。"
+            "value" : "你仍可继续导入这些项目，但部分设置可能不兼容。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "您仍可匯入這些項目，但部分設定可能不相容。"
+            "value" : "你仍可匯入這些項目，但部分設定可能不相容。"
           }
         },
         "zh-HK" : {
@@ -1609,8 +1837,14 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Exporter les réglages sélectionnés sous forme d’archive afin de pouvoir les importer sur d’autres ordinateurs."
+            "state" : "translated",
+            "value" : "Exportez les réglages sélectionnés sous forme d’archive afin de pouvoir les importer sur d’autres ordinateurs."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अन्य कंप्यूटरों में इंपोर्ट करने की अनुमति देने के लिए चयनित सेटिंग को आर्काइव के रूप में एक्सपोर्ट करें।"
           }
         },
         "it" : {
@@ -1646,7 +1880,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Exporte as configurações selecionadas como um arquivo para permitir a importação em outros computadores."
+            "value" : "Exporte os ajustes selecionados como um arquivo para permitir a importação em outros computadores."
           }
         },
         "ru" : {
@@ -1659,6 +1893,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Seçili ayarları arşiv olarak dışa aktararak diğer bilgisayarlara aktarılmasını sağlayın."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Експортуйте вибрані параметри як архів, щоб їх можна було імпортувати на інших компʼютерах."
           }
         },
         "zh-Hans" : {
@@ -1682,6 +1922,7 @@
       }
     },
     "Export Settings" : {
+      "comment" : "window title",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -1713,6 +1954,12 @@
             "value" : "Exporter les réglages"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सेटिंग एक्सपोर्ट करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1740,7 +1987,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Eksportuj ustawienia"
+            "value" : "Eksport ustawień"
           }
         },
         "pt" : {
@@ -1752,13 +1999,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Экспортировать настройки"
+            "value" : "Экспорт настроек"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ayarları Dışa Aktar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Експортувати параметри"
           }
         },
         "zh-Hans" : {
@@ -1782,6 +2035,7 @@
       }
     },
     "Import Settings" : {
+      "comment" : "window title",
       "localizations" : {
         "cs" : {
           "stringUnit" : {
@@ -1813,6 +2067,12 @@
             "value" : "Importer les réglages"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सेटिंग इंपोर्ट करें"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1840,7 +2100,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Importuj ustawienia"
+            "value" : "Import ustawień"
           }
         },
         "pt" : {
@@ -1852,13 +2112,19 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Импортировать настройки"
+            "value" : "Импорт настроек"
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ayarlar İçe Aktar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Імпортувати параметри"
           }
         },
         "zh-Hans" : {
@@ -1886,7 +2152,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vyberte položky k importu:"
+            "value" : "Vyberte položky k importu:"
           }
         },
         "de" : {
@@ -1910,7 +2176,13 @@
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Sélectionner les éléments à importer :"
+            "value" : "Sélectionnez les éléments à importer :"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इंपोर्ट करने के लिए आइटम चुनें :"
           }
         },
         "it" : {
@@ -1959,6 +2231,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "İçe aktarılacak öğeleri seçin:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Виберіть елементи для імпорту:"
           }
         },
         "zh-Hans" : {
@@ -2020,6 +2298,12 @@
             "value" : "Périmètres des fichiers"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "फ़ाइल स्कोप"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2068,6 +2352,12 @@
             "value" : "Dosya Kapsamları"
           }
         },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Області файлів"
+          }
+        },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2094,7 +2384,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Více definic nahrazení"
+            "value" : "Definice vícenásobného nahrazení"
           }
         },
         "de" : {
@@ -2125,6 +2415,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Définitions de remplacement multiples"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "मल्टीपल रिप्लेस परिभाषाएँ"
           }
         },
         "it" : {
@@ -2172,7 +2468,13 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Birden çok değişiklik tanımı"
+            "value" : "Çoklu Değiştirme Tanımları"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Набори множинної заміни"
           }
         },
         "zh-Hans" : {
@@ -2201,7 +2503,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Všechna nastavení v okně Nastavení"
+            "value" : "Všechna nastavení v okně Nastavení"
           }
         },
         "de" : {
@@ -2230,14 +2532,20 @@
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Tous les paramètres dans la fenêtre Réglages"
+            "state" : "translated",
+            "value" : "Tous les réglages dans la fenêtre Réglages"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सेटिंग विंडो में सभी सेटिंग"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tutte le impostazioni nella\nfinestra Impostazioni"
+            "value" : "Tutte le impostazioni nella finestra Impostazioni"
           }
         },
         "ja" : {
@@ -2254,8 +2562,8 @@
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Alle instellingen in het venster ‘Instellingen’"
+            "state" : "translated",
+            "value" : "Alle instellingen in het venster 'Instellingen'"
           }
         },
         "pl" : {
@@ -2267,7 +2575,7 @@
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Todas as configurações na janela de Configurações"
+            "value" : "Todos os ajustes na janela de Ajustes"
           }
         },
         "ru" : {
@@ -2280,6 +2588,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ayarlar penceresindeki tüm ayarlar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Усі параметри у вікні «Параметри»"
           }
         },
         "zh-Hans" : {
@@ -2341,6 +2655,12 @@
             "value" : "Réglages"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सेटिंग"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2387,6 +2707,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Ayarlar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Параметри"
           }
         },
         "zh-Hans" : {
@@ -2448,6 +2774,12 @@
             "value" : "Syntaxes"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सिंटैक्स"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2494,6 +2826,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Sözdizimleri"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Синтаксиси"
           }
         },
         "zh-Hans" : {
@@ -2555,6 +2893,12 @@
             "value" : "Thèmes"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "थीम"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2601,6 +2945,12 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Temalar"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Теми"
           }
         },
         "zh-Hans" : {

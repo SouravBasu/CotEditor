@@ -56,18 +56,18 @@ struct FilePreviewView: View {
             
             HStack(spacing: 12) {
                 if self.item.isAlias {
-                    Button(.init("Show in Finder", table: "Document")) {
+                    Button(.init("Show in Finder", table: "Document", comment: "verb; button")) {
                         let url = (self.item.contentAttributes as? LinkFileAttributes)?.destinationURL ?? self.item.previewItemURL!
                         NSWorkspace.shared.activateFileViewerSelecting([url])
                     }
                     
                     if self.item.isFolderAlias {
-                        Button(.init("Open in New Window", table: "Document")) {
+                        Button(.init("Open in New Window", table: "Document", comment: "verb; button")) {
                             self.item.openLinkedFile()
                         }
                     } else {
                         Button(.init("Open Original", table: "Document",
-                                     comment: "action label; “Original” refers to the target of an alias/symlink in macOS. Refer to how the Finder translates it.")) {
+                                     comment: "verb; button; “Original” refers to the target of an alias/symlink in macOS. Refer to how the Finder translates it.")) {
                             let menuItem = NSMenuItem()
                             menuItem.representedObject = self.item.previewItemURL
                             NSApp.sendAction(#selector(DirectoryDocument.openOriginalDocumentAsPlainText), to: nil, from: menuItem)
@@ -77,7 +77,7 @@ struct FilePreviewView: View {
                 } else {
                     OpenWithExternalEditorMenu(url: self.item.previewItemURL)
                     
-                    Button(.init("Open as Plain Text", table: "Document")) {
+                    Button(.init("Open as Plain Text", table: "Document", comment: "verb; button")) {
                         let menuItem = NSMenuItem()
                         menuItem.representedObject = self.item.previewItemURL
                         NSApp.sendAction(#selector(DirectoryDocument.openDocumentAsPlainText), to: nil, from: menuItem)
@@ -188,12 +188,12 @@ struct ImageAttributesView: View {
         
         LabeledContent(.init("Dimensions", table: "Document"),
                        value: self.attributes.dimensions.formatted)
-        LabeledContent(.init("Image DPI", table: "Document"),
+        LabeledContent(.init("Image DPI", table: "Document", comment: "Refer the same expression by Apple."),
                        value: String(localized: "\(self.attributes.dotsPerInch, format: .number) pixels/inch", table: "Document"))
         if let colorSpace = self.attributes.colorSpace {
-            LabeledContent(.init("Color space", table: "Document"),
+            LabeledContent(.init("Color space", table: "Document", comment: "Refer the same expression by Apple."),
                            optional: colorSpace.colorSpaceModel.localizedName)
-            LabeledContent(.init("Color profile", table: "Document"),
+            LabeledContent(.init("Color profile", table: "Document", comment: "Refer the same expression by Apple."),
                            optional: colorSpace.localizedName)
         }
     }
@@ -326,7 +326,8 @@ private struct OpenWithExternalEditorMenu: View {
             
             var title = AttributedString(self.editor.displayName)
             if self.isDefault {
-                title += AttributedString(String(localized: " (default)", table: "Document"),
+                title += AttributedString(String(localized: " (default)", table: "Document",
+                                                 comment: "suffix added to the app name of the default external editor"),
                                           attributes: .init().foregroundColor(.secondary))
             }
             if self.includesVersion, let version = self.editor.version, !version.isEmpty {
@@ -397,7 +398,7 @@ private extension Duration {
     let url = Bundle.main.url(forResource: "AppIcon", withExtension: "icns")!
     let item = try! PreviewDocument(contentsOf: url, ofType: UTType.icns.identifier)
     
-    return FilePreviewView(item: item)
+    FilePreviewView(item: item)
 }
 
 #Preview("ImageAttributesView") {

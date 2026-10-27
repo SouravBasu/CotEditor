@@ -311,7 +311,7 @@ extension Logger {
         switch item.action {
             case #selector(toggleMarkdownPreview):
                 let hasDocument = (NSDocumentController.shared as? DocumentController)?.currentPlainTextDocument != nil
-                    || NSDocumentController.shared.documents.contains { $0 is Document || ($0 as? DirectoryDocument)?.currentDocument is Document }
+                    || NSDocumentController.shared.documents.contains { $0 is TextDocument || ($0 as? DirectoryDocument)?.currentDocument is TextDocument }
                 let isPreviewOpen = MarkdownPreviewWindowController.shared.isWindowLoaded && MarkdownPreviewWindowController.shared.window?.isVisible == true
                 return hasDocument || isPreviewOpen
                 

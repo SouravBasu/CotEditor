@@ -139,7 +139,7 @@ final class DocumentWindowController: NSWindowController, NSWindowDelegate {
         toolbar.autosavesConfiguration = true
         toolbar.delegate = self
         window.toolbar = toolbar
-        self.updateMarkdownPreviewToolbarItemVisibility(syntaxName: (document as? Document)?.syntaxName)
+        self.updateMarkdownPreviewToolbarItemVisibility(syntaxName: (document as? TextDocument)?.syntaxName)
         
         // observe opacity setting change
         // -> Keep opaque when the window was created as a browsing window (the right side ones in the browsing mode).
@@ -1066,7 +1066,7 @@ extension DocumentWindowController: NSToolbarDelegate {
                                       defaultValue: "Show or hide Markdown preview window", table: "Document")
                 item.image = NSImage(systemSymbolName: "doc.richtext", accessibilityDescription: item.label)
                 item.action = #selector(AppDelegate.toggleMarkdownPreview)
-                item.isHidden = (self.fileDocument as? Document)?.syntaxName != SyntaxName.markdown
+                item.isHidden = (self.fileDocument as? TextDocument)?.syntaxName != SyntaxName.markdown
                 return item
                 
             default:

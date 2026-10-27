@@ -849,9 +849,9 @@ struct MarkdownPreviewGFMRenderingTests {
         let controller = MarkdownPreviewWindowController()
         controller.isPinned = false
         
-        let doc1 = Document()
+        let doc1 = TextDocument()
         doc1.textStorage.replaceCharacters(in: NSRange(location: 0, length: 0), with: "# Doc One")
-        let doc2 = Document()
+        let doc2 = TextDocument()
         doc2.textStorage.replaceCharacters(in: NSRange(location: 0, length: 0), with: "# Doc Two")
         
         controller.updateTrackedDocument(to: doc1)
@@ -867,11 +867,11 @@ struct MarkdownPreviewGFMRenderingTests {
         controller.isPinned = false
     }
     
-    @Test func test_unpinning_resynchronizesToFrontDocument() {
+    @Test func test_unpinning_resynchronizesToFrontTextDocument() {
         let controller = MarkdownPreviewWindowController()
         controller.isPinned = false
         
-        let doc = Document()
+        let doc = TextDocument()
         controller.updateTrackedDocument(to: doc)
         
         controller.isPinned = true
@@ -890,7 +890,7 @@ struct MarkdownPreviewGFMRenderingTests {
         #expect(controller.validateUserInterfaceItem(item) == false)
         #expect(item.state == .off)
         
-        let doc = Document()
+        let doc = TextDocument()
         controller.updateTrackedDocument(to: doc)
         #expect(controller.validateUserInterfaceItem(item) == true)
         #expect(item.state == .off)
@@ -953,14 +953,14 @@ struct MarkdownPreviewGFMRenderingTests {
         let controller = MarkdownPreviewWindowController()
         controller.isPinned = false
         
-        let docA = Document()
+        let docA = TextDocument()
         docA.textStorage.replaceCharacters(in: NSRange(location: 0, length: 0), with: "# Alpha Document")
         controller.updateTrackedDocument(to: docA)
         #expect(controller.currentDocument === docA)
         #expect(controller.containerViewController.isShowingPlaceholder == false)
         #expect(controller.previewViewController.lastMarkdown == "# Alpha Document")
         
-        let docB = Document()
+        let docB = TextDocument()
         docB.textStorage.replaceCharacters(in: NSRange(location: 0, length: 0), with: "# Beta Document")
         controller.updateTrackedDocument(to: docB)
         #expect(controller.currentDocument === docB)
@@ -972,7 +972,7 @@ struct MarkdownPreviewGFMRenderingTests {
         let controller = MarkdownPreviewWindowController()
         controller.isPinned = false
         
-        let doc = Document()
+        let doc = TextDocument()
         controller.updateTrackedDocument(to: doc)
         #expect(controller.containerViewController.isShowingPlaceholder == false)
         
@@ -985,7 +985,7 @@ struct MarkdownPreviewGFMRenderingTests {
         let controller = MarkdownPreviewWindowController()
         controller.isPinned = false
         
-        let doc = Document()
+        let doc = TextDocument()
         controller.updateTrackedDocument(to: doc)
         #expect(controller.currentDocument === doc)
         
@@ -994,11 +994,11 @@ struct MarkdownPreviewGFMRenderingTests {
         #expect(controller.containerViewController.isShowingPlaceholder == true)
     }
     
-    @Test func test_weakDocumentReference_doesNotRetainDocument() {
+    @Test func test_weakDocumentReference_doesNotRetainTextDocument() {
         let controller = MarkdownPreviewWindowController()
         controller.isPinned = false
         
-        var doc: Document? = Document()
+        var doc: TextDocument? = TextDocument()
         weak var weakDoc = doc
         
         controller.updateTrackedDocument(to: doc)
@@ -1016,7 +1016,7 @@ struct MarkdownPreviewGFMRenderingTests {
 @MainActor struct MarkdownPreviewKeystrokeSyncTests {
     
     @Test func test_keystrokeSync_observedDirectlyFromTextStorage() async throws {
-        let doc = Document()
+        let doc = TextDocument()
         doc.textStorage.replaceCharacters(in: NSRange(location: 0, length: 0), with: "# Initial")
         
         let controller = MarkdownPreviewWindowController()
@@ -1035,7 +1035,7 @@ struct MarkdownPreviewGFMRenderingTests {
     }
     
     @Test func test_attributeEdits_ignoredByKeystrokeObserver() async throws {
-        let doc = Document()
+        let doc = TextDocument()
         doc.textStorage.replaceCharacters(in: NSRange(location: 0, length: 0), with: "# Static Title")
         
         let controller = MarkdownPreviewWindowController()
@@ -1051,7 +1051,7 @@ struct MarkdownPreviewGFMRenderingTests {
     }
     
     @Test func test_debounceMechanism_batchesFastKeystrokes() async throws {
-        let doc = Document()
+        let doc = TextDocument()
         let controller = MarkdownPreviewWindowController()
         controller.isPinned = false
         controller.updateTrackedDocument(to: doc)
@@ -1078,7 +1078,7 @@ struct MarkdownPreviewGFMRenderingTests {
     }
     
     @Test func test_flushPendingKeystrokes_firesImmediately() {
-        let doc = Document()
+        let doc = TextDocument()
         doc.textStorage.replaceCharacters(in: NSRange(location: 0, length: 0), with: "Hello")
         
         let controller = MarkdownPreviewWindowController()
@@ -1100,7 +1100,7 @@ struct MarkdownPreviewGFMRenderingTests {
         let controller = MarkdownPreviewWindowController()
         controller.isPinned = false
         
-        let doc = Document()
+        let doc = TextDocument()
         let tempDir1 = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
         try? FileManager.default.createDirectory(at: tempDir1, withIntermediateDirectories: true)
         let fileURL1 = tempDir1.appendingPathComponent("note.md")
@@ -1126,14 +1126,14 @@ struct MarkdownPreviewGFMRenderingTests {
 @Suite("MarkdownPreview Menu & Responder Chain Validation Tests", .serialized)
 @MainActor struct MarkdownPreviewMenuAndResponderTests {
     
-    @Test func test_menuValidation_enabledWithActiveDocument() {
+    @Test func test_menuValidation_enabledWithActiveTextDocument() {
         let appDelegate = AppDelegate()
         let item = PreviewDummyValidatedItem(action: #selector(AppDelegate.toggleMarkdownPreview))
         
         // Ensure preview window is closed
         MarkdownPreviewWindowController.shared.window?.orderOut(nil)
         
-        let doc = Document()
+        let doc = TextDocument()
         (NSDocumentController.shared as? DocumentController)?.addDocument(doc)
         defer {
             (NSDocumentController.shared as? DocumentController)?.removeDocument(doc)
@@ -1217,7 +1217,7 @@ struct MarkdownPreviewGFMRenderingTests {
     
     @Test func test_toolbarIdentifier_matchesSpecification() {
         let expectedRawValue = "com.coteditor.CotEditor.ToolbarItem.markdownPreview"
-        let doc = Document()
+        let doc = TextDocument()
         let controller = DocumentWindowController(document: doc)
         let toolbar = NSToolbar(identifier: "Document")
         let allowed = controller.toolbarAllowedItemIdentifiers(toolbar)
@@ -1225,7 +1225,7 @@ struct MarkdownPreviewGFMRenderingTests {
     }
     
     @Test func test_toolbarItemInDefaultList() {
-        let doc = Document()
+        let doc = TextDocument()
         let controller = DocumentWindowController(document: doc)
         let toolbar = NSToolbar(identifier: "Document")
         let defaults = controller.toolbarDefaultItemIdentifiers(toolbar)
@@ -1233,7 +1233,7 @@ struct MarkdownPreviewGFMRenderingTests {
     }
     
     @Test func test_toolbarItemInAllowedList() {
-        let doc = Document()
+        let doc = TextDocument()
         let controller = DocumentWindowController(document: doc)
         let toolbar = NSToolbar(identifier: "Document")
         let allowed = controller.toolbarAllowedItemIdentifiers(toolbar)
@@ -1241,7 +1241,7 @@ struct MarkdownPreviewGFMRenderingTests {
     }
     
     @Test func test_toolbarItemConstructionAndProperties() throws {
-        let doc = Document()
+        let doc = TextDocument()
         let controller = DocumentWindowController(document: doc)
         let toolbar = NSToolbar(identifier: "Document")
         let defaultItemIDs = controller.toolbarDefaultItemIdentifiers(toolbar)
@@ -1256,7 +1256,7 @@ struct MarkdownPreviewGFMRenderingTests {
     }
     
     @Test func test_toolbarItemVisibility_basedOnSyntax() throws {
-        let doc = Document()
+        let doc = TextDocument()
         let controller = DocumentWindowController(document: doc)
         let toolbar = NSToolbar(identifier: "Document")
         let defaultItemIDs = controller.toolbarDefaultItemIdentifiers(toolbar)
@@ -1273,7 +1273,7 @@ struct MarkdownPreviewGFMRenderingTests {
     }
     
     @Test func test_toolbarItemVisibility_dynamicSwitching() async throws {
-        let doc = Document()
+        let doc = TextDocument()
         doc.setSyntax(name: "None")
         let controller = DocumentWindowController(document: doc)
         guard let window = controller.window, let toolbar = window.toolbar else {

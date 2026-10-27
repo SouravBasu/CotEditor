@@ -35,7 +35,7 @@ final class MarkdownPreviewWindowController: NSWindowController, NSWindowDelegat
     
     static let shared = MarkdownPreviewWindowController()
     
-    private(set) weak var currentDocument: Document?
+    private(set) weak var currentDocument: TextDocument?
     
     var isPinned: Bool = false {
         didSet {
@@ -114,7 +114,7 @@ final class MarkdownPreviewWindowController: NSWindowController, NSWindowDelegat
     override func showWindow(_ sender: Any?) {
         if self.currentDocument == nil, !self.isPinned {
             let frontDocument = (NSDocumentController.shared as? DocumentController)?.currentPlainTextDocument
-                ?? (NSDocumentController.shared.documents.first as? Document)
+                ?? (NSDocumentController.shared.documents.first as? TextDocument)
             if let frontDocument {
                 self.updateTrackedDocument(to: frontDocument)
             }
@@ -168,14 +168,14 @@ final class MarkdownPreviewWindowController: NSWindowController, NSWindowDelegat
                     .debounce(for: .seconds(0.1), scheduler: RunLoop.main)
                     .sink { [weak self] fileDocument in
                         guard let self, !self.isPinned else { return }
-                        self.updateTrackedDocument(to: fileDocument as? Document)
+                        self.updateTrackedDocument(to: fileDocument as? TextDocument)
                     }
             }
             .store(in: &self.trackingCancellables)
     }
     
     /// Updates document tracking to a new document or displays placeholder if nil.
-    func updateTrackedDocument(to document: Document?) {
+    func updateTrackedDocument(to document: TextDocument?) {
         guard !self.isPinned else { return }
         guard document !== self.currentDocument else { return }
         
@@ -239,7 +239,7 @@ final class MarkdownPreviewWindowController: NSWindowController, NSWindowDelegat
         
         if !self.isPinned {
             let nextDocument = (NSDocumentController.shared as? DocumentController)?.currentPlainTextDocument
-                ?? (NSDocumentController.shared.documents.first as? Document)
+                ?? (NSDocumentController.shared.documents.first as? TextDocument)
             if let nextDocument {
                 self.updateTrackedDocument(to: nextDocument)
                 return

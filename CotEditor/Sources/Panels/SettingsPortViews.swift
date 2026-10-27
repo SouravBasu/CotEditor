@@ -45,15 +45,17 @@ struct ExportSettingsView: View {
         
         VStack(alignment: .leading) {
             VStack(alignment: .leading, spacing: 6) {
-                Text("Export Settings", tableName: "SettingsPorting")
-                    .font(.system(size: 14, weight: .bold))
+                Text("Export Settings", tableName: "SettingsPorting", comment: "view title")
+                    .font(.system(size: 14, weight: .semibold))
                 Text("Export selected settings as an archive to allow importing into other computers.", tableName: "SettingsPorting")
+                    .controlSize(.small)
+                    .foregroundStyle(.secondary)
             }
             .padding(.bottom, 12)
             
             PortableTypesView(types: $types, includedTypes: self.includedTypes)
             
-            SubmitButtonGroup(.init("Action.export.label", defaultValue: "Export…"), helpAnchor: "howto_port_settings", action: self.exportSettings)
+            SubmitButtonGroup(.init("Action.export.ellipsis.label", defaultValue: "Export…"), helpAnchor: "howto_port_settings", action: self.exportSettings)
                 .disabled(self.types.isEmpty)
                 .padding(.top)
         }
@@ -69,7 +71,6 @@ struct ExportSettingsView: View {
             self.document = nil
         }
         .alert(error: $error)
-        .frame(width: 340)
     }
     
     
@@ -92,7 +93,6 @@ struct ImportSettingsView: View {
     
     typealias Types = PortableSettingsDocument.SettingTypes
     
-    var name: String
     var document: PortableSettingsDocument
     
     
@@ -106,8 +106,8 @@ struct ImportSettingsView: View {
     var body: some View {
         
         VStack(alignment: .leading, spacing: 8) {
-            Text(self.name)
-                .font(.system(size: 14, weight: .bold))
+            Text("Import Settings", tableName: "SettingsPorting", comment: "view title")
+                .font(.system(size: 14, weight: .semibold))
             
             if let documentError {
                 DocumentErrorView(error: documentError)
@@ -115,6 +115,7 @@ struct ImportSettingsView: View {
             }
             
             Text("Select the items to import:", tableName: "SettingsPorting")
+                .zIndex(1)
             PortableTypesView(types: $types, includedTypes: self.document.bundledSettings)
             
             SubmitButtonGroup(.init("Action.import.ellipsis.label", defaultValue: "Import…"), helpAnchor: "howto_port_settings", action: self.importSettings)
@@ -130,7 +131,6 @@ struct ImportSettingsView: View {
             }
         }
         .alert(error: $error)
-        .frame(width: 340)
     }
     
     
@@ -268,6 +268,6 @@ extension PortableSettingsDocument.Error: LocalizedError {
     var document = try! PortableSettingsDocument(including: .all)
     document.info.version = Version(6, 0, 0)
     
-    return ImportSettingsView(name: "Untitled", document: document)
+    return ImportSettingsView(document: document)
         .scenePadding()
 }

@@ -1,13 +1,13 @@
 {
-  "originHash" : "423082f39559ab4331c8832ebc8aa455062b84d6bbff6117da6b259434f0351d",
+  "originHash" : "d9cb8bb45a05acd69a09ef53c7b445beca0fb0a02590fde7375570a78783f538",
   "pins" : [
     {
       "identity" : "sparkle",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sparkle-project/Sparkle",
       "state" : {
-        "revision" : "eef1a539a373c1f1a320624b1130fc5de7b2e100",
-        "version" : "2.10.0"
+        "revision" : "ab7d71291238df6e0492143b120c9b696a35f603",
+        "version" : "2.10.1"
       }
     },
     {
@@ -186,8 +186,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/tree-sitter/tree-sitter-php",
       "state" : {
-        "revision" : "92b5271b60bec77fb65b5e5bc41561e8dac81299",
-        "version" : "0.25.0"
+        "revision" : "58d5643086ae60e93a3746cca648363ee97c8761",
+        "version" : "0.25.1"
       }
     },
     {
@@ -222,8 +222,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/tree-sitter/tree-sitter-scala",
       "state" : {
-        "revision" : "b931fcc338390925eb893d70ad070033f5856ccf",
-        "version" : "0.26.2"
+        "revision" : "851032fc97297bbe299dabe5bd826f778794d03c",
+        "version" : "0.26.3"
       }
     },
     {
@@ -232,7 +232,7 @@
       "location" : "https://github.com/DerekStride/tree-sitter-sql",
       "state" : {
         "branch" : "gh-pages",
-        "revision" : "39fdb006403747241244326e8af3b3e96b85381c"
+        "revision" : "e038788e5d4daba82dea35676bf49a216629e141"
       }
     },
     {
@@ -240,8 +240,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/alex-pinkus/tree-sitter-swift",
       "state" : {
-        "branch" : "with-generated-files",
-        "revision" : "31d17fe7e818a2048c808b5c6fdc2dc792f4f5b5"
+        "revision" : "82bb3a533e0801fd2bbaa11dc49676e10bf41948"
       }
     },
     {

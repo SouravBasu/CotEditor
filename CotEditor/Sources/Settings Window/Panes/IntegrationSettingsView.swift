@@ -76,7 +76,7 @@ struct IntegrationSettingsView: View {
                     .gridColumnAlignment(.trailing)
                 
                 VStack(alignment: .leading) {
-                    Toggle(.init("Accept rmate connections", table: "IntegrationSettings", comment: "verb; checkbox"), isOn: $enablesRemoteEditing)
+                    Toggle(.init("Accept rmate connections", table: "IntegrationSettings", comment: "verb; checkbox; rmate is a remote connection protocol"), isOn: $enablesRemoteEditing)
                     
                     HStack {
                         Text("Port:", tableName: "IntegrationSettings")
@@ -125,6 +125,7 @@ struct IntegrationSettingsView: View {
             self.commandLineToolURL = manager.linkURL
         }
         .fixedSize(horizontal: false, vertical: true)
+        .frame(width: SettingsPane.width)
     }
 }
 

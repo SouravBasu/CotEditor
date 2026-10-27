@@ -49,6 +49,8 @@ import LineEnding
     
     private let server = RMateServer(applicationName: Bundle.main.bundleName, onOpen: RemoteEditingController.open, onError: { NSApp.presentError($0) })
     private var settingsObserver: AnyCancellable?
+    private var preservedWorkingCopyURLs: [URL] = []
+    private var terminationActivity: (any NSObjectProtocol)?
     
     
     // MARK: Public Methods
@@ -79,11 +81,61 @@ import LineEnding
             .combineLatest(defaults.publisher(for: .remoteEditingPort).prepend(defaults[.remoteEditingPort]))
             .sink { [weak self] enabled, port in
                 self?.server.listen(port: enabled ? port : nil)
+                self?.updateTerminationActivity(enabled: enabled)
             }
     }
     
     
+    /// Keeps the working copy of a closed document from the cleanup on termination.
+    ///
+    /// - Parameter url: The working copy URL retained for restoration.
+    func preserveWorkingCopy(at url: URL) {
+        
+        self.preservedWorkingCopyURLs.append(url)
+    }
+    
+    
+    /// Removes old working copies that neither open documents nor the restoration use, such as those left by a crash.
+    ///
+    /// - Note: Call this method on termination.
+    func removeUnusedWorkingCopies() {
+        
+        // another instance sharing the container may use the working copies
+        let bundleIdentifier = Bundle.main.bundleIdentifier ?? ""
+        guard !NSRunningApplication.runningApplications(withBundleIdentifier: bundleIdentifier).contains(where: { $0 != .current }) else { return }
+        
+        // -> AppKit can close documents before posting the termination notification.
+        let urls = DocumentController.shared.documents.compactMap(\.fileURL) + self.preservedWorkingCopyURLs
+        
+        // keep recent copies as a safety margin
+        let date = Date(timeIntervalSinceNow: -7 * 24 * 60 * 60)  // 7 days
+        
+        do {
+            try Self.fileStore.removeUnusedFiles(excluding: urls, createdBefore: date)
+        } catch {
+            Logger.app.error("Failed deleting unused remote working copies: \(error)")
+        }
+    }
+    
+    
     // MARK: Private Methods
+    
+    /// Keeps AppKit from skipping the termination process while remote editing is enabled.
+    ///
+    /// AppKit can terminate the app without the termination notification when sudden termination is enabled,
+    /// whereas unused working copies need to be removed on quit.
+    ///
+    /// - Parameter enabled: Whether remote editing is enabled.
+    private func updateTerminationActivity(enabled: Bool) {
+        
+        if enabled, self.terminationActivity == nil {
+            self.terminationActivity = ProcessInfo.processInfo.beginActivity(options: .suddenTerminationDisabled, reason: "Remote editing")
+        } else if !enabled, let terminationActivity {
+            ProcessInfo.processInfo.endActivity(terminationActivity)
+            self.terminationActivity = nil
+        }
+    }
+    
     
     /// Opens a received file as a document.
     ///
@@ -117,10 +169,8 @@ import LineEnding
         {
             document.setSyntax(name: name)
         }
-        DocumentController.shared.addDocument(document)
         document.didMakeDocumentForExistingFile(url: url)
-        document.makeWindowControllers()
-        document.showWindows()
+        (DocumentController.shared as! DocumentController).addDocumentAndDisplay(document)
         
         if let lineNumber = request.lineNumber, let textView = document.textView {
             let location = document.lineEndingScanner.lineRange(for: lineNumber)?.location ?? document.textStorage.length
@@ -176,6 +226,9 @@ extension RMateServer.ReceiveError: @retroactive LocalizedError {
             case .fileTooLarge:
                 String(localized: "RMateServer.ReceiveError.fileTooLarge.description",
                        defaultValue: "The remote file is too large to open.")
+            case .tooManyFiles:
+                String(localized: "RMateServer.ReceiveError.tooManyFiles.description",
+                       defaultValue: "Some remote files couldn’t be opened.")
         }
     }
     
@@ -187,6 +240,10 @@ extension RMateServer.ReceiveError: @retroactive LocalizedError {
                 String(localized: "RMateServer.ReceiveError.fileTooLarge.recoverySuggestion",
                        defaultValue: "Remote editing supports files up to \(Int64(maximumSize), format: .byteCount(style: .binary)).",
                        comment: "%@ is file size, such as \"100 MB\"")
+            case .tooManyFiles(let maximumCount):
+                String(localized: "RMateServer.ReceiveError.tooManyFiles.recoverySuggestion",
+                       defaultValue: "A single rmate command can open up to \(maximumCount) files at a time.",
+                       comment: "%lld is the number of files")
         }
     }
     

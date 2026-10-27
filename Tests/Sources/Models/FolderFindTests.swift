@@ -37,7 +37,7 @@ import UniformTypeIdentifiers
     @Test(.timeLimit(.minutes(1)))
     func findUpdatesStateWithSummary() async throws {
         
-        let rootURL = try Self.makeTemporaryDirectory()
+        let rootURL = try FileManager.default.makeTemporaryDirectory()
         defer { try? FileManager.default.removeItem(at: rootURL) }
         
         try Data("needle\nhay\n".utf8).write(to: rootURL.appending(path: "a.txt"))
@@ -67,7 +67,7 @@ import UniformTypeIdentifiers
     @Test(.timeLimit(.minutes(1)))
     func removeResultsUpdatesStateWithSummary() async throws {
         
-        let rootURL = try Self.makeTemporaryDirectory()
+        let rootURL = try FileManager.default.makeTemporaryDirectory()
         defer { try? FileManager.default.removeItem(at: rootURL) }
         
         try Data("needle\nneedle\nneedle\n".utf8).write(to: rootURL.appending(path: "a.txt"))
@@ -111,7 +111,7 @@ import UniformTypeIdentifiers
     @Test(.timeLimit(.minutes(1)))
     func editingIndependentDocumentUpdatesMatchRanges() async throws {
         
-        let rootURL = try Self.makeTemporaryDirectory()
+        let rootURL = try FileManager.default.makeTemporaryDirectory()
         defer { try? FileManager.default.removeItem(at: rootURL) }
         
         let fileURL = rootURL.appending(path: "a.txt").standardizedFileURL
@@ -128,7 +128,7 @@ import UniformTypeIdentifiers
         #expect(model.result(for: id)?.match?.range == NSRange(location: 4, length: 6))
         
         // edit the file in a document that is not part of the directory document
-        let document = try Document(contentsOf: fileURL, ofType: UTType.plainText.identifier)
+        let document = try TextDocument(contentsOf: fileURL, ofType: UTType.plainText.identifier)
         NSDocumentController.shared.addDocument(document)
         defer { document.close() }
         
@@ -145,7 +145,7 @@ import UniformTypeIdentifiers
     @Test(.timeLimit(.minutes(1)))
     func invalidRegularExpressionFails() async throws {
         
-        let rootURL = try Self.makeTemporaryDirectory()
+        let rootURL = try FileManager.default.makeTemporaryDirectory()
         defer { try? FileManager.default.removeItem(at: rootURL) }
         
         try Data("needle\n".utf8).write(to: rootURL.appending(path: "a.txt"))
@@ -246,19 +246,6 @@ import UniformTypeIdentifiers
         }
         
         throw WaitError.unexpectedState
-    }
-    
-    
-    /// Creates a temporary directory for a test.
-    ///
-    /// - Returns: The created directory URL.
-    private static func makeTemporaryDirectory() throws -> URL {
-        
-        let url = FileManager.default.temporaryDirectory
-            .appending(path: UUID().uuidString, directoryHint: .isDirectory)
-        try FileManager.default.createDirectory(at: url, withIntermediateDirectories: true)
-        
-        return url
     }
 }
 

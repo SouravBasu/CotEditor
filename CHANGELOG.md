@@ -6,16 +6,57 @@
 ### New Features
 
 - Support editing remote files with `rmate` over SSH port forwarding, enabled in Integration settings.
+- Add an option to automatically save a copy of settings in iCloud for manual import on other Macs.
 
 
 ### Improvements
 
 - Move donations to the CotEditor project from a settings pane to a separate window, accessible from the CotEditor menu.
 - Add an Integration pane to the settings window for managing integration with external tools.
+- Move settings import and export from the File menu to General settings.
+- Update the Shortcuts settings layout.
+
+
+
+7.1.3 (2026-10-28)
+--------------------------
+
+### Improvements
+
+- Update tree-sitter-php to 0.25.1.
+- Update tree-sitter-scala to 0.26.3.
+- [dev] Update the build environment to Xcode 27.2.
+- [non-AppStore ver.] Update Sparkle from 2.10.0 to 2.10.1.
 
 
 ### Fixes
 
+- Fix an issue in the file browser where the matched part of filenames was not highlighted while filtering.
+- Fix an issue in Snippets settings where shortcuts were recorded with non-Latin characters when a non-Latin keyboard layout was active.
+- Fix an issue where VoiceOver read internal descriptions instead of localized labels for document statistics in the editor help.
+- Fix the Settings window layout in Russian localization.
+- [trivial] Fix an issue where an extra space appeared before the script name in the console when using the AppleScript `write to console` command without a timestamp.
+
+
+
+7.1.2 (2026-10-12)
+--------------------------
+
+### New Features
+
+- Add new “Classic (Dark)” theme.
+
+
+### Improvements
+
+- Focus the search field when opening the folder find pane from the menu or using a keyboard shortcut.
+- Improve Swift syntax highlighting for `unsafe`, `copy`, `consume`, and inline array types.
+
+
+### Fixes
+
+- Fix a security issue where running the `cot` command from a specially crafted application path could execute unintended commands.
+- Fix a security issue where restarting the app from a specially crafted application path could execute unintended commands.
 - Fix an issue where new windows did not inherit the last resized window size when the window size was set to Auto.
 
 

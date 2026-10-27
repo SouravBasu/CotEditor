@@ -35,6 +35,8 @@ struct ShortcutField: NSViewRepresentable {
     @Binding var value: Shortcut?
     @Binding var error: Shortcut.CustomizationError?
     
+    var placeholder: String?
+    
     
     func makeNSView(context: Context) -> NSTextField {
         
@@ -58,6 +60,7 @@ struct ShortcutField: NSViewRepresentable {
         
         context.coordinator.updateBinding(shortcut: $value)
         nsView.objectValue = self.value
+        nsView.placeholderString = self.placeholder
     }
     
     
@@ -129,7 +132,7 @@ struct ShortcutField: NSViewRepresentable {
 }
 
 
-final class ShortcutTextField: NSTextField, NSTextViewDelegate {
+private final class ShortcutTextField: NSTextField, NSTextViewDelegate {
     
     // MARK: Private Properties
     
@@ -138,6 +141,22 @@ final class ShortcutTextField: NSTextField, NSTextViewDelegate {
     
     
     // MARK: Text Field Methods
+    
+    override init(frame frameRect: NSRect) {
+        
+        super.init(frame: frameRect)
+        
+        // type shortcuts with a Roman keyboard layout
+        (self.cell as? NSTextFieldCell)?.allowedInputSourceLocales = [NSAllRomanInputSourcesLocaleIdentifier]
+    }
+    
+    
+    @available(*, unavailable)
+    required init?(coder: NSCoder) {
+        
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     isolated deinit {
         

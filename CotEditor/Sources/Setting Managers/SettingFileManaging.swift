@@ -90,7 +90,7 @@ extension ImportingItem {
     /// - Parameter body: The operation to perform.
     /// - Returns: The operation result.
     /// - Throws: An error thrown by `body`.
-    func withSecurityScopedAccess<Result>(_ body: () throws -> Result) rethrows -> Result {
+    func withSecurityScopedAccess<Result, E: Error>(_ body: () throws(E) -> Result) throws(E) -> Result {
         
         guard case .url(let url) = self else {
             return try body()
@@ -656,7 +656,7 @@ struct ImportDuplicationError: LocalizedError {
     var recoverySuggestion: String {
         
         String(localized: "ImportDuplicationError.recoverySuggestion",
-               defaultValue: "A custom setting with the same name already exists. Replacing it will overwrite its current content.",
+               defaultValue: "A custom setting with the same name already exists. Replacing it will overwrite its current contents.",
                comment: "Refer to similar expressions by Apple.")
     }
 }

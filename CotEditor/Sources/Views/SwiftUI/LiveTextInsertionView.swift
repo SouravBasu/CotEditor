@@ -57,7 +57,7 @@ struct LiveTextInsertionView: View {
                 Spacer()
                 
                 if let transcript = try? self.result?.get().transcript, !transcript.isEmpty {
-                    Button(.init("Insert", table: "LiveTextInsertion", comment: "verb; button")) {
+                    Button(.init("Action.insert.label", defaultValue: "Insert")) {
                         self.actionHandler(transcript)
                         self.dismiss()
                     }.keyboardShortcut(.defaultAction)
@@ -71,11 +71,7 @@ struct LiveTextInsertionView: View {
             .scenePadding([.horizontal, .bottom])
         }
         .task {
-            do {
-                self.result = .success(try await Self.analyzer.analyze(self.image, orientation: .up, configuration: .init([.text])))
-            } catch {
-                self.result = .failure(error)
-            }
+            self.result = await Result { try await Self.analyzer.analyze(self.image, orientation: .up, configuration: .init([.text])) }
         }
         .controlSize(.small)
         .fixedSize()

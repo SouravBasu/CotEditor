@@ -1,5 +1,6 @@
 //
 //  PropertyListValueTests.swift
+//  DefaultsTests
 //
 //  CotEditor
 //  https://coteditor.com
@@ -25,7 +26,7 @@
 
 import Foundation
 import Testing
-@testable import CotEditor
+@testable import Defaults
 
 struct PropertyListValueTests {
     
@@ -154,26 +155,6 @@ struct PropertyListValueTests {
     }
     
     
-    @Test func plist() throws {
-        
-        let dictionary: [String: Any] = [
-            "title": "Dogcow",
-            "name": 1024,
-            "enabled": true,
-            "options": [
-                "data": Data([0xDE]),
-                "double": 2.0,
-            ],
-        ]
-        
-        #expect(PropertyListSerialization.propertyList(dictionary, isValidFor: .xml))
-        
-        let data = try PropertyListSerialization.data(fromPropertyList: dictionary, format: .xml, options: 0)
-        
-        #expect(!data.isEmpty)
-    }
-    
-    
     @Test func plistRoundTrip() throws {
         
         let value: PropertyListValue = .dictionary([
@@ -187,7 +168,7 @@ struct PropertyListValueTests {
         ])
         
         let data = try PropertyListSerialization.data(fromPropertyList: value.any, format: .xml, options: 0)
-        let plist = try PropertyListSerialization.propertyList(from: data, format: nil)
+        let plist = try unsafe PropertyListSerialization.propertyList(from: data, format: nil)
         
         #expect(PropertyListValue(plist) == value)
     }

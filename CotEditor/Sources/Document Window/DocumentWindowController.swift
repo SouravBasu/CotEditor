@@ -356,7 +356,7 @@ final class DocumentWindowController: NSWindowController, NSWindowDelegate {
         
         // observe document's syntax change for toolbar
         self.documentSyntaxObserver?.cancel()
-        if let document = document as? Document {
+        if let document = document as? TextDocument {
             self.syntaxPopUpButton?.isEnabled = true
             self.documentSyntaxObserver = Task { [weak self] in
                 for await syntaxName in Observations({ document.syntaxName }) {
@@ -368,6 +368,10 @@ final class DocumentWindowController: NSWindowController, NSWindowDelegate {
             self.syntaxPopUpButton?.isEnabled = false
             self.updateMarkdownPreviewToolbarItemVisibility(syntaxName: nil)
         }
+        
+        // update the window title for the new document
+        // -> NSWindowController synchronizes the title before `fileDocument` is updated.
+        self.synchronizeWindowTitleWithDocumentName()
     }
     
     
@@ -453,7 +457,7 @@ final class DocumentWindowController: NSWindowController, NSWindowDelegate {
                 return item
             }
         
-        if let document = self.fileDocument as? Document {
+        if let document = self.fileDocument as? TextDocument {
             self.selectSyntaxPopUpItem(with: document.syntaxName, in: popUpButton)
         } else {
             self.updateSyntaxPopUpButtonWidth(popUpButton)
@@ -752,7 +756,7 @@ extension DocumentWindowController: NSToolbarDelegate {
             case .syntax:
                 let popUpButton = NSPopUpButton()
                 popUpButton.bezelStyle = .toolbar
-                popUpButton.isEnabled = (self.fileDocument is Document)
+                popUpButton.isEnabled = (self.fileDocument is TextDocument)
                 // store the reference only for the actual toolbar
                 // -> this method is invoked also for creating the item copies for the customization palette.
                 if flag {
@@ -985,7 +989,7 @@ extension DocumentWindowController: NSToolbarDelegate {
                                       defaultValue: "Prevent the document from being edited", table: "Document")
                 item.stateImages[.on] = NSImage(systemSymbolName: "pencil", accessibilityDescription: item.label)
                 item.stateImages[.off] = NSImage(systemSymbolName: "pencil.slash", accessibilityDescription: item.label)
-                item.action = #selector(Document.toggleEditable)
+                item.action = #selector(TextDocument.toggleEditable)
                 return item
                 
             case .spellCheck:

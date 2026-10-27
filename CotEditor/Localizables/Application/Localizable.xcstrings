@@ -1530,7 +1530,7 @@
         }
       }
     },
-    "Action.export.label" : {
+    "Action.export.ellipsis.label" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "cs" : {
@@ -1649,7 +1649,7 @@
         }
       }
     },
-    "Action.export.named.label" : {
+    "Action.export.ellipsis.named.label" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
         "cs" : {
@@ -2002,6 +2002,125 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "輸入"
+          }
+        }
+      }
+    },
+    "Action.insert.label" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Vložit"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Hinzufügen"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Insert"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Insert"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Insertar"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Insérer"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "सम्मिलित करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Inserisci"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "挿入"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "삽입"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Voeg in"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Wstaw"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Inserir"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Вставить"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Ekle"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Вставити"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "插入"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "插入"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "插入"
           }
         }
       }
@@ -3792,6 +3911,217 @@
         }
       }
     },
+    "CloudSettingsError.iCloudUnavailable.description" : {
+      "comment" : "Refer to the same expression by Apple.",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Drive není k dispozici."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Drive ist nicht verfügbar."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Drive is not available."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Drive is not available."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Drive no está disponible."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Drive n’est pas disponible."
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Drive non è disponibile."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Driveは利用できません。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Drive를 사용할 수 없음."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Drive is niet beschikbaar."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Usługa iCloud Drive niedostępna."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "O iCloud Drive Não Está Disponível."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Drive недоступен."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Drive Kullanılamıyor."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud云盘不可用。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法使用「iCloud雲碟」。"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法使用「iCloud雲碟」。"
+          }
+        }
+      }
+    },
+    "CloudSettingsError.invalidArchiveURL.description" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Auf die ausgewählte Kopie der Einstellungen konnte nicht zugegriffen werden."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn’t access the selected settings copy."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn’t access the selected settings copy."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No se ha podido acceder a la copia de ajustes seleccionada."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Impossible d’accéder à la copie des réglages sélectionnée."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択した設定のコピーにアクセスできませんでした。"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Er kon geen toegang worden verkregen tot de geselecteerde kopie van de instellingen."
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法取用選擇的設定副本。"
+          }
+        }
+      }
+    },
+    "CloudSettingsError.metadataQueryFailed.description" : {
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die Suche nach Kopien der Einstellungen in iCloud ist fehlgeschlagen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn’t find settings copies in iCloud."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Couldn’t find settings copies in iCloud."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No se han podido encontrar copias de los ajustes en iCloud."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "La recherche de copies des réglages sur iCloud a échoué."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloudに設定のコピーが見つかりませんでした。"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Het zoeken naar kopieën van de instellingen in iCloud is mislukt."
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法在iCloud中找到設定副本。"
+          }
+        }
+      }
+    },
     "DeletionConfirmation.message" : {
       "comment" : "Refer to the same expression by Apple.",
       "extractionState" : "extracted_with_value",
@@ -3925,7 +4255,7 @@
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Bist du sicher, dass du „%@“ löschen willst?"
+            "value" : "Möchtest du „%@“ wirklich löschen?"
           }
         },
         "en" : {
@@ -8819,7 +9149,7 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Vlastní nastavení se stejným názvem již existuje. Jeho nahrazením dojde k přepsání aktuálního obsahu."
+            "value" : "Vlastní nastavení se stejným názvem již existuje. Náhradou bude obsah této položky přepsán."
           }
         },
         "de" : {
@@ -8831,13 +9161,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "A custom setting with the same name already exists. Replacing it will overwrite its current content."
+            "value" : "A custom setting with the same name already exists. Replacing it will overwrite its current contents."
           }
         },
         "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "A custom setting with the same name already exists. Replacing it will overwrite its current content."
+            "value" : "A custom setting with the same name already exists. Replacing it will overwrite its current contents."
           }
         },
         "es" : {
@@ -8849,19 +9179,19 @@
         "fr" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "Un réglage personnalisé du même nom existe déjà. Si vous le remplacez, son contenu actuel sera écrasé."
+            "value" : "Un réglage personnalisé du même nom existe déjà. Si vous le remplacez, le contenu d’origine sera perdu."
           }
         },
         "hi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "समान नाम की एक कस्टम सेटिंग पहले से मौजूद है। इसे बदलने से इसकी मौजूदा सामग्री अधिलेखित हो जाएगी।"
+            "value" : "समान नाम की एक कस्टम सेटिंग पहले से मौजूद है। उसे बदलने पर उसका वर्तमान कॉन्टेंट ओवरराइट कर दिया जाएगा।"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Esiste già un’opzione con lo stesso nome. Sostituendola, il suo contenuto verrà sovrascritto."
+            "value" : "Esiste già un’opzione con lo stesso nome. Se decidi di sostituire l’opzione, i contenuti attuali verranno sovrascritti."
           }
         },
         "ja" : {
@@ -8873,61 +9203,61 @@
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "같은 이름의 사용자 설정이 이미 있습니다. 교체하면 현재 내용이 덮어쓰기됩니다."
+            "value" : "같은 이름의 사용자 설정이 이미 있습니다. 대치하면 현재 내용을 덮어씁니다."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
-            "value" : "Er bestaat al een aangepaste instelling met dezelfde naam. Als je deze vervangt, wordt de huidige inhoud overschreven."
+            "value" : "Er bestaat al een aangepaste instelling met dezelfde naam. Als je de instelling vervangt, wordt de content ervan overschreven."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ustawienie własne o tej samej nazwie już istnieje. Zastąpienie go spowoduje nadpisanie jego obecnej zawartości."
+            "value" : "Ustawienie własne o tej samej nazwie już istnieje. Zastąpienie spowoduje nadpisanie jego bieżącej zawartości."
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Já existe um ajuste personalizado com o mesmo nome. Substituí-lo sobrescreverá o conteúdo atual."
+            "value" : "Já existe um ajuste personalizado com o mesmo nome. A substituição sobrescreverá o conteúdo atual."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Пользовательский параметр с таким именем уже существует. Замена его перезапишет его текущее содержимое."
+            "value" : "Пользовательский параметр с таким именем уже существует. Замена приведет к перезаписи текущего содержимого этого параметра."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Aynı adlı bir özelleştirilmiş ayar hâlihazırda var. Onu değiştirmek geçerli içeriğin üzerine yazacaktır."
+            "value" : "Aynı adlı bir özelleştirilmiş ayar hâlihazırda var. Onu değiştirmek, şu anki içeriğinin üzerine yazacaktır."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Власний параметр з такою назвою вже існує. У разі заміни його поточний вміст буде перезаписано."
+            "value" : "Власний параметр з такою назвою вже існує. Якщо ви заміните цей елемент, то втратите весь його вміст."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "已存在同名自定设置。替换后将会覆盖当前内容。"
+            "value" : "已存在同名自定设置。若替换，则会覆盖其当前内容。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "已存在同名的自訂設定。取代它將覆寫其當前內容。"
+            "value" : "已存在同名的自訂設定。若選擇取代，將會覆寫原有的內容。"
           }
         },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "相同名稱的自訂設定已經存在。如取代，將會覆寫目前的內容。"
+            "value" : "相同名稱的自訂設定已經存在。如要取代，將會覆寫目前的內容。"
           }
         }
       }
@@ -10492,115 +10822,115 @@
         "cs" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Název nesmí začínat tečkou „.“."
+            "value" : "Název nesmí začínat tečkou \".\"."
           }
         },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Name darf nicht mit „.“ beginnen."
+            "value" : "Name darf nicht mit einem Punkt „.“ beginnen."
           }
         },
         "en" : {
           "stringUnit" : {
             "state" : "new",
-            "value" : "Name can’t begin with “.”."
+            "value" : "Name can’t begin with a dot “.”."
           }
         },
         "en-GB" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Name can’t begin with “.”."
+            "value" : "Name can’t begin with a dot “.”."
           }
         },
         "es" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "El nombre no puede comenzar con “.”."
+            "value" : "El nombre no puede comenzar con un punto “.”."
           }
         },
         "fr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Le nom ne peut pas commencer par « . »."
+            "value" : "Le nom ne peut pas commencer par un point « . »."
           }
         },
         "hi" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "नाम “.” से शुरू नहीं हो सकता।"
+            "value" : "नाम डॉट “.” से शुरू नहीं हो सकता।"
           }
         },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Il nome non può iniziare con “.”."
+            "value" : "Il nome non può iniziare con un punto “.”."
           }
         },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "名前を“.”から始めることはできません。"
+            "value" : "名前を“.”（ドット）から始めることはできません。"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "이름은 ‘.’으로 시작할 수 없습니다."
+            "value" : "이름은 점 ‘.’으로 시작할 수 없습니다."
           }
         },
         "nl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Naam kan niet beginnen met '.'."
+            "value" : "Naam kan niet beginnen met een punt (.)."
           }
         },
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nazwa nie może się zaczynać od „.” (kropki)."
+            "value" : "Nazwa nie może się zaczynać od kropki."
           }
         },
         "pt" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Nome não pode começar com “.”."
+            "value" : "Nome não pode começar com um ponto “.”."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Имя не может начинаться с точки."
+            "value" : "Имя не может начинаться с точки «.»."
           }
         },
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ad “.” ile başlayamaz."
+            "value" : "Ad nokta (“.”) ile başlayamaz."
           }
         },
         "uk" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Імʼя не може починатися з «.»."
+            "value" : "Імʼя не може починатися з крапки «.»."
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "名称不能以“.”开头。"
+            "value" : "名称不能以点“.”开头。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "名稱不能以「.」開頭。"
+            "value" : "名稱不能以點「.」開頭。"
           }
         },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "名稱不能以「.」開頭。"
+            "value" : "名稱不能以點「.」開頭。"
           }
         }
       }
@@ -13980,6 +14310,12 @@
             "state" : "needs_review",
             "value" : "De verbinding op afstand is verbroken. Je wijzigingen zijn niet verstuurd."
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "遙距連線已中斷。你的變更尚未被送出。"
+          }
         }
       }
     },
@@ -14026,6 +14362,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Wil je de wijzigingen in '%@' op deze Mac bewaren?"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "儲存對「%@」的變更至這部Mac嗎？"
           }
         }
       }
@@ -14194,6 +14536,12 @@
             "state" : "needs_review",
             "value" : "Wijzigingen kunnen niet meer op afstand worden bewaard. Bewaar het document op deze Mac om je wijzigingen te behouden."
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法遙距儲存變更。如要保留你的變更，請將文件儲存到這部Mac上。"
+          }
         }
       }
     },
@@ -14241,6 +14589,12 @@
             "state" : "needs_review",
             "value" : "De verbinding op afstand voor '%@' is verbroken."
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「%@」的遙距連線已中斷。"
+          }
         }
       }
     },
@@ -14287,6 +14641,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "De poort is al in gebruik."
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此連接埠已被使用。"
           }
         }
       }
@@ -14455,6 +14815,12 @@
             "state" : "needs_review",
             "value" : "Voer een poortnummer van 1 tot en met 65535 in."
           }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "輸入1至65535之間的一個連接埠編號。"
+          }
         }
       }
     },
@@ -14501,6 +14867,12 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Het externe bestand is te groot om te openen."
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "遙距檔案太大，無法開啟。"
           }
         }
       }
@@ -14549,6 +14921,184 @@
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Bewerken op afstand ondersteunt bestanden tot %@."
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "遙距編輯支援最多%@大小的檔案。"
+          }
+        }
+      }
+    },
+    "RMateServer.ReceiveError.tooManyFiles.description" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Einige entfernte Dateien konnten nicht geöffnet werden."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Some remote files couldn’t be opened."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Some remote files couldn’t be opened."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "No se pudieron abrir algunos archivos remotos."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Certains fichiers distants n’ont pas pu être ouverts."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一部のリモートファイルを開けませんでした。"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Sommige externe bestanden konden niet worden geopend."
+          }
+        }
+      }
+    },
+    "RMateServer.ReceiveError.tooManyFiles.recoverySuggestion" : {
+      "comment" : "%lld is the number of files",
+      "localizations" : {
+        "de" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Ein einzelner rmate-Befehl kann bis zu %lld Datei gleichzeitig öffnen."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Ein einzelner rmate-Befehl kann bis zu %lld Dateien gleichzeitig öffnen."
+                }
+              }
+            }
+          }
+        },
+        "en" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "A single rmate command can open up to %lld file at a time."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "new",
+                  "value" : "A single rmate command can open up to %lld files at a time."
+                }
+              }
+            }
+          }
+        },
+        "en-GB" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "A single rmate command can open up to %lld file at a time."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "A single rmate command can open up to %lld files at a time."
+                }
+              }
+            }
+          }
+        },
+        "es" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "Un solo comando rmate puede abrir hasta %lld archivo a la vez."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "Un solo comando rmate puede abrir hasta %lld archivos a la vez."
+                }
+              }
+            }
+          }
+        },
+        "fr" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "Une seule commande rmate peut ouvrir jusqu’à %lld fichier à la fois."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "Une seule commande rmate peut ouvrir jusqu’à %lld fichiers à la fois."
+                }
+              }
+            }
+          }
+        },
+        "ja" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "1回のrmateコマンドで同時に開けるファイルは%lld個までです。"
+                }
+              }
+            }
+          }
+        },
+        "nl" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "Eén rmate-opdracht kan maximaal %lld bestand tegelijk openen."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "needs_review",
+                  "value" : "Eén rmate-opdracht kan maximaal %lld bestanden tegelijk openen."
+                }
+              }
+            }
           }
         }
       }
@@ -17767,7 +18317,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "確定要捨棄你所作的更改並使用「%@」重新開啟文件嗎？"
+            "value" : "確定要捨棄你所作的變更並使用「%@」重新開啟文件嗎？"
           }
         }
       }

@@ -202,6 +202,7 @@ struct FormatSettingsView: View {
             self.handledEncodingListRequestID = requestID
             self.isEncodingListPresented = true
         }
+        .frame(width: SettingsPane.width)
     }
 }
 
@@ -507,8 +508,8 @@ private struct SyntaxListView: View {
             }
             
             Button(isContext
-                   ? .init("Action.export.label", defaultValue: "Export…")
-                   : .init("Action.export.named.label", defaultValue: "Export “\(selection.name)”…"),
+                   ? .init("Action.export.ellipsis.label", defaultValue: "Export…")
+                   : .init("Action.export.ellipsis.named.label", defaultValue: "Export “\(selection.name)”…"),
                    systemImage: "square.and.arrow.up")
             {
                 if let url = self.manager.urlForUserSetting(name: selection.name) {

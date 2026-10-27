@@ -31,6 +31,13 @@ import URLUtils
 
 @MainActor final class KeyBindingManager {
     
+    /// A message posted after custom key bindings are saved or restored.
+    struct DidUpdateSettingsMessage: NotificationCenter.MainActorMessage {
+        
+        typealias Subject = KeyBindingManager
+    }
+    
+    
     // MARK: Public Properties
     
     static let shared = KeyBindingManager()
@@ -95,6 +102,7 @@ import URLUtils
         
         self.userKeyBindings.removeAll()
         self.applyShortcutsToMainMenu()
+        NotificationCenter.default.post(DidUpdateSettingsMessage(), subject: self)
     }
     
     
@@ -234,6 +242,7 @@ import URLUtils
         // store new values
         self.userKeyBindings = userKeyBindings
         self.modifiedKeyBindings.formUnion(userKeyBindings)
+        NotificationCenter.default.post(DidUpdateSettingsMessage(), subject: self)
     }
     
     
@@ -277,7 +286,7 @@ import URLUtils
             case #selector((any EncodingChanging).changeEncoding),
                  #selector((any SyntaxChanging).changeSyntax),
                  #selector((any ThemeChanging).changeTheme),
-                 #selector(Document.changeLineEnding(_:)),
+                 #selector(TextDocument.changeLineEnding(_:)),
                  #selector((any SnippetInsertable).insertSnippet),
                  #selector(ScriptManager.launchScript),
                  #selector(AppDelegate.openHelpAnchor),

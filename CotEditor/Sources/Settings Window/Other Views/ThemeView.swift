@@ -358,8 +358,8 @@ private struct ThemeListView: View {
             }
             
             Button(isContext
-                   ? .init("Action.export.label", defaultValue: "Export…")
-                   : .init("Action.export.named.label", defaultValue: "Export “\(selection.name)”…"),
+                   ? .init("Action.export.ellipsis.label", defaultValue: "Export…")
+                   : .init("Action.export.ellipsis.named.label", defaultValue: "Export “\(selection.name)”…"),
                    systemImage: "square.and.arrow.up")
             {
                 if let url = self.manager.urlForUserSetting(name: selection.name) {
@@ -393,7 +393,7 @@ private struct ThemeListView: View {
                 self.isImporterPresented = true
             }
             .modifierKeyAlternate(.option) {
-                Button(.init("Reload All Themes", table: "ThemeEditor"), systemImage: "arrow.clockwise") {
+                Button(.init("Reload All Themes", table: "ThemeEditor", comment: "verb; menu item"), systemImage: "arrow.clockwise") {
                     Task {
                         await self.manager.invalidateUserSettings()
                     }
@@ -484,29 +484,19 @@ private struct ThemeEditorView: View {
             
             GridRow {
                 VStack(alignment: .trailing, spacing: 3) {
-                    ColorPicker(LocalizedStringResource("\(SyntaxType.keywords.label):"),
-                                selection: $theme.keywords.binding)
-                    ColorPicker(LocalizedStringResource("\(SyntaxType.commands.label):"),
-                                selection: $theme.commands.binding)
-                    ColorPicker(LocalizedStringResource("\(SyntaxType.types.label):"),
-                                selection: $theme.types.binding)
-                    ColorPicker(LocalizedStringResource("\(SyntaxType.attributes.label):"),
-                                selection: $theme.attributes.binding)
-                    ColorPicker(LocalizedStringResource("\(SyntaxType.variables.label):"),
-                                selection: $theme.variables.binding)
+                    ColorPicker("\(SyntaxType.keywords.label):", selection: $theme.keywords.binding)
+                    ColorPicker("\(SyntaxType.commands.label):", selection: $theme.commands.binding)
+                    ColorPicker("\(SyntaxType.types.label):", selection: $theme.types.binding)
+                    ColorPicker("\(SyntaxType.attributes.label):", selection: $theme.attributes.binding)
+                    ColorPicker("\(SyntaxType.variables.label):", selection: $theme.variables.binding)
                 }.accessibilityElement(children: .contain)
                 
                 VStack(alignment: .trailing, spacing: 3) {
-                    ColorPicker(LocalizedStringResource("\(SyntaxType.values.label):"),
-                                selection: $theme.values.binding)
-                    ColorPicker(LocalizedStringResource("\(SyntaxType.numbers.label):"),
-                                selection: $theme.numbers.binding)
-                    ColorPicker(LocalizedStringResource("\(SyntaxType.strings.label):"),
-                                selection: $theme.strings.binding)
-                    ColorPicker(LocalizedStringResource("\(SyntaxType.characters.label):"),
-                                selection: $theme.characters.binding)
-                    ColorPicker(LocalizedStringResource("\(SyntaxType.comments.label):"),
-                                selection: $theme.comments.binding)
+                    ColorPicker("\(SyntaxType.values.label):", selection: $theme.values.binding)
+                    ColorPicker("\(SyntaxType.numbers.label):", selection: $theme.numbers.binding)
+                    ColorPicker("\(SyntaxType.strings.label):", selection: $theme.strings.binding)
+                    ColorPicker("\(SyntaxType.characters.label):", selection: $theme.characters.binding)
+                    ColorPicker("\(SyntaxType.comments.label):", selection: $theme.comments.binding)
                 }.accessibilityElement(children: .contain)
             }
             

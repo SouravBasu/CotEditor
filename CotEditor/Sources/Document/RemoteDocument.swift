@@ -31,36 +31,18 @@ import Defaults
 import RMate
 
 /// A text document associated with an `rmate` connection.
-@Observable final class RemoteDocument: Document {
-    
-    // MARK: Enums
-    
-    private enum SerializationKey {
-        
-        static let remoteMetadata = "remoteMetadata"
-    }
-    
+@Observable final class RemoteDocument: TextDocument {
     
     // MARK: Public Properties
     
-    var remoteState: RemoteDocumentState? {
-        
-        didSet {
-            self.hasRemoteState.withLock { $0 = self.remoteState != nil }
-            self.remoteState?.document = self
-            self.invalidateRestorableState()
-            if oldValue != nil, self.remoteState == nil {
-                self.windowController?.window?.subtitle = ""
-            }
-            self.windowController?.synchronizeWindowTitleWithDocumentName()
-        }
-    }
+    var remoteState: RemoteDocumentState?  { didSet { self.didSetRemoteState(oldState: oldValue) } }
     
     
     // MARK: Private Properties
     
     private let hasRemoteState: Mutex<Bool> = .init(false)  // presence check for background save callbacks
     private var pendingCloseContexts: [DelegateContext] = []
+    private var pendingSaves: [() -> Void] = []
     private var preservesSharedWorkingCopy = false
     
     
@@ -103,42 +85,20 @@ import RMate
     
     override static var readableTypes: [String] {
         
-        // use the types registered for Document in Info.plist
-        Document.readableTypes
+        // use the types registered for TextDocument in Info.plist
+        TextDocument.readableTypes
     }
     
     
     override static var writableTypes: [String] {
         
-        Document.writableTypes
+        TextDocument.writableTypes
     }
     
     
     override static func isNativeType(_ type: String) -> Bool {
         
-        Document.isNativeType(type)
-    }
-    
-    
-    override func encodeRestorableState(with coder: NSCoder, backgroundQueue queue: OperationQueue) {
-        
-        super.encodeRestorableState(with: coder, backgroundQueue: queue)
-        
-        if let remoteState, let data = try? JSONEncoder().encode(remoteState.file.metadata) {
-            coder.encode(data, forKey: SerializationKey.remoteMetadata)
-        }
-    }
-    
-    
-    override func restoreState(with coder: NSCoder) {
-        
-        super.restoreState(with: coder)
-        
-        if let data = coder.decodeObject(of: NSData.self, forKey: SerializationKey.remoteMetadata) as? Data,
-           let metadata = try? JSONDecoder().decode(RMateFile.Metadata.self, from: data)
-        {
-            self.remoteState = RemoteDocumentState(file: RMateFile(metadata: metadata))
-        }
+        TextDocument.isNativeType(type)
     }
     
     
@@ -197,9 +157,17 @@ import RMate
     
     override func save(to url: URL, ofType typeName: String, for saveOperation: NSDocument.SaveOperationType, completionHandler: @escaping (any Error?) -> Void) {
         
-        // check whether the remote file can receive changes
-        guard self.remoteState?.isSaving != true else { return completionHandler(CocoaError(.userCancelled)) }
+        // perform explicit save operations after the current transmission
+        if self.remoteState?.isSaving == true {
+            guard !saveOperation.isAutosave else { return completionHandler(CocoaError(.userCancelled)) }
+            
+            self.pendingSaves.append {
+                self.save(to: url, ofType: typeName, for: saveOperation, completionHandler: completionHandler)
+            }
+            return
+        }
         
+        // check whether the remote file can receive changes
         let remoteState = saveOperation.sendsToRemoteFile ? self.remoteState : nil
         if let remoteState, !remoteState.file.isConnected {
             remoteState.presentDisconnectAlert(explicitly: saveOperation == .saveOperation)
@@ -214,6 +182,14 @@ import RMate
                 self.detachRemoteFile(removingBackingFileAt: removesWorkingCopy ? previousBackingFileURL : nil)
             }
             completionHandler(error)
+            
+            // resume the save operations requested during the transmission
+            // -> A resumed save that sends to the remote file defers the following saves and closing again.
+            let saves = self.pendingSaves
+            self.pendingSaves.removeAll()
+            for save in saves {
+                save()
+            }
             
             // resume closing only after AppKit has completed its save activity
             let contexts = self.pendingCloseContexts
@@ -256,7 +232,13 @@ import RMate
     
     override func finishSaving(data: Data?, for operation: NSDocument.SaveOperationType, completionHandler: @escaping (any Error?) -> Void) {
         
-        guard operation.sendsToRemoteFile, let remoteState, let data else {
+        guard operation.sendsToRemoteFile, let remoteState else {
+            return super.finishSaving(data: data, for: operation, completionHandler: completionHandler)
+        }
+        
+        guard let data else {
+            // keep the document edited and accept subsequent saves even if nothing can be sent
+            remoteState.cancelSaving()
             return super.finishSaving(data: data, for: operation, completionHandler: completionHandler)
         }
         
@@ -311,6 +293,9 @@ import RMate
             for case let document as RemoteDocument in self.otherDocuments(usingBackingFileAt: fileURL) {
                 document.preservesSharedWorkingCopy = true
             }
+            
+            // the cleanup on termination must not delete it either
+            RemoteEditingController.shared.preserveWorkingCopy(at: fileURL)
         }
         
         NotificationCenter.default.removeObserver(self, name: NSApplication.willTerminateNotification, object: nil)
@@ -389,6 +374,17 @@ import RMate
         
         UserDefaults.standard[.quitAlwaysKeepsWindows] &&
             self.remoteState?.file.isConnected == false && self.isDocumentEdited
+    }
+    
+    
+    private func didSetRemoteState(oldState: RemoteDocumentState?) {
+        
+        self.hasRemoteState.withLock { $0 = self.remoteState != nil }
+        self.remoteState?.document = self
+        if oldState != nil, self.remoteState == nil {
+            self.windowController?.window?.subtitle = ""
+        }
+        self.windowController?.synchronizeWindowTitleWithDocumentName()
     }
     
     

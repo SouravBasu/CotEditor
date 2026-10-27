@@ -93,15 +93,12 @@ extension Logger {
     
     // MARK: Private Properties
     
-    private var isSettingsImporterPresented = false
-    
     private var menuUpdateObservers: [Task<Void, Never>] = []
     
     private lazy var settingsWindowController = SettingsWindowController<SettingsPane>()
     private weak var aboutPanel: NSPanel?
     private weak var whatsNewPanel: NSPanel?
     private weak var donationPanel: NSPanel?
-    private weak var exportSettingsPanel: NSPanel?
     
     @IBOutlet private weak var encodingsMenu: NSMenu?
     @IBOutlet private weak var syntaxesMenu: NSMenu?
@@ -122,7 +119,6 @@ extension Logger {
             .compactMapValues(\.self)
             .mapKeys(\.rawValue)
         UserDefaults.standard.register(defaults: defaults)
-        NSUserDefaultsController.shared.initialValues = defaults
     }
     
     
@@ -130,7 +126,7 @@ extension Logger {
     
     func applicationWillFinishLaunching(_ notification: Notification) {
         
-        if Document.autosavesInPlace {
+        if TextDocument.autosavesInPlace {
             ProcessInfo.processInfo.enableSuddenTermination()
         }
         
@@ -172,6 +168,7 @@ extension Logger {
         
         RemoteEditingController.shared.start()
         KeyBindingManager.shared.applyShortcutsToMainMenu()
+        CloudSettingsManager.shared.start()
         
         NSApp.servicesProvider = ServicesProvider()
         NSApp.registerServicesMenuSendTypes([.fileURL], returnTypes: [])
@@ -193,7 +190,23 @@ extension Logger {
     }
     
     
+    func applicationShouldTerminate(_ sender: NSApplication) -> NSApplication.TerminateReply {
+        
+        if UserDefaults.standard[.syncsSettings] || CloudSettingsManager.shared.hasPendingSave {
+            Task {
+                await CloudSettingsManager.shared.flush()
+                sender.reply(toApplicationShouldTerminate: true)
+            }
+            return .terminateLater
+        }
+        
+        return .terminateNow
+    }
+    
+    
     func applicationWillTerminate(_ notification: Notification) {
+        
+        RemoteEditingController.shared.removeUnusedWorkingCopies()
         
         if self.needsRelaunch {
             NSApp.relaunch()
@@ -296,9 +309,6 @@ extension Logger {
     func validateUserInterfaceItem(_ item: any NSValidatedUserInterfaceItem) -> Bool {
         
         switch item.action {
-            case #selector(importSettings):
-                return !self.isSettingsImporterPresented
-                
             case #selector(toggleMarkdownPreview):
                 let hasDocument = (NSDocumentController.shared as? DocumentController)?.currentPlainTextDocument != nil
                     || NSDocumentController.shared.documents.contains { $0 is Document || ($0 as? DirectoryDocument)?.currentDocument is Document }
@@ -310,8 +320,6 @@ extension Logger {
         
         return true
     }
-    
-    
     /// Activates self and perform New menu action (from Dock menu).
     @IBAction func newDocumentActivatingApplication(_ sender: Any?) {
         
@@ -324,9 +332,9 @@ extension Logger {
     @IBAction func showAboutPanel(_ sender: Any?) {
         
         let panel = self.aboutPanel ?? NSPanel(view: AboutView(), title: String(localized: "About \(Bundle.main.bundleName)", table: "About", comment: "window title; %@ is app name"))
-        panel.makeKeyAndOrderFront(sender)
-        
         self.aboutPanel = panel
+        
+        panel.makeKeyAndOrderFront(sender)
     }
     
     
@@ -334,9 +342,9 @@ extension Logger {
     @IBAction func showWhatsNew(_ sender: Any?) {
         
         let panel = self.whatsNewPanel ?? NSPanel(view: WhatsNewView())
-        panel.makeKeyAndOrderFront(sender)
-        
         self.whatsNewPanel = panel
+        
+        panel.makeKeyAndOrderFront(sender)
     }
     
     
@@ -358,61 +366,12 @@ extension Logger {
             panel = NSPanel(contentViewController: viewController)
             panel.title = String(localized: "Donation", table: "Donation", comment: "window title")
             panel.hidesOnDeactivate = false
-            panel.setContentSize(viewController.view.intrinsicContentSize)
+            panel.setContentSize(viewController.view.intrinsicContentSize)  // needs for window centering
+            panel.center()
         }
-        
-        panel.center()
-        panel.makeKeyAndOrderFront(nil)
-        
         self.donationPanel = panel
-    }
-    
-    
-    /// Opens the Export Settings panel.
-    @IBAction func exportSettings(_ sender: Any?) {
         
-        let panel = self.exportSettingsPanel ?? NSPanel(
-            view: ExportSettingsView(includedTypes: PortableSettingsDocument.exportableSettings).scenePadding(),
-            hidesTitleButtons: true,
-            title: String(localized: "Export Settings", table: "SettingsPorting", comment: "window title")
-        )
         panel.makeKeyAndOrderFront(nil)
-        
-        self.exportSettingsPanel = panel
-    }
-    
-    
-    /// Opens the Import Settings panel.
-    @IBAction func importSettings(_ sender: Any?) {
-        
-        let panel = NSOpenPanel()
-        panel.allowedContentTypes = [.cotSettings]
-        panel.message = String(localized: "Choose a CotEditor settings archive to import.", table: "SettingsPorting")
-        panel.prompt = String(localized: "Action.import.label", defaultValue: "Import")
-        
-        self.isSettingsImporterPresented = true
-        
-        panel.begin { response in
-            self.isSettingsImporterPresented = false
-            
-            guard response == .OK, let url = panel.url else { return }
-            
-            let document: PortableSettingsDocument
-            do {
-                document = try PortableSettingsDocument(contentsOf: url)
-            } catch {
-                NSApp.presentError(error)
-                return
-            }
-            
-            let name = url.deletingPathExtension().lastPathComponent
-            let panel = NSPanel(
-                view: ImportSettingsView(name: name, document: document).scenePadding(),
-                hidesTitleButtons: true,
-                title: String(localized: "Import Settings", table: "SettingsPorting", comment: "window title")
-            )
-            panel.makeKeyAndOrderFront(nil)
-        }
     }
     
     
@@ -519,8 +478,7 @@ extension Logger {
     private func prepareMainMenu() {
         
         assert(NSApp.mainMenu != nil)
-        
-        guard self.menuUpdateObservers.isEmpty else { return assertionFailure() }
+        assert(self.menuUpdateObservers.isEmpty)
         
         self.syntaxesMenu?.delegate = self
         
@@ -530,7 +488,7 @@ extension Logger {
             let item = NSMenuItem()
             item.title = "\(lineEnding.description) (\(lineEnding.label))"
             item.tag = lineEnding.index
-            item.action = #selector(Document.changeLineEnding(_:))
+            item.action = #selector(TextDocument.changeLineEnding(_:))
             item.isHidden = !lineEnding.isBasic
             item.keyEquivalentModifierMask = lineEnding.isBasic ? [] : [.option]
             
@@ -637,7 +595,7 @@ extension AppDelegate: NSMenuDelegate {
         var fileEncodings = EncodingManager.shared.fileEncodings
         
         if checksDocument,
-           let document = NSApp.target(forAction: action) as? Document,
+           let document = NSApp.target(forAction: action) as? TextDocument,
            !fileEncodings.contains(document.fileEncoding)
         {
             fileEncodings.insert(contentsOf: [document.fileEncoding, nil], at: 0)

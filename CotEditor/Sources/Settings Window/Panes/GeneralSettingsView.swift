@@ -35,12 +35,14 @@ struct GeneralSettingsView: View {
     var showsUpdaterSettings = false
 #endif
     
+    @Environment(\.locale) private var locale
+    
     @Namespace private var accessibility
     
     @AppStorage(.quitAlwaysKeepsWindows) private var quitAlwaysKeepsWindows: Bool
     @AppStorage(.noDocumentOnLaunchOption) private var noDocumentOnLaunchOption: NoDocumentOnLaunchOption
-    
     @AppStorage(.enablesAutosaveInPlace) private var enablesAutosaveInPlace: Bool
+    @AppStorage(.syncsSettings) private var syncsSettings: Bool
     @AppStorage(.documentConflictOption) private var documentConflictOption: DocumentConflictOption
     
     @State private var initialEnablesAutosaveInPlace: Bool = false
@@ -48,6 +50,7 @@ struct GeneralSettingsView: View {
     @State private var isAutosaveChangeConfirmationPresented = false
     @State private var suppressesQuitAlwaysKeepsWindowsChangeConfirmation = false
     @State private var isQuitAlwaysKeepsWindowsChangeConfirmationPresented = false
+    @State private var isSettingsExporterPresented = false
     @State private var isWarningsSettingPresented = false
     
     
@@ -93,37 +96,31 @@ struct GeneralSettingsView: View {
                 Text("Document save:", tableName: "GeneralSettings")
                     .gridColumnAlignment(.trailing)
                 
-                VStack(alignment: .leading) {
-                    Toggle(.init("Enable Auto Save with Versions", table: "GeneralSettings", comment: "verb; checkbox"), isOn: $enablesAutosaveInPlace)
-                        .onChange(of: self.enablesAutosaveInPlace) { _, newValue in
-                            if newValue != self.initialEnablesAutosaveInPlace {
-                                self.isAutosaveChangeConfirmationPresented = true
-                            }
-                        }
-                        .onAppear {
-                            self.initialEnablesAutosaveInPlace = self.enablesAutosaveInPlace
-                        }
-                        .confirmationDialog(.init("NextSessionApplicationConfirmation.title", defaultValue: "The change will be applied first on the next launch.", table: "GeneralSettings"), isPresented: $isAutosaveChangeConfirmationPresented) {
-                            Button(.init("Restart Now", table: "GeneralSettings", comment: "verb; button")) {
-                                (NSApp.delegate as? AppDelegate)?.needsRelaunch = true
-                                NSApp.terminate(self)
-                            }
-                            Button(.init("Later", table: "GeneralSettings", comment: "button")) {
-                                // do nothing
-                            }
-                            Button(role: .cancel) {
-                                self.enablesAutosaveInPlace.toggle()
-                            }
-                        } message: {
-                            Text(.init("NextSessionApplicationConfirmation.message", defaultValue: "Do you want to restart CotEditor now?", table: "GeneralSettings"))
-                        }
-                    
+                Toggle(isOn: $enablesAutosaveInPlace) {
+                    Text("Enable Auto Save with Versions", tableName: "GeneralSettings", comment: "verb; checkbox")
                     Text("A system feature that automatically overwrites your files while editing. Even if turned off, CotEditor covertly creates a backup in case it unexpectedly quits.", tableName: "GeneralSettings")
-                        .foregroundStyle(.secondary)
-                        .controlSize(.small)
-                        .lineLimit(10)
-                        .fixedSize(horizontal: false, vertical: true)
-                        .padding(.leading, 22)
+                }
+                .onChange(of: self.enablesAutosaveInPlace) { _, newValue in
+                    if newValue != self.initialEnablesAutosaveInPlace {
+                        self.isAutosaveChangeConfirmationPresented = true
+                    }
+                }
+                .onAppear {
+                    self.initialEnablesAutosaveInPlace = self.enablesAutosaveInPlace
+                }
+                .confirmationDialog(.init("NextSessionApplicationConfirmation.title", defaultValue: "The change will be applied first on the next launch.", table: "GeneralSettings"), isPresented: $isAutosaveChangeConfirmationPresented) {
+                    Button(.init("Restart Now", table: "GeneralSettings", comment: "verb; button")) {
+                        (NSApp.delegate as? AppDelegate)?.needsRelaunch = true
+                        NSApp.terminate(self)
+                    }
+                    Button(.init("Later", table: "GeneralSettings", comment: "button")) {
+                        // do nothing
+                    }
+                    Button(role: .cancel) {
+                        self.enablesAutosaveInPlace.toggle()
+                    }
+                } message: {
+                    Text(.init("NextSessionApplicationConfirmation.message", defaultValue: "Do you want to restart CotEditor now?", table: "GeneralSettings"))
                 }
             }
             
@@ -132,7 +129,7 @@ struct GeneralSettingsView: View {
                 Text("When document is changed by another application:", tableName: "GeneralSettings")
                     .accessibilityLabeledPair(role: .label, id: "documentConflictOption", in: self.accessibility)
                     .gridCellColumns(2)
-            }.padding(.bottom, -8)
+            }.padding(.bottom, -10)
             
             GridRow {
                 Color.clear
@@ -150,6 +147,57 @@ struct GeneralSettingsView: View {
                 .pickerStyle(.radioGroup)
                 .labelsHidden()
                 .accessibilityLabeledPair(role: .content, id: "documentConflictOption", in: self.accessibility)
+            }
+            
+            if self.hasLongImportAndExportLabel {
+                GridRow {
+                    Text("Settings import & export:", tableName: "GeneralSettings")
+                        .accessibilityLabeledPair(role: .label, id: "settingsPorting", in: self.accessibility)
+                        .gridCellColumns(2)
+                }.padding(.bottom, -10)
+            }
+            
+            GridRow {
+                if self.hasLongImportAndExportLabel {
+                    Color.clear
+                        .frame(width: 1, height: 1)
+                        .gridCellUnsizedAxes([.horizontal, .vertical])
+                        .accessibilityHidden(true)
+                } else {
+                    Text("Settings import & export:", tableName: "GeneralSettings")
+                        .gridColumnAlignment(.trailing)
+                        .accessibilityLabeledPair(role: .label, id: "settingsPorting", in: self.accessibility)
+                }
+                
+                VStack(alignment: .leading) {
+                    Toggle(isOn: $syncsSettings) {
+                        Text("Keep a copy in iCloud", tableName: "GeneralSettings",
+                             comment: "verb; checkbox; refer to the expression for “Keep a copy” by Apple")
+                        Text("Store a copy of these settings for other devices to import.", tableName: "GeneralSettings")
+                    }
+                    if let error = CloudSettingsManager.shared.error {
+                        Label(error.localizedDescription, systemImage: "exclamationmark.triangle")
+                            .symbolVariant(.fill)
+                            .symbolRenderingMode(.multicolor)
+                            .foregroundStyle(.secondary)
+                            .controlSize(.small)
+                            .padding(.leading, 20)
+                    }
+                    
+                    HStack {
+                        Button(.init("Action.export.ellipsis.label", defaultValue: "Export…")) {
+                            self.isSettingsExporterPresented.toggle()
+                        }
+                        SettingsImportMenu()
+                    }
+                }
+                .accessibilityLabeledPair(role: .content, id: "settingsPorting", in: self.accessibility)
+                .sheet(isPresented: $isSettingsExporterPresented) {
+                    ExportSettingsView(includedTypes: PortableSettingsDocument.exportableSettings)
+                        .scenePadding()
+                        .frame(width: 420)
+                        .presentationSizing(.fitted)
+                }
             }
             
             GridRow {
@@ -178,6 +226,165 @@ struct GeneralSettingsView: View {
             }
         }
         .fixedSize(horizontal: false, vertical: true)
+        .frame(width: SettingsPane.width)
+    }
+    
+    
+    /// Whether the localized import and export label needs its own row.
+    private var hasLongImportAndExportLabel: Bool {
+        
+        self.locale.language.languageCode.map([.german, .french, .italian, .spanish].contains) == true
+    }
+}
+
+
+private struct SettingsImportMenu: View {
+    
+    @State private var importingSettings: PortableSettingsDocument?
+    @State private var importingCloudArchiveURL: URL?
+    @State private var cloudArchives: [CloudSettingsManager.Archive]?
+    @State private var cloudArchivesError: any Error?
+    @State private var error: any Error?
+    
+    @State private var isImporterPresented = false
+    @State private var isCopiesManagerPresented = false
+    
+    
+    var body: some View {
+        
+        HStack {
+            Menu(.init("Action.import.ellipsis.label", defaultValue: "Import…")) {
+                if let cloudArchivesError {
+                    Text(cloudArchivesError.localizedDescription)
+                } else if let cloudArchives {
+                    if cloudArchives.isEmpty {
+                        Text("No Settings Copies in iCloud", tableName: "GeneralSettings", comment: "message; menu item")
+                    }
+                    ForEach(cloudArchives.sortedBySource) { archive in
+                        Button {
+                            self.importingCloudArchiveURL = archive.url
+                        } label: {
+                            let secondaryLabel = if let info = archive.info {
+                                "\(info.date.formatted(date: .abbreviated, time: .omitted)) (iCloud)"
+                            } else {
+                                "(iCloud)"
+                            }
+                            Text(AttributedString(archive.displayName + " ") +
+                                 AttributedString(secondaryLabel, attributes: .init().foregroundColor(.secondary)))
+                        }
+                    }
+                } else {
+                    Text("Loading Settings Copies from iCloud…", tableName: "GeneralSettings", comment: "message; menu item")
+                }
+                
+                Divider()
+                
+                if self.cloudArchives?.isEmpty == false {
+                    Button(.init("Manage Copies on iCloud…", table: "GeneralSettings", comment: "verb; menu item")) {
+                        self.isCopiesManagerPresented = true
+                    }
+                }
+                Button(.init("Choose Settings Archive…", table: "GeneralSettings", comment: "verb; menu item")) {
+                    self.isImporterPresented = true
+                }
+            } primaryAction: {
+                self.isImporterPresented.toggle()
+            }
+            .menuStyle(.button)
+            .menuOrder(.fixed)
+            .disabled(self.importingCloudArchiveURL != nil)
+            .task(id: CloudSettingsManager.shared.ubiquityIdentityToken as? NSObject) {
+                await self.observeCloudArchives()
+            }
+            .task(id: self.importingCloudArchiveURL) {
+                await self.loadCloudArchive()
+            }
+            
+            if self.importingCloudArchiveURL != nil {
+                ProgressView()
+                    .controlSize(.small)
+            }
+        }
+        .fileImporter(isPresented: $isImporterPresented, allowedContentTypes: [.cotSettings]) { result in
+            switch result {
+                case .success(let url):
+                    let accessing = url.startAccessingSecurityScopedResource()
+                    defer {
+                        if accessing { url.stopAccessingSecurityScopedResource() }
+                    }
+                    
+                    do {
+                        self.importingSettings = try PortableSettingsDocument(contentsOf: url)
+                    } catch {
+                        self.error = error
+                    }
+                case .failure(let error):
+                    self.error = error
+            }
+        }
+        .fileDialogMessage(.init("Choose a CotEditor settings archive to import.", table: "SettingsPorting"))
+        .fileDialogConfirmationLabel(.init("Action.import.label", defaultValue: "Import"))
+        .sheet(item: $importingSettings) { document in
+            ImportSettingsView(document: document)
+                .scenePadding()
+                .frame(width: 420)
+                .presentationSizing(.fitted)
+        }
+        .sheet(isPresented: $isCopiesManagerPresented) {
+            CloudSettingsCopiesView(archives: $cloudArchives, loadingError: self.cloudArchivesError)
+                .id(CloudSettingsManager.shared.ubiquityIdentityToken as? NSObject)
+                .scenePadding()
+                .frame(width: 420)
+                .presentationSizing(.fitted)
+        }
+        .alert(error: $error)
+    }
+    
+    
+    /// Updates the cloud archive menu while the view is visible.
+    private func observeCloudArchives() async {
+        
+        guard !Task.isCancelled else { return }
+        
+        self.cloudArchives = nil
+        self.cloudArchivesError = nil
+        self.importingCloudArchiveURL = nil
+        
+        do {
+            for try await archives in CloudSettingsManager.shared.archives() {
+                guard !Task.isCancelled else { return }
+                self.cloudArchives = archives
+            }
+        } catch {
+            guard !Task.isCancelled else { return }
+            self.cloudArchivesError = error
+        }
+    }
+    
+    
+    /// Loads the selected cloud archive and presents the existing settings selection sheet.
+    private func loadCloudArchive() async {
+        
+        guard let url = self.importingCloudArchiveURL else { return }
+        
+        // -> The account can change before SwiftUI cancels this task.
+        let identity = CloudSettingsManager.shared.ubiquityIdentityToken as? NSObject
+        
+        let result = await Result { try await CloudSettingsManager.shared.load(from: url) }
+        
+        guard
+            !Task.isCancelled,
+            identity == CloudSettingsManager.shared.ubiquityIdentityToken as? NSObject,
+            self.importingCloudArchiveURL == url
+        else { return }
+        
+        self.importingCloudArchiveURL = nil
+        switch result {
+            case .success(let document):
+                self.importingSettings = document
+            case .failure(let error):
+                self.error = error
+        }
     }
 }
 
@@ -226,7 +433,7 @@ private struct WarningsSettingView: View {
         VStack {
             Form {
                 Text("Suppress the following warnings:", tableName: "GeneralSettings")
-                Toggle(.init("Inconsistent line endings", table: "GeneralSettings"), isOn: $suppressesInconsistentLineEndingAlert)
+                Toggle(.init("Inconsistent line endings", table: "GeneralSettings", comment: "checkbox"), isOn: $suppressesInconsistentLineEndingAlert)
             }
             
             HStack {

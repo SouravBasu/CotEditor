@@ -55,7 +55,7 @@ final class EditorTextViewController: NSViewController, NSServicesMenuRequestor,
     
     // MARK: Private Properties
     
-    private let document: Document
+    private let document: TextDocument
     
     @ViewLoading private var scrollView: BidiScrollView
     private weak var advancedCounterView: NSView?
@@ -66,7 +66,7 @@ final class EditorTextViewController: NSViewController, NSServicesMenuRequestor,
     
     // MARK: Lifecycle
     
-    init(document: Document) {
+    init(document: TextDocument) {
         
         self.document = document
         
@@ -432,7 +432,7 @@ final class EditorTextViewController: NSViewController, NSServicesMenuRequestor,
             .filter { counter.statusBarRequirements.contains($0.counterTypes) }
             .compactMap { type in
                 counter.result.formattedValue(type: type, forAccessibility: true)
-                    .map { "\(type.label): \($0)" }
+                    .map { "\(String(localized: type.label)): \($0)" }
             }
         
         return components.isEmpty ? nil : components.joined(separator: ", ")

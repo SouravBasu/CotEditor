@@ -201,7 +201,7 @@ struct OutlineInspectorView: View, HostedPaneView {
                     .listRowSeparator(.hidden)
             }
             .environment(\.defaultMinListRowHeight, self.fontSize)
-            .clipShape(.rect(cornerRadius: 8, style: .continuous))
+            .clipShape(.rect(cornerRadius: 8))
             .onChange(of: self.model.outlineAllIDs, initial: true) { oldValue, newValue in
                 if self.model.filterString.isEmpty {
                     let newIDs = Set(newValue)
@@ -381,7 +381,7 @@ private final class OutlineBuildNode {
     ///
     /// - Parameter items: The flat outline items.
     /// - Returns: Root nodes of the constructed tree and all node IDs in document order.
-    static func build(from items: [OutlineItem]) -> (roots: [OutlineBuildNode], allIDs: [OutlineItem.ID]) {
+    static func build(from items: [OutlineItem]) -> sending (roots: [OutlineBuildNode], allIDs: [OutlineItem.ID]) {
         
         var roots: [OutlineBuildNode] = []
         var stack: [(level: Int, node: OutlineBuildNode)] = []

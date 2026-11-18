@@ -9,7 +9,7 @@
 //
 //  ---------------------------------------------------------------------------
 //
-//  © 2023-2025 1024jp
+//  © 2023-2026 1024jp
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -40,6 +40,13 @@ public extension NSMenuItem {
             self.keyEquivalentModifierMask = newValue?.modifiers ?? []
         }
     }
+    
+    
+    /// The command name for the user.
+    final var commandName: String {
+        
+        self.title.trimmingCharacters(in: .whitespaces.union(.punctuationCharacters))  // remove ellipsis
+    }
 }
 
 
@@ -48,20 +55,19 @@ public extension NSMenu {
     /// Finds the menu item that has the given shortcut.
     ///
     /// - Parameter shortcut: The shortcut to find.
-    /// - Returns: The command name for the user.
-    final func commandName(for shortcut: Shortcut) -> String? {
+    /// - Returns: The menu item, or `nil` if not found.
+    final func item(for shortcut: Shortcut) -> NSMenuItem? {
         
         self.items.lazy
             .compactMap { item in
                 if let submenu = item.submenu {
-                    submenu.commandName(for: shortcut)
+                    submenu.item(for: shortcut)
                 } else if shortcut == item.shortcut {
-                    item.title
+                    item
                 } else {
                     nil
                 }
             }
-            .first?
-            .trimmingCharacters(in: .whitespaces.union(.punctuationCharacters))  // remove ellipsis
+            .first
     }
 }

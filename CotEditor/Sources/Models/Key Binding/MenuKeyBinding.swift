@@ -1,14 +1,14 @@
 //
-//  ArithmeticsTests.swift
+//  MenuKeyBinding.swift
 //
 //  CotEditor
 //  https://coteditor.com
 //
-//  Created by 1024jp on 2022-06-30.
+//  Created by 1024jp on 2017-12-01.
 //
 //  ---------------------------------------------------------------------------
 //
-//  © 2022-2024 1024jp
+//  © 2017-2026 1024jp
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -23,14 +23,12 @@
 //  limitations under the License.
 //
 
-import Testing
-@testable import CotEditor
+import struct Foundation.Selector
+import Shortcut
 
-struct ArithmeticsTests {
+struct MenuKeyBinding: Hashable, Codable {
     
-    @Test func digits() {
-        
-        #expect(0.digits == [0])
-        #expect(1024.digits == [4, 2, 0, 1])
-    }
+    var action: Selector
+    var tag: Int = 0
+    var shortcut: Shortcut?
 }

@@ -94,10 +94,14 @@ struct RegexSyntaxTests {
         #expect(symbol.ranges(in: "[^]a]") == [NSRange(location: 0, length: 5)])
         #expect(symbol.ranges(in: "[^a]b]") == [NSRange(location: 0, length: 4)])
         
+        #expect(symbol.ranges(in: "[[:alpha:]_]") == [NSRange(location: 0, length: 12)])
+        #expect(symbol.ranges(in: "[\u{93E}\u{93F}]") == [NSRange(location: 0, length: 4)])
+        
         // just containing ranges for `(?<=`, `(` and `)`
         #expect(symbol.ranges(in: "(?<=\\[)a]") == [NSRange(location: 0, length: 4),
                                                     NSRange(location: 0, length: 1),
                                                     NSRange(location: 6, length: 1)])
+        #expect(symbol.ranges(in: "(?i-m)").contains(NSRange(location: 0, length: 5)))
     }
     
     
@@ -120,9 +124,44 @@ struct RegexSyntaxTests {
     }
     
     
+    @Test func highlightDollarAsAnchor() {
+        
+        let string = "(a)$1"
+        
+        #expect(RegexSyntaxType.anchor.ranges(in: string) == [NSRange(location: 3, length: 1)])
+        #expect(RegexSyntaxType.backReference.ranges(in: string).isEmpty)
+    }
+    
+    
+    @Test func highlightBackReferenceInReplacement() {
+        
+        let string = "\\\\$1"
+        
+        #expect(RegexSyntaxType.backReference.ranges(in: string, mode: .replacement(unescapes: false)) == [NSRange(location: 2, length: 2)])
+    }
+    
+    
+    @Test func highlightControlCharacter() {
+        
+        #expect(RegexSyntaxType.character.ranges(in: "\\cM").contains(NSRange(location: 0, length: 3)))
+    }
+    
+    
+    @Test func highlightHexEscape() {
+        
+        #expect(RegexSyntaxType.character.ranges(in: "\\xA").contains(NSRange(location: 0, length: 3)))
+    }
+    
+    
+    @Test func highlightOctalEscape() {
+        
+        #expect(RegexSyntaxType.character.ranges(in: "\\0477").contains(NSRange(location: 0, length: 4)))
+    }
+    
+    
     @Test func highlightUnicodePropertyName() {
         
-        let properties = ["\\p{gc=L}", "\\P{Lowercase_Letter}", "\\p{White-Space}"]
+        let properties = ["\\p{gc=L}", "\\P{Lowercase_Letter}", "\\p{White-Space}", "\\p{Numeric_Value=1.5}"]
         
         for property in properties {
             #expect(RegexSyntaxType.character.ranges(in: property).contains(NSRange(..<property.utf16.count)))
@@ -145,6 +184,27 @@ struct RegexSyntaxTests {
         #expect(RegexSyntaxType.symbol.ranges(in: string) == [NSRange(location: 0, length: 2),
                                                               NSRange(location: 10, length: 2)])
         #expect(RegexSyntaxType.quantifier.ranges(in: string) == [NSRange(location: 12, length: 1)])
+        #expect(RegexSyntaxType.character.ranges(in: string).isEmpty)
+    }
+    
+    
+    @Test func quoteEndingWithBackslash() {
+        
+        let string = #"\Qa\\E+"#
+        
+        #expect(RegexSyntaxType.symbol.ranges(in: string) == [NSRange(location: 0, length: 2),
+                                                              NSRange(location: 4, length: 2)])
+        #expect(RegexSyntaxType.quantifier.ranges(in: string) == [NSRange(location: 6, length: 1)])
+    }
+    
+    
+    @Test func ignoreSyntaxInComment() {
+        
+        let string = "(?#[a])b"
+        
+        #expect(RegexSyntaxType.symbol.ranges(in: string) == [NSRange(location: 0, length: 3),
+                                                              NSRange(location: 0, length: 1),
+                                                              NSRange(location: 6, length: 1)])
         #expect(RegexSyntaxType.character.ranges(in: string).isEmpty)
     }
     

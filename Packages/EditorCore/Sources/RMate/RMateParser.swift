@@ -44,6 +44,7 @@ struct RMateParser {
     
     // MARK: Internal Properties
     
+    private(set) var hasReceivedCommand = false
     private(set) var isFinished = false
     
     
@@ -115,6 +116,7 @@ struct RMateParser {
                 
                 self.message = RMateMessage(command: line)
                 self.headerLength = 0
+                self.hasReceivedCommand = true
                 
                 continue
             }
@@ -144,7 +146,7 @@ struct RMateParser {
         
         guard self.headerLength <= Self.maximumHeaderLength else { throw .headerTooLarge }
         
-        guard let separator = line.range(of: ": ") else { throw .invalidMessage }
+        guard let separator = line.range(of: ": ", options: .literal) else { throw .invalidMessage }
         
         let key = String(line[..<separator.lowerBound])
         let value = String(line[separator.upperBound...])

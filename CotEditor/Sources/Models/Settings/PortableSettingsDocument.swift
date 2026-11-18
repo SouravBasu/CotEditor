@@ -74,6 +74,7 @@ struct PortableSettingsDocument: FileDocument, Identifiable, Sendable {
         
         static let defaults = "Defaults.plist"
         static let shortcuts = "Shortcuts.plist"
+        static let textKeyBindings = "TextKeyBindings.plist"
         static let keyBindings = "KeyBindings"
         static let replacements = "Replacements"
         static let syntaxes = "Syntaxes"
@@ -88,7 +89,8 @@ struct PortableSettingsDocument: FileDocument, Identifiable, Sendable {
     var id = UUID()
     
     var defaults: [String: PropertyListValue]
-    var keyBindings: Data?
+    var menuKeyBindings: Data?
+    var textKeyBindings: Data?
     var replacements: [String: any Persistable]
     var syntaxes: [String: any Persistable]
     var themes: [String: any Persistable]
@@ -127,7 +129,8 @@ struct PortableSettingsDocument: FileDocument, Identifiable, Sendable {
         
         self.defaults = plist.compactMapValues(PropertyListValue.init)
         
-        self.keyBindings = fileWrappers[WrapperKey.keyBindings]?.fileWrappers?[WrapperKey.shortcuts]?.regularFileContents
+        self.menuKeyBindings = fileWrappers[WrapperKey.keyBindings]?.fileWrappers?[WrapperKey.shortcuts]?.regularFileContents
+        self.textKeyBindings = fileWrappers[WrapperKey.keyBindings]?.fileWrappers?[WrapperKey.textKeyBindings]?.regularFileContents
         self.replacements = fileWrappers[WrapperKey.replacements]?.fileWrappers?.compactMapValues(\.persistable) ?? [:]
         self.syntaxes = fileWrappers[WrapperKey.syntaxes]?.fileWrappers?.compactMapValues(\.persistable) ?? [:]
         self.themes = fileWrappers[WrapperKey.themes]?.fileWrappers?.compactMapValues(\.persistable) ?? [:]
@@ -165,10 +168,15 @@ struct PortableSettingsDocument: FileDocument, Identifiable, Sendable {
             WrapperKey.defaults: defaultsWrapper,
         ]
         
-        if let keyBindings {
-            dictionary[WrapperKey.keyBindings] = FileWrapper(directoryWithFileWrappers: [
-                WrapperKey.shortcuts: FileWrapper(regularFileWithContents: keyBindings),
-            ])
+        var keyBindingWrappers: [String: FileWrapper] = [:]
+        if let menuKeyBindings {
+            keyBindingWrappers[WrapperKey.shortcuts] = FileWrapper(regularFileWithContents: menuKeyBindings)
+        }
+        if let textKeyBindings {
+            keyBindingWrappers[WrapperKey.textKeyBindings] = FileWrapper(regularFileWithContents: textKeyBindings)
+        }
+        if !keyBindingWrappers.isEmpty {
+            dictionary[WrapperKey.keyBindings] = FileWrapper(directoryWithFileWrappers: keyBindingWrappers)
         }
         
         if !self.syntaxes.isEmpty {
@@ -260,7 +268,8 @@ struct PortableSettingsDocument: FileDocument, Identifiable, Sendable {
             .compactMapValues(PropertyListValue.init)
         
         if types.contains(.settings) {
-            self.keyBindings = try KeyBindingManager.shared.userSettingsData()
+            self.menuKeyBindings = try KeyBindingManager.shared.userMenuSettingsData()
+            self.textKeyBindings = try KeyBindingManager.shared.userTextSettingsData()
         }
         
         self.replacements = types.contains(.replacements) ? ReplacementManager.shared.exportSettings() : [:]
@@ -300,8 +309,13 @@ struct PortableSettingsDocument: FileDocument, Identifiable, Sendable {
             
             userDefaults.setValuesForKeys(defaults.mapValues(\.any))
         }
-        if types.contains(.settings), let keyBindings {
-            try KeyBindingManager.shared.importSetting(data: keyBindings)
+        if types.contains(.settings) {
+            if let menuKeyBindings {
+                try KeyBindingManager.shared.importMenuSetting(data: menuKeyBindings)
+            }
+            if let textKeyBindings {
+                try KeyBindingManager.shared.importTextSetting(data: textKeyBindings)
+            }
         }
         
         if types.contains(.fileScopes),

@@ -68,6 +68,21 @@ final class FileNode {
     }
     
     
+    /// Whether the file can be renamed.
+    var isRenamable: Bool {
+        
+        self.parent?.file.isWritable == true && !self.file.isUserImmutable
+    }
+    
+    
+    /// Whether the file can be moved to another folder or the Trash.
+    var isMovable: Bool {
+        
+        // -> Moving a folder to another folder requires the write permission of the folder itself.
+        self.isRenamable && (!self.file.isDirectory || self.file.isWritable)
+    }
+    
+    
     /// The children of the node by reading them lazily.
     var children: [FileNode]? {
         
@@ -216,7 +231,7 @@ extension FileNode {
             return node
         }
         
-        guard let child = children.first(where: { $0.file.fileURL.isAncestor(of: fileURL) }) else { return nil }
+        guard let child = children.first(where: { $0.file.isDirectory && $0.file.fileURL.isAncestor(of: fileURL) }) else { return nil }
         
         return child.node(at: fileURL, inCache: inCache)
     }

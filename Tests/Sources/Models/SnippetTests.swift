@@ -25,6 +25,7 @@
 
 import Foundation
 import Testing
+import LineEnding
 import StringUtils
 import TextEditing
 @testable import CotEditor
@@ -56,6 +57,16 @@ struct SnippetTests {
         
         #expect(string2 == "<q>x<<<CURSOR>>>y</q>")
         #expect(selections2 == [NSRange(location: 17, length: 0)])
+    }
+    
+    
+    @Test func tokenAdjoiningCombiningMark() {
+        
+        let snippet = Snippet(name: "", format: "<<<CURSOR>>>\u{301}")
+        let (string, selections) = snippet.insertion(selectedString: "")
+        
+        #expect(string == "\u{301}")
+        #expect(selections == [NSRange(location: 0, length: 0)])
     }
     
     
@@ -106,7 +117,7 @@ struct SnippetTests {
             NSRange(location: 4, length: 3),
             NSRange(location: 8, length: 0),
             NSRange(location: 9, length: 2),
-        ])
+        ], lineEnding: .lf)
         
         #expect(context.strings == [
             "<li>aaa</li>",
@@ -118,5 +129,25 @@ struct SnippetTests {
             NSRange(location: 21, length: 0),
             NSRange(location: 33, length: 0),
         ])
+    }
+    
+    
+    @Test func insertionsWithinIndent() {
+        
+        let snippet = Snippet(name: "", format: "x\n<<<CURSOR>>>y")
+        let context = snippet.insertions(for: "    a", ranges: [NSRange(location: 2, length: 0)], lineEnding: .lf)
+        
+        #expect(context.strings == ["x\n  y"])
+        #expect(context.selectedRanges == [NSRange(location: 6, length: 0)])
+    }
+    
+    
+    @Test func insertionsWithInconsistentLineEndings() {
+        
+        let snippet = Snippet(name: "", format: "(<<<SELECTION>>><<<CURSOR>>>)")
+        let context = snippet.insertions(for: "a\r\nb", ranges: [NSRange(location: 0, length: 3)], lineEnding: .lf)
+        
+        #expect(context.strings == ["(a\n)"])
+        #expect(context.selectedRanges == [NSRange(location: 3, length: 0)])
     }
 }

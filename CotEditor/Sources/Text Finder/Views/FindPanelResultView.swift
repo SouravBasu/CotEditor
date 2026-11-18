@@ -27,6 +27,7 @@ import SwiftUI
 import AppKit
 import Defaults
 import StringUtils
+import ValueRange
 
 struct FindPanelResultView: View {
     
@@ -82,8 +83,7 @@ struct FindPanelResultView: View {
                 .alignment(.trailing)
                 
                 TableColumn(.init("Matched Text", table: "TextFind", comment: "table column header")) {
-                    Text(AttributedString($0.attributedLineString(offset: 16)))
-                        .truncationMode(.tail)
+                    MatchedText(match: $0)
                         .padding(.vertical, -2)
                 }
             }
@@ -94,7 +94,7 @@ struct FindPanelResultView: View {
             .font(.system(size: self.fontSize))
             .copyable(self.model.matches
                 .filter(with: self.selection)
-                .map(\.attributedLineString.string))
+                .map(\.lineString))
             .onChange(of: self.selection) { _, newValue in
                 // remove selection of previous data
                 if newValue.count > 1 {
@@ -172,6 +172,20 @@ struct FindPanelResultView: View {
 }
 
 
+private struct MatchedText: View {
+    
+    var match: FindAllMatch
+    var offset = 16
+    
+    
+    var body: some View {
+        
+        Text(self.match.attributedLineString(offset: self.offset))
+            .truncationMode(.tail)
+    }
+}
+
+
 private extension NSTextView {
     
     var documentName: String? {
@@ -185,11 +199,23 @@ private extension FindAllMatch {
     
     /// Returns the attributed string truncated from the head.
     ///
-    /// - Parameter offset: The maximum number of composed characters to truncate.
+    /// - Parameter offset: The maximum number of composed characters to keep before the match.
     /// - Returns: An attributed string.
-    func attributedLineString(offset: Int) -> NSAttributedString {
+    func attributedLineString(offset: Int) -> AttributedString {
         
-        self.attributedLineString.truncatedHead(until: self.inlineLocation, offset: offset)
+        var string = AttributedString(self.lineString)
+        
+        for highlight in self.highlights {
+            guard let range = Range(highlight.range, in: string) else { continue }
+            
+            string[range].backgroundColor = Color(nsColor: highlight.value)
+        }
+        
+        if let range = Range(NSRange(location: self.inlineLocation, length: 0), in: string) {
+            string.truncateHead(until: range.lowerBound, offset: offset)
+        }
+        
+        return string
     }
 }
 
@@ -200,9 +226,9 @@ private extension FindAllMatch {
     let model = FindPanelResultView.Model()
     model.matches = [
         .init(range: NSRange(12..<16), lineNumber: 1, inlineLocation: 12,
-              attributedLineString: .init("Clarus says moof!")),
+              lineString: "Clarus says moof!"),
         .init(range: NSRange(64..<73), lineNumber: 3, inlineLocation: 64,
-              attributedLineString: .init("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.")),
+              lineString: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."),
     ]
     model.findString = "Clarus"
     

@@ -1,14 +1,15 @@
 //
-//  KeyBindingItem.swift
+//  Arithmetics.swift
+//  StringUtils
 //
 //  CotEditor
 //  https://coteditor.com
 //
-//  Created by 1024jp on 2016-06-22.
+//  Created by 1024jp on 2021-09-23.
 //
 //  ---------------------------------------------------------------------------
 //
-//  © 2016-2024 1024jp
+//  © 2021-2026 1024jp
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -23,23 +24,17 @@
 //  limitations under the License.
 //
 
-import struct Foundation.Selector
-import Observation
-import Shortcut
-
-@Observable final class KeyBindingItem {
+extension Int {
     
-    let action: Selector
-    let tag: Int
-    var shortcut: Shortcut?
-    let defaultShortcut: Shortcut?
-    
-    
-    init(action: Selector, tag: Int, shortcut: Shortcut?, defaultShortcut: Shortcut?) {
+    /// Array of digits from the ones place.
+    public var digits: [Int] {
         
-        self.action = action
-        self.tag = tag
-        self.shortcut = shortcut
-        self.defaultShortcut = defaultShortcut
+        assert(self >= 0)
+        
+        if self == 0 { return [0] }
+        
+        return sequence(first: self) { $0 / 10 }
+            .prefix { $0 > 0 }
+            .map { $0 % 10 }
     }
 }

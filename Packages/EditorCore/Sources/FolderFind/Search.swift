@@ -39,6 +39,7 @@ public struct Search: Sendable {
     var progress: FolderFindProgress?
     var isIncluded: (@Sendable (FolderFind.Candidate) -> Bool)?
     
+    private let rootPathComponents: [String]
     private var fileScopeMatcher: FileScope.Matcher?
     private var metrics: FolderFind.Metrics
     private var files: [FolderFind.FileResult] = []
@@ -59,6 +60,7 @@ public struct Search: Sendable {
         assert(options.maximumMatchCountPerFile > 0)
         
         self.rootURL = rootURL
+        self.rootPathComponents = rootURL.standardizedFileURL.pathComponents
         self.pattern = pattern
         self.options = options
         self.progress = progress
@@ -142,9 +144,12 @@ public struct Search: Sendable {
     
     /// Searches a file.
     ///
-    /// - Parameter candidate: The file candidate to search.
+    /// - Parameters:
+    ///   - candidate: The file candidate to search. Its file URL must be standardized.
     /// - Throws: `CancellationError` if the task is cancelled.
     private mutating func searchFile(_ candidate: FolderFind.Candidate) throws(CancellationError) {
+        
+        assert(candidate.fileURL == candidate.fileURL.standardizedFileURL)
         
         guard
             candidate.fileSize <= self.options.maximumFileSize,
@@ -163,13 +168,12 @@ public struct Search: Sendable {
         
         self.recordSearchedFile(matchCount: matches.count)
         
-        let rootPathComponents = self.rootURL.standardizedFileURL.pathComponents
-        let directoryPathComponents = candidate.fileURL.deletingLastPathComponent().standardizedFileURL.pathComponents
+        let directoryPathComponents = candidate.fileURL.pathComponents.dropLast()
         
-        guard directoryPathComponents.starts(with: rootPathComponents) else { return assertionFailure() }
+        guard directoryPathComponents.starts(with: self.rootPathComponents) else { return assertionFailure() }
         
         self.files.append(FolderFind.FileResult(fileURL: candidate.fileURL,
-                                                directoryPathComponents: Array(directoryPathComponents.dropFirst(rootPathComponents.count)),
+                                                directoryPathComponents: Array(directoryPathComponents.dropFirst(self.rootPathComponents.count)),
                                                 matches: matches,
                                                 isTruncated: isTruncated))
     }
@@ -216,12 +220,21 @@ public struct Search: Sendable {
             }
             
             let range = ranges[0]
-            let clampedLineRange = lineCounter.lineContentsRange(for: range)
-                .clamped(around: range, maxLength: maximumLineLength)
-            let lineRange = nsString.rangeOfComposedCharacterSequences(for: clampedLineRange)
+            let contentsRange = lineCounter.lineContentsRange(for: range)
+            // -> A match can start at the LF of a CRLF, after the end of the line contents.
+            //    Display it as an empty range at the end of the line, like the same match in LF.
+            let displayedRange = (range.location > contentsRange.upperBound)
+                ? NSRange(location: contentsRange.upperBound, length: 0)
+                : range
+            let clampedLineRange = contentsRange.clamped(around: displayedRange, maxLength: maximumLineLength)
+            // -> `rangeOfComposedCharacterSequences(for:)` returns the character at the location for an empty range,
+            //    which is a line ending on an empty line.
+            let lineRange = clampedLineRange.isEmpty
+                ? clampedLineRange
+                : nsString.rangeOfComposedCharacterSequences(for: clampedLineRange)
             let line = nsString.substring(with: lineRange)
-            let rangeInLine = NSRange(location: range.location - lineRange.location,
-                                      length: min(range.upperBound, lineRange.upperBound) - range.location)
+            let rangeInLine = NSRange(location: displayedRange.location - lineRange.location,
+                                      length: min(displayedRange.upperBound, lineRange.upperBound) - displayedRange.location)
             
             matches.append(FolderFind.Match(range: range, line: line, rangeInLine: rangeInLine))
         }

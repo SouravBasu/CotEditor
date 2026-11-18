@@ -24,7 +24,9 @@
 //
 
 import Foundation
+import ImageIO
 import Testing
+import UniformTypeIdentifiers
 @testable import CotEditor
 
 struct FileDropItemTests {
@@ -92,11 +94,39 @@ struct FileDropItemTests {
     
     @Test func dropTextWithWebURL() throws {
         
-        let item = FileDropItem(format: "[<<<FILENAME-NOSUFFIX>>>](<<<RELATIVE-PATH>>>) <<<ABSOLUTE-PATH>>>")
+        let item = FileDropItem(format: "[<<<FILENAME-NOSUFFIX>>>](<<<RELATIVE-PATH>>>) <<<ABSOLUTE-PATH>>><<<FILECONTENT>>>")
         let droppedURL = try #require(URL(string: "https://example.com/assets/image.png"))
         let documentURL = URL(filePath: "/Documents/index.md")
-        let expected = "[image](https://example.com/assets/image.png) https://example.com/assets/image.png"
+        let expected = "[image](https://example.com/assets/image.png) https://example.com/assets/image.png<<<FILECONTENT>>>"
         
         #expect(item.dropText(forFileURL: droppedURL, documentURL: documentURL) == expected)
+    }
+    
+    
+    @Test func dropTextWithTokenInFilename() {
+        
+        let item = FileDropItem(format: "<<<ABSOLUTE-PATH>>>")
+        let droppedURL = URL(filePath: "/Users/Shared/<<<FILENAME>>>.txt")
+        
+        #expect(item.dropText(forFileURL: droppedURL, documentURL: nil) == "/Users/Shared/<<<FILENAME>>>.txt")
+    }
+    
+    
+    @Test func dropTextWithRotatedImage() throws {
+        
+        let directoryURL = try FileManager.default.makeTemporaryDirectory()
+        defer { try? FileManager.default.removeItem(at: directoryURL) }
+        let imageURL = directoryURL.appending(path: "image.jpg")
+        
+        let context = try #require(CGContext(data: nil, width: 4, height: 3, bitsPerComponent: 8, bytesPerRow: 0,
+                                             space: CGColorSpaceCreateDeviceRGB(), bitmapInfo: CGImageAlphaInfo.noneSkipLast.rawValue))
+        let image = try #require(context.makeImage())
+        let destination = try #require(CGImageDestinationCreateWithURL(imageURL as CFURL, UTType.jpeg.identifier as CFString, 1, nil))
+        CGImageDestinationAddImage(destination, image, [kCGImagePropertyOrientation: CGImagePropertyOrientation.right.rawValue] as CFDictionary)
+        try #require(CGImageDestinationFinalize(destination))
+        
+        let item = FileDropItem(format: "<<<IMAGEWIDTH>>>x<<<IMAGEHEIGHT>>>")
+        
+        #expect(item.dropText(forFileURL: imageURL, documentURL: nil) == "3x4")
     }
 }

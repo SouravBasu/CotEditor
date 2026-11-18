@@ -67,6 +67,7 @@ struct LineSortTests {
             """
         
         #expect(pattern.sort(lines) == lines)
+        #expect(pattern.sort(lines, options: SortOptions(descending: true)) == lines)
     }
     
     
@@ -199,6 +200,9 @@ struct LineSortTests {
         let range = try #require(pattern.range(for: tsvString))
         #expect(pattern.sortKey(for: tsvString) == tsvString)
         #expect(NSRange(range, in: tsvString) == NSRange(0..<3))
+        
+        let zeroWidthSpaceString = "\u{200B}dog"
+        #expect(pattern.range(for: zeroWidthSpaceString) == Range(NSRange(1..<4), in: zeroWidthSpaceString))
     }
     
     
@@ -215,6 +219,7 @@ struct LineSortTests {
         #expect(options.parse("-1000,1 m/s") == -1000)
         #expect(options.parse("+1,000") == 1000)
         #expect(options.parse("dog 10") == nil)
+        #expect(options.parse("Nancy") == nil)
         
         options.locale = .init(identifier: "de")
         #expect(options.numeric)

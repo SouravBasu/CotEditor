@@ -129,8 +129,8 @@ private struct ModeListView: View {
             }
         }
         .scrollEdgeEffectStyle(.hard, for: .bottom)
-        .clipShape(.rect(cornerRadius: 7, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 7, style: .continuous).strokeBorder(.separator))
+        .clipShape(.rect(cornerRadius: 7))
+        .overlay(RoundedRectangle(cornerRadius: 7).strokeBorder(.separator))
         .contextMenu(forSelectionType: Mode.self) { selections in
             if let selection = selections.first {
                 self.contextMenu(for: selection)
@@ -313,7 +313,7 @@ private struct ModeIndentOptionsView: View {
             
             Group {
                 HStack(alignment: .firstTextBaseline) {
-                    Text(.init("Prefer using", table: "EditSettings"))
+                    Text("Prefer using", tableName: "EditSettings")
                         .accessibilityLabeledPair(role: .label, id: "expandsTab", in: self.accessibility)
                     Picker(selection: self.expandsTab) {
                         Text("Spaces", tableName: "EditSettings", comment: "noun; menu item; indent style").tag(true)

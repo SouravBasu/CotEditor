@@ -129,19 +129,32 @@ actor TreeSitterClient: IncrementalParsing, HighlightParsing, OutlineParsing {
             : []
         self.pendingAffectedRanges.clear()
         
-        try Task.checkCancellation()
-        
-        guard
-            let updateRange = (invalidations.unionRange()?.union(range) ?? range).intersection(parseRange)
-        else { return nil }
-        
-        let highlights = try self.queryMatches(.highlights, in: updateRange, string: string as NSString)
-            .flatMap(\.captures)
-            .sorted()
-            .resolvingCaptureConflicts()
-            .compactMap(Highlight.init(capture:))
-        
-        return (highlights, updateRange)
+        do {
+            try Task.checkCancellation()
+            
+            guard
+                let updateRange = (invalidations.unionRange()?.union(range) ?? range).intersection(parseRange)
+            else { return nil }
+            
+            let highlights = try self.queryMatches(.highlights, in: updateRange, string: string as NSString)
+                .flatMap(\.captures)
+                .sorted()
+                .resolvingCaptureConflicts()
+                .compactMap(Highlight.init(capture:))
+                // -> The caller repaints only the update range.
+                .compactMap { highlight in
+                    highlight.range
+                        .intersection(updateRange)
+                        .flatMap { $0.isEmpty ? nil : Highlight(value: highlight.value, range: $0) }
+                }
+            
+            return (highlights, updateRange)
+            
+        } catch {
+            // -> The layer doesn't report the parsed changes again.
+            self.pendingAffectedRanges.formUnion(invalidations)
+            throw error
+        }
     }
     
     
@@ -162,11 +175,13 @@ actor TreeSitterClient: IncrementalParsing, HighlightParsing, OutlineParsing {
         let content = LanguageLayer.Content(string: string, limit: parseRange.length)
         
         if !self.pendingAffectedRanges.isEmpty {
-            // -> Outline parsing should preserve pending ranges when highlights are available,
-            //    because highlight parsing uses them to compute the next update range.
-            _ = self.layer.parse(with: content, affecting: self.pendingAffectedRanges.indexSet, resolveSublayers: true)
+            let invalidations = self.layer.parse(with: content, affecting: self.pendingAffectedRanges.indexSet, resolveSublayers: true)
             
-            if !self.syntax.features.contains(.highlight) {
+            // -> Outline parsing should preserve pending ranges together with the parsed changes when highlights are available,
+            //    because highlight parsing uses them to compute the next update range.
+            if self.syntax.features.contains(.highlight) {
+                self.pendingAffectedRanges.formUnion(invalidations)
+            } else {
                 self.pendingAffectedRanges.clear()
             }
         }

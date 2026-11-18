@@ -106,12 +106,14 @@ public extension NSRange {
         
         assert(maxLength > 0)
         assert(headPadding >= 0)
+        assert(headPadding < maxLength)
         assert(self.lowerBound <= target.lowerBound && target.lowerBound <= self.upperBound)
         
         guard self.length > maxLength else { return self }
         
-        let effectiveHead = min(headPadding, target.location - self.location)
-        let fragmentStart = max(self.location, target.location - effectiveHead)
+        // -> shorten the head padding to include target as much as possible
+        let effectiveHead = min(headPadding, target.location - self.location, max(maxLength - target.length, 0))
+        let fragmentStart = target.location - effectiveHead
         let fragmentEnd = min(self.upperBound, fragmentStart + maxLength)
         
         return NSRange(fragmentStart..<fragmentEnd)
@@ -151,23 +153,30 @@ public extension NSRange {
     
     /// Returns a new range by assuming the indices of the given items are inserted.
     ///
+    /// Items at the same location are inserted in the array order.
+    ///
     /// - Parameter items: Insertion items to be inserted, sorted by `location` in ascending order.
     /// - Returns: A new range that the receiver moved.
     func inserted(items: [Self.InsertionItem]) -> NSRange {
         
         assert(items == items.sorted(using: KeyPathComparator(\.location)))
         
-        let location = items
-            .prefix { (self.isEmpty && $0.forward) ? $0.location <= self.lowerBound : $0.location < self.lowerBound }
+        let lowerItems = items.filter { $0.location == self.lowerBound }
+        let headCount = self.isEmpty
+            ? lowerItems.prefix(while: \.forward).count
+            : lowerItems.lastIndex { !$0.forward }.map { $0 + 1 } ?? 0
+        let location = (items.filter { $0.location < self.lowerBound } + lowerItems.prefix(headCount))
             .map(\.string.length)
             .reduce(self.location, +)
-        let length = items
-            .filter { (self.isEmpty || !$0.forward) ? self.lowerBound < $0.location : self.lowerBound <= $0.location }
-            .filter { (self.isEmpty || $0.forward) ? $0.location < self.upperBound : $0.location <= self.upperBound }
-            .map(\.string.length)
-            .reduce(self.length, +)
         
-        return NSRange(location: location, length: length)
+        guard !self.isEmpty else { return NSRange(location: location, length: 0) }
+        
+        let upperItems = items.filter { $0.location == self.upperBound }
+        let upperBound = (items.filter { $0.location < self.upperBound } + upperItems.prefix { !$0.forward })
+            .map(\.string.length)
+            .reduce(self.upperBound, +)
+        
+        return NSRange(location..<upperBound)
     }
     
     
@@ -192,7 +201,7 @@ public extension Sequence<NSRange> {
     var merged: [NSRange] {
         
         self
-            .sorted(using: KeyPathComparator(\.location))
+            .sorted { $0.location < $1.location }
             .reduce(into: []) { ranges, range in
                 if let last = ranges.last, last.touches(range) {
                     ranges[ranges.count - 1] = last.union(range)
@@ -200,6 +209,45 @@ public extension Sequence<NSRange> {
                     ranges.append(range)
                 }
             }
+    }
+}
+
+
+public extension [NSRange] {
+    
+    /// Returns the ranges that remain after removing the given ranges from the receiver.
+    ///
+    /// - Note: The receiver must be `merged` in advance.
+    ///
+    /// - Parameters:
+    ///   - ranges: The ranges to remove, which must be `merged` in advance.
+    /// - Returns: The remaining ranges in ascending order.
+    func subtracting(_ ranges: [NSRange]) -> [NSRange] {
+        
+        assert(self == self.merged)
+        assert(ranges == ranges.merged)
+        
+        var index = ranges.startIndex
+        
+        return self.reduce(into: []) { result, range in
+            var location = range.lowerBound
+            
+            while location < range.upperBound {
+                while index < ranges.endIndex, ranges[index].upperBound <= location {
+                    index += 1
+                }
+                
+                guard index < ranges.endIndex, ranges[index].lowerBound < range.upperBound else {
+                    result.append(NSRange(location..<range.upperBound))
+                    break
+                }
+                
+                if location < ranges[index].lowerBound {
+                    result.append(NSRange(location..<ranges[index].lowerBound))
+                }
+                location = ranges[index].upperBound
+            }
+        }
     }
 }
 

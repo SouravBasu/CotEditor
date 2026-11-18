@@ -30,7 +30,7 @@ struct FindProgressTests {
         
         let progress = FindProgress(scope: 0..<10)
         
-        #expect(progress.state == .ready)
+        #expect(progress.state == .processing)
         #expect(progress.count == 0)
         #expect(progress.fractionCompleted == 0)
     }
@@ -48,6 +48,18 @@ struct FindProgressTests {
     }
     
     
+    @Test func fractionCompletedWithOffsetScope() {
+        
+        let progress = FindProgress(scope: 2..<4)
+        
+        progress.updateCompletedUnit(to: 3)
+        #expect(progress.fractionCompleted == 0.5)
+        
+        progress.updateCompletedUnit(to: 4)
+        #expect(progress.fractionCompleted == 1)
+    }
+    
+    
     @Test func fractionCompletedWithEmptyScope() {
         
         let progress = FindProgress(scope: 0..<0)
@@ -61,9 +73,9 @@ struct FindProgressTests {
         let progress = FindProgress(scope: 0..<5)
         
         progress.incrementCount()
-        progress.incrementCount(by: 2)
+        progress.incrementCount()
         
-        #expect(progress.count == 3)
+        #expect(progress.count == 2)
     }
     
     
@@ -76,6 +88,26 @@ struct FindProgressTests {
         
         progress.incrementCompletedUnit()
         #expect(progress.fractionCompleted == 1)
+    }
+    
+    
+    /// Cancels the task performing the work when the progress is cancelled.
+    @Test(.timeLimit(.minutes(1)))
+    func cancelPerformingTask() async {
+        
+        let progress = FindProgress(scope: 0..<1)
+        let task = Task {
+            try await progress.perform {
+                while !Task.isCancelled {
+                    await Task.yield()
+                }
+                try Task.checkCancellation()
+            }
+        }
+        
+        progress.cancel()
+        
+        await #expect(throws: CancellationError.self) { try await task.value }
     }
     
     

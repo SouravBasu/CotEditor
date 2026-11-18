@@ -46,9 +46,10 @@ struct WhatsNewView: View {
                     
                     if let prerelease = self.prerelease {
                         Text(prerelease.label)
-                            .fontDesign(.rounded)
+                            .font(.system(size: 16, weight: .medium, design: .rounded))
                             .kerning(0.5)
-                            .padding(.horizontal, 4)
+                            .padding(.vertical, 1)
+                            .padding(.horizontal, 5)
                             .overlay(RoundedRectangle(cornerRadius: 5).stroke())
                             .foregroundStyle(.tint)
                     }
@@ -155,10 +156,11 @@ private extension Version.Prerelease {
 enum NewFeature: CaseIterable {
     
     static let version = Version(7, 2, 0)
-    static let buildNumber = 856
+    static let buildNumber = 857
     
     case remoteEditing
     case copySettingsIniCloud
+    case textKeyBinding
 }
 
 
@@ -171,6 +173,8 @@ private extension NewFeature {
                 Image(systemName: "server.rack")
             case .copySettingsIniCloud:
                 Image(systemName: "icloud.and.arrow.up")
+            case .textKeyBinding:
+                Image(systemName: "keyboard")
         }
     }
     
@@ -185,6 +189,10 @@ private extension NewFeature {
             case .copySettingsIniCloud:
                 .init("NewFeature.copySettingsIniCloud.label",
                       defaultValue: "Your settings, one import away",
+                      table: "WhatsNew")
+            case .textKeyBinding:
+                .init("NewFeature.textKeyBinding.label",
+                      defaultValue: "Your keys, your rules",
                       table: "WhatsNew")
         }
     }
@@ -201,6 +209,10 @@ private extension NewFeature {
                 .init("NewFeature.copySettingsIniCloud.description",
                       defaultValue: "Keep an up-to-date copy of your settings in iCloud to import on your other Macs anytime.",
                       table: "WhatsNew")
+            case .textKeyBinding:
+                .init("NewFeature.textKeyBinding.description",
+                      defaultValue: "Customize shortcuts for moving the insertion point, selecting, and deleting text, so your fingers feel right at home.",
+                      table: "WhatsNew")
         }
     }
     
@@ -212,6 +224,8 @@ private extension NewFeature {
                 "howto_edit_remote"
             case .copySettingsIniCloud:
                 "howto_store_settings_in_icloud"
+            default:
+                nil
         }
     }
     

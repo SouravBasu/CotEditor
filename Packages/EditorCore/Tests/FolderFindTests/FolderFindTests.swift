@@ -83,7 +83,7 @@ struct FolderFindTests {
         #expect(summary.metrics.matchCount == 1)
         #expect(match.range == NSRange(location: 80, length: needle.utf16.count))
         #expect(match.line.utf16.count == 512)
-        #expect(match.rangeInLine == NSRange(location: 64, length: 448))
+        #expect(match.rangeInLine == NSRange(location: 0, length: 512))
         #expect(Range(match.rangeInLine, in: AttributedString(match.line)) != nil)
     }
     
@@ -129,6 +129,37 @@ struct FolderFindTests {
         #expect(match.range == NSRange(location: 600, length: 0))
         #expect(match.rangeInLine == NSRange(location: match.line.utf16.count, length: 0))
         #expect(Range(match.rangeInLine, in: AttributedString(match.line)) != nil)
+    }
+    
+    
+    @Test func matchStartingInsideCRLFIsAtEndOfLine() async throws {
+        
+        let rootURL = try Self.makeTemporaryDirectory()
+        defer { try? FileManager.default.removeItem(at: rootURL) }
+        
+        try Data("xa\r\nb".utf8).write(to: rootURL.appending(path: "a.txt"))
+        let pattern = try FolderFind.Query(findString: #"\n"#, mode: .regularExpression(options: [], unescapesReplacement: false)).pattern()
+        var search = try Search(rootURL: rootURL, pattern: pattern)
+        let summary = try await search.run()
+        let match = try #require(summary.files.first?.matches.first)
+        
+        #expect(match.line == "xa")
+        #expect(match.rangeInLine == NSRange(location: 2, length: 0))
+    }
+    
+    
+    @Test func matchOnEmptyLineHasEmptyLine() async throws {
+        
+        let rootURL = try Self.makeTemporaryDirectory()
+        defer { try? FileManager.default.removeItem(at: rootURL) }
+        
+        try Data("a\n\nb".utf8).write(to: rootURL.appending(path: "a.txt"))
+        let pattern = try FolderFind.Query(findString: "^$", mode: .regularExpression(options: .anchorsMatchLines, unescapesReplacement: false)).pattern()
+        var search = try Search(rootURL: rootURL, pattern: pattern)
+        let summary = try await search.run()
+        let match = try #require(summary.files.first?.matches.first)
+        
+        #expect(match.line.isEmpty)
     }
     
     
@@ -444,6 +475,24 @@ struct FolderFindTests {
     }
     
     
+    @Test func summaryEmptiesMatchWithinLargerEdit() throws {
+        
+        let fileURL = URL(fileURLWithPath: "/tmp/a.txt").standardizedFileURL
+        var summary = FolderFind.Summary(metrics: .init(findString: "abc"),
+                                         files: [
+                                            FolderFind.FileResult(fileURL: fileURL, directoryPathComponents: [],
+                                                                  matches: [
+                                                                    FolderFind.Match(range: NSRange(location: 2, length: 3), line: "x-abc-x", rangeInLine: NSRange(location: 2, length: 3)),
+                                                                  ]),
+                                         ])
+        
+        // replacing both "x" in "x-abc-x" with "yy" at once is notified as the edit of the whole text
+        summary.updateMatchRanges(in: fileURL, editedRange: NSRange(location: 0, length: 9), changeInLength: 2, length: 9)
+        
+        #expect(summary.files[0].matches[0].range == NSRange(location: 0, length: 0))
+    }
+    
+    
     @Test func caseInsensitiveSearch() async throws {
         
         let rootURL = try Self.makeTemporaryDirectory()
@@ -602,8 +651,9 @@ struct FolderFindTests {
         let rootURL = try Self.makeTemporaryDirectory()
         defer { try? FileManager.default.removeItem(at: rootURL) }
         
-        // The first 8 KiB end within the emoji's surrogate pair for UTF-16.
-        let string = String(repeating: "a", count: 4_095) + "🐈needle"
+        // The first 8 KiB end within the emoji's surrogate pair for UTF-16,
+        // and “ß” is invalid in the other byte order, unlike “a”.
+        let string = String(repeating: "ß", count: 4_095) + "🐈needle"
         let url = rootURL.appending(path: "text.txt")
         try #require(string.data(using: encoding)).write(to: url)
         if usesExtendedAttribute {
@@ -704,6 +754,21 @@ struct FolderFindTests {
         
         #expect(summary.metrics.matchCount == 2)
         #expect(Set(summary.files.map(\.filename)) == ["README.md", "index.html"])
+    }
+    
+    
+    @Test func fileScopeRegularExpressionMatchesPrecomposedName() throws {
+        
+        let rootURL = try Self.makeTemporaryDirectory()
+        defer { try? FileManager.default.removeItem(at: rootURL) }
+        
+        let fileURL = rootURL.appending(path: "データ.txt")
+        try Data("needle".utf8).write(to: fileURL)
+        let candidate = try FolderFind.Candidate(at: fileURL)
+        
+        #expect(try FileScope(rules: [
+            FileScope.Rule(target: .filename, comparison: .matchesRegularExpression, value: #"データ\.txt"#),
+        ]).contains(candidate, relativeTo: rootURL))
     }
     
     
@@ -836,6 +901,12 @@ struct FolderFindTests {
         #expect(throws: FileScope.Error.invalidRegularExpression(pattern: "[")) {
             _ = try FileScope.Matcher(FileScope(rules: [
                 FileScope.Rule(target: .filename, comparison: .matchesRegularExpression, value: "["),
+            ]))
+        }
+        
+        #expect(throws: FileScope.Error.invalidRegularExpression(pattern: "a)|(b")) {
+            _ = try FileScope.Matcher(FileScope(rules: [
+                FileScope.Rule(target: .filename, comparison: .matchesRegularExpression, value: "a)|(b"),
             ]))
         }
         

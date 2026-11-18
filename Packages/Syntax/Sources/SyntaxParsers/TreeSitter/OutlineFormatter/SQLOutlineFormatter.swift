@@ -47,10 +47,12 @@ private extension SQLOutlineFormatter {
     
     private static let sqlTypeNodeTypes: Set<String> = [
         "array_size_definition",
+        "array_type",
         "bigint",
         "binary",
         "bit",
         "char",
+        "datetime",
         "datetimeoffset",
         "decimal",
         "double",
@@ -74,7 +76,6 @@ private extension SQLOutlineFormatter {
         "keyword_box3d",
         "keyword_bytea",
         "keyword_date",
-        "keyword_datetime",
         "keyword_datetime2",
         "keyword_geography",
         "keyword_geometry",
@@ -148,19 +149,14 @@ private extension SQLOutlineFormatter {
                 .compactMap(argument.namedChild(at:))
                 .filter { $0 == customType || $0.nodeType == "array_size_definition" }
             
-            return Self.typeText(for: typeNodes, source: source)
+            return Self.typeText(for: typeNodes, in: argument, source: source)
         }
         
-        var typeNodes = (0..<argument.namedChildCount)
+        let typeNodes = (0..<argument.namedChildCount)
             .compactMap(argument.namedChild(at:))
             .filter { Self.sqlTypeNodeTypes.contains($0.nodeType ?? "") }
         
-        // drop the leading modifier keyword node (e.g. IN, OUT, INOUT, VARIADIC)
-        if typeNodes.count > 1, typeNodes[1].nodeType != "array_size_definition" {
-            typeNodes.removeFirst()
-        }
-        
-        return Self.typeText(for: typeNodes, source: source)
+        return Self.typeText(for: typeNodes, in: argument, source: source)
     }
     
     
@@ -168,16 +164,17 @@ private extension SQLOutlineFormatter {
     ///
     /// - Parameters:
     ///   - typeNodes: The SQL type-related nodes in source order.
+    ///   - argument: The SQL function argument node that contains the type nodes.
     ///   - source: The source text as `NSString`.
     /// - Returns: The normalized type text, or `nil` if it is empty.
-    private static func typeText(for typeNodes: [Node], source: NSString) -> String? {
+    private static func typeText(for typeNodes: [Node], in argument: Node, source: NSString) -> String? {
         
         guard let firstTypeNode = typeNodes.first else { return nil }
         
         let range = typeNodes.dropFirst()
             .reduce(into: firstTypeNode.range) { $0.formUnion($1.range) }
-        let type = source.substring(with: range)
-            .replacing(/\s+/, with: " ")
+        let type = Self.text(of: argument, in: range, source: source)
+            .collapsingWhitespace
             .trimmingCharacters(in: .whitespacesAndNewlines)
         
         return type.isEmpty ? nil : type

@@ -180,7 +180,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Automatycznie"
+            "value" : "autom."
           }
         },
         "pt" : {
@@ -1192,7 +1192,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wcięcie zawijanej linii o"
+            "value" : "Wcięcie zawijanego wiersza:"
           }
         },
         "pt" : {
@@ -1234,7 +1234,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "縮排換行"
+            "value" : "自動換行縮排字元數："
           }
         }
       }
@@ -1572,7 +1572,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "每行結尾"
+            "value" : "行結尾"
           }
         }
       }
@@ -2586,7 +2586,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "欄位的頁面指引："
+            "value" : "頁面指引欄位："
           }
         }
       }
@@ -2770,7 +2770,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "px"
+            "value" : "piks."
           }
         },
         "pt" : {
@@ -2925,7 +2925,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "關聯系統設定"
+            "value" : "使用系統設定"
           }
         }
       }
@@ -3221,7 +3221,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "sp."
+            "value" : "spacje"
           }
         },
         "pt" : {
@@ -4480,7 +4480,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pionowa"
+            "value" : "Pionowo"
           }
         },
         "pt" : {

@@ -89,7 +89,7 @@ public extension String {
             case .automatic(let options):
                 (content, encoding) = try String.string(data: data, options: options)
             case .specific(let readingEncoding):
-                guard let string = String(data: data, encoding: readingEncoding) else {
+                guard let string = String(decoding: data, encoding: readingEncoding) else {
                     throw CocoaError(.fileReadInapplicableStringEncoding, userInfo: [NSStringEncodingErrorKey: readingEncoding.rawValue])
                 }
                 content = string
@@ -111,10 +111,86 @@ public extension String {
         
         "¥".canBeConverted(to: encoding) ? self : self.replacingOccurrences(of: "¥", with: "\\", options: .literal)
     }
+    
+    
+    /// Encodes the string in the given encoding, replacing the characters that the encoding cannot represent.
+    ///
+    /// - Note: Use this method for arbitrary text to workaround the issue that `data(using:allowLossyConversion:)` can raise an exception,
+    ///         return `nil`, or never return, for example, with a combining mark that cannot be composed (2026-11, macOS 27.2, FB25468311 and FB25468345).
+    ///
+    /// - Parameters:
+    ///   - encoding: The text encoding to convert to.
+    /// - Returns: The encoded data.
+    func lossyData(using encoding: String.Encoding) -> Data {
+        
+        // -> The Unicode encodings can represent all characters, thus the conversion always reaches the end.
+        //    `.ascii` and `.nonLossyASCII` are not here to workaround `String` replacing the characters out of ASCII
+        //    with 0xFF and `?` (2026-11, macOS 27.2, FB25468366 and FB25468642).
+        if encoding.isUnicodeEncoding,
+           let data = self.data(using: encoding, allowLossyConversion: true)
+        {
+            return data
+        }
+        
+        let string = self as NSString
+        
+        // workaround the issue that the conversion may never return when the buffer gets full (2026-11, macOS 27.2, FB25468345)
+        // -> Neither `maximumLengthOfBytes(using:)` nor counting the bytes in advance is enough for all encodings.
+        //    Thus, reserve the size for the longest output.
+        return withUnsafeTemporaryAllocation(of: UInt8.self, capacity: (string.length + 10) * 8) { buffer in
+            // workaround the issue that the conversion in Simplified Chinese (Mac OS) can report more bytes than it wrote,
+            // which never exceed the maximum length (2026-11, macOS 27.2, FB25468488)
+            unsafe buffer.prefix(string.maximumLengthOfBytes(using: encoding.rawValue)).initialize(repeating: 0)
+            
+            var data = Data()
+            var options: NSString.EncodingConversionOptions = [.allowLossy, .externalRepresentation]
+            var location = 0
+            
+            // workaround the issue that `getBytes(...)` can stop before the end even with `.allowLossy` (2026-11, macOS 27.2, FB25468311)
+            while location < string.length {
+                var usedLength = 0
+                var remaining = NSRange()
+                
+                unsafe string.getBytes(buffer.baseAddress, maxLength: buffer.count, usedLength: &usedLength, encoding: encoding.rawValue, options: options, range: NSRange(location..<string.length), remaining: &remaining)
+                unsafe data.append(contentsOf: buffer[..<usedLength])
+                options.remove(.externalRepresentation)
+                
+                if remaining.location > location {
+                    location = remaining.location
+                } else {
+                    // replace the character that cannot be converted at all
+                    data.append(contentsOf: "?".utf8)
+                    location += 1
+                }
+            }
+            
+            return data
+        }
+    }
 }
 
 
 extension String {
+    
+    /// Creates a string by decoding the given data.
+    ///
+    /// - Note: Use this initializer to workaround the issue that `init(data:encoding:)` leaves
+    ///         the escape sequences in Non-lossy ASCII as they are (2026-11, macOS 27.2, FB25468642).
+    ///
+    /// - Parameters:
+    ///   - data: The data to decode.
+    ///   - encoding: The text encoding of the data.
+    init?(decoding data: Data, encoding: String.Encoding) {
+        
+        if encoding == .nonLossyASCII {
+            guard let string = NSString(data: data, encoding: encoding.rawValue) else { return nil }
+            
+            self = string as String
+        } else {
+            self.init(data: data, encoding: encoding)
+        }
+    }
+    
     
     /// Reads string from data by detecting the text encoding based on the detection options.
     ///
@@ -138,7 +214,7 @@ extension String {
         // try interpreting with xattr encoding
         if let xattrEncoding = options.xattrEncoding {
             // just trust xattr encoding if the content is empty
-            if let string = data.isEmpty ? "" : String(data: data, encoding: xattrEncoding) {
+            if let string = data.isEmpty ? "" : String(decoding: data, encoding: xattrEncoding) {
                 return (string, xattrEncoding)
             }
         }
@@ -147,14 +223,14 @@ extension String {
         if options.respectsDeclaration,
            let encoding = data.scanEncodingDeclaration(),
            options.candidates.contains(encoding),
-           let string = String(data: data, encoding: encoding)
+           let string = String(decoding: data, encoding: encoding)
         {
             return (string, encoding)
         }
         
         // try applying encodings in order from the top of the candidates
         for encoding in options.candidates {
-            if let string = String(data: data, encoding: encoding) {
+            if let string = String(decoding: data, encoding: encoding) {
                 return (string, encoding)
             }
         }
@@ -175,6 +251,7 @@ extension Data {
     /// - HTML: `charset=`
     ///   - Within the first 1,024 bytes.
     ///   - Uses an IANA charset name.
+    ///   - The value is quoted, or follows `;` in a quoted `content` value (HTML 4).
     /// - XML: `encoding=`
     ///   - Inside the `<?xml ...?>` declaration, which must appear at the beginning of the file.
     ///   - Uses an IANA charset name.
@@ -212,12 +289,12 @@ extension Data {
             .prefix(2)  // first 2 lines
             .lazy
             .compactMap { line in
-                line.firstMatch(of: /(?:(?:file)?encoding|coding)[:=] *["']? *(?<encoding>[-_.a-zA-Z0-9]+)/)
+                line.firstMatch(of: /(?:(?:file)?encoding|coding)(?::|[ \t]*=)[ \t]*["']?[ \t]*(?<encoding>[-_.a-zA-Z0-9]+)/)
                     .map { EncodingDeclaration(range: $0.range, encodingName: $0.encoding) }
             }
             .first
         
-        let htmlDeclaration = string.firstMatch(of: /\scharset\s*= *["'](?<encoding>[-_.a-zA-Z0-9]+)["']/.ignoresCase())
+        let htmlDeclaration = string.firstMatch(of: /(?:\scharset\s*= *["']|;\s*charset\s*= *)(?<encoding>[-_.a-zA-Z0-9]+)["']/.ignoresCase())
             .flatMap { match in
                 string[..<match.range.lowerBound].unicodeScalars.allSatisfy(\.isASCII)
                     ? EncodingDeclaration(range: match.range, encodingName: match.encoding)
@@ -231,10 +308,15 @@ extension Data {
         else { return nil }
         
         let cfEncoding = CFStringConvertIANACharSetNameToEncoding(encodingName as CFString)
-        if cfEncoding != kCFStringEncodingInvalidId {
-            return String.Encoding(cfEncoding: cfEncoding)
-        }
         
-        return nil
+        guard cfEncoding != kCFStringEncodingInvalidId else { return nil }
+        
+        let encoding = String.Encoding(cfEncoding: cfEncoding)
+        
+        // -> The declaration was found by reading the data as ASCII. An encoding that reads it differently,
+        //    such as UTF-16, cannot be the actual encoding of the data.
+        guard String(data: Data(encodingName.utf8), encoding: encoding) == String(encodingName) else { return nil }
+        
+        return encoding
     }
 }

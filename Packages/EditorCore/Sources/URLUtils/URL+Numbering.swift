@@ -32,6 +32,13 @@ public struct NumberingFormat: Sendable {
     private var numberedFormat: @Sendable (String, Int) -> String
     
     
+    /// Creates a numbering format.
+    ///
+    /// - Note: The `numberedFormat` must write the count in ASCII digits without grouping separators so that the numbered name can be parsed.
+    ///
+    /// - Parameters:
+    ///   - format: The closure that creates the name without a number from the base name.
+    ///   - numberedFormat: The closure that creates the name with a number from the base name and the count.
     public init(_ format: @escaping @Sendable (_ base: String) -> String, numbered numberedFormat: @escaping @Sendable (_ base: String, _ count: Int) -> String) {
         
         self.format = format
@@ -52,19 +59,17 @@ public extension URL {
         let format = format ?? NumberingFormat({ $0 }, numbered: { "\($0) \($1)" })
         let filename = self.lastPathComponent
         let (baseName, count) = format.components(filename.deletingPathExtension)
+        
+        // use the numbered name as is if available
+        if count != nil, !self.isReachable { return self }
+        
         let baseURL = self.deletingLastPathComponent()
         let pathExtension = filename.pathExtension
         
-        return (count...).lazy
+        return ((count.map { max($0, 2) } ?? 1)...).lazy
             .map { format.filename(baseName, count: $0) }
             .map { baseURL.appending(component: $0) }
-            .map { url in
-                 if let pathExtension {
-                    url.appendingPathExtension(pathExtension)
-                } else {
-                    url
-                }
-            }
+            .map { pathExtension.map($0.appendingPathExtension) ?? $0 }
             .first { !$0.isReachable }!
     }
 }
@@ -87,20 +92,16 @@ extension NumberingFormat {
     /// Parses the given name into the base part of the name and the suffix number.
     ///
     /// - Parameter name: The name.
-    /// - Returns: The base part of the name and the suffix number.
-    func components(_ name: String) -> (base: String, count: Int) {
+    /// - Returns: The base part of the name and the suffix number, or `nil` for the number if the name is not numbered.
+    func components(_ name: String) -> (base: String, count: Int?) {
         
-        if let match = try? self.multiRegex.wholeMatch(in: name), let count = Int(match.count) {
-            let base = String(match.base)
-            return if self.filename(base, count: count) == name {
-                (base, count)
-            } else {
-                (name, 1)
-            }
+        // -> ignore too large numbers so that incrementing them does not overflow
+        if let match = try? self.multiRegex.wholeMatch(in: name), let count = Int(match.count), count < .max / 2 {
+            (String(match.base), count)
         } else if let match = try? self.singleRegex.wholeMatch(in: name) {
-            return (String(match.base), 1)
+            (String(match.base), nil)
         } else {
-            return (name, 1)
+            (name, nil)
         }
     }
     
@@ -112,7 +113,7 @@ extension NumberingFormat {
             .replacing("%@", with: "(?<base>.+)")
             .replacing("0", with: "(?<count>[0-9]+)")
         
-        return try! Regex(pattern)
+        return try! Regex(pattern).dotMatchesNewlines()
     }
     
     
@@ -122,6 +123,6 @@ extension NumberingFormat {
         let pattern = NSRegularExpression.escapedPattern(for: self.format("%@"))
             .replacing("%@", with: "(?<base>.+)")
         
-        return try! Regex(pattern)
+        return try! Regex(pattern).dotMatchesNewlines()
     }
 }

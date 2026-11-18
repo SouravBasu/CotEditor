@@ -11,12 +11,15 @@
 ; set defaults at first
 (identifier) @variables
 (field_identifier) @attributes
+((identifier) @values
+  (#match? @values "^[A-Z][A-Z\\d_]*$"))
 
 
 ; MARK: Keywords
 ; ----------------------------
 
 [
+  "auto"
   "break"
   "case"
   "const"
@@ -27,8 +30,11 @@
   "enum"
   "extern"
   "for"
+  "goto"
   "if"
   "inline"
+  "register"
+  "restrict"
   "return"
   "sizeof"
   "static"
@@ -40,6 +46,29 @@
   "while"
 ] @keywords
 
+; C11 keywords and compiler extensions
+[
+  "_Alignas"
+  "_Alignof"
+  "_Atomic"
+  "_Generic"
+  "_Noreturn"
+  "__alignof"
+  "__alignof__"
+  "__asm"
+  "__asm__"
+  "__attribute"
+  "__attribute__"
+  "__declspec"
+  "__extension__"
+  "__forceinline"
+  "__inline"
+  "__inline__"
+  "__restrict__"
+  "__thread"
+  "__volatile__"
+] @keywords
+
 [
   "#define"
   "#elif"
@@ -49,6 +78,7 @@
   "#ifdef"
   "#ifndef"
   "#include"
+  "defined"
 ] @keywords
 
 (preproc_directive) @keywords
@@ -95,9 +125,6 @@
 
 ; MARK: Values
 ; ----------------------------
-
-((identifier) @values
-  (#match? @values "^[A-Z][A-Z\\d_]*$"))
 
 (null) @values.builtin
 

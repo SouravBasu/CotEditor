@@ -30,7 +30,6 @@ import Synchronization
     
     public enum State: Sendable {
         
-        case ready
         case processing
         case finished
         case cancelled
@@ -40,7 +39,7 @@ import Synchronization
         public var isTerminated: Bool {
             
             switch self {
-                case .ready, .processing: false
+                case .processing: false
                 case .finished, .cancelled: true
             }
         }
@@ -49,9 +48,10 @@ import Synchronization
     
     private struct Storage {
         
-        var state: State = .ready
+        var state: State = .processing
         var count: Int = 0
         var completedUnit: Int = 0
+        var cancellationHandler: (@Sendable () -> Void)?
     }
     
     
@@ -102,12 +102,43 @@ import Synchronization
     }
     
     
-    /// Changes the state to `.cancelled`.
+    /// Performs the given work in a task that is cancelled together with the progress.
+    ///
+    /// - Parameter operation: The work to perform.
+    /// - Returns: The result of the work.
+    /// - Throws: The error thrown by the work, such as `CancellationError` when cancelled.
+    public func perform<Success: Sendable>(_ operation: @escaping @Sendable () async throws -> Success) async throws -> Success {
+        
+        // -> Create the task in the lock so that `cancel()` in the operation always finds the handler.
+        let (task, isCancelled) = self.storage.withLock {
+            let task = Task { try await operation() }
+            $0.cancellationHandler = { task.cancel() }
+            return (task, $0.state == .cancelled)
+        }
+        
+        if isCancelled {
+            task.cancel()
+        }
+        
+        return try await withTaskCancellationHandler {
+            try await task.value
+        } onCancel: {
+            task.cancel()
+        }
+    }
+    
+    
+    /// Changes the state to `.cancelled` and cancels the task performing the work.
     public func cancel() {
         
-        withMutation(keyPath: \.state) {
-            self.storage.withLock { $0.state = .cancelled }
+        let cancellationHandler = withMutation(keyPath: \.state) {
+            self.storage.withLock {
+                $0.state = .cancelled
+                return $0.cancellationHandler
+            }
         }
+        
+        cancellationHandler?()
     }
     
     
@@ -121,20 +152,18 @@ import Synchronization
     
     
     /// Increments count.
-    ///
-    /// - Parameter count: The amount to increment.
-    public func incrementCount(by count: Int = 1) {
+    public func incrementCount() {
         
-        self.storage.withLock { $0.count += count }
+        self.storage.withLock { $0.count += 1 }
     }
     
     
     /// Updates the `completedUnit` to a new value.
     ///
-    /// - Parameter unit: The new completed unit.
+    /// - Parameter unit: The new completed unit in the scope.
     public func updateCompletedUnit(to unit: Int) {
         
-        self.storage.withLock { $0.completedUnit = unit }
+        self.storage.withLock { $0.completedUnit = unit - self.scope.lowerBound }
     }
     
     

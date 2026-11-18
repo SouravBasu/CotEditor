@@ -246,8 +246,38 @@ struct TreeSitterTypeScriptOutlineTests {
         #expect(nsSource.substring(with: outline[7].range) == "ReadonlyRecord")
         #expect(nsSource.substring(with: outline[8].range) == "PublicID")
     }
+    
+    
+    @Test func outlineOmitsTrailingCommaAfterWhitespace() async throws {
+        
+        let source = #"""
+            function run(a ,) {
+            }
+        """#
+        
+        let outline = try await self.parseOutline(in: source)
+        
+        #expect(outline.map(\.title) == ["run(a)"])
+    }
 
 
+    @Test func outlineIncludesClassExpressionsAndPropertyFunctions() async throws {
+        
+        let source = #"""
+            const C = class Named {
+              a(): void {}
+            }
+            export default {
+              run: (a: number): number => a,
+            }
+        """#
+        
+        let outline = try await self.parseOutline(in: source)
+        
+        #expect(outline.map(\.title) == ["Named", "a()", "run"])
+    }
+    
+    
     // MARK: Private Methods
     
     private func parseOutline(in source: String) async throws -> [OutlineItem] {

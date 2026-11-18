@@ -23,6 +23,7 @@
 //  limitations under the License.
 //
 
+import AppKit
 import Foundation
 import Testing
 import DocumentFile
@@ -52,6 +53,48 @@ struct DirectoryDocumentTests {
         #expect(self.path(of: movingNode.file.fileURL) == self.path(of: expectedURL))
         #expect(self.path(of: leafNode.file.fileURL) == self.path(of: expectedURL.appending(path: "child/leaf.txt", directoryHint: .notDirectory)))
         #expect(FileManager.default.fileExists(atPath: expectedURL.path(percentEncoded: false)))
+    }
+    
+    
+    @Test @MainActor func duplicatingItemNumbersFilenameWithPlainDigits() throws {
+        
+        let rootURL = try FileManager.default.makeTemporaryDirectory()
+        defer { try? FileManager.default.removeItem(at: rootURL) }
+        
+        let fileURL = rootURL.appending(path: "file.txt", directoryHint: .notDirectory)
+        try Data().write(to: fileURL)
+        
+        let document = DirectoryDocument()
+        document.fileURL = rootURL
+        try document.read(from: rootURL, ofType: "public.folder")
+        
+        let rootNode = try #require(document.fileNode)
+        let originalNode = try #require(rootNode.node(at: fileURL))
+        let copyNode = try document.duplicateItem(at: originalNode)
+        let numberedNode = try document.duplicateItem(at: copyNode)
+        let expectedName = numberedNode.file.name.replacing("2", with: "1000")
+        
+        try document.renameItem(at: numberedNode, with: numberedNode.file.name.replacing("2", with: "999"))
+        
+        #expect(try document.duplicateItem(at: numberedNode).file.name == expectedName)
+    }
+    
+    
+    @Test @MainActor func persistentObjectRestoresFolderNode() throws {
+        
+        let urls = try self.makeMoveConflictTree()
+        defer { try? FileManager.default.removeItem(at: urls.rootURL) }
+        
+        let document = DirectoryDocument()
+        document.fileURL = urls.rootURL
+        try document.read(from: urls.rootURL, ofType: "public.folder")
+        
+        let viewController = FileBrowserViewController(document: document)
+        let outlineView = NSOutlineView()
+        let folderNode = try #require(document.fileNode?.node(at: urls.folderURL))
+        let object = try #require(viewController.outlineView(outlineView, persistentObjectForItem: folderNode))
+        
+        #expect(viewController.outlineView(outlineView, itemForPersistentObject: object) as? FileNode === folderNode)
     }
     
     

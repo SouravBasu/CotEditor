@@ -63,8 +63,8 @@ private extension COutlineFormatter {
             let parameters = functionDeclarator.child(byFieldName: "parameters")
         else { return nil }
         
-        let parameterList = source.substring(with: parameters.range)
-            .replacing(/\s+/, with: " ")
+        let parameterList = Self.text(of: parameters, source: source)
+            .normalizingClauseSpacing(openings: ["("], closings: [")"])
         let title = source.substring(with: name.range) + parameterList
         let range = name.range.union(parameters.range)
         

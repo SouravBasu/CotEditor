@@ -12,6 +12,14 @@
 (identifier) @variables
 (property_identifier) @attributes
 
+; UPPER_SNAKE_CASE identifiers
+([
+    (identifier)
+    (shorthand_property_identifier)
+    (shorthand_property_identifier_pattern)
+ ] @values
+ (#match? @values "^[A-Z_][A-Z\\d_]+$"))
+
 
 ; MARK: Keywords
 ; ----------------------------
@@ -42,6 +50,7 @@
   "from"
   "function"
   "get"
+  "global"
   "if"
   "implements"
   "import"
@@ -52,6 +61,7 @@
   "is"
   "keyof"
   "let"
+  "module"
   "namespace"
   "new"
   "of"
@@ -115,6 +125,7 @@
 
 (type_identifier) @types
 (predefined_type) @types
+(new_expression constructor: (identifier) @types)
 
 ; special identifiers
 ((identifier) @types
@@ -140,20 +151,14 @@
 ; MARK: Variables
 ; ----------------------------
 
-(required_parameter (identifier) @variables)
-(optional_parameter (identifier) @variables)
+((required_parameter (identifier) @variables)
+ (#not-match? @variables "^[A-Z_][A-Z\\d_]+$"))
+((optional_parameter (identifier) @variables)
+ (#not-match? @variables "^[A-Z_][A-Z\\d_]+$"))
 
 ; built-in variables (mixed env: JS/Node/Browser)
 ((identifier) @variables
  (#match? @variables "^(arguments|module|console|window|document|globalThis)$"))
-
-; UPPER_SNAKE_CASE identifiers
-([
-    (identifier)
-    (shorthand_property_identifier)
-    (shorthand_property_identifier_pattern)
- ] @values
- (#match? @values "^[A-Z_][A-Z\\d_]+$"))
 
 [
   (this)

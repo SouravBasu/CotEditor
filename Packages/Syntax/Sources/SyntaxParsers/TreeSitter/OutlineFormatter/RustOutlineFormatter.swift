@@ -37,6 +37,11 @@ enum RustOutlineFormatter: TreeSitterOutlineFormatting {
             case .function:
                 return (title: Self.functionTitle(for: match, title: source.substring(with: capture.range), source: source),
                         range: Self.signatureRange(for: match, nameRange: capture.range))
+            case .container:
+                let title = match.outlineNode
+                    .map { Self.normalizedClause(Self.text(of: $0, source: source)) }
+                    ?? source.substring(with: capture.range)
+                return (title: title, range: capture.range)
             default:
                 return Self.defaultTitle(capture: capture, source: source)
         }
@@ -55,12 +60,12 @@ private extension RustOutlineFormatter {
     /// - Returns: The displayed Rust function title.
     static func functionTitle(for match: QueryMatch, title: String, source: NSString) -> String {
         
-        let typeParameters = Self.typeParametersRange(for: match)
-            .map(source.substring(with:))
+        let typeParameters = Self.typeParametersNode(for: match)
+            .map { Self.text(of: $0, source: source) }
             .map(Self.normalizedClause)
             ?? ""
-        let parameters = Self.parametersRange(for: match)
-            .map(source.substring(with:))
+        let parameters = Self.parametersNode(for: match)
+            .map { Self.text(of: $0, source: source) }
             .map(Self.normalizedClause)
             ?? "()"
         
@@ -77,19 +82,19 @@ private extension RustOutlineFormatter {
     static func signatureRange(for match: QueryMatch, nameRange: NSRange) -> NSRange {
         
         nameRange.union(with: [
-            Self.typeParametersRange(for: match),
+            Self.typeParametersNode(for: match)?.range,
             Self.parametersRange(for: match),
         ])
     }
     
     
-    /// Returns the type parameter list range for a Rust function item.
+    /// Returns the type parameter list node for a Rust function item.
     ///
     /// - Parameter match: The resolved query match.
-    /// - Returns: The type parameter list range, or `nil` if none exists.
-    private static func typeParametersRange(for match: QueryMatch) -> NSRange? {
+    /// - Returns: The type parameter list node, or `nil` if none exists.
+    private static func typeParametersNode(for match: QueryMatch) -> Node? {
         
-        match.outlineNode?.parent?.child(byFieldName: "type_parameters")?.range
+        match.outlineNode?.parent?.child(byFieldName: "type_parameters")
     }
     
     
@@ -100,13 +105,6 @@ private extension RustOutlineFormatter {
     private static func normalizedClause(_ clause: String) -> String {
         
         clause
-            .replacing(/\s+/, with: " ")
-            .replacing(/\(\s+/, with: "(")
-            .replacing(/\[\s+/, with: "[")
-            .replacing(/<\s+/, with: "<")
-            .replacing(/\s+\)/, with: ")")
-            .replacing(/\s+\]/, with: "]")
-            .replacing(/\s+>/, with: ">")
-            .replacing(/\s*,\s*/, with: ", ")
+            .normalizingClauseSpacing(openings: ["(", "[", "<"], closings: [")", "]", ">"], trailingCommaClosings: [")", "]", ">"])
     }
 }

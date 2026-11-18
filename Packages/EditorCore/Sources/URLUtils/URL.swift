@@ -68,6 +68,13 @@ public extension URL {
         let pathComponents = self.pathComponents.dropLast()
         let basePathComponents = baseURL.pathComponents.dropLast(isDirectory ? 0 : 1)
         
+        // the root directory has no name to append
+        if self.pathComponents == ["/"] {
+            let parentComponents = basePathComponents.dropFirst().map { _ in ".." }
+            
+            return parentComponents.isEmpty ? "." : parentComponents.joined(separator: "/")
+        }
+        
         let sameCount = zip(basePathComponents, pathComponents).prefix(while: { $0.0 == $0.1 }).count
         let parentCount = basePathComponents.count - sameCount
         let parentComponents = [String](repeating: "..", count: parentCount)
@@ -84,12 +91,31 @@ public extension URL {
     /// - Returns: `true` if the receiver is an ancestor of the given URL.
     func isAncestor(of url: URL) -> Bool {
         
-        let ancestorComponents = self.standardizedFileURL.resolvingSymlinksInPath().pathComponents
-        let childComponents = url.standardizedFileURL.resolvingSymlinksInPath().pathComponents
+        let ancestorComponents = self.resolvedPathComponents
+        let childComponents = url.resolvedPathComponents
         
         guard ancestorComponents.count < childComponents.count else { return false }
         
         return zip(ancestorComponents, childComponents).allSatisfy(==)
+    }
+    
+    
+    /// The path components after resolving symbolic links.
+    ///
+    /// Unlike `resolvingSymlinksInPath()`, this property also resolves the existing part of the path to a missing item.
+    private var resolvedPathComponents: [String] {
+        
+        var url = self.standardizedFileURL
+        var missingComponents: [String] = []
+        
+        for _ in url.pathComponents.dropFirst() {
+            guard !FileManager.default.fileExists(atPath: url.path(percentEncoded: false)) else { break }
+            
+            missingComponents.insert(url.lastPathComponent, at: 0)
+            url.deleteLastPathComponent()
+        }
+        
+        return url.resolvingSymlinksInPath().pathComponents + missingComponents
     }
     
     

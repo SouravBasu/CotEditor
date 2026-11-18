@@ -341,7 +341,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "自動裁剪後端空白字元"
+            "value" : "自動移除行尾空白"
           }
         }
       }
@@ -2102,7 +2102,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Spacje"
+            "value" : "spacje"
           }
         },
         "pt" : {
@@ -2215,7 +2215,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Tabulatory"
+            "value" : "tabulatory"
           }
         },
         "pt" : {

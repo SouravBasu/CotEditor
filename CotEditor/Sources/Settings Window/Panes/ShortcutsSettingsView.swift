@@ -24,12 +24,26 @@
 //
 
 import SwiftUI
+import AppKit
 import OSLog
 import Shortcut
 
 struct ShortcutsSettingsView: View {
     
+    enum Category: CaseIterable {
+        
+        case menu
+        case text
+    }
+    
+    
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    @Environment(\.undoManager) private var undoManager
+    
+    @Namespace private var namespace
+    
     @State private var model = KeyBindingModel()
+    @State private var category: Category = .menu
     
     
     var body: some View {
@@ -39,10 +53,43 @@ struct ShortcutsSettingsView: View {
                 .lineLimit(10)
                 .fixedSize(horizontal: false, vertical: true)
             
-            ShortcutTreeView(model: self.model)
-                .clipShape(.rect(cornerRadius: 7, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: 7, style: .continuous).strokeBorder(.separator))
-                .frame(height: 280)
+            VStack(spacing: 0) {
+                switch self.category {
+                    case .menu:
+                        ShortcutTreeView(model: self.model)
+                    case .text:
+                        TextShortcutTable(model: self.model)
+                }
+            }
+            .alternatingRowBackgrounds(.disabled)
+            .tableColumnHeaders(.hidden)
+            .safeAreaBar(edge: .top, alignment: .leading) {
+                HStack {
+                    ForEach(Category.allCases, id: \.self) { category in
+                        Button(category.label) {
+                            self.category = category
+                        }
+                        .buttonStyle(TabPickerButtonStyle(isSelected: category == self.category, namespace: self.namespace))
+                    }
+                }
+                .animation(self.reduceMotion ? nil : .snappy(duration: 0.2), value: self.category)
+                .accessibilityRepresentation {
+                    Picker(selection: $category) {
+                        ForEach(Category.allCases, id: \.self) { category in
+                            Text(category.label)
+                        }
+                    } label: {
+                        EmptyView()
+                    }
+                    .pickerStyle(.segmented)
+                }
+                .padding(.horizontal)
+                .padding(.vertical, 6)
+            }
+            .scrollEdgeEffectStyle(.hard, for: .top)
+            .clipShape(.rect(cornerRadius: 7))
+            .overlay(RoundedRectangle(cornerRadius: 7).strokeBorder(.separator))
+            .frame(height: 280)
             
             HStack(alignment: .firstTextBaseline) {
                 Button(.init("Action.restoreDefaults.label", defaultValue: "Restore Defaults"), action: self.model.restore)
@@ -61,6 +108,16 @@ struct ShortcutsSettingsView: View {
         .onAppear {
             self.model.load()
         }
+        .onDisappear {
+            self.model.undoManager?.removeAllActions(withTarget: self.model)
+        }
+        .onChange(of: self.undoManager, initial: true) { _, newValue in
+            self.model.undoManager = newValue
+        }
+        .onChange(of: self.category) {
+            self.model.error = nil
+        }
+        .alert(error: $model.savingError)
         .frame(width: SettingsPane.width)
     }
 }
@@ -68,20 +125,26 @@ struct ShortcutsSettingsView: View {
 
 @MainActor @Observable private final class KeyBindingModel {
     
-    typealias Item = Node<KeyBindingItem>
+    typealias Item = Node<MenuKeyBindingItem>
     
-    private(set) var tree: [Item] = []
+    private(set) var menuTree: [Item] = []
     private(set) var isRestorable: Bool = false
+    private(set) var textKeyBindings = TextKeyBindingMap()
     var error: Shortcut.CustomizationError?
+    var savingError: (any Error)?
+    
+    var undoManager: UndoManager?
     
     private let manager: KeyBindingManager = .shared
     
     
-    /// Loads data from the user defaults.
+    /// Loads data from the user defaults and resets the undo history.
     func load() {
         
-        self.tree = self.manager.menuTree
+        self.menuTree = self.manager.menuTree
+        self.textKeyBindings = self.manager.textKeyBindings
         self.isRestorable = self.manager.isCustomized
+        self.undoManager?.removeAllActions(withTarget: self)
     }
     
     
@@ -92,28 +155,131 @@ struct ShortcutsSettingsView: View {
             try self.manager.restoreDefaults()
         } catch {
             Logger.app.error("\(error.localizedDescription)")
+            self.savingError = error
             return
         }
         
+        self.registerUndo()
+        
         // reset the values in place to keep the expansion state of the table
-        for item in self.tree.flatMap(\.flatValues) {
+        for item in self.menuTree.flatMap(\.flatValues) {
             item.shortcut = item.defaultShortcut
         }
         self.isRestorable = false
+        self.textKeyBindings = self.manager.textKeyBindings
         self.error = nil
     }
     
     
-    /// Saves the current settings.
-    func save() {
+    /// Restores the default shortcut of a menu command.
+    ///
+    /// - Parameter item: The menu command to restore.
+    func restore(_ item: MenuKeyBindingItem) {
+        
+        if let shortcut = item.defaultShortcut {
+            do {
+                try self.manager.checkCustomizationAvailability(for: shortcut)
+            } catch {
+                self.error = error
+                return
+            }
+        }
+        
+        self.error = nil
+        self.update(item.defaultShortcut, for: item)
+    }
+    
+    
+    /// Changes the shortcut of a menu command and saves the settings.
+    ///
+    /// - Parameters:
+    ///   - shortcut: The new shortcut, or `nil` to remove it.
+    ///   - item: The menu command to update.
+    func update(_ shortcut: Shortcut?, for item: MenuKeyBindingItem) {
+        
+        self.registerUndo()
+        item.shortcut = shortcut
         
         do {
-            try self.manager.save(tree: self.tree)
+            try self.manager.save(menuTree: self.menuTree)
         } catch {
             Logger.app.error("\(error.localizedDescription)")
+            self.savingError = error
         }
         
         self.isRestorable = self.manager.isCustomized
+    }
+    
+    
+    /// Validates a shortcut to assign to a menu command or a text editing command.
+    ///
+    /// - Parameters:
+    ///   - shortcut: The shortcut to validate.
+    ///   - command: The text editing command to add the shortcut to, or `nil` for a menu command.
+    /// - Throws: If the shortcut is unavailable.
+    func validate(_ shortcut: Shortcut, for command: TextKeyBindingCommand? = nil) throws(Shortcut.CustomizationError) {
+        
+        try self.manager.checkCustomizationAvailability(for: shortcut, command: command)
+    }
+    
+    
+    /// Returns the shortcuts of a text editing command to display.
+    ///
+    /// - Parameter command: The text editing command.
+    /// - Returns: The shortcuts not taken by other commands.
+    func shortcuts(for command: TextKeyBindingCommand) -> [Shortcut] {
+        
+        self.manager.shortcuts(for: command, in: self.textKeyBindings)
+    }
+    
+    
+    /// Saves the shortcuts of a text editing command, or restores its system bindings with `nil`.
+    ///
+    /// - Parameters:
+    ///   - shortcuts: The new shortcuts, or `nil` to restore system bindings.
+    ///   - command: The command to update.
+    func save(shortcuts: [Shortcut]?, for command: TextKeyBindingCommand) {
+        
+        self.error = nil
+        do {
+            try self.manager.save(shortcuts: shortcuts, for: command)
+        } catch let error as Shortcut.CustomizationError {
+            self.error = error
+            return
+        } catch {
+            Logger.app.error("\(error.localizedDescription)")
+            self.savingError = error
+            return
+        }
+        
+        self.registerUndo()  // before reflecting the saved state to the model
+        self.textKeyBindings = self.manager.textKeyBindings
+        self.isRestorable = self.manager.isCustomized
+    }
+    
+    
+    /// Registers the current settings to restore with undo.
+    private func registerUndo() {
+        
+        let shortcuts = self.menuTree.flatMap(\.flatValues).map { ($0, $0.shortcut) }
+        
+        self.undoManager?.registerUndo(withTarget: self) { [textKeyBindings = self.textKeyBindings] target in
+            target.registerUndo()
+            
+            for (item, shortcut) in shortcuts {
+                item.shortcut = shortcut
+            }
+            do {
+                try target.manager.save(menuTree: target.menuTree)
+                try target.manager.save(textKeyBindings: textKeyBindings)
+            } catch {
+                Logger.app.error("\(error.localizedDescription)")
+                target.savingError = error
+            }
+            target.textKeyBindings = target.manager.textKeyBindings
+            target.isRestorable = target.manager.isCustomized
+            target.error = nil
+        }
     }
 }
 
@@ -130,23 +296,203 @@ private struct ShortcutTreeView: View {
     var body: some View {
         
         Table(of: Item.self, selection: $selection) {
-            TableColumn(.init("Command", table: "ShortcutsSettings", comment: "table column header"), value: \.name)
+            TableColumn(.init("Command", table: "ShortcutsSettings", comment: "table column header")) { node in
+                Text(node.name)
+                    .bold(node.value.map { $0.shortcut != $0.defaultShortcut } ?? false)
+            }
             
             TableColumn(.init("Key", table: "ShortcutsSettings", comment: "table column header; keyboard shortcut")) { node in
                 if let item = node.value {
                     ShortcutField(value: Binding(get: { item.shortcut },
-                                                 set: { item.shortcut = $0; self.model.save() }),
-                                  error: $model.error, placeholder: item.defaultShortcut?.symbol)
+                                                 set: { self.model.update($0, for: item) }),
+                                  error: $model.error,
+                                  validation: { shortcut throws(Shortcut.CustomizationError) in try self.model.validate(shortcut) })
                 }
             }
-            .width(100)
+            .width(120)
             
         } rows: {
-            ForEach(self.model.tree) { menu in
+            ForEach(self.model.menuTree) { menu in
                 Section(menu.name) {
                     OutlineGroup(menu.children ?? [], children: \.children)
                 }
             }
+        }
+        .contextMenu(forSelectionType: Item.ID.self) { ids in
+            if let id = ids.first, let item = self.model.menuTree.lazy.compactMap({ $0.node(with: id)?.value }).first {
+                Button(.init("Action.restoreDefaults.label", defaultValue: "Restore Defaults")) {
+                    self.model.restore(item)
+                }
+                .disabled(item.shortcut == item.defaultShortcut)
+            }
+        }
+        .onDeleteCommand {
+            guard
+                let id = self.selection,
+                let item = self.model.menuTree.lazy.compactMap({ $0.node(with: id)?.value }).first,
+                item.shortcut != item.defaultShortcut
+            else { return }
+            
+            self.model.restore(item)
+        }
+    }
+}
+
+
+private struct TextShortcutTable: View {
+    
+    @Bindable var model: KeyBindingModel
+    
+    @State private var selection: TextKeyBindingCommand?
+    
+    
+    var body: some View {
+        
+        Table(of: TextKeyBindingCommand.self, selection: $selection) {
+            TableColumn(.init("Command", table: "ShortcutsSettings", comment: "table column header")) { command in
+                Text(command.label)
+                    .bold(self.model.textKeyBindings.customizations[command] != nil)
+            }
+            
+            TableColumn(.init("Key", table: "ShortcutsSettings", comment: "table column header; keyboard shortcut")) { command in
+                TextShortcutFields(model: self.model, command: command)
+            }
+            .width(120)
+            
+        } rows: {
+            ForEach(TextKeyBindingCommand.Category.allCases, id: \.self) { category in
+                Section(category.label) {
+                    ForEach(category.commands) { command in
+                        TableRow(command)
+                    }
+                }
+            }
+        }
+        .contextMenu(forSelectionType: TextKeyBindingCommand.self) { commands in
+            if let command = commands.first {
+                Button(.init("Action.restoreDefaults.label", defaultValue: "Restore Defaults")) {
+                    self.model.save(shortcuts: nil, for: command)
+                }
+                .disabled(self.model.textKeyBindings.customizations[command] == nil)
+            }
+        }
+        .onDeleteCommand {
+            guard
+                let command = self.selection,
+                self.model.textKeyBindings.customizations[command] != nil
+            else { return }
+            
+            self.model.save(shortcuts: nil, for: command)
+        }
+    }
+}
+
+
+private struct TextShortcutFields: View {
+    
+    @Bindable var model: KeyBindingModel
+    var command: TextKeyBindingCommand
+    
+    
+    var body: some View {
+        
+        let slots = self.slots
+        
+        HStack(spacing: 0) {
+            ForEach(slots.indices, id: \.self) { index in
+                if index > 1 {
+                    Text(verbatim: ", ")
+                }
+                ShortcutField(value: Binding(get: { slots[index] }, set: { self.update($0, at: index) }),
+                              error: $model.error,
+                              validation: { shortcut throws(Shortcut.CustomizationError) in try self.model.validate(shortcut, for: self.command) })
+                .accessibilityLabel(.init("Add Shortcut", table: "ShortcutsSettings", comment: "accessibility label for the blank field to add a shortcut"),
+                                    isEnabled: index == 0)
+                .frame(width: slots[index].map(Self.width(of:)))
+            }
+        }
+    }
+    
+    
+    /// The fields to display: a blank one to add a shortcut, followed by the current shortcuts.
+    private var slots: [Shortcut?] {
+        
+        [nil] + self.model.shortcuts(for: self.command)
+    }
+    
+    
+    /// Replaces the shortcut in a field, removing the field with `nil`, and saves the command's shortcuts.
+    ///
+    /// - Parameters:
+    ///   - shortcut: The new shortcut, or `nil` to remove it.
+    ///   - index: The index of the field to update.
+    private func update(_ shortcut: Shortcut?, at index: Int) {
+        
+        var slots = self.slots
+        
+        guard slots.indices.contains(index) else { return }
+        
+        slots[index] = shortcut
+        self.model.save(shortcuts: slots.compactMap(\.self), for: self.command)
+    }
+    
+    
+    /// Returns the width to display a shortcut in a field.
+    ///
+    /// - Parameter shortcut: The shortcut to display.
+    /// - Returns: The field width in points.
+    private static func width(of shortcut: Shortcut) -> CGFloat {
+        
+        let width = (shortcut.symbol as NSString).size(withAttributes: [.font: NSFont.systemFont(ofSize: 0)]).width
+        
+        return width + 6
+    }
+}
+
+
+private struct TabPickerButtonStyle: PrimitiveButtonStyle {
+    
+    var isSelected: Bool
+    var namespace: Namespace.ID
+    
+    
+    @Environment(\.colorSchemeContrast) private var contrast
+    
+    private let shape = RoundedRectangle(cornerRadius: 6)
+    
+    
+    func makeBody(configuration: Configuration) -> some View {
+        
+        Button(action: configuration.trigger) {
+            configuration.label
+                .padding(.vertical, 2)
+                .padding(.horizontal, 10)
+        }
+        .buttonStyle(.borderless)
+        .fontWeight(.medium)
+        .foregroundStyle(self.isSelected ? .primary : .secondary)
+        .background {
+            if self.isSelected {
+                self.shape.fill(.fill)
+                    .matchedGeometryEffect(id: "selection", in: self.namespace)
+            }
+        }
+        .overlay(self.contrast == .increased ? self.shape.stroke(.tertiary) : nil)
+    }
+}
+
+
+private extension ShortcutsSettingsView.Category {
+    
+    var label: LocalizedStringResource {
+        
+        switch self {
+            case .menu:
+                .init("Category.menu.label",
+                      defaultValue: "Menu", table: "ShortcutsSettings")
+            case .text:
+                .init("Category.text.label",
+                      defaultValue: "Text Editing", table: "ShortcutsSettings")
         }
     }
 }

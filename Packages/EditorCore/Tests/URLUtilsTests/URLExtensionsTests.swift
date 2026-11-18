@@ -71,6 +71,15 @@ struct URLExtensionsTests {
     }
     
     
+    @Test func createRelativeURLToRoot() {
+        
+        let url = URL(filePath: "/")
+        
+        #expect(url.path(relativeTo: URL(filePath: "/foo/bar/", directoryHint: .isDirectory)) == "../..")
+        #expect(url.path(relativeTo: URL(filePath: "/file.txt")) == ".")
+    }
+    
+    
     @Test func ancestor() throws {
         
         let leaf = URL(filePath: "/Dog/Cow/Cat")
@@ -79,6 +88,20 @@ struct URLExtensionsTests {
         #expect(parent.isAncestor(of: leaf))
         #expect(!parent.isAncestor(of: URL(filePath: "/Dog/Cow 1/Cat")))
         #expect(!leaf.isAncestor(of: leaf))
+    }
+    
+    
+    @Test func ancestorOfMissingFileInSymbolicLink() throws {
+        
+        let directory = try TemporaryDirectory()
+        defer { directory.cleanup() }
+        
+        let folder = directory.url.appending(component: "folder", directoryHint: .isDirectory)
+        let link = directory.url.appending(component: "link")
+        try FileManager.default.createDirectory(at: folder, withIntermediateDirectories: false)
+        try FileManager.default.createSymbolicLink(at: link, withDestinationURL: folder)
+        
+        #expect(link.isAncestor(of: link.appending(component: "missing.txt")))
     }
     
     
@@ -127,8 +150,8 @@ struct URLExtensionsTests {
         
         try Data().write(to: zero)
         try Data().write(to: one)
-        #expect(zero.appendingUniqueNumber().lastPathComponent == "file 0 2.txt")
-        #expect(one.appendingUniqueNumber().lastPathComponent == "file 1 2.txt")
+        #expect(zero.appendingUniqueNumber().lastPathComponent == "file 2.txt")
+        #expect(one.appendingUniqueNumber().lastPathComponent == "file 2.txt")
     }
     
     
@@ -143,6 +166,20 @@ struct URLExtensionsTests {
         
         try Data().write(to: base)
         #expect(base.appendingUniqueNumber().lastPathComponent == "1.2 file 2")
+    }
+    
+    
+    @Test func appendingUniqueNumberWithLineBreakInFilename() throws {
+        
+        let directory = try TemporaryDirectory()
+        defer { directory.cleanup() }
+        
+        let base = directory.url.appending(component: "foo\nbar 2.txt")
+        
+        #expect(base.appendingUniqueNumber().lastPathComponent == "foo\nbar 2.txt")
+        
+        try Data().write(to: base)
+        #expect(base.appendingUniqueNumber().lastPathComponent == "foo\nbar 3.txt")
     }
     
     

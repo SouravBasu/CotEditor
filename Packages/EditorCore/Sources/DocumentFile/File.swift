@@ -42,13 +42,14 @@ public struct File: Equatable, Sendable {
     }
     
     
-    public nonisolated static let metadataResourceKeys: Set<URLResourceKey> = [.isDirectoryKey, .isHiddenKey, .isWritableKey, .isAliasFileKey, .contentTypeKey]
+    public nonisolated static let metadataResourceKeys: Set<URLResourceKey> = [.isDirectoryKey, .isHiddenKey, .isWritableKey, .isUserImmutableKey, .isAliasFileKey, .contentTypeKey]
     
     public var name: String
     public var fileURL: URL
     public let isDirectory: Bool
     public var isHidden: Bool
     public var isWritable: Bool
+    public var isUserImmutable: Bool
     public var isAlias: Bool
     public var kind: Kind
     public var tags: [FinderTag]
@@ -69,6 +70,7 @@ public struct File: Equatable, Sendable {
         self.isDirectory = isDirectory
         self.isHidden = fileURL.lastPathComponent.starts(with: ".")
         self.isWritable = true
+        self.isUserImmutable = false
         self.isAlias = false
         self.kind = Kind(pathExtension: fileURL.pathExtension, isDirectory: isDirectory)
         self.tags = []
@@ -91,6 +93,7 @@ public struct File: Equatable, Sendable {
         self.isDirectory = resourceValues.isDirectory ?? false
         self.isHidden = resourceValues.isHidden ?? false
         self.isWritable = resourceValues.isWritable ?? true
+        self.isUserImmutable = resourceValues.isUserImmutable ?? false
         self.isAlias = resourceValues.isAliasFile ?? false
         
         self.kind = if self.isAlias, (try? URL(resolvingAliasFileAt: fileURL).isDirectory) == true {
@@ -164,7 +167,8 @@ extension File.Kind {
             self = .general
         } else if type.conforms(to: .image) {
             self = .image
-        } else if type.conforms(to: .movie), type != .mpeg2TransportStream {  // .ts (possibly a TypeScript file) extension can be mapped to MPEG-2 transport stream.
+        } else if type.conforms(to: .movie), !type.conforms(to: .mpeg2TransportStream) {
+            // .ts and .mts (possibly TypeScript files) extensions can be mapped to MPEG-2 transport stream.
             self = .movie
         } else if type.conforms(to: .audio) {
             self = .audio

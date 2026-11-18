@@ -2283,13 +2283,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "查找后一个匹配。"
+            "value" : "查找下一个匹配。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "尋找後一個匹配。"
+            "value" : "尋找下一個符合項目。"
           }
         },
         "zh-HK" : {
@@ -2509,13 +2509,13 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "查找前一个匹配。"
+            "value" : "查找上一个匹配。"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "尋找前一個匹配。"
+            "value" : "尋找上一個符合項目。"
           }
         },
         "zh-HK" : {
@@ -6666,7 +6666,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "重點標示全部"
+            "value" : "全部重點標示"
           }
         }
       }
@@ -7754,7 +7754,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zastąp wszystko"
+            "value" : "Zastąp wszystkie"
           }
         },
         "pt" : {
@@ -8135,7 +8135,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "取代"
+            "value" : "取代為"
           }
         }
       }
@@ -9465,7 +9465,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Opcja W zaznaczeniu jest włączona, chociaż nic nie jest zaznaczone."
+            "value" : "Opcja „W zaznaczeniu” jest włączona, chociaż nic nie jest zaznaczone."
           }
         },
         "pt" : {
@@ -9584,7 +9584,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zaznacz zakres wyszukiwania w dokumencie lub wyłącz opcję W zaznaczeniu."
+            "value" : "Zaznacz zakres wyszukiwania w dokumencie lub wyłącz opcję „W zaznaczeniu”."
           }
         },
         "pt" : {

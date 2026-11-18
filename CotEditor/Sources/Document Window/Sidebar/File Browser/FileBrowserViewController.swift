@@ -47,6 +47,7 @@ final class FileBrowserViewController: NSViewController, NSMenuItemValidation {
     private var expandedItems: [Any]?
     
     private var expandingNodes: [FileNode: [FileNode]] = [:]
+    private var draggedNodes: [FileNode] = []
     
     private var contextMenuSession = 0
     private var isContextMenuShown = false
@@ -297,7 +298,7 @@ final class FileBrowserViewController: NSViewController, NSMenuItemValidation {
             // open the Quick Look panel by pressing the Space key
             self.quickLook(with: event)
             
-        } else if hasNoModifier, event.specialKey == .delete, !self.outlineView.selectedRowIndexes.isEmpty {
+        } else if hasNoModifier, event.specialKey == .delete, self.targetNodes(for: nil).contains(where: \.isMovable) {
             // delete selected items by pressing the Delete key
             self.delete(self)
             
@@ -393,7 +394,7 @@ final class FileBrowserViewController: NSViewController, NSMenuItemValidation {
                 return !self.targetRows(for: menuItem).isEmpty
                 
             case #selector(delete):
-                return !self.outlineView.selectedRowIndexes.isEmpty
+                return self.targetNodes(for: menuItem).contains(where: \.isMovable)
                 
             case #selector(showInFinder):
                 menuItem.isHidden = self.targetRows(for: menuItem).isEmpty
@@ -417,11 +418,12 @@ final class FileBrowserViewController: NSViewController, NSMenuItemValidation {
                 } else {
                     true
                 }
+                return targetNodes.first?.parent?.file.isWritable == true
                 
             case #selector(moveToTrash):
                 let targetNodes = self.targetNodes(for: menuItem)
                 menuItem.isHidden = targetNodes.isEmpty
-                return targetNodes.contains(where: \.file.isWritable)
+                return targetNodes.contains(where: \.isMovable)
                 
             case #selector(share):
                 menuItem.isHidden = self.targetRows(for: menuItem).isEmpty
@@ -993,14 +995,19 @@ extension FileBrowserViewController: NSOutlineViewDataSource {
         guard
             destNode.file.isWritable,
             !fileURLs.contains(destNode.file.fileURL),
-            !fileURLs.contains(where: { $0.isAncestor(of: destNode.file.fileURL) })
+            !fileURLs.contains(where: { (try? $0.isDirectory) == true && $0.isAncestor(of: destNode.file.fileURL) })
         else { return [] }
         
         if info.draggingSourceOperationMask == .copy { return .copy }
         
         let isInternal = info.draggingSource as? NSOutlineView == outlineView
         
-        return isInternal ? .move : .copy
+        guard isInternal else { return .copy }
+        
+        // avoid moving items that cannot be moved, such as items in a read-only folder
+        guard self.draggedNodes.contains(where: \.isMovable) else { return [] }
+        
+        return .move
     }
     
     
@@ -1062,7 +1069,15 @@ extension FileBrowserViewController: NSOutlineViewDataSource {
     }
     
     
+    func outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, willBeginAt screenPoint: NSPoint, forItems draggedItems: [Any]) {
+        
+        self.draggedNodes = draggedItems.compactMap { $0 as? FileNode }
+    }
+    
+    
     func outlineView(_ outlineView: NSOutlineView, draggingSession session: NSDraggingSession, endedAt screenPoint: NSPoint, operation: NSDragOperation) {
+        
+        self.draggedNodes = []
         
         switch operation {
             case .delete:  // ended at the Trash
@@ -1084,7 +1099,8 @@ extension FileBrowserViewController: NSOutlineViewDataSource {
             let path = object as? String
         else { return nil }
         
-        let url = URL(filePath: path, relativeTo: rootURL)
+        // -> File nodes for folders have the trailing slash in their URL.
+        let url = rootURL.appending(path: path, directoryHint: .checkFileSystem)
         
         return self.document.fileNode?.node(at: url)
     }
@@ -1243,7 +1259,7 @@ extension FileBrowserViewController: NSTextFieldDelegate {
         // avoid renaming unsaved document
         guard self.document.openedDocument(at: node)?.isDocumentEdited != true else { return false }
         
-        return node.file.isWritable
+        return node.isRenamable
     }
     
     

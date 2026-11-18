@@ -94,7 +94,9 @@ private struct CommandSnippetsView: View {
                 }
                 
                 TableColumn(.init("Key", table: "SnippetsSettings", comment: "table column header; keyboard shortcut")) { $item in
-                    ShortcutField(value: $item.shortcut, error: $error)
+                    ShortcutField(value: $item.shortcut, error: $error) { shortcut throws(Shortcut.CustomizationError) in
+                        try KeyBindingManager.shared.checkCustomizationAvailability(for: shortcut)
+                    }
                 }
                 .width(80)
                 
@@ -347,8 +349,8 @@ private struct InsertionFormatView<Variable: TokenRepresentable, MenuContent: Vi
             
             TokenTextEditor<Variable>(text: $text)
                 .accessibilityLabeledPair(role: .content, id: "insertionFormat", in: self.accessibility)
-                .clipShape(.rect(cornerRadius: 7, style: .continuous))
-                .overlay(RoundedRectangle(cornerRadius: 7, style: .continuous).strokeBorder(.separator))
+                .clipShape(.rect(cornerRadius: 7))
+                .overlay(RoundedRectangle(cornerRadius: 7).strokeBorder(.separator))
                 .frame(height: 100)
                 .overlay {
                     if let prompt {

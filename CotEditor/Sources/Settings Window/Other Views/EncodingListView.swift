@@ -48,7 +48,7 @@ struct EncodingListView: View {
         
         private(set) var items: [Item]
         
-        @ObservationIgnored var undoManager: UndoManager?
+        var undoManager: UndoManager?
         
         private let defaults: UserDefaults
         private let defaultEncoding: CFStringEncoding
@@ -104,7 +104,7 @@ struct EncodingListView: View {
             .animation(.default, value: self.model.items)
             .scrollContentBackground(.hidden)
             .background(.fill.quaternary, in: .rect(cornerRadius: 8))
-            .overlay(RoundedRectangle(cornerRadius: 7, style: .continuous).strokeBorder(.separator))
+            .overlay(RoundedRectangle(cornerRadius: 7).strokeBorder(.separator))
             .environment(\.defaultMinListRowHeight, 14)
             .frame(minHeight: 100, idealHeight: 250)
             
@@ -143,9 +143,6 @@ struct EncodingListView: View {
                 .labelStyle(.iconOnly)
                 
                 Spacer()
-                
-                Button(.init("Action.restoreDefaults.label", defaultValue: "Restore Defaults"), action: self.model.restore)
-                    .disabled(!self.model.canRestore)
             }
             
             Text("This order is used for the Encoding menu and for encoding detection. Only the encodings listed here are considered during detection, with higher items taking priority.", tableName: "EncodingList")
@@ -155,6 +152,9 @@ struct EncodingListView: View {
             SubmitButtonGroup(helpAnchor: "howto_customize_encoding_order") {
                 self.model.save()
                 self.dismiss()
+            } supplementalButton: {
+                Button(.init("Action.restoreDefaults.label", defaultValue: "Restore Defaults"), action: self.model.restore)
+                    .disabled(!self.model.canRestore)
             }
             .padding(.top)
         }

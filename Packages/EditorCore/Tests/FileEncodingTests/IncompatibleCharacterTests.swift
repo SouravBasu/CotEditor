@@ -146,6 +146,15 @@ struct IncompatibleCharacterTests {
     }
     
     
+    @Test func scanYenSign() throws {
+        
+        let incompatibles = try "¥".charactersIncompatible(with: .ascii)
+        
+        #expect(incompatibles.count == 1)
+        #expect(incompatibles[0].value.converted == "\\")
+    }
+    
+    
     @Test func scanCombiningMarks() throws {
         
         let string = "e" + "\u{0301}"  // decomposed é
@@ -154,6 +163,17 @@ struct IncompatibleCharacterTests {
         // "e\u{0301}" as a character is not ASCII
         #expect(incompatibles.count == 1)
         #expect(incompatibles[0].value.character == string.first)
+    }
+    
+    
+    @Test func scanInconsistentComposedCharacterSequences() throws {
+        
+        // -> `rangeOfComposedCharacterSequence(at:)` returns different ranges for the flag and the ZWJ.
+        let string = "a🇯🇵\u{200D}b"
+        let incompatibles = try string.charactersIncompatible(with: .plainShiftJIS)
+        
+        #expect(incompatibles.first?.lowerBound == 1)
+        #expect(incompatibles.last?.upperBound == 6)
     }
     
     

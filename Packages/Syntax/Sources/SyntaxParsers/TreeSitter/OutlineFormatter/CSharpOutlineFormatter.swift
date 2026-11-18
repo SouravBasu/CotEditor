@@ -36,12 +36,15 @@ enum CSharpOutlineFormatter: TreeSitterOutlineFormatting {
         switch capture.kind {
             case .value:
                 let range = capture.range.union(with: [Self.explicitInterfaceRange(for: match)])
-                let title = Self.normalizedSignature(source.substring(with: range))
+                let title = Self.normalizedSignature(Self.signatureText(in: range, for: match, source: source))
                 return (title, range)
             case .function:
                 let range = Self.signatureRange(for: match, source: source, nameRange: capture.range)
-                let title = Self.normalizedSignature(source.substring(with: range))
+                let title = Self.normalizedSignature(Self.signatureText(in: range, for: match, source: source))
                 return (title, range)
+            case .mark:
+                let title = source.substring(with: capture.range).trimmingCharacters(in: .whitespacesAndNewlines)
+                return (title, capture.range)
             default:
                 return Self.defaultTitle(capture: capture, source: source)
         }
@@ -116,6 +119,21 @@ private extension CSharpOutlineFormatter {
     }
     
     
+    /// Returns the C# signature text in the range without comments.
+    ///
+    /// - Parameters:
+    ///   - range: The signature range.
+    ///   - match: The resolved query match.
+    ///   - source: The source text as `NSString`.
+    /// - Returns: The signature text.
+    private static func signatureText(in range: NSRange, for match: QueryMatch, source: NSString) -> String {
+        
+        match.outlineNode?.parent
+            .map { Self.text(of: $0, in: range, source: source) }
+            ?? source.substring(with: range)
+    }
+    
+    
     /// Returns a whitespace-normalized C# signature text.
     ///
     /// - Parameter signature: The raw signature text.
@@ -123,15 +141,7 @@ private extension CSharpOutlineFormatter {
     private static func normalizedSignature(_ signature: String) -> String {
         
         signature
-            .replacing(/\s+/, with: " ")
-            .replacing(/\(\s+/, with: "(")
-            .replacing(/\s+\)/, with: ")")
-            .replacing(/\s+\(/, with: "(")
-            .replacing(/\s+</, with: "<")
-            .replacing(/<\s+/, with: "<")
-            .replacing(/\s+>/, with: ">")
-            .replacing(/\.\s+/, with: ".")
-            .replacing(/\s*,\s*/, with: ", ")
+            .normalizingClauseSpacing(openings: ["(", "<", "."], closings: [")", "(", "<", ">"])
             .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }

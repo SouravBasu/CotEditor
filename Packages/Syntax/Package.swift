@@ -20,7 +20,7 @@ let package = Package(
         .package(url: "https://github.com/apple/swift-argument-parser", from: Version(1, 8, 0)),
         .package(url: "https://github.com/jpsim/Yams", from: Version(6, 2, 0)),
         .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", from: Version(0, 65, 0)),
-        .package(url: "https://github.com/tree-sitter/swift-tree-sitter", exact: Version(0, 10, 0)),
+        .package(url: "https://github.com/tree-sitter/swift-tree-sitter", .upToNextMinor(from: Version(0, 10, 0))),
         
         .package(url: "https://github.com/tree-sitter/tree-sitter-bash", from: Version(0, 25, 1)),
         .package(url: "https://github.com/tree-sitter/tree-sitter-c", from: Version(0, 24, 2)),
@@ -35,13 +35,13 @@ let package = Package(
         .package(url: "https://github.com/1024jp/tree-sitter-latex", branch: "swiftPackage"),
         .package(url: "https://github.com/1024jp/tree-sitter-lua", branch: "swiftPackage"),
         .package(url: "https://github.com/tree-sitter-grammars/tree-sitter-make", from: Version(1, 1, 1)),
-        .package(url: "https://github.com/tree-sitter-grammars/tree-sitter-markdown", from: Version(0, 5, 3)),
+        .package(url: "https://github.com/tree-sitter-grammars/tree-sitter-markdown", from: Version(0, 5, 4)),
         .package(url: "https://github.com/tree-sitter/tree-sitter-php", from: Version(0, 25, 1)),
         .package(url: "https://github.com/1024jp/tree-sitter-python", branch: "swiftPackage"),
         .package(url: "https://github.com/tree-sitter/tree-sitter-ruby", from: Version(0, 23, 1)),
         .package(url: "https://github.com/tree-sitter/tree-sitter-rust", from: Version(0, 24, 2)),
-        .package(url: "https://github.com/tree-sitter/tree-sitter-scala", from: Version(0, 26, 3)),
-        .package(url: "https://github.com/DerekStride/tree-sitter-sql", branch: "gh-pages"),
+        .package(url: "https://github.com/tree-sitter/tree-sitter-scala", from: Version(0, 26, 13)),
+        .package(url: "https://github.com/DerekStride/tree-sitter-sql", revision: "2d088525f3f986108d969dab526a0d7129281e24"),  // branch: "gh-pages" (0.3.13)
         .package(url: "https://github.com/alex-pinkus/tree-sitter-swift", revision: "82bb3a533e0801fd2bbaa11dc49676e10bf41948"),  // branch: "with-generated-files" (0.7.4)
         .package(url: "https://github.com/tree-sitter/tree-sitter-typescript", from: Version(0, 23, 2)),
     ],

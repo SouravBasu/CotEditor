@@ -1634,7 +1634,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zastąp wszystko"
+            "value" : "Zastąp wszystkie"
           }
         },
         "pt" : {
@@ -2876,7 +2876,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "直引號"
+            "value" : "轉為直引號"
           }
         }
       }
@@ -3476,7 +3476,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "插入摘錄"
+            "value" : "插入片段"
           }
         }
       }
@@ -4436,7 +4436,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "開啟󠄁⋯"
+            "value" : "開啟⋯"
           }
         }
       }
@@ -8876,7 +8876,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "每行結尾"
+            "value" : "行結尾"
           }
         }
       }
@@ -8996,7 +8996,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "每行結尾"
+            "value" : "行結尾"
           }
         }
       }
@@ -11636,7 +11636,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "將英數字元轉換成全形"
+            "value" : "將英數字元轉換為全形"
           }
         }
       }
@@ -11756,7 +11756,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "將英數字元轉換成半形"
+            "value" : "將英數字元轉換為半形"
           }
         }
       }
@@ -15194,7 +15194,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pionowa"
+            "value" : "Pionowo"
           }
         },
         "pt" : {
@@ -16436,7 +16436,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "切換至全形格式"
+            "value" : "轉換為全形"
           }
         }
       }
@@ -16556,7 +16556,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "插入摘錄"
+            "value" : "插入片段"
           }
         }
       }
@@ -16796,7 +16796,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "將縮排轉換成空格"
+            "value" : "將縮排轉換為空格"
           }
         }
       }
@@ -18476,7 +18476,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "裁剪後端空白字元"
+            "value" : "移除行尾空白"
           }
         }
       }
@@ -20474,7 +20474,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pozioma"
+            "value" : "Poziomo"
           }
         },
         "pt" : {
@@ -21584,7 +21584,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "选择下一列"
+            "value" : "向下扩展列选择"
           }
         },
         "zh-Hant" : {
@@ -21956,7 +21956,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "重複行"
+            "value" : "複製行"
           }
         }
       }
@@ -23276,7 +23276,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "編輯程式碼摘錄⋯"
+            "value" : "編輯程式碼片段⋯"
           }
         }
       }
@@ -23996,7 +23996,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "將縮排轉換成定位符號"
+            "value" : "將縮排轉換為定位符號"
           }
         }
       }
@@ -24365,6 +24365,12 @@
       "comment" : "Class = \"NSMenuItem\"; title = \"Donate to CotEditor…\"; ObjectID = \"qPX-5r-cB2\";",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přispět na vývoj CotEditoru…"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -24395,16 +24401,70 @@
             "value" : "Faire un don à CotEditor…"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor को दान करें…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fai una donazione per CotEditor…"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "CotEditorに寄付…"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor 후원…"
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Doneer aan CotEditor…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wesprzyj CotEditor darowizną…"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Поддержать CotEditor…"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "CotEditor’a Bağış Yap…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Підтримати CotEditor…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "向CotEditor捐赠…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "捐贈給CotEditor⋯"
           }
         },
         "zh-HK" : {
@@ -25490,7 +25550,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "切換至半形格式"
+            "value" : "轉換為半形"
           }
         }
       }
@@ -26210,7 +26270,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "加入文字行"
+            "value" : "合併行"
           }
         }
       }
@@ -26570,7 +26630,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "透過Unicode代碼位插入⋯"
+            "value" : "透過Unicode碼位插入⋯"
           }
         }
       }
@@ -28838,7 +28898,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "选择上一列"
+            "value" : "向上扩展列选择"
           }
         },
         "zh-Hant" : {

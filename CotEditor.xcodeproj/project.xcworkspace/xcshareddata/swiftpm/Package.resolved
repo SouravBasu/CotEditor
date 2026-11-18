@@ -1,5 +1,5 @@
 {
-  "originHash" : "d9cb8bb45a05acd69a09ef53c7b445beca0fb0a02590fde7375570a78783f538",
+  "originHash" : "501e20932f4b358b39b9d99e2840ea3cb142adccdfb4d6b51a1737357a1bb032",
   "pins" : [
     {
       "identity" : "sparkle",
@@ -177,8 +177,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/tree-sitter-grammars/tree-sitter-markdown",
       "state" : {
-        "revision" : "f969cd3ae3f9fbd4e43205431d0ae286014c05b5",
-        "version" : "0.5.3"
+        "revision" : "41ff24a6c775492c543b09228aeb98d1cd2b3a0f",
+        "version" : "0.5.4"
       }
     },
     {
@@ -222,8 +222,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/tree-sitter/tree-sitter-scala",
       "state" : {
-        "revision" : "851032fc97297bbe299dabe5bd826f778794d03c",
-        "version" : "0.26.3"
+        "revision" : "e8728b1c62ea096c753a9a70325f77ebbf2192de",
+        "version" : "0.26.13"
       }
     },
     {
@@ -231,8 +231,7 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/DerekStride/tree-sitter-sql",
       "state" : {
-        "branch" : "gh-pages",
-        "revision" : "e038788e5d4daba82dea35676bf49a216629e141"
+        "revision" : "2d088525f3f986108d969dab526a0d7129281e24"
       }
     },
     {

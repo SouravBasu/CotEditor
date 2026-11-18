@@ -58,8 +58,8 @@ private extension JavaScriptOutlineFormatter {
     /// - Returns: The displayed JavaScript function title.
     static func functionTitle(for match: QueryMatch, title: String, source: NSString) -> String {
         
-        let parameters = Self.parametersRange(for: match)
-            .map(source.substring(with:))
+        let parameters = Self.parametersNode(for: match)
+            .map { Self.text(of: $0, source: source) }
             .map(Self.normalizedClause)
             ?? "()"
         
@@ -86,20 +86,17 @@ private extension JavaScriptOutlineFormatter {
     private static func normalizedClause(_ clause: String) -> String {
         
         clause
-            .replacing(/\s+/, with: " ")
-            .replacing(/\(\s+/, with: "(")
-            .replacing(/\s+\)/, with: ")")
-            .replacing(/\s*,\s*/, with: ", ")
+            .normalizingClauseSpacing(openings: ["("], closings: [")"], trailingCommaClosings: [")"])
             .trimmingCharacters(in: .whitespacesAndNewlines)
     }
     
     
-    /// Returns whether the match represents a variable-assigned callable.
+    /// Returns whether the match represents a callable assigned to a variable or an object property.
     ///
     /// - Parameter match: The resolved query match.
-    /// - Returns: `true` when the callable is assigned through a variable declarator.
+    /// - Returns: `true` when the callable is assigned through a variable declarator or a property pair.
     private static func isAssignedFunction(_ match: QueryMatch) -> Bool {
         
-        match.outlineNode?.parent?.nodeType == "variable_declarator"
+        ["variable_declarator", "pair"].contains(match.outlineNode?.parent?.nodeType)
     }
 }

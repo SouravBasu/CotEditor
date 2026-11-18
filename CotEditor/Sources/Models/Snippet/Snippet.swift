@@ -24,6 +24,7 @@
 //
 
 import Foundation.NSString
+import LineEnding
 import Shortcut
 import StringUtils
 import TextEditing
@@ -103,16 +104,24 @@ extension Snippet {
     /// - Parameters:
     ///   - string: The whole content string where to insert the snippet.
     ///   - ranges: The current selected ranges.
+    ///   - lineEnding: The line ending to which the line endings in the strings to insert are standardized.
     /// - Returns: An `EditingContext` containing strings to insert and selected ranges.
-    func insertions(for string: String, ranges: [NSRange]) -> EditingContext {
+    func insertions(for string: String, ranges: [NSRange], lineEnding: LineEnding) -> EditingContext {
+        
+        // match line endings to the document in advance
+        // -> Otherwise, the delegate standardizes them by replacing the text again, and the insertion points in the snippet are lost.
+        var snippet = self
+        snippet.format = self.format.replacingLineEndings(with: lineEnding)
         
         var offset = 0
         let insertions = ranges.map { range in
             let selectedString = (string as NSString).substring(with: range)
+                .replacingLineEndings(with: lineEnding)
             let indent = string.rangeOfIndent(at: range.location)
+                .map { NSRange($0.lowerBound..<min($0.upperBound, range.location)) }
                 .map((string as NSString).substring(with:)) ?? ""
             
-            let insertion = self.insertion(selectedString: selectedString, indent: indent)
+            let insertion = snippet.insertion(selectedString: selectedString, indent: indent)
             let selectedRanges = insertion.selectedRanges.map { $0.shifted(by: range.location + offset) }
             offset += insertion.string.length - range.length
             
@@ -135,18 +144,27 @@ extension Snippet {
         
         assert(indent.allSatisfy(\.isWhitespace))
         
-        // split at the cursor tokens before inserting the selection,
-        // so that a cursor token contained in the selection is kept as is
-        return self.format
-            .replacing(/\R/) { $0.output + indent }  // indent
-            .split(separator: Variable.cursor.token, omittingEmptySubsequences: false)
-            .map { $0.replacing(Variable.selection.token, with: selectedString) }  // selection
-            .enumerated()
-            .reduce(into: ("", [])) { result, item in
-                if item.offset > 0 {
-                    result.selectedRanges.append(NSRange(location: (result.string as NSString).length, length: 0))
-                }
-                result.string += item.element
+        let format = self.format.replacing(/\R/) { $0.output + indent }  // indent
+        
+        // replace the tokens in a single pass, so that tokens contained in the selection are kept as is
+        var string = ""
+        var selectedRanges: [NSRange] = []
+        var location = 0
+        Variable.makeTokenizer().tokenize(format) { token, range, _ in
+            string += (format as NSString).substring(with: NSRange(location..<range.lowerBound))
+            location = range.upperBound
+            
+            switch Variable(rawValue: token) {
+                case .selection:
+                    string += selectedString
+                case .cursor:
+                    selectedRanges.append(NSRange(location: string.length, length: 0))
+                case nil:
+                    assertionFailure()
             }
+        }
+        string += (format as NSString).substring(from: location)
+        
+        return (string, selectedRanges)
     }
 }

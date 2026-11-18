@@ -55,8 +55,8 @@ private extension LuaOutlineFormatter {
     /// - Returns: The displayed Lua function title.
     static func functionTitle(for match: QueryMatch, title: String, source: NSString) -> String {
         
-        let parameters = Self.parametersRange(for: match)
-            .map(source.substring(with:))
+        let parameters = Self.parametersNode(for: match)
+            .map { Self.text(of: $0, source: source) }
             .map(Self.normalizedClause)
             ?? "()"
         
@@ -83,10 +83,7 @@ private extension LuaOutlineFormatter {
     private static func normalizedClause(_ clause: String) -> String {
         
         clause
-            .replacing(/\s+/, with: " ")
-            .replacing(/\(\s+/, with: "(")
-            .replacing(/\s+\)/, with: ")")
-            .replacing(/\s*,\s*/, with: ", ")
+            .normalizingClauseSpacing(openings: ["("], closings: [")"])
             .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }

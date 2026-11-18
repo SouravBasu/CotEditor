@@ -55,6 +55,7 @@ extension NSAttributedString.Key {
     private var highlightParser: (any HighlightParsing)?
     private var outlineParser: (any OutlineParsing)?
     
+    private var setupTask: Task<Void, Never>?
     private var highlightParseTask: Task<Void, any Error>?
     private var outlineParseTask: Task<Void, any Error>?
     private var invalidRanges: EditedRangeSet = .init()
@@ -100,13 +101,14 @@ extension NSAttributedString.Key {
         }
         
         self.isReady = true
-        self.invalidRanges.clear()
+        self.invalidRanges.update(editedRange: self.textStorage.range)
         
-        Task { [weak self] in
+        self.setupTask = Task { [weak self] in
             if let self, let parser = self.incrementalParser {
                 let content = self.textStorage.string.immutable
                 await parser.update(content: content)
             }
+            guard !Task.isCancelled else { return }
             self?.performInitialHighlight()
             self?.updateOutline(withDelay: false)
         }
@@ -116,6 +118,8 @@ extension NSAttributedString.Key {
     /// Cancels all remaining parsing tasks.
     func cancel() {
         
+        self.setupTask?.cancel()
+        self.setupTask = nil
         self.highlightParseTask?.cancel()
         self.highlightParseTask = nil
         self.outlineParseTask?.cancel()
@@ -156,7 +160,6 @@ extension NSAttributedString.Key {
         assert(self.isReady)
         
         self.highlightParseTask?.cancel()
-        self.highlightParseTask = nil
         
         self.invalidRanges.append(editedRange: editedRange, changeInLength: delta)
         
@@ -169,7 +172,7 @@ extension NSAttributedString.Key {
             } catch {
                 Logger.app.debug("failed noting edit: \(error.localizedDescription) in \(#function)")
                 if let self {
-                    await parser.update(content: self.textStorage.string)
+                    await parser.update(content: self.textStorage.string.immutable)
                 }
             }
         }
@@ -223,11 +226,15 @@ extension NSAttributedString.Key {
     ///   - withDelay: If `true`, applies a short debounce before parsing.
     private func highlightIfNeeded(withDelay: Bool = false) {
         
-        self.highlightParseTask?.cancel()
+        let canceledTask = self.highlightParseTask
+        canceledTask?.cancel()
         
         guard !self.invalidRanges.isEmpty else { return }
         
         self.highlightParseTask = Task { [weak self] in
+            // wait for the canceled parse to restore the changes it consumed
+            _ = await canceledTask?.result
+            
             if withDelay {
                 // -> Perform not in the same run loop at least to give layoutManagers time to update their values.
                 try await Task.sleep(for: .seconds(0.05), tolerance: .seconds(0.02))  // debounce
@@ -264,6 +271,10 @@ extension NSAttributedString.Key {
             guard let self else { return }
             
             try await self.performHighlight(in: self.textStorage.range)
+            
+            guard !Task.isCancelled else { return }
+            
+            self.invalidRanges.clear()
         }
     }
     
@@ -291,7 +302,13 @@ extension NSAttributedString.Key {
         let string = self.textStorage.string.immutable
         let result = try await parser.parseHighlights(in: string, range: highlightRange)
         
-        try Task.checkCancellation()
+        guard !Task.isCancelled else {
+            // -> An incremental parser doesn't report the changes it parsed again.
+            if let result, parser is any IncrementalParsing {
+                self.invalidRanges.formUnion(preEditRange: result.updateRange, changeInLength: self.textStorage.length - string.length)
+            }
+            throw CancellationError()
+        }
         
         guard let result else { return }
         

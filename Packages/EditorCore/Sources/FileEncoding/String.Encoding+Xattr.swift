@@ -9,7 +9,7 @@
 //
 //  ---------------------------------------------------------------------------
 //
-//  © 2020-2025 1024jp
+//  © 2020-2026 1024jp
 //
 //  Licensed under the Apache License, Version 2.0 (the "License");
 //  you may not use this file except in compliance with the License.
@@ -52,19 +52,19 @@ public extension Data {
         
         guard let string = String(data: self, encoding: .ascii) else { return nil }
         
-        let components = string.split(separator: ";")
+        let components = string.split(separator: ";", omittingEmptySubsequences: false)
         
         guard
-            let cfEncoding: CFStringEncoding = if components.count >= 2 {
+            let cfEncoding: CFStringEncoding = if components.count >= 2, !components[1].isEmpty {
                 UInt32(components[1])
-            } else if let ianaCharSetName = components.first {
-                CFStringConvertIANACharSetNameToEncoding(ianaCharSetName as CFString)
             } else {
-                nil
+                CFStringConvertIANACharSetNameToEncoding(components[0] as CFString)
             },
         cfEncoding != kCFStringEncodingInvalidId
         else { return nil }
         
-        return String.Encoding(cfEncoding: cfEncoding)
+        let encoding = String.Encoding(cfEncoding: cfEncoding)
+        
+        return String.availableStringEncodings.contains(encoding) ? encoding : nil
     }
 }

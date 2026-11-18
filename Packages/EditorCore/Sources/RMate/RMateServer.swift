@@ -42,6 +42,7 @@ public import Observation
         
         case fileTooLarge(maximumSize: Int)
         case tooManyFiles(maximumCount: Int)
+        case invalidRequest
     }
     
     
@@ -54,11 +55,14 @@ public import Observation
     
     // MARK: Private Properties
     
+    private static let initialRetryDelay: Duration = .milliseconds(100)
+    
     private let applicationName: String
     private let onOpen: @MainActor (RMateFile, RMateOpenRequest) async throws -> Void
     private let onError: @MainActor (any Error) -> Void
     private var listener: NetworkListener<TCP>?
     private var listeningTask: Task<Void, Never>?
+    private var retryDelay: Duration = RMateServer.initialRetryDelay
     private var connections: [ObjectIdentifier: RMateConnection] = [:]
     
     
@@ -91,6 +95,8 @@ public import Observation
     
     /// Starts or stops accepting connections.
     ///
+    /// If listening fails, for example, because another app uses the port, the server reports the failure in `error` and retries repeatedly until it succeeds.
+    ///
     /// - Note: Existing connections remain open.
     ///
     /// - Parameter port: The loopback TCP port, or `nil` to stop accepting connections.
@@ -111,11 +117,23 @@ public import Observation
             return
         }
         
+        self.startListening(on: port)
+    }
+    
+    
+    // MARK: Private Methods
+    
+    /// Starts accepting connections on the given port.
+    ///
+    /// - Parameter port: The loopback TCP port.
+    private func startListening(on port: NWEndpoint.Port) {
+        
         do {
             let parameters = NWParametersBuilder {
                 TCP()
                     .keepalive(idleTimeInSeconds: 30, count: 3, intervalInSeconds: 10)
                     .retransmitConnectionDropTime(30)
+                    .persistTimeout(30)  // drop connections that stop receiving data, for example, through a stalled tunnel
             }
             .localEndpoint(.hostPort(host: .ipv4(.loopback), port: port))
             
@@ -126,9 +144,11 @@ public import Observation
                 guard let self, self.listener === listener else { return }
                 
                 switch state {
+                    case .ready:
+                        self.error = nil
+                        self.retryDelay = Self.initialRetryDelay
                     case .waiting(let error), .failed(let error):
-                        self.error = .failed(underlying: error)
-                        self.listeningTask?.cancel()
+                        self.retryListening(on: port, after: error)
                     default: break
                 }
             }
@@ -153,11 +173,37 @@ public import Observation
                 } catch {
                     guard let self, self.listener === listener, !Task.isCancelled else { return }
                     
-                    self.error = .failed(underlying: error)
+                    self.retryListening(on: port, after: error)
                 }
             }
         } catch {
             self.error = .failed(underlying: error)
+        }
+    }
+    
+    
+    /// Stops the failed listener and tries listening on the same port again later.
+    ///
+    /// - Parameters:
+    ///   - port: The loopback TCP port.
+    ///   - error: The error that stopped the listener.
+    private func retryListening(on port: NWEndpoint.Port, after error: any Error) {
+        
+        self.error = .failed(underlying: error)
+        self.listener = nil
+        self.listeningTask?.cancel()
+        
+        // retry at gradually increasing intervals
+        // -> The previous listener may release the port in a moment, while another app may hold it much longer.
+        let delay = self.retryDelay
+        self.retryDelay = min(delay * 2, .seconds(3))
+        
+        self.listeningTask = Task { [weak self] in
+            try? await Task.sleep(for: delay, tolerance: delay / 4)
+            
+            guard let self, !Task.isCancelled else { return }
+            
+            self.startListening(on: port)
         }
     }
 }

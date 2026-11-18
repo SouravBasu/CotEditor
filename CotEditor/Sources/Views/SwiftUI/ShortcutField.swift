@@ -35,18 +35,20 @@ struct ShortcutField: NSViewRepresentable {
     @Binding var value: Shortcut?
     @Binding var error: Shortcut.CustomizationError?
     
-    var placeholder: String?
+    var validation: ((Shortcut) throws(Shortcut.CustomizationError) -> Void)?
     
     
     func makeNSView(context: Context) -> NSTextField {
         
         let nsView = ShortcutTextField()
-        nsView.cell?.sendsActionOnEndEditing = true
         nsView.delegate = context.coordinator
         nsView.formatter = ShortcutFormatter()
         nsView.isEditable = true
         nsView.isBordered = false
         nsView.drawsBackground = false
+        
+        // type shortcuts with a Roman keyboard layout
+        (nsView.cell as? NSTextFieldCell)?.allowedInputSourceLocales = [NSAllRomanInputSourcesLocaleIdentifier]
         
         // fix the alignment to right regardless the UI layout direction
         nsView.alignment = .right
@@ -58,41 +60,28 @@ struct ShortcutField: NSViewRepresentable {
     
     func updateNSView(_ nsView: NSTextField, context: Context) {
         
-        context.coordinator.updateBinding(shortcut: $value)
+        context.coordinator.field = self
         nsView.objectValue = self.value
-        nsView.placeholderString = self.placeholder
     }
     
     
     func makeCoordinator() -> Coordinator {
         
-        Coordinator(shortcut: $value, error: $error)
+        Coordinator(self)
     }
     
     
     @MainActor final class Coordinator: NSObject, NSTextFieldDelegate {
         
-        private var shortcut: Binding<Shortcut?>
-        private var cachedShortcut: Shortcut?
-        
-        @Binding private var error: Shortcut.CustomizationError?
+        var field: ShortcutField
         
         
-        init(shortcut: Binding<Shortcut?>, error: Binding<Shortcut.CustomizationError?>) {
-            
-            self.shortcut = shortcut
-            self.cachedShortcut = shortcut.wrappedValue
-            self._error = error
-        }
-        
-        
-        /// Updates the binding to keep it in sync with the current view state.
+        /// Creates a coordinator for a shortcut field.
         ///
-        /// - Parameter shortcut: The binding to update.
-        func updateBinding(shortcut: Binding<Shortcut?>) {
+        /// - Parameter field: The field whose bindings and validation to use.
+        init(_ field: ShortcutField) {
             
-            self.shortcut = shortcut
-            self.cachedShortcut = shortcut.wrappedValue
+            self.field = field
         }
         
         
@@ -102,17 +91,17 @@ struct ShortcutField: NSViewRepresentable {
             
             let shortcut = sender.objectValue as? Shortcut
             
-            self.error = nil
+            self.field.error = nil
             
             // not edited
-            guard shortcut != self.cachedShortcut else { return }
+            guard shortcut != self.field.value else { return }
             
             if let shortcut {
                 do {
-                    try shortcut.checkCustomizationAvailability(for: NSApp.mainMenu)
+                    try self.field.validation?(shortcut)
                 } catch {
-                    self.error = error
-                    sender.objectValue = self.cachedShortcut  // reset text field
+                    self.field.error = error
+                    sender.objectValue = self.field.value  // reset text field
                     NSSound.beep()
                     
                     // make text field edit mode again
@@ -125,8 +114,8 @@ struct ShortcutField: NSViewRepresentable {
             }
             
             // successfully update data
-            self.shortcut.wrappedValue = shortcut
-            self.cachedShortcut = shortcut
+            self.field.value = shortcut
+            sender.objectValue = self.field.value  // the binding owner may reject the new value
         }
     }
 }
@@ -142,22 +131,6 @@ private final class ShortcutTextField: NSTextField, NSTextViewDelegate {
     
     // MARK: Text Field Methods
     
-    override init(frame frameRect: NSRect) {
-        
-        super.init(frame: frameRect)
-        
-        // type shortcuts with a Roman keyboard layout
-        (self.cell as? NSTextFieldCell)?.allowedInputSourceLocales = [NSAllRomanInputSourcesLocaleIdentifier]
-    }
-    
-    
-    @available(*, unavailable)
-    required init?(coder: NSCoder) {
-        
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    
     isolated deinit {
         
         if let monitor = self.keyDownMonitor {
@@ -167,39 +140,13 @@ private final class ShortcutTextField: NSTextField, NSTextViewDelegate {
     }
     
     
-    override func viewWillMove(toSuperview newSuperview: NSView?) {
-        
-        super.viewWillMove(toSuperview: newSuperview)
-        
-        if newSuperview != nil {
-            // fix the alignment to right regardless the UI layout direction
-            self.alignment = .right
-            self.baseWritingDirection = .leftToRight
-        }
-    }
-    
-    
-    override func viewWillMove(toWindow newWindow: NSWindow?) {
-        
-        super.viewWillMove(toWindow: newWindow)
-        
-        if newWindow == nil {
-            self.windowObservationTask?.cancel()
-            self.windowObservationTask = nil
-        }
-    }
-    
-    
     /// Text field turns into edit mode.
     override func becomeFirstResponder() -> Bool {
         
         guard super.becomeFirstResponder() else { return false }
         
-        if let fieldEditor = self.currentEditor() as? NSTextView {
-            // hide insertion point
-            fieldEditor.insertionPointColor = .clear
-            fieldEditor.delegate = self
-        }
+        // hide insertion point
+        (self.currentEditor() as? NSTextView)?.insertionPointColor = .clear
         
         self.keyDownMonitor = NSEvent.addLocalMonitorForEvents(matching: .keyDown) { [unowned self] event -> NSEvent? in
             guard let shortcut = Shortcut(keyDownEvent: event) else { return event }
@@ -235,10 +182,7 @@ private final class ShortcutTextField: NSTextField, NSTextViewDelegate {
     override func textDidEndEditing(_ notification: Notification) {
         
         // restore field editor
-        if let fieldEditor = self.currentEditor() as? NSTextView {
-            fieldEditor.insertionPointColor = .controlTextColor
-            fieldEditor.delegate = nil
-        }
+        (self.currentEditor() as? NSTextView)?.insertionPointColor = .controlTextColor
         
         // end monitoring key down event
         if let monitor = self.keyDownMonitor {

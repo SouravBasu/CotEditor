@@ -2011,13 +2011,13 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Vložit"
           }
         },
         "de" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Hinzufügen"
           }
         },
@@ -2029,97 +2029,97 @@
         },
         "en-GB" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Insert"
           }
         },
         "es" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Insertar"
           }
         },
         "fr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Insérer"
           }
         },
         "hi" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "सम्मिलित करें"
           }
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Inserisci"
           }
         },
         "ja" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "挿入"
           }
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "삽입"
           }
         },
         "nl" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Voeg in"
           }
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Wstaw"
           }
         },
         "pt" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Inserir"
           }
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Вставить"
           }
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Ekle"
           }
         },
         "uk" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Вставити"
           }
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "插入"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "插入"
           }
         },
         "zh-HK" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "插入"
           }
         }
@@ -3950,6 +3950,12 @@
             "value" : "iCloud Drive n’est pas disponible."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Drive उपलब्ध नहीं है।"
+          }
+        },
         "it" : {
           "stringUnit" : {
             "state" : "translated",
@@ -3995,7 +4001,13 @@
         "tr" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "iCloud Drive Kullanılamıyor."
+            "value" : "iCloud Drive kullanılabilir değil."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud Drive недоступний."
           }
         },
         "zh-Hans" : {
@@ -4020,6 +4032,12 @@
     },
     "CloudSettingsError.invalidArchiveURL.description" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "K vybrané kopii nastavení se nepodařilo získat přístup."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4050,16 +4068,70 @@
             "value" : "Impossible d’accéder à la copie des réglages sélectionnée."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "चुनी गई सेटिंग कॉपी तक पहुँचा नहीं जा सका।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile accedere alla copia delle impostazioni scelta."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "選択した設定のコピーにアクセスできませんでした。"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "선택한 설정 복사본에 접근할 수 없습니다."
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Er kon geen toegang worden verkregen tot de geselecteerde kopie van de instellingen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak dostępu do wybranej kopii ustawień."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не удалось получить доступ к выбранной копии настроек."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seçili ayarlar kopyasına erişilemedi."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалося отримати доступ до вибраної копії параметрів."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法访问所选的设置副本。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法存取所選的設定副本。"
           }
         },
         "zh-HK" : {
@@ -4072,6 +4144,12 @@
     },
     "CloudSettingsError.metadataQueryFailed.description" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na iCloudu se nepodařilo najít žádné kopie nastavení."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -4102,16 +4180,70 @@
             "value" : "La recherche de copies des réglages sur iCloud a échoué."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud में सेटिंग कॉपियाँ नहीं मिलीं।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile trovare su iCloud copie di impostazioni."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "iCloudに設定のコピーが見つかりませんでした。"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud에서 설정 복사본을 찾을 수 없습니다."
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Het zoeken naar kopieën van de instellingen in iCloud is mislukt."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie można znaleźć kopii ustawień w iCloud."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не удалось найти копии настроек в iCloud."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud’da ayarlar kopyası bulunamadı."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалося знайти копії параметрів в iCloud."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "无法在iCloud中找到设置副本。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在iCloud中找不到設定副本。"
           }
         },
         "zh-HK" : {
@@ -6708,7 +6840,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Czy chcesz konwertować lub reinterpretować ten dokument z użyciem „%@”?"
+            "value" : "Czy chcesz przekonwertować lub zreinterpretować ten dokument z użyciem „%@”?"
           }
         },
         "pt" : {
@@ -6989,7 +7121,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%1$@的複製%2$lld"
+            "value" : "%1$@副本%2$lld"
           }
         }
       }
@@ -7109,7 +7241,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "%@的複製"
+            "value" : "%@副本"
           }
         }
       }
@@ -7704,7 +7836,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "拖放檔案的副檔名（轉換成小寫）。"
+            "value" : "拖放檔案的副檔名（轉換為小寫）。"
           }
         }
       }
@@ -7823,7 +7955,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "拖放檔案的副檔名（轉換成大寫）。"
+            "value" : "拖放檔案的副檔名（轉換為大寫）。"
           }
         }
       }
@@ -9736,7 +9868,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "你要將所有每行結尾轉換成%@（此文件中最常用的每行結尾）嗎？"
+            "value" : "你要將所有行結尾轉換為%@（此文件中最常用的行結尾）嗎？"
           }
         }
       }
@@ -9855,7 +9987,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "此文件中最常用的每行結尾是%@。"
+            "value" : "此文件中最常用的行結尾是%@。"
           }
         }
       }
@@ -9974,7 +10106,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "此文件的每行結尾不一致。"
+            "value" : "此文件的行結尾不一致。"
           }
         }
       }
@@ -10572,7 +10704,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "名稱不能包括新行。"
+            "value" : "名稱不能包括換行符號。"
           }
         }
       }
@@ -11169,7 +11301,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "依循以下模板填寫，然後將其發佈至%1$@或傳送至%2$@。請注意，可能會在問題頁面上分享你的電子郵件內容。請用英文或日文填寫你的訊息。"
+            "value" : "填寫以下模板，然後將其發佈至%1$@或傳送至%2$@。請注意，可能會在問題頁面上分享你的電子郵件內容。請用英文或日文填寫你的訊息。"
           }
         }
       }
@@ -13980,7 +14112,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Dokument nie mógł zostać reinterpretowany z użyciem kodowania tekstu „%@”."
+            "value" : "Dokument nie mógł zostać zreinterpretowany z użyciem kodowania tekstu „%@”."
           }
         },
         "pt" : {
@@ -14269,6 +14401,12 @@
     "RemoteDocumentClosingAlert.informativeText" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vzdálené připojení je odpojeno. Vaše změny nebyly odeslány."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14299,16 +14437,70 @@
             "value" : "La connexion distante est interrompue. Vos modifications n’ont pas été envoyées."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रिमोट कनेक्शन डिस्कनेक्ट किया गया है। आपके बदलाव भेजे नहीं गए हैं।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La connessione remota è interrotta. Le tue modifiche non sono state inviate."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "リモート接続が切断されています。変更内容は送信されていません。"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "원격 연결이 끊어졌습니다. 변경 사항이 전송되지 않았습니다."
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "De verbinding op afstand is verbroken. Je wijzigingen zijn niet verstuurd."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Połączenie zdalne zostało przerwane. Twoje zmiany nie zostały przesłane."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Соединение с удаленным хостом разорвано. Ваши изменения не были отправлены."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uzak bağlantı kesildi. Değişiklikleriniz gönderilmedi."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Віддалене зʼєднання розірвано. Ваші зміни не надіслано."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "远程连接已断开。你的更改尚未发送。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "遠端連線已中斷，你的變更尚未傳送。"
           }
         },
         "zh-HK" : {
@@ -14322,6 +14514,12 @@
     "RemoteDocumentClosingAlert.messageText" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uložit změny v dokumentu „%@“ na tento Mac?"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14352,16 +14550,70 @@
             "value" : "Enregistrer les modifications apportées à « %@ » sur ce Mac ?"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "क्या “%@” के बदलाव इस Mac पर सहेजने हैं?"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Salvare le modifiche a “%@” su questo Mac?"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "“%@”の変更内容をこのMacに保存しますか?"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "‘%@’의 변경 사항을 이 Mac에 저장하겠습니까?"
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Wil je de wijzigingen in '%@' op deze Mac bewaren?"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zapisać zmiany w „%@” na tym Macu?"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сохранить изменения в «%@» на этом Mac?"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bu Mac’te “%@” dosyasına yapılan değişiklikler kaydedilsin mi?"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зберегти зміни в «%@» на цьому Mac?"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要将对“%@”的更改保存到这台Mac上吗？"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "要將「%@」的變更儲存在這部Mac上嗎？"
           }
         },
         "zh-HK" : {
@@ -14495,6 +14747,12 @@
     "RemoteDocumentDisconnectAlert.informativeText" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Změny již nelze ukládat vzdáleně. Chcete-li je zachovat, uložte dokument na tento Mac."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14525,16 +14783,70 @@
             "value" : "Les modifications ne peuvent plus être enregistrées à distance. Pour les conserver, enregistrez le document sur ce Mac."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "बदलाव अब रिमोट पर सहेजे नहीं जा सकते। अपने बदलाव रखने के लिए दस्तावेज़ को इस Mac पर सहेजें।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non è più possibile salvare le modifiche da remoto. Per conservarle, salva il documento su questo Mac."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "変更内容をリモートに保存できなくなりました。変更内容を保持するには、書類をこのMacに保存してください。"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "더 이상 변경 사항을 원격으로 저장할 수 없습니다. 변경 사항을 유지하려면 이 Mac에 문서를 저장하십시오."
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Wijzigingen kunnen niet meer op afstand worden bewaard. Bewaar het document op deze Mac om je wijzigingen te behouden."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zmian nie można już zapisać zdalnie. Aby zachować zmiany, zapisz dokument na tym Macu."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Изменения больше не могут быть сохранены на удаленном хосте. Чтобы сохранить изменения, сохраните документ на этом Mac."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Değişiklikler artık uzaktan kaydedilemiyor. Değişikliklerinizi tutmak için belgeyi bu Mac’te kaydedin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зміни більше не можна зберігати віддалено. Щоб зберегти внесені зміни, збережіть документ на цьому Mac."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "更改无法再保存到远程。若要保留更改，请将文稿保存到这台Mac上。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "變更已無法儲存到遠端。若要保留變更，請將文件儲存在這部Mac上。"
           }
         },
         "zh-HK" : {
@@ -14548,6 +14860,12 @@
     "RemoteDocumentDisconnectAlert.messageText" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vzdálené připojení k dokumentu „%@“ bylo přerušeno."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14578,16 +14896,70 @@
             "value" : "La connexion distante pour « %@ » a été interrompue."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@” का रिमोट कनेक्शन डिस्कनेक्ट किया गया।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La connessione remota a “%@” è stata interrotta."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "“%@”のリモート接続が切断されました。"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "‘%@’의 원격 연결이 끊어졌습니다."
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "De verbinding op afstand voor '%@' is verbroken."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Połączenie zdalne dla „%@” zostało przerwane."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Соединение с удаленным хостом для «%@» было разорвано."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@” için olan uzak bağlantı kesildi."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Віддалене зʼєднання для «%@» розірвано."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "“%@”的远程连接已断开。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "「%@」的遠端連線已中斷。"
           }
         },
         "zh-HK" : {
@@ -14601,6 +14973,12 @@
     "RMateServer.ListenError.addressInUse.description" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Port se již používá."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14631,16 +15009,70 @@
             "value" : "Le port est déjà utilisé."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "यह पोर्ट पहले से उपयोग में है।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La porta è già in uso."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "そのポートはすでに使用されています。"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "해당 포트가 이미 사용 중입니다."
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "De poort is al in gebruik."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybrany port jest już używany."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Порт уже занят."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kapı hâlihazırda kullanımda."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Порт уже використовується."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此端口已在使用中。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "此連接埠已在使用中。"
           }
         },
         "zh-HK" : {
@@ -14774,6 +15206,12 @@
     "RMateServer.ListenError.invalidPort.recoverySuggestion" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zadejte číslo portu v rozsahu od 1 do 65535."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14804,16 +15242,70 @@
             "value" : "Saisissez un numéro de port compris entre 1 et 65535."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 से 65535 के बीच का पोर्ट नंबर दर्ज करें।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Inserisci un numero di porta da 1 a 65535."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "1から65535までのポート番号を入力してください。"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1~65535 사이의 포트 번호를 입력하십시오."
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Voer een poortnummer van 1 tot en met 65535 in."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wprowadź numer portu z zakresu od 1 do 65535."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введите номер порта от 1 до 65535."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "1 ila 65535 arasında bir kapı numarası girin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Введіть номер порту від 1 до 65535."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "请输入1到65535之间的端口号。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "請輸入1到65535之間的連接埠號碼。"
           }
         },
         "zh-HK" : {
@@ -14827,6 +15319,12 @@
     "RMateServer.ReceiveError.fileTooLarge.description" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vzdálený soubor je příliš velký a nelze jej otevřít."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14857,16 +15355,70 @@
             "value" : "Le fichier distant est trop volumineux pour être ouvert."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रिमोट फ़ाइल खोलने के लिए बहुत बड़ी है।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il file remoto è troppo grande per essere aperto."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "リモートファイルが大きすぎるため開けません。"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "원격 파일이 너무 커서 열 수 없습니다."
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Het externe bestand is te groot om te openen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Plik zdalny jest zbyt duży, aby go otworzyć."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удаленный файл слишком большой для открытия."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uzak dosya açılmak için pek büyük."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Віддалений файл завеликий для відкриття."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "远程文件太大，无法打开。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "遠端檔案過大，無法開啟。"
           }
         },
         "zh-HK" : {
@@ -14881,6 +15433,12 @@
       "comment" : "%@ is file size, such as \"100 MB\"",
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vzdálené úpravy podporují soubory do velikosti %@."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14911,16 +15469,70 @@
             "value" : "L’édition à distance prend en charge les fichiers d’une taille maximale de %@."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रिमोट एडिटिंग में %@ तक की फ़ाइलें खोली जा सकती हैं।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "La modifica da remoto supporta file fino a %@."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "リモート編集では%@までのファイルに対応しています。"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "원격 편집은 최대 %@ 크기의 파일을 지원합니다."
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Bewerken op afstand ondersteunt bestanden tot %@."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edycja zdalna obsługuje pliki o rozmiarze do %@."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удаленное редактирование поддерживает файлы до %@."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uzak düzenleme, %@ büyüklüğüne kadar olan dosyaları destekler."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Віддалене редагування підтримує файли розміром до %@."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "远程编辑支持最大%@的文件。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "遠端編輯可開啟的檔案大小上限為%@。"
           }
         },
         "zh-HK" : {
@@ -14931,9 +15543,253 @@
         }
       }
     },
+    "RMateServer.ReceiveError.invalidRequest.description" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vzdálené soubory nelze otevřít, protože požadavek od rmate není ve správném formátu."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Die entfernten Dateien konnten nicht geöffnet werden, da die Anforderung von rmate nicht das korrekte Format hat."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "The remote files couldn’t be opened because the request from rmate isn’t in the correct format."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "The remote files couldn’t be opened because the request from rmate isn’t in the correct format."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Los archivos remotos no han podido abrirse porque la solicitud de rmate no tiene el formato correcto."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossible d’ouvrir les fichiers distants car le format de la requête de rmate n’est pas correct."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रिमोट फ़ाइलें खोली नहीं जा सकीं क्योंकि rmate से आया अनुरोध सही फ़ॉर्मैट में नहीं है।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Impossibile aprire i file remoti perché la richiesta di rmate non è nel formato corretto."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "rmateからのリクエストのフォーマットが正しくないため、リモートファイルを開けませんでした。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "rmate에서 보낸 요청이 올바른 포맷이 아니기 때문에 원격 파일을 열 수 없습니다."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "De externe bestanden konden niet worden geopend, omdat het verzoek van rmate niet de juiste structuur heeft."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nie można otworzyć zdalnych plików, ponieważ żądanie wysłane przez rmate ma nieprawidłowy format."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Não foi possível abrir os arquivos remotos porque a solicitação do rmate não está no formato correto."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не удалось открыть удаленные файлы, так как запрос от rmate имеет неверный формат."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "rmate komutundan gelen istek doğru biçimde olmadığı için uzak dosyalar açılamadı."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалося відкрити віддалені файли, оскільки запит від rmate має неправильний формат."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未能打开远程文件，因为来自rmate的请求格式不正确。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法開啟遠端檔案，因為來自rmate的要求格式不正確。"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "無法開啟遙距檔案，因為來自rmate的要求格式不正確。"
+          }
+        }
+      }
+    },
+    "RMateServer.ReceiveError.invalidRequest.recoverySuggestion" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Je možné, že název souboru obsahuje neplatné znaky. Přejmenujte soubor na vzdáleném počítači a zkuste to znovu."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Möglicherweise enthält ein Dateiname ungültige Zeichen. Benenne die Datei auf dem entfernten Computer um und versuche es erneut."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "A file name may include invalid characters. Rename the file on the remote computer, and then try again."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A file name may include invalid characters. Rename the file on the remote computer, and then try again."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Es posible que el nombre de un archivo contenga caracteres no válidos. Cambia el nombre del archivo en el ordenador remoto e inténtalo de nuevo."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Un nom de fichier contient peut-être des caractères non valides. Renommez le fichier sur l’ordinateur distant puis réessayez."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "हो सकता है कि किसी फ़ाइल के नाम में अमान्य वर्ण शामिल हों। रिमोट कंप्यूटर पर फ़ाइल का नाम बदलें और फिर कोशिश करें।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Il nome di un file potrebbe includere caratteri non validi. Rinomina il file sul computer remoto e riprova."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ファイル名に無効な文字が含まれている可能性があります。リモートコンピュータ上でファイル名を変更してから、やり直してください。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "파일 이름에 유효하지 않은 문자가 포함되어 있을 수 있습니다. 원격 컴퓨터에서 파일 이름을 변경한 다음 다시 시도하십시오."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Mogelijk bevat een bestandsnaam ongeldige tekens. Wijzig de naam van het bestand op de externe computer en probeer het opnieuw."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nazwa pliku może zawierać niedozwolone znaki. Zmień nazwę pliku na zdalnym komputerze i spróbuj ponownie."
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Talvez o nome de um arquivo inclua caracteres inválidos. Renomeie o arquivo no computador remoto e tente novamente."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Возможно, имя файла содержит недействительные символы. Переименуйте файл на удаленном хосте и повторите попытку."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir dosya adı geçersiz karakterler içeriyor olabilir. Uzak bilgisayardaki dosyayı yeniden adlandırın ve daha sonra yeniden deneyin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Можливо, імʼя файлу містить неприпустимі символи. Перейменуйте файл на віддаленому компʼютері і спробуйте ще раз."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "文件名称可能包含无效的字符。请在远程电脑上重新命名文件，然后重试。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "檔案名稱可能包含無效的字元。請在遠端電腦上重新命名檔案，然後再試一次。"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "檔案名稱可能包含無效的字元。請在遙距電腦上重新命名檔案，然後再試。"
+          }
+        }
+      }
+    },
     "RMateServer.ReceiveError.tooManyFiles.description" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Některé vzdálené soubory se nepodařilo otevřít."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14964,10 +15820,28 @@
             "value" : "Certains fichiers distants n’ont pas pu être ouverts."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कुछ रिमोट फ़ाइलें खोली नहीं जा सकीं।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Non è stato possibile aprire alcuni dei file remoti."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "一部のリモートファイルを開けませんでした。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "일부 원격 파일을 열 수 없습니다."
           }
         },
         "nl" : {
@@ -14975,12 +15849,84 @@
             "state" : "needs_review",
             "value" : "Sommige externe bestanden konden niet worden geopend."
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Niektórych plików zdalnych nie udało się otworzyć."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не удалось открыть некоторые удаленные файлы."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bazı uzak dosyalar açılamadı."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не вдалося відкрити деякі віддалені файли."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "部分远程文件无法打开。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "部分遠端檔案無法開啟。"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "部份遙距檔案無法開啟。"
+          }
         }
       }
     },
     "RMateServer.ReceiveError.tooManyFiles.recoverySuggestion" : {
       "comment" : "%lld is the number of files",
       "localizations" : {
+        "cs" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Jeden příkaz rmate může najednou otevřít maximálně %lld soubory."
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Jeden příkaz rmate může najednou otevřít maximálně %lld souboru."
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Jeden příkaz rmate může najednou otevřít maximálně %lld soubor."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Jeden příkaz rmate může najednou otevřít maximálně %lld souborů."
+                }
+              }
+            }
+          }
+        },
         "de" : {
           "variations" : {
             "plural" : {
@@ -15071,6 +16017,42 @@
             }
           }
         },
+        "hi" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "एक rmate कमांड एक बार में अधिकतम %lld फ़ाइल खोल सकता है।"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "एक rmate कमांड एक बार में अधिकतम %lld फ़ाइलें खोल सकता है।"
+                }
+              }
+            }
+          }
+        },
+        "it" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Un singolo comando rmate può aprire al massimo %lld file alla volta."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Un singolo comando rmate può aprire al massimo %lld file alla volta."
+                }
+              }
+            }
+          }
+        },
         "ja" : {
           "variations" : {
             "plural" : {
@@ -15078,6 +16060,18 @@
                 "stringUnit" : {
                   "state" : "translated",
                   "value" : "1回のrmateコマンドで同時に開けるファイルは%lld個までです。"
+                }
+              }
+            }
+          }
+        },
+        "ko" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "하나의 rmate 명령으로 한 번에 최대 %lld개의 파일을 열 수 있습니다."
                 }
               }
             }
@@ -15096,6 +16090,150 @@
                 "stringUnit" : {
                   "state" : "needs_review",
                   "value" : "Eén rmate-opdracht kan maximaal %lld bestanden tegelijk openen."
+                }
+              }
+            }
+          }
+        },
+        "pl" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Pojedyncze polecenie rmate może otworzyć jednocześnie do %lld plików."
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Pojedyncze polecenie rmate może otworzyć jednocześnie do %lld plików."
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Pojedyncze polecenie rmate może otworzyć jednocześnie tylko %lld plik."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Pojedyncze polecenie rmate może otworzyć jednocześnie do %lld pliku."
+                }
+              }
+            }
+          }
+        },
+        "ru" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Одна команда rmate может открыть до %lld файлов одновременно."
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Одна команда rmate может открыть до %lld файлов одновременно."
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Одна команда rmate может открыть до %lld файла одновременно."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Одна команда rmate может открыть до %lld файлов одновременно."
+                }
+              }
+            }
+          }
+        },
+        "tr" : {
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Tek bir rmate komutu, aynı anda %lld dosyaya kadar açabilir."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Tek bir rmate komutu, aynı anda %lld dosyaya kadar açabilir."
+                }
+              }
+            }
+          }
+        },
+        "uk" : {
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Однією командою rmate можна відкрити не більше ніж %lld файли за раз."
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Однією командою rmate можна відкрити не більше ніж %lld файлів за раз."
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Однією командою rmate можна відкрити не більше ніж %lld файл за раз."
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "Однією командою rmate можна відкрити не більше ніж %lld файла за раз."
+                }
+              }
+            }
+          }
+        },
+        "zh-Hans" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "单个rmate命令一次最多可打开%lld个文件。"
+                }
+              }
+            }
+          }
+        },
+        "zh-Hant" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "單次rmate指令最多可開啟%lld個檔案。"
+                }
+              }
+            }
+          }
+        },
+        "zh-HK" : {
+          "variations" : {
+            "plural" : {
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "單個rmate命令一次最多可以開啟%lld個檔案。"
                 }
               }
             }
@@ -17362,7 +18500,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Shift鍵只可以與其他變更鍵搭配使用。"
+            "value" : "Shift鍵只可以與其他變更鍵配合使用。"
           }
         }
       }
@@ -17475,7 +18613,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "單獨的按鍵類型不能被用作快捷鍵。"
+            "value" : "單獨的按鍵類型不能被用作快速鍵。"
           }
         },
         "zh-HK" : {
@@ -17594,7 +18732,7 @@
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "組合鍵「%@」無法用作自訂綁定熱鍵。"
+            "value" : "組合鍵「%@」無法用作自訂快速鍵。"
           }
         },
         "zh-HK" : {
@@ -17707,19 +18845,19 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "插入片段后的光标位置"
+            "value" : "插入片段后的插入点位置"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "插入片段後的遊標位置"
+            "value" : "插入片段後的插入點位置"
           }
         },
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "插入摘錄之後的插入點。"
+            "value" : "插入片段後的插入點。"
           }
         }
       }
@@ -18275,7 +19413,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Czy masz pewność, że chcesz odrzucić zmiany i ponownie otworzyć dokument, używając „%@”?"
+            "value" : "Czy na pewno chcesz odrzucić zmiany i ponownie otworzyć dokument z użyciem „%@”?"
           }
         },
         "pt" : {

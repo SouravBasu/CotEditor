@@ -29,6 +29,7 @@ import Combine
 import Defaults
 import Invisible
 import LineEnding
+import Shortcut
 import SyntaxFormat
 import StringUtils
 import TextEditing
@@ -176,7 +177,7 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
     private var fontObservers: Set<AnyCancellable> = []
     private var windowOpacityObserver: NSKeyValueObservation?
     private var keyStateObservers: [any NSObjectProtocol] = []
-    private var undoObservers: [any NSObjectProtocol] = []
+    private var undoObserver: any NSObjectProtocol?
     
     
     // MARK: Lifecycle
@@ -204,6 +205,9 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
         self.isVerticallyResizable = true
         self.autoresizingMask = .width
         self.textContainerInset = Self.textContainerInset
+        
+        layoutManager.tabWidth = self.tabWidth
+        textContainer.tabWidth = self.tabWidth
         
         // set NSTextView behaviors
         self.allowsUndo = true
@@ -358,24 +362,20 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
                 },
             ]
             
-            // observe undo/redo to correct the color of restored texts
-            self.undoObservers.forEach(NotificationCenter.default.removeObserver)
-            self.undoObservers = if let undoManager = self.undoManager {
-                [NSNotification.Name.NSUndoManagerDidUndoChange, .NSUndoManagerDidRedoChange].map { name in
-                    NotificationCenter.default.addObserver(forName: name, object: undoManager, queue: .main) { [unowned self] _ in
-                        MainActor.assumeIsolated { [unowned self] in
-                            self.normalizeTextColor()
-                        }
+            // observe text edits to correct the color of the text restored by undo/redo
+            self.undoObserver.map(NotificationCenter.default.removeObserver)
+            self.undoObserver = NotificationCenter.default.addObserver(forName: NSTextStorage.willProcessEditingNotification, object: self.textStorage, queue: .main) { [unowned self] _ in
+                MainActor.assumeIsolated { [unowned self] in
+                    if let undoManager = self.undoManager, undoManager.isUndoing || undoManager.isRedoing {
+                        self.normalizeTextColor()
                     }
                 }
-            } else {
-                []
             }
         } else {
             self.keyStateObservers.forEach(NotificationCenter.default.removeObserver)
             self.keyStateObservers.removeAll()
-            self.undoObservers.forEach(NotificationCenter.default.removeObserver)
-            self.undoObservers.removeAll()
+            self.undoObserver.map(NotificationCenter.default.removeObserver)
+            self.undoObserver = nil
             self.windowOpacityObserver = nil
             self.instanceHighlightTask?.cancel()
             self.instanceHighlightTask = nil
@@ -455,6 +455,27 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
         }
         
         self.isPerformingRectangularSelection = false
+    }
+    
+    
+    override func keyDown(with event: NSEvent) {
+        
+        let bindings = KeyBindingManager.shared.textKeyBindings
+        
+        guard
+            bindings.isCustomized,
+            !self.hasMarkedText(),
+            !self.isShowingCompletion
+        else { return super.keyDown(with: event) }
+        
+        switch bindings.action(for: event) {
+            case .perform(let command):
+                self.doCommand(by: command.action)
+            case .suppress:
+                break
+            case nil:
+                super.keyDown(with: event)
+        }
     }
     
     
@@ -543,17 +564,12 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
         }
         
         // smart outdent with certain symbols
-        if self.isAutomaticIndentEnabled, replacementRange.isEmpty {
-            let levelToReduce = self.string.smartOutdentLevel(with: plainString, indentWidth: self.tabWidth, tokens: self.indentTokens, in: self.rangeForUserTextChange)
-            for _ in 0..<levelToReduce {
-                // select the whole space run for a single indent level beforehand
-                // -> Otherwise, `deleteBackward(_:)` deletes only a single character per level when the automatic tab expansion is disabled.
-                if let deletionRange = self.string.rangeForSoftTabDeletion(in: self.rangeForUserTextChange, tabWidth: self.tabWidth) {
-                    self.setSelectedRangesWithUndo(self.selectedRanges.map(\.rangeValue))
-                    self.selectedRange = deletionRange
-                }
-                self.deleteBackward(nil)
-            }
+        if self.isAutomaticIndentEnabled, replacementRange.isEmpty,
+           let deletionRange = self.string.rangeForSmartOutdent(with: plainString, indentWidth: self.tabWidth, tokens: self.indentTokens, in: self.rangeForUserTextChange)
+        {
+            self.setSelectedRangesWithUndo(self.selectedRanges.map(\.rangeValue))
+            self.selectedRange = deletionRange
+            self.deleteBackward(nil)
         }
         
         super.insertText(plainString, replacementRange: replacementRange)
@@ -638,7 +654,8 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
            self.rangeForUserTextChange.isEmpty,
            let lastCharacter = self.string.character(before: self.rangeForUserTextChange),
            let nextCharacter = self.string.character(after: self.rangeForUserTextChange),
-           self.matchingSymbolPairs.contains(where: { $0.begin == Character(lastCharacter) && $0.end == Character(nextCharacter) })
+           self.matchingSymbolPairs.contains(where: { $0.begin == Character(lastCharacter) && $0.end == Character(nextCharacter) }),
+           self.textStorage?.attribute(.autoBalancedClosingBracket, at: self.rangeForUserTextChange.location, effectiveRange: nil) as? Bool == true
         {
             self.setSelectedRangesWithUndo(self.selectedRanges.map(\.rangeValue))
             self.selectedRange = NSRange(location: self.rangeForUserTextChange.location - 1, length: 2)
@@ -891,17 +908,6 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
         }
         
         return menu
-    }
-    
-    
-    override var typingAttributes: [NSAttributedString.Key: Any] {
-        
-        didSet {
-            // -> The font can differ from the specified text font while typing marked text.
-            guard self.hasMarkedText() != true else { return }
-            
-            (self.textContainer as? TextContainer)?.indentAttributes = typingAttributes
-        }
     }
     
     
@@ -1276,9 +1282,11 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
         
         didSet {
             tabWidth = max(1, tabWidth)
-            (self.layoutManager as? LayoutManager)?.tabWidth = tabWidth
             
             guard tabWidth != oldValue else { return }
+            
+            (self.layoutManager as? LayoutManager)?.tabWidth = tabWidth
+            (self.textContainer as? TextContainer)?.tabWidth = tabWidth
             
             self.invalidateRestorableState()
             self.invalidateDefaultParagraphStyle()
@@ -1531,10 +1539,12 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
     }
     
     
-    /// Updates the color of the text restored by undo/redo to the current theme color.
+    /// Updates the color of the text in the edited range of the text storage to the current theme color.
     ///
     /// The standard undo operation restores texts with the attributes attached at the time they were removed,
     /// in which the text color can be outdated if the theme has changed since then.
+    ///
+    /// - Note: Call this method only while the text storage is processing editing.
     private func normalizeTextColor() {
         
         guard
@@ -1542,7 +1552,9 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
             let textColor = self.theme?.text.color
         else { return }
         
-        textStorage.enumerateAttribute(.foregroundColor, in: textStorage.range) { value, range, _ in
+        assert(!textStorage.editedRange.isNotFound)
+        
+        textStorage.enumerateAttribute(.foregroundColor, in: textStorage.editedRange) { value, range, _ in
             guard value as? NSColor != textColor else { return }
             
             textStorage.addAttribute(.foregroundColor, value: textColor, range: range)
@@ -1588,10 +1600,10 @@ final class EditorTextView: NSTextView, CurrentLineHighlighting, MultiCursorEdit
         if paragraphStyle.lineHeightMultiple != self.defaultParagraphStyle?.lineHeightMultiple ||
            paragraphStyle.defaultTabInterval != self.defaultParagraphStyle?.defaultTabInterval
         {
+            (self.layoutManager as? LayoutManager)?.lineHeightMultiple = paragraphStyle.lineHeightMultiple
             self.defaultParagraphStyle = paragraphStyle
             self.typingAttributes[.paragraphStyle] = paragraphStyle
             self.textStorage?.addAttribute(.paragraphStyle, value: paragraphStyle, range: self.string.range)
-            (self.layoutManager as? LayoutManager)?.lineHeightMultiple = paragraphStyle.lineHeightMultiple
             self.needsUpdateInsertionIndicators = true
         }
         

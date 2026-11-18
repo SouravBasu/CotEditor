@@ -1125,7 +1125,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "代碼位"
+            "value" : "碼位"
           }
         }
       }
@@ -1238,7 +1238,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "代碼位"
+            "value" : "碼位"
           }
         }
       }
@@ -2637,6 +2637,12 @@
     "Disconnected" : {
       "comment" : "window subtitle; for remote document",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Odpojeno"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2661,16 +2667,70 @@
             "value" : "Déconnecté"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "डिस्कनेक्ट किया गया"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Disconnesso"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "切断済み"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "연결 끊김"
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Verbinding verbroken"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rozłączony"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Отключено"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bağlantı kesildi"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зʼєднання розірвано"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已断开连接"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "已中斷連線"
           }
         },
         "zh-HK" : {
@@ -3453,7 +3513,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "提取提纲…"
+            "value" : "正在提取大纲…"
           }
         },
         "zh-Hant" : {
@@ -4961,25 +5021,25 @@
             "plural" : {
               "few" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
+                  "state" : "translated",
                   "value" : "Znaleziono tylko pierwsze %lld dopasowania."
                 }
               },
               "many" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
+                  "state" : "translated",
                   "value" : "Znaleziono tylko pierwszych %lld dopasowań."
                 }
               },
               "one" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
+                  "state" : "translated",
                   "value" : "Znaleziono tylko pierwsze dopasowanie."
                 }
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
+                  "state" : "translated",
                   "value" : "Znaleziono tylko pierwsze %lld dopasowania."
                 }
               }
@@ -5009,25 +5069,25 @@
             "plural" : {
               "few" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
+                  "state" : "translated",
                   "value" : "Найдены только первые совпадения (%lld)."
                 }
               },
               "many" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
+                  "state" : "translated",
                   "value" : "Найдены только первые совпадения (%lld)."
                 }
               },
               "one" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
+                  "state" : "translated",
                   "value" : "Найдены только первые совпадения (%lld)."
                 }
               },
               "other" : {
                 "stringUnit" : {
-                  "state" : "needs_review",
+                  "state" : "translated",
                   "value" : "Найдены только первые совпадения (%lld)."
                 }
               }
@@ -5126,8 +5186,8 @@
       "localizations" : {
         "cs" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Byl dosažen limit vyhledávání"
+            "state" : "translated",
+            "value" : "Dosažen limit hledání"
           }
         },
         "de" : {
@@ -5168,7 +5228,7 @@
         },
         "it" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Limite di ricerca raggiunto"
           }
         },
@@ -5180,8 +5240,8 @@
         },
         "ko" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "검색 제한에 도달함"
+            "state" : "translated",
+            "value" : "검색 한도에 도달함"
           }
         },
         "nl" : {
@@ -5192,7 +5252,7 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "Osiągnięto limit wyszukiwania"
           }
         },
@@ -5204,14 +5264,14 @@
         },
         "ru" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Достигнут лимит поиска"
+            "state" : "translated",
+            "value" : "Достигнут предел поиска"
           }
         },
         "tr" : {
           "stringUnit" : {
-            "state" : "needs_review",
-            "value" : "Arama Sınırına Ulaşıldı"
+            "state" : "translated",
+            "value" : "Arama Sınırına Erişildi"
           }
         },
         "uk" : {
@@ -5222,13 +5282,13 @@
         },
         "zh-Hans" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "已达搜索上限"
           }
         },
         "zh-Hant" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "已達搜尋上限"
           }
         },
@@ -6726,7 +6786,7 @@
         },
         "pl" : {
           "stringUnit" : {
-            "state" : "needs_review",
+            "state" : "translated",
             "value" : "%#@maches@ w %#@files@"
           },
           "substitutions" : {
@@ -6769,25 +6829,25 @@
                 "plural" : {
                   "few" : {
                     "stringUnit" : {
-                      "state" : "needs_review",
+                      "state" : "translated",
                       "value" : "%arg+ dopasowania"
                     }
                   },
                   "many" : {
                     "stringUnit" : {
-                      "state" : "needs_review",
+                      "state" : "translated",
                       "value" : "%arg+ dopasowań"
                     }
                   },
                   "one" : {
                     "stringUnit" : {
-                      "state" : "needs_review",
+                      "state" : "translated",
                       "value" : "%arg+ dopasowanie"
                     }
                   },
                   "other" : {
                     "stringUnit" : {
-                      "state" : "needs_review",
+                      "state" : "translated",
                       "value" : "%arg+ dopasowania"
                     }
                   }
@@ -8463,7 +8523,7 @@
               "other" : {
                 "stringUnit" : {
                   "state" : "translated",
-                  "value" : "找到「%2$@」以外的%1$lld個每行結尾。"
+                  "value" : "找到「%2$@」以外的%1$lld個行結尾。"
                 }
               }
             }
@@ -9144,7 +9204,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "不一致的每行結尾"
+            "value" : "不一致的行結尾"
           }
         }
       }
@@ -9370,7 +9430,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "檢閱器"
+            "value" : "檢閲器"
           }
         }
       }
@@ -9490,7 +9550,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "文件檢閱器"
+            "value" : "文件檢閲器"
           }
         }
       }
@@ -9831,7 +9891,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "下一个提纲项目"
+            "value" : "跳到下一个大纲项目"
           }
         },
         "zh-Hant" : {
@@ -9944,7 +10004,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "上一个提纲项目"
+            "value" : "跳到上一个大纲项目"
           }
         },
         "zh-Hant" : {
@@ -10294,7 +10354,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "每行結尾"
+            "value" : "行結尾"
           }
         }
       }
@@ -10407,7 +10467,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "每行結尾"
+            "value" : "行結尾"
           }
         }
       }
@@ -11735,7 +11795,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "顯示導覽列"
+            "value" : "導覽列"
           }
         }
       }
@@ -12062,7 +12122,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "下一个大纲项"
+            "value" : "下一个大纲项目"
           }
         },
         "zh-Hant" : {
@@ -12412,6 +12472,119 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "未找到問題。"
+          }
+        }
+      }
+    },
+    "No Selection" : {
+      "comment" : "title of the outline menu when no outline item is selected",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nic nevybráno"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nichts ausgewählt"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No Selection"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ningún elemento seleccionado"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Aucune sélection"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "कोई चयन नहीं"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna selezione"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選択なし"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "선택된 항목 없음"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Geen selectie"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak zaznaczenia"
+          }
+        },
+        "pt" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nada Selecionado"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нет выбранного"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Seçim Yok"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає вибраних елементів"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "未选择"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒有選取項目"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "沒有選取項目"
           }
         }
       }
@@ -13978,7 +14151,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "前一个大纲项"
+            "value" : "上一个大纲项目"
           }
         },
         "zh-Hant" : {
@@ -13998,6 +14171,12 @@
     "Remote" : {
       "comment" : "window subtitle; for remote document",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vzdálený"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -14022,16 +14201,70 @@
             "value" : "Distant"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "रिमोट"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Remoto"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "リモート"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "원격"
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Op afstand"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zdalny"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Удаленный"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uzak"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Віддалений"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "远程"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "遠端"
           }
         },
         "zh-HK" : {
@@ -17230,7 +17463,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "往前"
+            "value" : "前进"
           }
         },
         "zh-Hant" : {
@@ -17468,7 +17701,7 @@
         "zh-Hans" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "返回/往前"
+            "value" : "返回/前进"
           }
         },
         "zh-Hant" : {
@@ -19861,7 +20094,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "縮排選擇"
+            "value" : "縮排所選範圍"
           }
         }
       }
@@ -20813,7 +21046,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "保持視窗總是在最上方"
+            "value" : "保持視窗總是位於最上方"
           }
         }
       }
@@ -22656,7 +22889,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pozioma"
+            "value" : "Poziomo"
           }
         },
         "pt" : {
@@ -22775,7 +23008,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pozioma"
+            "value" : "Poziomy kierunek tekstu"
           }
         },
         "pt" : {
@@ -23132,7 +23365,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pionowa"
+            "value" : "Pionowo"
           }
         },
         "pt" : {
@@ -23251,7 +23484,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Pionowa"
+            "value" : "Pionowy kierunek tekstu"
           }
         },
         "pt" : {

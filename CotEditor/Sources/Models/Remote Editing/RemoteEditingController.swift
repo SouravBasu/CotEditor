@@ -47,10 +47,12 @@ import LineEnding
     
     // MARK: Private Properties
     
-    private let server = RMateServer(applicationName: Bundle.main.bundleName, onOpen: RemoteEditingController.open, onError: { NSApp.presentError($0) })
+    private let server = RMateServer(applicationName: Bundle.main.bundleName, onOpen: RemoteEditingController.open, onError: RemoteEditingController.presentError)
     private var settingsObserver: AnyCancellable?
     private var preservedWorkingCopyURLs: [URL] = []
     private var terminationActivity: (any NSObjectProtocol)?
+    
+    private static var lastErrorPresentation: ContinuousClock.Instant?
     
     
     // MARK: Public Methods
@@ -182,6 +184,29 @@ import LineEnding
         
         NSApp.activate()
     }
+    
+    
+    /// Presents an error that occurred while receiving remote files.
+    ///
+    /// The error is only logged while remote editing is disabled or shortly after the previous error was presented,
+    /// so that successive errors, for example, from a misbehaving client, do not keep blocking the app with alerts.
+    ///
+    /// - Parameter error: The error to present.
+    private static func presentError(_ error: any Error) {
+        
+        guard
+            UserDefaults.standard[.enablesRemoteEditing],
+            self.lastErrorPresentation.map({ $0.duration(to: .now) > .seconds(10) }) ?? true
+        else {
+            Logger.app.error("Failed receiving remote file: \(error)")
+            return
+        }
+        
+        NSApp.presentError(error)
+        
+        // -> The app-modal alert returns after the user dismisses it.
+        self.lastErrorPresentation = .now
+    }
 }
 
 
@@ -229,6 +254,9 @@ extension RMateServer.ReceiveError: @retroactive LocalizedError {
             case .tooManyFiles:
                 String(localized: "RMateServer.ReceiveError.tooManyFiles.description",
                        defaultValue: "Some remote files couldn’t be opened.")
+            case .invalidRequest:
+                String(localized: "RMateServer.ReceiveError.invalidRequest.description",
+                       defaultValue: "The remote files couldn’t be opened because the request from rmate isn’t in the correct format.")
         }
     }
     
@@ -244,6 +272,9 @@ extension RMateServer.ReceiveError: @retroactive LocalizedError {
                 String(localized: "RMateServer.ReceiveError.tooManyFiles.recoverySuggestion",
                        defaultValue: "A single rmate command can open up to \(maximumCount) files at a time.",
                        comment: "%lld is the number of files")
+            case .invalidRequest:
+                String(localized: "RMateServer.ReceiveError.invalidRequest.recoverySuggestion",
+                       defaultValue: "A file name may include invalid characters. Rename the file on the remote computer, and then try again.")
         }
     }
     

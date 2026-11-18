@@ -75,5 +75,27 @@ struct StringEncodingTests {
         #expect(String.Encoding.japaneseEUC.xattrEncodingData == eucJPData)
         #expect(eucJPData.decodingXattrEncoding == .japaneseEUC)
         #expect(Data("euc-jp".utf8).decodingXattrEncoding == .japaneseEUC)
+        
+        
+        #expect(Data("x;12345".utf8).decodingXattrEncoding == nil)
+        #expect(Data(";2569".utf8).decodingXattrEncoding == String.Encoding(cfEncoding: CFStringEncoding(CFStringEncodings.big5_E.rawValue)))
+    }
+    
+    
+    @Test func lossyData() {
+        
+        #expect("あ\u{3099}".lossyData(using: .shiftJIS) == Data([0x3F]))
+        #expect("a\u{0301}\u{0301}b".lossyData(using: .isoLatin1) == Data([0xE1, 0x3F, 0x62]))
+        #expect("\u{FFFE}a".lossyData(using: String.Encoding(cfEncoding: CFStringEncoding(CFStringEncodings.GB_18030_2000.rawValue))) == Data([0x3F, 0x61]))
+        #expect("é".lossyData(using: .ascii) == Data([0x65]))
+        #expect("é\\".lossyData(using: .nonLossyASCII) == Data("\\351\\\\".utf8))
+    }
+    
+    
+    @Test func decodeNonLossyASCII() throws {
+        
+        let data = Data("\\351\\\\".utf8)
+        
+        #expect(try String.string(data: data, decodingStrategy: .specific(.nonLossyASCII)).0 == "é\\")
     }
 }

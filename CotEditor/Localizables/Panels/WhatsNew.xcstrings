@@ -117,6 +117,12 @@
     "NewFeature.copySettingsIniCloud.description" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uchovávejte aktuální kopii svého nastavení na iCloudu, abyste ji mohli kdykoli importovat do ostatních Maců."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -147,10 +153,28 @@
             "value" : "Conservez sur iCloud une copie toujours à jour de vos réglages, à importer à tout moment sur vos autres Mac."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अपनी सेटिंग की ताज़ा कॉपी iCloud में रखें, ताकि जब चाहें अपने दूसरे Mac पर इंपोर्ट कर सकें।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tieni in iCloud una copia aggiornata delle tue impostazioni, per importarle su un altro Mac in qualunque momento."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "設定のコピーを常に最新の状態でiCloudに保存して、ほかのMacでいつでも読み込めるようになりました。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud에 최신 설정의 복사본을 유지하고, 언제든 다른 Mac에서 가져올 수 있습니다."
           }
         },
         "nl" : {
@@ -158,12 +182,60 @@
             "state" : "needs_review",
             "value" : "Bewaar een altijd actuele kopie van je instellingen in iCloud om ze op je andere Macs te importeren wanneer je maar wilt."
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Przechowuj w iCloud aktualną kopię swoich ustawień, aby w każdej chwili zaimportować je na innych Twoich Macach."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Храните актуальную копию настроек в iCloud для импорта на другие Mac в любое время."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlarınızın güncel bir kopyasını iCloud’da tutun; böylece dilediğiniz zaman diğer Mac’lerinize aktarabilirsiniz."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зберігайте актуальну копію своїх параметрів в iCloud, щоб будь-коли імпортувати їх на інші свої компʼютери Mac."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在iCloud中保留一份最新的设置副本，随时可导入到你的其他Mac。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在iCloud中保留最新的設定副本，隨時可在其他Mac上輸入。"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在iCloud中儲存最新的設定副本，讓你隨時在其他Mac上輸入。"
+          }
         }
       }
     },
     "NewFeature.copySettingsIniCloud.label" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaše nastavení připravené k importu"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -194,10 +266,28 @@
             "value" : "Retrouvez vos réglages en une importation"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आपकी सेटिंग, बस एक इंपोर्ट दूर"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importa rapidamente le tue impostazioni"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "読み込むだけで、いつもの設定に"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "가져오기 한 번으로 나의 설정 그대로"
           }
         },
         "nl" : {
@@ -205,12 +295,60 @@
             "state" : "needs_review",
             "value" : "Je instellingen, slechts één import verwijderd"
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoje ustawienia – wystarczy jeden import"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваши настройки — одним импортом"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlarınızı tek bir yerde tutun"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваші параметри — за крок до імпорту"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "一次导入，设置就位"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "輸入一次，回到熟悉的設定"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你的設定，只需輸入就得"
+          }
         }
       }
     },
     "NewFeature.remoteEditing.description" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otevírejte soubory ze vzdáleného počítače přes SSH pomocí `rmate` a ukládejte změny přímo na něm."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -241,10 +379,28 @@
             "value" : "Ouvrez des fichiers d’un ordinateur distant avec `rmate` via SSH et enregistrez-y directement vos modifications."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SSH के ज़रिए `rmate` से किसी रिमोट कंप्यूटर की फ़ाइलें खोलें, और बदलाव सीधे वहीं सहेजें।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Apri e modifica file su un computer remoto usando `rmate` su SSH."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "`rmate`を使ってSSH経由でリモートコンピュータ上のファイルを開き、変更内容をそのまま保存できるようになりました。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SSH를 통해 `rmate`로 원격 컴퓨터의 파일을 열고, 변경 사항을 원격 컴퓨터에 바로 저장할 수 있습니다."
           }
         },
         "nl" : {
@@ -252,12 +408,60 @@
             "state" : "needs_review",
             "value" : "Open bestanden op een externe computer met `rmate` via SSH en bewaar je wijzigingen daar direct."
           }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Otwieraj pliki na komputerze zdalnym za pomocą `rmate` przez SSH i zapisuj zmiany bezpośrednio na nim."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Открывайте файлы на удаленном хосте с помощью `rmate` через SSH и сохраняйте изменения прямо там."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "SSH üzerinden `rmate` kullanarak uzak bir bilgisayardaki dosyaları açın ve yaptığınız değişiklikleri doğrudan aynı dosyaya kaydedin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Відкривайте файли на віддаленому компʼютері за допомогою `rmate` через SSH і зберігайте зміни безпосередньо на ньому."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "通过SSH使用`rmate`打开远程电脑上的文件，并将更改直接存回远程电脑。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "透過SSH使用`rmate`開啟遠端電腦上的檔案，並將變更直接存回遠端。"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "使用`rmate`透過SSH開啟遙距電腦上的檔案，並直接將你的變更儲存回原處。"
+          }
         }
       }
     },
     "NewFeature.remoteEditing.label" : {
       "extractionState" : "extracted_with_value",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Upravujte vzdálené soubory přímo na Macu"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -288,16 +492,302 @@
             "value" : "Modifiez des fichiers distants directement sur votre Mac"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "अपने Mac पर ही रिमोट फ़ाइलें संपादित करें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Modifica file remoti direttamente dal Mac"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "リモートファイルを手元で編集"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mac에서 바로 원격 파일 편집"
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Bewerk externe bestanden rechtstreeks op je Mac"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Edytuj zdalne pliki bezpośrednio na Twoim Macu"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редактируйте файлы на удаленном хосте прямо на вашем Mac"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Uzak dosyaları Mac’inizde düzenleyin"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Редагуйте віддалені файли просто на своєму Mac"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在Mac上直接编辑远程文件"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "直接在Mac上編輯遠端檔案"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "直接於你的Mac上編輯遙距檔案"
+          }
+        }
+      }
+    },
+    "NewFeature.textKeyBinding.description" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Přizpůsobte si klávesové zkratky pro pohyb kurzoru, výběr a mazání textu podle vlastních potřeb."
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Passe die Kurzbefehle zum Bewegen der Einfügemarke sowie zum Auswählen und Löschen von Text an, damit sich deine Finger ganz wie zu Hause fühlen."
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Customize shortcuts for moving the insertion point, selecting, and deleting text, so your fingers feel right at home."
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Customise shortcuts for moving the insertion point, selecting, and deleting text, so your fingers feel right at home."
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Personaliza los atajos para mover el punto de inserción, seleccionar y eliminar texto, y haz que tus dedos se sientan como en casa."
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Personnalisez les raccourcis pour déplacer le point d’insertion, sélectionner et supprimer du texte, et vos doigts se sentiront comme chez eux."
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सम्मिलन बिंदु हिलाने, टेक्स्ट चुनने और डिलीट करने के शॉर्टकट अपनी पसंद से बदलें, ताकि आपकी उँगलियाँ सहज रहें।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Personalizza come preferisci le scorciatoie per spostare il punto di inserimento, selezionare e cancellare il testo."
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "挿入ポイントの移動やテキストの選択・削除に使うショートカットを、カスタマイズできるようになりました。いつもの指づかいで、もっと快適に。"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "삽입점 이동, 텍스트 선택 및 삭제에 사용하는 단축키를 손에 익은 방식으로 사용자화할 수 있습니다."
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Pas de toetscombinaties aan voor het verplaatsen van het invoegpunt en het selecteren en verwijderen van tekst, zodat je vingers zich meteen thuis voelen."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Dostosuj skróty do przemieszczania punktu wstawiania, zaznaczania i usuwania tekstu, aby Twoje palce czuły się jak w domu."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Настройте сочетания клавиш для перемещения курсора, выделения и удаления текста, чтобы ваши пальцы чувствовали себя как дома."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "İmleci hareket ettirme, metin seçme ve metin silme işlemlerine yönelik kestirmeleri özelleştirin; böylece parmaklarınız kendilerini tamamen rahat hissetsin."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Налаштуйте клавіатурні скорочення для переміщення точки вставлення, вибору й видалення тексту, щоб працювати було звично та зручно."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自定移动插入点、选择和删除文本的快捷键，让手指操作得心应手。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "可自訂移動插入點、選取與刪除文字的快速鍵，讓你怎麼按都順手。"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "自訂移動插入點、選擇與刪除文字的快捷鍵，令你打字得心應手。"
+          }
+        }
+      }
+    },
+    "NewFeature.textKeyBinding.label" : {
+      "extractionState" : "extracted_with_value",
+      "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vaše klávesové zkratky, vaše pravidla"
+          }
+        },
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Deine Tasten, deine Regeln"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "new",
+            "value" : "Your keys, your rules"
+          }
+        },
+        "en-GB" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your keys, your rules"
+          }
+        },
+        "es" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Tus teclas, tus reglas"
+          }
+        },
+        "fr" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Vos touches, vos règles"
+          }
+        },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "आपकी कीज़, आपके नियम"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "I tuoi tasti, le tue regole"
+          }
+        },
+        "ja" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "キー操作を自分流に"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "나에게 맞는 단축키"
+          }
+        },
+        "nl" : {
+          "stringUnit" : {
+            "state" : "needs_review",
+            "value" : "Jouw toetsen, jouw regels"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Twoje klawisze, twoje zasady"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваши клавиши — ваши правила"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Sizin tuşlarınız, sizin kurallarınız"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ваші клавіші — ваші правила"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你的按键，你做主"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "按鍵操作，由你作主"
+          }
+        },
+        "zh-HK" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "你的按鍵，由你決定"
           }
         }
       }

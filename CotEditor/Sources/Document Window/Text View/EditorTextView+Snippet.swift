@@ -24,6 +24,7 @@
 //
 
 import AppKit
+import LineEnding
 
 extension EditorTextView: SnippetInsertable {
     
@@ -32,7 +33,7 @@ extension EditorTextView: SnippetInsertable {
         
         guard let snippet = sender.representedObject as? Snippet else { return assertionFailure() }
         
-        self.insert(snippet: snippet)
+        self.insert(snippet: snippet, lineEnding: self.lineEnding)
     }
 }
 
@@ -41,12 +42,14 @@ private extension NSTextView {
     
     /// Inserts the given snippet to the insertion points.
     ///
-    /// - Parameter snippet: The snippet to insert.
-    final func insert(snippet: Snippet) {
+    /// - Parameters:
+    ///   - snippet: The snippet to insert.
+    ///   - lineEnding: The line ending of the document.
+    final func insert(snippet: Snippet, lineEnding: LineEnding) {
         
         guard let ranges = self.rangesForUserTextChange?.map(\.rangeValue) else { return }
         
-        let context = snippet.insertions(for: self.string, ranges: ranges)
+        let context = snippet.insertions(for: self.string, ranges: ranges, lineEnding: lineEnding)
         
         self.edit(with: context, actionName: String(localized: "Insert Snippet", table: "MainMenu", comment: "verb; undo action name"))
         self.scrollRangeToVisible(self.selectedRange)

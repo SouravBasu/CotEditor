@@ -48,14 +48,15 @@ struct FindResult {
 }
 
 
-struct FindAllMatch: Identifiable {
+struct FindAllMatch: Identifiable, Sendable {
     
     let id = UUID()
     
     var range: NSRange
     var lineNumber: Int
     var inlineLocation: Int
-    var attributedLineString: NSAttributedString
+    var lineString: String
+    var highlights: [ValueRange<NSColor>] = []
 }
 
 
@@ -68,6 +69,17 @@ struct FindMatchesCache {
         var mode: TextFind.Mode
         var inSelection: Bool
         var selectedRanges: [NSRange]
+        
+        
+        static func == (lhs: Self, rhs: Self) -> Bool {
+            
+            // -> Use literal comparison because the regular expression matches canonically equivalent strings differently.
+            lhs.textVersion == rhs.textVersion &&
+            lhs.findString.compare(rhs.findString, options: .literal) == .orderedSame &&
+            lhs.mode == rhs.mode &&
+            lhs.inSelection == rhs.inSelection &&
+            lhs.selectedRanges == rhs.selectedRanges
+        }
     }
     
     
@@ -98,6 +110,12 @@ struct FindMatchesCache {
         var findString: String = ""
         var matches: [FindAllMatch] = []
         weak var client: NSTextView?
+    }
+    
+    
+    struct ClearFindAllHighlightsMessage: NotificationCenter.MainActorMessage {
+        
+        typealias Subject = NSTextStorage
     }
     
     
@@ -145,6 +163,7 @@ struct FindMatchesCache {
     
     private var findTask: Task<Void, any Error>?
     private var highlightObservationTask: Task<Void, Never>?
+    private var findAllHighlightObserver: NotificationCenter.ObservationToken?
     private var textChangeObserver: (any NSObjectProtocol)?
     
     
@@ -153,6 +172,7 @@ struct FindMatchesCache {
     isolated deinit {
         self.findTask?.cancel()
         self.highlightObservationTask?.cancel()
+        self.findAllHighlightObserver.map(NotificationCenter.default.removeObserver)
         self.removeTextChangeObserver()
     }
     
@@ -327,6 +347,7 @@ struct FindMatchesCache {
         
         self.highlightObservationTask?.cancel()
         self.highlightObservationTask = nil
+        self.clearFindAllHighlights(in: self.client)
         
         self.client.unhighlight(nil)
     }
@@ -402,6 +423,19 @@ struct FindMatchesCache {
     
     
     // MARK: Private Methods
+    
+    /// Clears Find All highlights and their observers in editors sharing the client's text storage.
+    ///
+    /// - Parameter client: The text view whose highlights are about to change.
+    private func clearFindAllHighlights(in client: NSTextView) {
+        
+        if let textStorage = client.textStorage {
+            NotificationCenter.default.post(ClearFindAllHighlightsMessage(), subject: textStorage)
+        }
+        self.findAllHighlightObserver.map(NotificationCenter.default.removeObserver)
+        self.findAllHighlightObserver = nil
+    }
+    
     
     /// Observes text changes in the current client and invalidates cache.
     private func observeClientTextChanges() {
@@ -606,6 +640,7 @@ struct FindMatchesCache {
         
         // mark all matches
         if isIncremental {
+            self.clearFindAllHighlights(in: client)
             client.updateBackgroundColor(.unemphasizedSelectedTextBackgroundColor, ranges: matches)
             
             // unmark either when the client view resigned the key window or when the Find panel closed
@@ -646,7 +681,12 @@ struct FindMatchesCache {
         guard let (textFind, client) = self.prepareTextFind() else { return }
         
         let matchedRanges = try await self.findMatches(for: textFind, in: client)
-        client.selectedRanges = matchedRanges as [NSValue]
+        
+        if matchedRanges.isEmpty {
+            NSSound.beep()
+        } else {
+            client.selectedRanges = matchedRanges as [NSValue]
+        }
         
         self.notify(FindResult(action: .find, count: matchedRanges.count), for: client)
         self.settings.noteFindHistory()
@@ -692,7 +732,9 @@ struct FindMatchesCache {
         defer { client.isEditable = wasEditable }
         
         let progress = FindProgress(scope: textFind.scopeRange)
-        async let findResult = Self.findAll(for: textFind, showsList: showsList, progress: progress)
+        async let findResult = progress.perform {
+            try await Self.findAll(for: textFind, showsList: showsList, progress: progress)
+        }
         
         // present progress view
         client.window?.beginSheet {
@@ -715,6 +757,7 @@ struct FindMatchesCache {
         
         self.highlightObservationTask?.cancel()
         self.highlightObservationTask = nil
+        self.clearFindAllHighlights(in: client)
         
         client.updateBackgroundColors(highlights)
         
@@ -727,6 +770,15 @@ struct FindMatchesCache {
         self.notify(FindResult(action: .find, count: matches.count), for: client)
         
         if showsList {
+            if let textStorage = client.textStorage {
+                self.findAllHighlightObserver.map(NotificationCenter.default.removeObserver)
+                self.findAllHighlightObserver = NotificationCenter.default.addObserver(of: textStorage, for: ClearFindAllHighlightsMessage.self) { [weak self, weak client] _ in
+                    client?.unhighlight(nil)
+                    self?.findAllHighlightObserver.map(NotificationCenter.default.removeObserver)
+                    self?.findAllHighlightObserver = nil
+                }
+            }
+            
             let message = DidFindAllMessage(findString: textFind.findString, matches: matches, client: client)
             NotificationCenter.default.post(message, subject: self)
         }
@@ -746,7 +798,9 @@ struct FindMatchesCache {
         let editorTextView = client as? EditorTextView
         let replacementString = self.settings.replacementString
         let progress = FindProgress(scope: textFind.scopeRange)
-        async let replacementResult = Self.replaceAll(for: textFind, with: replacementString, progress: progress)
+        async let replacementResult = progress.perform {
+            try await Self.replaceAll(for: textFind, with: replacementString, progress: progress)
+        }
         
         // present progress view
         client.window?.beginSheet {
@@ -836,20 +890,21 @@ struct FindMatchesCache {
             if showsList {
                 let matchedRange = matches[0]
                 
-                // build a highlighted line string for result table
+                // build the line string and highlight ranges for result table
                 let lineFragmentRange = lineCounter.lineContentsRange(for: matchedRange)
                     .clamped(around: matchedRange, maxLength: 1024)  // -> limit to avoid out of memory with very long lines
                 let lineString = (textFind.string as NSString).substring(with: lineFragmentRange)
-                let attrLineString = NSMutableAttributedString(string: lineString)
+                var lineHighlights: [ValueRange<NSColor>] = []
                 for (color, range) in zip(highlightColors, matches) where !range.isEmpty {
-                    guard let inlineRange = range.shifted(by: -lineFragmentRange.location).intersection(attrLineString.range) else { continue }
-                    attrLineString.addAttribute(.backgroundColor, value: color, range: inlineRange)
+                    guard let inlineRange = range.shifted(by: -lineFragmentRange.location).intersection(lineString.range) else { continue }
+                    lineHighlights.append(ValueRange(value: color, range: inlineRange))
                 }
                 
                 let lineNumber = lineCounter.lineNumber(at: matchedRange.location)
                 let inlineLocation = matchedRange.location - lineFragmentRange.location
                 
-                resultMatches.append(.init(range: matchedRange, lineNumber: lineNumber, inlineLocation: inlineLocation, attributedLineString: attrLineString))
+                resultMatches.append(.init(range: matchedRange, lineNumber: lineNumber, inlineLocation: inlineLocation,
+                                           lineString: lineString, highlights: lineHighlights))
             }
             
             progress.updateCompletedUnit(to: matches[0].upperBound)
@@ -870,14 +925,14 @@ struct FindMatchesCache {
     /// - Throws: `CancellationError` if the task is cancelled.
     @concurrent private static func replaceAll(for textFind: TextFind, with replacementString: String, progress: FindProgress) async throws(CancellationError) -> (replacementItems: [TextFind.ReplacementItem], selectedRanges: [NSRange]?) {
         
-        try textFind.replaceAll(with: replacementString) { range, count, stop in
+        try textFind.replaceAll(with: replacementString) { range, stop in
             guard progress.state != .cancelled else {
                 stop = true
                 return
             }
             
             progress.updateCompletedUnit(to: range.upperBound)
-            progress.incrementCount(by: count)
+            progress.incrementCount()
         }
     }
 }

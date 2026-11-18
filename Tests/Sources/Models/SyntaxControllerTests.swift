@@ -56,6 +56,24 @@ import ValueRange
     }
     
     
+    @Test func cancelAfterSetup() async {
+        
+        let (controller, layoutManager, _) = self.makeController(
+            text: "foo bar",
+            syntax: Syntax(highlights: [.keywords: [Syntax.Highlight(begin: "foo")]])
+        )
+        
+        controller.setupParser()
+        controller.cancel()
+        
+        let didHighlight = await Task.waitFor(timeout: .seconds(1)) {
+            !layoutManager.syntaxHighlights().isEmpty
+        }
+        
+        #expect(!didHighlight)
+    }
+    
+    
     @Test func updateClearsHighlights() async {
         
         let (controller, layoutManager, _) = self.makeController(
@@ -107,6 +125,32 @@ import ValueRange
         #expect(item.range == NSRange(0..<10))
         #expect(item.kind == .heading(nil))
         #expect(item.style.isEmpty)
+    }
+    
+    
+    @Test func editDuringInitialHighlight() async {
+        
+        let (controller, layoutManager, textStorage) = self.makeController(
+            text: String(repeating: "foo bar\n", count: 50_000),
+            syntax: Syntax(highlights: [.keywords: [Syntax.Highlight(begin: "foo")]])
+        )
+        
+        controller.setupParser()
+        
+        // edit after the beginning is highlighted
+        let didHighlightBeginning = await Task.waitFor(interval: .milliseconds(1)) {
+            layoutManager.temporaryAttribute(.syntaxType, atCharacterIndex: 0, effectiveRange: nil) != nil
+        }
+        #expect(didHighlightBeginning)
+        
+        textStorage.replaceCharacters(in: NSRange(location: 0, length: 0), with: "a")
+        controller.invalidate(in: NSRange(location: 0, length: 1), changeInLength: 1)
+        controller.parseIfNeeded()
+        
+        let didHighlightEnd = await Task.waitFor {
+            layoutManager.temporaryAttribute(.syntaxType, atCharacterIndex: textStorage.length - 8, effectiveRange: nil) != nil
+        }
+        #expect(didHighlightEnd)
     }
     
     

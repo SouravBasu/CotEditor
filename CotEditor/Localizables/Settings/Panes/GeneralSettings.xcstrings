@@ -229,6 +229,12 @@
     "Choose Settings Archive…" : {
       "comment" : "verb; menu item",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vybrat archiv nastavení…"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -253,16 +259,70 @@
             "value" : "Choisir une archive de réglages…"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सेटिंग आर्काइव चुनें…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Scegli l’archivio delle impostazioni…"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "設定アーカイブを選択…"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "설정 아카이브 선택…"
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Kies een instellingenarchief…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wybierz archiwum ustawień…"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Выбрать архив настроек…"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlar Arşivi Seç…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вибрати архів параметрів…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "选取设置归档…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "選擇設定封存檔⋯"
           }
         },
         "zh-HK" : {
@@ -1078,7 +1138,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "不一致的每行結尾"
+            "value" : "不一致的行結尾"
           }
         }
       }
@@ -1086,6 +1146,12 @@
     "Keep a copy in iCloud" : {
       "comment" : "verb; checkbox; refer to the expression for “Keep a copy” by Apple",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zachovat kopii na iCloudu"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1110,16 +1176,70 @@
             "value" : "Conserver une copie sur iCloud"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud में कॉपी रखें"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Conserva una copia in iCloud"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "iCloudにコピーを保存"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud에 복사본 유지"
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Bewaar een kopie in iCloud"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pozostaw kopię w iCloud"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сохранять копию в iCloud"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bir kopyayı iCloud’da tut"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зберігати копію в iCloud"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在iCloud中保留副本"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "在iCloud中保留副本"
           }
         },
         "zh-HK" : {
@@ -1246,6 +1366,12 @@
     "Loading Settings Copies from iCloud…" : {
       "comment" : "message; menu item",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Načítání kopií nastavení z iCloudu…"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1270,16 +1396,70 @@
             "value" : "Chargement des copies des réglages depuis iCloud…"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud से सेटिंग कॉपियाँ लोड हो रही हैं…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Carico le copie delle impostazioni da iCloud…"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "iCloudから設定のコピーを読み込み中…"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud에서 설정 복사본 로드 중…"
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Kopieën van de instellingen worden uit iCloud geladen…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wczytuję kopie ustawień z iCloud…"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Загрузка копий настроек из iCloud…"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarlar iCloud’dan Yükleniyor…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Завантаження копій параметрів з iCloud…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在从iCloud加载设置副本…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "正在從iCloud載入設定副本⋯"
           }
         },
         "zh-HK" : {
@@ -1293,6 +1473,12 @@
     "Manage Copies on iCloud…" : {
       "comment" : "verb; menu item",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Spravovat kopie na iCloudu…"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1323,16 +1509,70 @@
             "value" : "Gérer les copies sur iCloud…"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud पर कॉपियाँ प्रबंधित करें…"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Gestisci le copie su iCloud…"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "iCloudのコピーを管理…"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud의 복사본 관리…"
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Beheer kopieën in iCloud…"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zarządzaj kopiami w iCloud…"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Управление копиями настроек в iCloud…"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kopyaları iCloud’da Yönet…"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Керувати копіями в iCloud…"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "管理iCloud上的副本…"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "管理iCloud上的副本⋯"
           }
         },
         "zh-HK" : {
@@ -1647,7 +1887,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Zachowanie aplikacji zmieni się dopiero przy drugim kolejnym uruchomieniu."
+            "value" : "Zmiana w działaniu aplikacji zacznie w pełni obowiązywać dopiero po drugim ponownym uruchomieniu aplikacji."
           }
         },
         "pt" : {
@@ -1816,6 +2056,12 @@
     "No Settings Copies in iCloud" : {
       "comment" : "message; menu item",
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Na iCloudu nejsou žádné kopie nastavení"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -1840,16 +2086,70 @@
             "value" : "Aucune copie des réglages sur iCloud"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud में कोई सेटिंग कॉपी नहीं है"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nessuna copia delle impostazioni trovata in iCloud"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "iCloudに設定のコピーがありません"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud에 설정 복사본 없음"
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Geen kopieën van de instellingen in iCloud"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Brak kopii ustawień w iCloud"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Нет копий настроек в iCloud"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud’da Ayarlar Kopyası Yok"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Немає копій параметрів в iCloud"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud中没有设置副本"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "iCloud中沒有設定副本"
           }
         },
         "zh-HK" : {
@@ -2053,7 +2353,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Wyświetl okno dialogowe Otwórz…"
+            "value" : "Wyświetl okno dialogowe Otwórz"
           }
         },
         "pt" : {
@@ -2327,7 +2627,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "在開啟時："
+            "value" : "在啟動時："
           }
         }
       }
@@ -2397,7 +2697,7 @@
         "pl" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Niezależnie od tego ustawienia w przypadku korzystania z wersji wstępnej nowe wersje wstępne są zawsze uwzględniane"
+            "value" : "Niezależnie od tego ustawienia, w przypadku korzystania z wersji wstępnej, nowe wersje wstępne są zawsze uwzględniane"
           }
         },
         "pt" : {
@@ -2439,7 +2739,7 @@
         "zh-HK" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "無論此設定如何，使用預先發佈版本時永遠都會包括新的預先發佈版本。"
+            "value" : "無論此設定為何，使用預先發佈版本時永遠都會包括新的預先發佈版本。"
           }
         }
       }
@@ -2672,6 +2972,12 @@
     },
     "Settings import & export:" : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import a export nastavení:"
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2696,16 +3002,70 @@
             "value" : "Importation et exportation des réglages :"
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "सेटिंग इंपोर्ट और एक्सपोर्ट :"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Importa/esporta impostazioni:"
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "設定の読み込みと書き出し:"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "설정 가져오기 및 내보내기:"
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Instellingen importeren en exporteren:"
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Import i eksport ustawień:"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Импорт и экспорт настроек:"
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ayarları içe ve dışa aktar:"
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Імпорт і експорт параметрів:"
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "设置导入与导出："
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "設定的輸入與輸出："
           }
         },
         "zh-HK" : {
@@ -2830,6 +3190,12 @@
     },
     "Store a copy of these settings for other devices to import." : {
       "localizations" : {
+        "cs" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ukládat kopii tohoto nastavení pro import do jiných zařízení."
+          }
+        },
         "de" : {
           "stringUnit" : {
             "state" : "translated",
@@ -2854,16 +3220,70 @@
             "value" : "Enregistrez une copie de ces réglages pour pouvoir les importer sur d’autres appareils."
           }
         },
+        "hi" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "इन सेटिंग की एक कॉपी रखें, ताकि दूसरे डिवाइस उसे इंपोर्ट कर सकें।"
+          }
+        },
+        "it" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Archivia una copia di queste impostazioni, per importarle su altri dispositivi."
+          }
+        },
         "ja" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "ほかのデバイスで読み込めるように、設定のコピーを保存します。"
           }
         },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "다른 기기에서 가져올 수 있도록 이 설정의 복사본을 저장합니다."
+          }
+        },
         "nl" : {
           "stringUnit" : {
             "state" : "needs_review",
             "value" : "Bewaar een kopie van deze instellingen om ze op andere apparaten te kunnen importeren."
+          }
+        },
+        "pl" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zachowaj kopię tych ustawień, aby inne urządzenia mogły je zaimportować."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сохранить копию этих настроек для импорта на другие устройства."
+          }
+        },
+        "tr" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Başka aygıtlarda da içe aktarılabilmesi için bu ayarların bir kopyasını tutun."
+          }
+        },
+        "uk" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Зберігайте копію цих параметрів для імпорту на інших пристроях."
+          }
+        },
+        "zh-Hans" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "保存这些设置的副本，以便其他设备导入。"
+          }
+        },
+        "zh-Hant" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "儲存這些設定的副本，供其他裝置輸入使用。"
           }
         },
         "zh-HK" : {

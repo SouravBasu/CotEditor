@@ -37,6 +37,7 @@ struct SyntaxValidationTests {
             highlights: [
                 .keywords: [
                     duplicate,
+                    .init(begin: "abc", ignoreCase: true),
                     duplicate,
                     .init(begin: "(", isRegularExpression: true),
                     .init(begin: "a", end: "(", isRegularExpression: true),
@@ -50,6 +51,14 @@ struct SyntaxValidationTests {
         
         #expect(errors.contains { $0.code == .duplicated && $0.scope == .highlight(.keywords) && $0.value == "abc" })
         #expect(errors.contains { $0.code == .regularExpression && $0.scope == .highlight(.keywords) && $0.value == "(" })
+    }
+    
+    
+    @Test func emptyPatternValidation() {
+        
+        let syntax = Syntax(outlines: [.init()])
+        
+        #expect(syntax.validate().isEmpty)
     }
     
     

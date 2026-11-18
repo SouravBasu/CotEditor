@@ -46,7 +46,10 @@ enum TypeScriptOutlineFormatter: TreeSitterOutlineFormatting {
                     return Self.defaultTitle(capture: capture, source: source)
                 }
                 let range = Self.signatureRange(for: match, nameRange: capture.range)
-                let title = Self.normalizedClause(source.substring(with: range))
+                let signature = match.outlineNode?.parent
+                    .map { Self.text(of: $0, in: range, source: source) }
+                    ?? source.substring(with: range)
+                let title = Self.normalizedClause(signature)
                 return (title, range)
             default:
                 return Self.defaultTitle(capture: capture, source: source)
@@ -99,13 +102,13 @@ private extension TypeScriptOutlineFormatter {
     }
     
     
-    /// Returns whether the match represents a variable-assigned callable.
+    /// Returns whether the match represents a callable assigned to a variable or an object property.
     ///
     /// - Parameter match: The resolved query match.
-    /// - Returns: `true` when the callable is assigned through a variable declarator.
+    /// - Returns: `true` when the callable is assigned through a variable declarator or a property pair.
     private static func isAssignedFunction(_ match: QueryMatch) -> Bool {
         
-        match.outlineNode?.parent?.nodeType == "variable_declarator"
+        ["variable_declarator", "pair"].contains(match.outlineNode?.parent?.nodeType)
     }
     
     
@@ -116,15 +119,7 @@ private extension TypeScriptOutlineFormatter {
     private static func normalizedClause(_ clause: String) -> String {
         
         clause
-            .replacing(/\s+/, with: " ")
-            .replacing(/\(\s+/, with: "(")
-            .replacing(/\s+\)/, with: ")")
-            .replacing(/\s+\(/, with: "(")
-            .replacing(/,\s*\)/, with: ")")
-            .replacing(/\s+</, with: "<")
-            .replacing(/<\s+/, with: "<")
-            .replacing(/\s+>/, with: ">")
-            .replacing(/\s*,\s*/, with: ", ")
+            .normalizingClauseSpacing(openings: ["(", "<"], closings: [")", "(", "<", ">"], trailingCommaClosings: [")", ">"])
             .trimmingCharacters(in: .whitespacesAndNewlines)
     }
 }

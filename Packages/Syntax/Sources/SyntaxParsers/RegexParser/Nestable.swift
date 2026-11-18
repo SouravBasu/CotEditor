@@ -79,8 +79,7 @@ extension [NestableToken: SyntaxType] {
                         true
                 }
             }
-            .sorted(using: [KeyPathComparator(\.range.location),
-                            KeyPathComparator(\.range.length, order: .reverse)])
+            .sorted { ($0.range.location, -$0.range.length) < ($1.range.location, -$1.range.length) }
         
         guard !positions.isEmpty else { return [:] }
         
@@ -127,7 +126,11 @@ extension [NestableToken: SyntaxType] {
                 continue
             }
             
-            guard let endIndex = beginPosition.token.matchingEndIndex(in: positions, from: index, upperBound: searchUpperBound) else {
+            // -> searchUpperBound can precede the begin token end when the token ends between CR and LF of a CRLF.
+            guard
+                beginPosition.range.upperBound <= searchUpperBound,
+                let endIndex = beginPosition.token.matchingEndIndex(in: positions, from: index, range: NSRange(beginPosition.range.upperBound...searchUpperBound))
+            else {
                 if !beginPosition.token.allowsMultiline {
                     failedUpperBounds[beginPosition.token] = searchUpperBound
                 }
@@ -140,7 +143,7 @@ extension [NestableToken: SyntaxType] {
             highlights[beginPosition.type, default: []].append(range)
             
             seekLocation = range.upperBound
-            index = endIndex
+            index = endIndex + 1
         }
         
         return highlights
@@ -165,7 +168,7 @@ private extension NestableToken {
         
         switch self {
             case .inline: false
-            case .pair(_, _, _, let isNestable, _): isNestable
+            case .pair(let pair, _, _, let isNestable, _): isNestable && pair.begin != pair.end
         }
     }
     
@@ -182,7 +185,7 @@ private extension NestableToken {
         switch self {
             case .inline(let delimiter, let leadingOnly):
                 return (leadingOnly
-                        ? try! NSRegularExpression(pattern: "^ *(\(NSRegularExpression.escapedPattern(for: delimiter)))", options: .anchorsMatchLines)
+                        ? try! NSRegularExpression(pattern: "^[ \t]*(\(NSRegularExpression.escapedPattern(for: delimiter)))", options: .anchorsMatchLines)
                             .matches(in: string, range: parseRange)
                             .map { $0.range(at: 1) }
                         : string.ranges(of: delimiter, range: parseRange))
@@ -198,50 +201,37 @@ private extension NestableToken {
                 // -> `prefixes` is pre-sorted by descending length at NestableToken creation
                 //    to ensure longest-match-first and stable Hashable identity.
                 let nsString = string as NSString
+                let endRanges = string.ranges(of: pair.end, range: parseRange)
                 
-                if pair.begin == pair.end {
-                    let ranges = string.ranges(of: pair.begin, range: parseRange)
-                    if prefixes.isEmpty {
-                        return ranges
-                            .map { NestableItem(type: type, token: self, role: [.begin, .end], range: $0) }
-                    } else {
-                        return ranges.map { range in
-                            if let prefixLength = Self.matchingPrefixLength(at: range.location, in: nsString, prefixes: prefixes, parseRange: parseRange) {
-                                NestableItem(type: type, token: self, role: .begin,
-                                             range: NSRange(location: range.location - prefixLength, length: range.length + prefixLength))
-                            } else {
-                                NestableItem(type: type, token: self, role: .end, range: range)
-                            }
-                        }
-                    }
-                } else {
-                    let beginItems: [NestableItem] = if prefixes.isEmpty {
-                        string.ranges(of: pair.begin, range: parseRange)
-                            .map { NestableItem(type: type, token: self, role: .begin, range: $0) }
-                    } else {
-                        string.ranges(of: pair.begin, range: parseRange)
-                            .compactMap { range in
-                                guard let prefixLength = Self.matchingPrefixLength(at: range.location, in: nsString, prefixes: prefixes, parseRange: parseRange) else { return nil }
-                                return NestableItem(type: type, token: self, role: .begin,
-                                                    range: NSRange(location: range.location - prefixLength, length: range.length + prefixLength))
-                            }
-                    }
-                    let endItems = string.ranges(of: pair.end, range: parseRange)
-                        .map { NestableItem(type: type, token: self, role: .end, range: $0) }
-                    return beginItems + endItems
+                if pair.begin == pair.end, prefixes.isEmpty {
+                    return endRanges.map { NestableItem(type: type, token: self, role: [.begin, .end], range: $0) }
                 }
+                
+                let beginRanges = (pair.begin == pair.end) ? endRanges : string.ranges(of: pair.begin, range: parseRange)
+                let beginItems: [NestableItem] = if prefixes.isEmpty {
+                    beginRanges.map { NestableItem(type: type, token: self, role: .begin, range: $0) }
+                } else {
+                    beginRanges.compactMap { range in
+                        guard let prefixLength = Self.matchingPrefixLength(at: range.location, in: nsString, prefixes: prefixes, parseRange: parseRange) else { return nil }
+                        return NestableItem(type: type, token: self, role: .begin,
+                                            range: NSRange(location: range.location - prefixLength, length: range.length + prefixLength))
+                    }
+                }
+                let endItems = endRanges.map { NestableItem(type: type, token: self, role: .end, range: $0) }
+                
+                return beginItems + endItems
         }
     }
     
     
-    /// Returns the index of the first end token that matches the begin token within the search bound.
+    /// Returns the index of the first end token that matches the begin token within the search bounds.
     ///
     /// - Parameters:
     ///   - positions: The ordered token positions in the parse range.
     ///   - startIndex: The index in `positions` where the search starts.
-    ///   - searchUpperBound: The upper bound where the search should stop.
+    ///   - searchRange: The UTF-16 search range for token start locations.
     /// - Returns: The index of the matching end token in `positions`, or `nil` if not found.
-    func matchingEndIndex(in positions: [NestableItem], from startIndex: Int, upperBound searchUpperBound: Int) -> Int? {
+    func matchingEndIndex(in positions: [NestableItem], from startIndex: Int, range searchRange: NSRange) -> Int? {
         
         let isDoubleEscape: Bool = switch self {
             case .pair(let pair, _, _, _, let escapeCharacter?): String(escapeCharacter) == pair.end
@@ -249,32 +239,38 @@ private extension NestableToken {
         }
         
         var nestDepth = 0
-        var skipCount = 0
-        for (offset, position) in positions[startIndex...].enumerated() where position.token == self {
-            guard position.range.location <= searchUpperBound else { return nil }
+        var skipsNext = false
+        for index in positions.indices[startIndex...] where positions[index].token == self {
+            let position = positions[index]
             
-            guard skipCount == 0 else {
-                skipCount -= 1
+            guard position.range.location < searchRange.upperBound else { return nil }
+            
+            // skip tokens overlapping the begin token
+            guard position.range.location >= searchRange.lowerBound else { continue }
+            
+            guard !skipsNext else {
+                skipsNext = false
                 continue
             }
             
             if position.role.contains(.end) {
                 // -> Single character pairs cannot be nested.
-                if isDoubleEscape, startIndex < positions.count {
-                    skipCount = positions[(startIndex + offset + 1)...].prefix { next in
-                        next.token == position.token &&
-                        next.role.contains(.end) &&
-                        next.range.location <= searchUpperBound &&
-                        next.range.location == position.range.location + 1 + skipCount
-                    }.count
-                    
-                    if skipCount.isMultiple(of: 2) {
-                        return startIndex + offset + skipCount  // found
-                    } else {
+                if isDoubleEscape {
+                    // skip a pair of adjacent end tokens as an escaped delimiter
+                    let nextIndex = index + 1
+                    if nextIndex < positions.endIndex,
+                       positions[nextIndex].token == self,
+                       positions[nextIndex].role.contains(.end),
+                       positions[nextIndex].range.location < searchRange.upperBound,
+                       positions[nextIndex].range.location == position.range.location + 1
+                    {
+                        skipsNext = true
                         continue
                     }
+                    return index  // found
                 }
-                if nestDepth == 0 { return startIndex + offset }  // found
+                if nestDepth == 0 { return index }  // found
+                
                 nestDepth -= 1
                 
             } else if self.allowsNesting {

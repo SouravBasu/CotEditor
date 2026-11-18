@@ -144,6 +144,10 @@ struct EncodingDetectionTests {
         
         #expect(Data("fileencoding: utf8".utf8).scanEncodingDeclaration() == .utf8)  // Vim
         #expect(Data("encoding=utf8".utf8).scanEncodingDeclaration() == .utf8)  // Python
+        #expect(Data("coding:\tutf8".utf8).scanEncodingDeclaration() == .utf8)  // PEP 263
+        #expect(Data("<?xml encoding = \"utf-8\"?>".utf8).scanEncodingDeclaration() == .utf8)  // XML
+        
+        #expect(Data("<?xml version=\"1.0\" encoding=\"utf-16\"?>".utf8).scanEncodingDeclaration() == nil)
         
         // HTML (1024 bytes)
         let data = Data("<meta charset=\"utf-8\">".utf8)
@@ -152,6 +156,8 @@ struct EncodingDetectionTests {
         #expect(Data("<meta charset=\"utf-8\" 犬".utf8).scanEncodingDeclaration() == .utf8)
         #expect(Data("犬<meta charset=\"utf-8\"".utf8).scanEncodingDeclaration() == nil)
         #expect(Data("<meta charset=utf-8".utf8).scanEncodingDeclaration() == nil)
+        #expect(Data("<meta content=\"text/html; charset=EUC-JP\">".utf8).scanEncodingDeclaration() == .japaneseEUC)
+        #expect(Data("text/html; charset=utf-8".utf8).scanEncodingDeclaration() == nil)
         
         #expect(Data("<meta charset=\"utf-8\">\n# coding: shift-jis".utf8).scanEncodingDeclaration() == .utf8)
         #expect(Data("# coding: shift-jis\n<meta charset=\"utf-8\">".utf8).scanEncodingDeclaration() == .shiftJIS)
